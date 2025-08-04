@@ -684,6 +684,280 @@
 <!-- =============================================== -->
 
 
+<!-- =============================================== -->
+<!-- ===== 최면 및 상담 안내 (독립형 섹션) ===== -->
+<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
+<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
+<!-- =============================================== -->
+<div id="mindbodylab-explanation-section">
+    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
+    <style>
+        /* 외부 폰트 불러오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        /* 전체 컨테이너 스타일 */
+        #mindbodylab-explanation-section {
+            width: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fdfdfd;
+        }
+
+        /* 각 정보 패널의 기본 레이아웃 */
+        #mindbodylab-explanation-section .info-panel {
+            /* 위아래 여백을 7rem에서 5rem으로 더 줄였습니다. */
+            padding: 5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        /* 어두운 배경 패널 */
+        #mindbodylab-explanation-section .info-panel.dark {
+            background-color: #1f2428;
+            color: #e8e8e8;
+        }
+
+        /* 밝은 배경 패널 */
+        #mindbodylab-explanation-section .info-panel.light {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
+        #mindbodylab-explanation-section .info-panel-content {
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        #mindbodylab-explanation-section .info-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 소제목 스타일 (예: (1) 최면이란) */
+        #mindbodylab-explanation-section .sub-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            padding-bottom: 1rem;
+            display: inline-block;
+            border-bottom: 2px solid;
+        }
+        
+        #mindbodylab-explanation-section .info-panel.dark .sub-heading {
+            border-color: #e8e8e8;
+        }
+        #mindbodylab-explanation-section .info-panel.light .sub-heading {
+            border-color: #333;
+        }
+
+        /* 본문 텍스트 스타일 */
+        #mindbodylab-explanation-section .main-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.7;
+            margin-top: 2rem;
+        }
+        
+        #mindbodylab-explanation-section .sub-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-top: 2rem;
+            color: #5a5a5a;
+        }
+        
+        #mindbodylab-explanation-section .info-panel.dark .sub-text {
+             color: #b0b0b0;
+        }
+
+        /* 강조 텍스트 (빨간색) */
+        #mindbodylab-explanation-section .text-red {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* 목차 리스트 스타일 */
+        #mindbodylab-explanation-section .toc-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2rem;
+        }
+        #mindbodylab-explanation-section .toc-list li {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* 노란색 하이라이트 박스 */
+        #mindbodylab-explanation-section .highlight-box-yellow {
+            background-color: #ffeb3b;
+            color: #333;
+            padding: 1.5rem;
+            margin-top: 2rem;
+            border-radius: 8px;
+            display: inline-block;
+        }
+        #mindbodylab-explanation-section .highlight-box-yellow p {
+            margin: 0;
+            font-size: 1.3rem;
+            font-weight: 600;
+        }
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 768px) {
+            #mindbodylab-explanation-section .info-panel {
+                /* 모바일 여백도 5rem에서 4rem으로 조정 */
+                padding: 4rem 1.2rem;
+            }
+            #mindbodylab-explanation-section .sub-heading {
+                font-size: 2rem;
+            }
+            #mindbodylab-explanation-section .main-text {
+                font-size: 1.5rem;
+            }
+            #mindbodylab-explanation-section .sub-text {
+                font-size: 1rem;
+            }
+            #mindbodylab-explanation-section .toc-list li {
+                font-size: 1.2rem;
+            }
+            #mindbodylab-explanation-section .highlight-box-yellow p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+
+    <!-- 섹션 1: 소개 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading" style="border:none; font-size: 3rem;">최면 심리 상담 센터</h2>
+            <p class="main-text">무의식적 문제의 원인을 찾고<br>최면 상담으로 해결하는 곳 입니다.</p>
+            <p class="main-text" style="margin-top: 1rem;">
+                <span style="color:#e74c3c; font-weight: 900;">마인드</span><span style="color:#3498db; font-weight: 900;">바디</span><span style="color:#f39c12; font-weight: 900;">랩</span>
+            </p>
+            <div class="highlight-box-yellow">
+                <p>마인드바디랩은 최면, NLP를 활용하여<br>회복탄력성 증대, 무의식의 변화를 시키는<br>방법에 최선을 다하고 있습니다.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 섹션 2: 목차 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="sub-heading" style="border:none; font-size: 2.8rem;">최면 상담 안내</h2>
+            <p class="sub-text" style="font-size: 1.3rem;">최면 상담 설명, 상담 비용, 예약 방법 등 안내</p>
+            <h3 style="font-size: 2rem; margin-top: 3rem;">- 목차 -</h3>
+            <ul class="toc-list">
+                <li>(1) 최면이란</li>
+                <li>(2) 상담이란</li>
+                <li>(3) 무의식이란</li>
+                <li>(4) 상담에서 무의식의 중요성</li>
+                <li>(5) 최면과 무의식의 관계</li>
+                <li>(6) 최면 상담이어야만 하는 이유</li>
+                <li>(7) 최면 상담 안내</li>
+                <li>(8) 상담 시간과 비용, 그리고 상담 횟수</li>
+                <li>(9) 최면상담사가 내담자에게 꼭 전하고 싶은 말</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 섹션 3: (1) 최면이란 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(1) 최면이란</h2>
+            <p class="main-text"><span class="text-red">최면</span>은 일상적인 의식 상태와는 다른<br>특별한 심리 상태를 의미합니다.</p>
+            <p class="sub-text">이는 깨어 있으면서도 주의력이 매우 집중돼<br>주변 환경에 대한 인식이 감소하는 상태입니다.<br>하지만 최면가의 암시 제안에는 더 잘 반응하는 상태입니다.</p>
+        </div>
+    </div>
+    
+    <!-- 섹션 4: 최면 상태 설명 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">최면 상태에서는<br>사람이 겉보기엔 잠든 것 같지만<br>실제로는 깨어 있어 <span class="text-red">내면의 감정과 기억에<br>깊이 접근할 수 있습니다.</span></p>
+            <p class="sub-text">이를 통해 평소에는 쉽게 접근하지 못했던<br>심리적 자원을 활용할 수 있게 됩니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 5: 최면의 활용 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+             <p class="main-text">최면 중에는 비판적 사고가 줄고,<br>제안을 쉽게 받아 심리 치료에 활용됩니다.</p>
+             <p class="sub-text">의학적으로 최면은 단순한 수면 상태가 아니라<br>특별한 의식 상태로, 이완과 집중이 강화되어<br>통증 관리나 스트레스 완화 등에 효과적으로 사용됩니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 6: 최면의 상호작용 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">최면은 최면가의 강요로 이끌어 가는 것은 불가합니다.<br>피 최면자의 자발적 협조에 의한<br>상호작용 과정으로 최면 상태가 유지될 수 있습니다.</p>
+            <p class="sub-text">즉, <span class="text-red">의식이 있는 상태</span>이며<br>자신의 의지와 의식에 의해 최면가의 말에<br><span class="text-red">대답과 행동을 하는 상태</span>입니다.</p>
+        </div>
+    </div>
+    
+    <!-- 섹션 7: 최면의 과학적 접근 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">최면은 의식이 있으면서<br>집중력을 높여 심리적 치유에<br>도움을 주는 방법입니다.</p>
+            <p class="sub-text"><span class="text-red">최면은 마술이나 미신적 현상이 아니라,</span><br>과학적으로 연구되고 있는 심리-생리학적 현상입니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 8: (2) 상담이란 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(2) 상담이란</h2>
+            <p class="main-text" style="color: #e8e8e8;"><span class="text-red">상담</span>은 심리학적 기법으로<br>내담자를 돕는 치유적 관계입니다.</p>
+            <p class="sub-text">심리상담은 정신 건강을 증진하고 삶의 질을 높이는 것을 목표로 합니다.<br>내담자가 자신의 감정과 문제를 이해하고 해결할 수 있도록 도움을 줍니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 9: 상담가의 역할 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <p class="main-text" style="color: #e8e8e8;">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span class="text-red">공감하며 경청</span>을 합니다.</p>
+            <p class="sub-text">내담자 스스로가 문제를 해결할 수 있도록 도움을 줍니다.<br>심리상담은 현재 문제를 해결하고, 자아 성장을 도와 삶의 질을 높이며,<br>스트레스 관리와 대인관계 개선을 통해 전반적인 정신 건강을 유지하고,</p>
+        </div>
+    </div>
+
+    <script>
+        // 스크롤 애니메이션을 위한 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoContents = document.querySelectorAll('#mindbodylab-explanation-section .info-panel-content');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                infoContents.forEach(content => {
+                    observer.observe(content);
+                });
+            } else {
+                infoContents.forEach(content => {
+                    content.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+</div>
+<!-- =============================================== -->
+<!-- ===== 독립형 섹션 끝 ===== -->
+<!-- =============================================== -->
+
 
 
 
