@@ -545,6 +545,153 @@
         }
     </style>
 
+<!-- =============================================== -->
+<!-- ===== 독립형 전체 스토리 섹션 (디자인 개선) ===== -->
+<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
+<!-- 모든 스토리 내용을 순서대로 포함하고 있습니다. -->
+<!-- =============================================== -->
+<div id="mindbodylab-full-story-section">
+    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
+    <style>
+        /* 외부 폰트 불러오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        /* 전체 컨테이너 스타일 */
+        #mindbodylab-full-story-section {
+            width: 100%;
+            font-family: 'Noto Sans KR', sans-serif; /* 폰트 지정 */
+            -webkit-font-smoothing: antialiased; /* 폰트 부드럽게 */
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fdfdfd; /* 기본 배경색 통일 */
+        }
+
+        /* 각 스토리 패널의 기본 레이아웃 */
+        #mindbodylab-full-story-section .story-panel {
+            /* 기존 min-height 제거, padding으로 공간 조절 */
+            padding: 10rem 1.5rem;
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            box-sizing: border-box;
+            text-align: center; /* 텍스트 중앙 정렬 */
+            overflow: hidden; /* 애니메이션을 위한 설정 */
+        }
+        
+        /* 어두운 배경 패널 */
+        #mindbodylab-full-story-section .story-panel.dark {
+            background-color: #1f2428; /* 조금 더 부드러운 검은색 */
+            color: #e8e8e8; /* 부드러운 흰색 */
+        }
+
+        /* 밝은 배경 패널 */
+        #mindbodylab-full-story-section .story-panel.light {
+            background-color: #fdfdfd; /* 거의 흰색 */
+            color: #333;
+        }
+
+        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
+        #mindbodylab-full-story-section .story-panel-content {
+            max-width: 800px; /* 콘텐츠 최대 너비 제한 */
+            width: 100%;
+            opacity: 0; /* 기본적으로 숨김 */
+            transform: translateY(30px); /* 아래에서 위로 올라오는 효과 */
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        /* 화면에 보일 때 적용될 클래스 */
+        #mindbodylab-full-story-section .story-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 제목(h2) 스타일 */
+        #mindbodylab-full-story-section .story-panel h2 {
+            font-size: 2.8rem; /* 폰트 크기 조정 */
+            font-weight: 700; /* 폰트 두께 조정 */
+            line-height: 1.4; /* 줄 간격 조정 */
+            margin: 0;
+        }
+        
+        /* 본문(p) 스타일 */
+        #mindbodylab-full-story-section .story-panel p {
+            font-size: 1.2rem; /* 폰트 크기 조정 */
+            font-weight: 400;
+            line-height: 1.8; /* 가독성을 위해 줄 간격 넓힘 */
+            margin: 1.5rem auto 0 auto; /* 위쪽 여백 조정 */
+            max-width: 90%;
+            color: #5a5a5a;
+        }
+        
+        #mindbodylab-full-story-section .story-panel.dark p {
+            color: #b0b0b0;
+        }
+        
+        /* 인용구 스타일 */
+        #mindbodylab-full-story-section .story-panel h2.quote {
+            font-size: 1.6rem;
+            font-weight: 500;
+            font-style: normal;
+            color: #999;
+            line-height: 1.7;
+        }
+        
+        /* 강조 텍스트 (세련된 하이라이트 효과) */
+        #mindbodylab-full-story-section .highlight-text {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+        #mindbodylab-full-story-section .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            opacity: 0.6;
+        }
+        #mindbodylab-full-story-section .story-panel.light .highlight-text::after {
+            background-color: #ffde59; /* 부드러운 노란색 */
+        }
+        #mindbodylab-full-story-section .story-panel.dark .highlight-text::after {
+            background-color: #59d4ff; /* 부드러운 파란색 */
+        }
+        
+        /* 최종 결론 텍스트 스타일 */
+        #mindbodylab-full-story-section .final-conclusion {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0056b3;
+        }
+        
+        /* 추천 대상 텍스트 스타일 */
+        #mindbodylab-full-story-section .recommendation {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 768px) {
+            #mindbodylab-full-story-section .story-panel {
+                padding: 6rem 1.2rem;
+            }
+            #mindbodylab-full-story-section .story-panel h2 {
+                font-size: 2rem;
+            }
+            #mindbodylab-full-story-section .story-panel p {
+                font-size: 1rem;
+            }
+            #mindbodylab-full-story-section .final-conclusion {
+                font-size: 2.2rem;
+            }
+            #mindbodylab-full-story-section .recommendation {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+
     <!-- 스토리 시작: 문제 제기 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
@@ -564,7 +711,7 @@
     <!-- 스토리 3: 일반적인 해결책 1 -->
     <div class="story-panel light">
         <div class="story-panel-content">
-            <h2>이럴 때 좋은 방법 중 하나는<br><span class="highlight-text">내 상황을 잘 아는 사람에게 고민을 이야기하고</span> 물어보는 것입니다.</h2>
+            <h2>이럴 때 좋은 방법 중 하나는<br><span class="highlight-text">내 상황을 잘 아는 사람에게</span> 고민을 이야기하고 물어보는 것입니다.</h2>
             <p>진짜 이 고민은 내 상황을 아는 사람만이 제대로 듣고 이해해 줄 수 있으니까요.</p>
         </div>
     </div>
@@ -636,10 +783,38 @@
             <h2 class="recommendation">때문에 기존의 심리상담이나<br>해결을 위해 받아본 여러가지 방법들이<br>효과가 부족했다고 느끼시는 분들에게 권합니다.</h2>
         </div>
     </div>
+    
+    <script>
+        // 스크롤 애니메이션을 위한 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            const storyContents = document.querySelectorAll('#mindbodylab-full-story-section .story-panel-content');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target); // 한 번 보이면 계속 보이도록 관찰 중지
+                        }
+                    });
+                }, { threshold: 0.1 }); // 10% 보였을 때 실행
+
+                storyContents.forEach(content => {
+                    observer.observe(content);
+                });
+            } else {
+                // IntersectionObserver를 지원하지 않는 브라우저에서는 바로 보이게 처리
+                storyContents.forEach(content => {
+                    content.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
 </div>
 <!-- =============================================== -->
 <!-- ===== 독립형 전체 스토리 섹션 끝 ===== -->
 <!-- =============================================== -->
+
 
 
     </main>
