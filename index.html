@@ -1230,6 +1230,340 @@
 <!-- ===== 독립형 섹션 끝 ===== -->
 <!-- =============================================== -->
 
+<!-- ======================================================= -->
+<!-- ===== 최면 상담의 효과 및 안내 (독립형 섹션) ===== -->
+<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
+<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
+<!-- ======================================================= -->
+<div id="mindbodylab-benefits-section">
+    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
+    <style>
+        /* 외부 폰트 불러오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        /* 전체 컨테이너 스타일 */
+        #mindbodylab-benefits-section {
+            width: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fdfdfd;
+        }
+
+        /* 각 정보 패널의 기본 레이아웃 */
+        #mindbodylab-benefits-section .info-panel {
+            padding: 5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        /* 어두운 배경 패널 */
+        #mindbodylab-benefits-section .info-panel.dark {
+            background-color: #1f2428;
+            color: #e8e8e8;
+        }
+
+        /* 밝은 배경 패널 */
+        #mindbodylab-benefits-section .info-panel.light {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
+        #mindbodylab-benefits-section .info-panel-content {
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        #mindbodylab-benefits-section .info-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 소제목 스타일 */
+        #mindbodylab-benefits-section .sub-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            display: inline-block;
+            border-bottom: 2px solid;
+        }
+        
+        #mindbodylab-benefits-section .info-panel.dark .sub-heading {
+            border-color: #e8e8e8;
+        }
+        #mindbodylab-benefits-section .info-panel.light .sub-heading {
+            border-color: #333;
+        }
+
+        /* 본문 텍스트 스타일 */
+        #mindbodylab-benefits-section .main-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        
+        #mindbodylab-benefits-section .main-text + .main-text {
+             margin-top: 2.5rem;
+        }
+
+        #mindbodylab-benefits-section .sub-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-top: 2rem;
+            color: #5a5a5a;
+        }
+        
+        #mindbodylab-benefits-section .info-panel.dark .sub-text {
+             color: #b0b0b0;
+        }
+
+        /* 강조 텍스트 (빨간색) */
+        #mindbodylab-benefits-section .text-red {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* 리스트 스타일 */
+        #mindbodylab-benefits-section .point-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2.5rem;
+            text-align: left; /* 리스트는 왼쪽 정렬 */
+            display: inline-block; /* 가운데 정렬을 위해 */
+        }
+        #mindbodylab-benefits-section .point-list li {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        #mindbodylab-benefits-section .point-list li + li {
+            margin-top: 2rem;
+        }
+        
+        /* 프로필 섹션 스타일 */
+        #mindbodylab-benefits-section .profile-name {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        #mindbodylab-benefits-section .profile-subtitle {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+        }
+        #mindbodylab-benefits-section .license-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #mindbodylab-benefits-section .license-list li {
+            margin-bottom: 1.5rem;
+        }
+        #mindbodylab-benefits-section .license-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: block;
+        }
+        #mindbodylab-benefits-section .license-issuer {
+            font-size: 1rem;
+            color: #bbb;
+            display: block;
+        }
+
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 768px) {
+            #mindbodylab-benefits-section .info-panel {
+                padding: 4rem 1.2rem;
+            }
+            #mindbodylab-benefits-section .sub-heading {
+                font-size: 2rem;
+            }
+            #mindbodylab-benefits-section .main-text,
+            #mindbodylab-benefits-section .point-list li {
+                font-size: 1.3rem;
+            }
+            #mindbodylab-benefits-section .sub-text {
+                font-size: 1rem;
+            }
+            #mindbodylab-benefits-section .profile-name {
+                font-size: 2.5rem;
+            }
+            #mindbodylab-benefits-section .profile-subtitle {
+                font-size: 1.2rem;
+            }
+            #mindbodylab-benefits-section .license-title {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+
+    <!-- 섹션 20: 최면 상담의 효과 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <ul class="point-list" style="color: #e8e8e8; text-align: center;">
+                <li>2. 효과 :<br>최면은 다양한 문제에 효과적이고,<br>의료적 절차에도 도움이 됩니다.</li>
+                <li>3. 빠른 결과 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>더 적은 회기로 더 빠른 개선을 경험할 수 있습니다.</li>
+            </ul>
+            <p class="main-text" style="margin-top: 3rem;">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더 효과적입니다.</span></p>
+        </div>
+    </div>
+
+    <!-- 섹션 21: (7) 최면 상담 안내 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(7) 최면 상담 안내</h2>
+            <p class="main-text"><span class="text-red">최면 상담</span>은 전문가가 최면 상태로<br>내담자를 이끌어 <span class="text-red">치유하는 방법</span>입니다.</p>
+            <p class="main-text">최면 상담은 무의식을 촉진해<br>심리 변화를 이끌어냅니다.</p>
+            <p class="main-text">최면 상태는 집중과 몰입이 높은<br>심리 상태입니다.</p>
+        </div>
+    </div>
+    
+    <!-- 섹션 22: 최면 상담의 적용 범위 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">최면 상담은 무의식에 접근해<br>정신 건강을 돕습니다.</p>
+            <p class="main-text">최면 상담은<br>다양한 심리적, 정서적<br>문제에 적용될 수 있습니다.</p>
+            <p class="main-text">불안, 우울 등 다양한 문제와<br>심리적 성장에<br>최면을 활용할 수 있습니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 23: 최면의 자발성 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">최면은 피최면자의<br>자발적 참여와 협력이 필요합니다.</p>
+            <p class="main-text">최면 중 피최면자의<br>윤리와 가치가 존중되며<br>최면가의 강압적 암시를<br>받을 수 없습니다.</p>
+            <p class="main-text">암시는 피최면자 스스로의 수용으로<br>받아들여지게 되는 것입니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 24: 최면 상담의 결론 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">결론적으로,<br>최면 상담은 무의식에 접근해<br>자기 이해와 성장을 돕습니다.</p>
+            <p class="main-text">이로 인하여<br><span class="text-red">심리적 문제를<br>스스로 치유하게 합니다.</span></p>
+        </div>
+    </div>
+
+    <!-- 섹션 25: (8) 상담 시간과 비용 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
+            <ul class="point-list" style="color: #e8e8e8;">
+                <li>- 기본 상담의 횟수는<br><strong>3회기</strong>를 기준으로 진행하고 있습니다.
+                    <span class="sub-text" style="display: block; color: #bbb;">※ 단 1회기 또는 2회기 상담만으로도 스스로 충분히 변화하고 안정감을 느낀다면, 상담은 바로 종결될 수 있습니다.<br>★ 내담자의 상담 이슈에 따라 상담 회기는 3회 이상으로 진행될 수 있습니다.</span>
+                </li>
+                <li>- 1회기 상담 시간 :<br><strong>1시간 30분 / 1주당 1회 상담</strong>을 진행 하고 있습니다.
+                    <span class="sub-text" style="display: block; color: #bbb;">※ 상담 진행에 따라 상담 시간은 더 길어 질 수 있습니다. 이때 추가 비용이 발생하지 않습니다.</span>
+                </li>
+                <li>- 최면 상담 비용<br><strong>1회기 상담 비용 - 15만원</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 섹션 26: (9) 최면상담사가 내담자에게 꼭 전하고 싶은 말 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(9) 최면상담사가<br>내담자에게 꼭 전하고 싶은 말</h2>
+            <p class="main-text" style="font-weight: 700;">최면은 만병통치약이 아닙니다.</p>
+            <p class="sub-text" style="text-align: left; margin-top: 2rem;">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한 번으로 다 해결될 것으로 기대를 하고 최면 상담 센터를 방문합니다. 그리고 최면 상담가가 모든 것을 알아서 다 해줄 것이라는 생각과 믿음을 갖고 최면 상담에 임하시곤 합니다. 최면 상담을 찾는 내담자들의 이러한 생각과 믿음을 갖는 것을 저는 충분히 이해하고 있습니다.<br><br>그런데 안타깝게도 최면은 만병통치약이 아닙니다. 그리고 최면 상담가는 내담자의 모든 것을 꿰뚫어 보는 독심술사의 능력을 갖고 있지 않습니다.<br><br>물론 단 한 번의 최면으로 극적인 효과를 보는 사례들도 분명히 있습니다. 그리고 최면 상담가의 유도문과 암시에 의해 내담자의 심리적 문제가 잘 치유되는 경우도 있습니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 27: 상담사의 역할 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="sub-text" style="text-align: left;">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를 원하는 상황에서 무의식적 원인으로 그 변화를 가로막고 있는 벽을 최면 상담가가 함께 협응을 통해서 함께 찾아가고 내담자가 갖고 있는 무의식적 장애물인 벽을 넘어 원하는 상태에 이르게 도움을 주는 조력자의 역할을 합니다.<br><br>즉 최면 상담 세션을 진행할 때 내담자의 적극적이고 능동적인 의지와 협조가 있어야 원하는 결과를 얻을 수 있다는 이야기를 드리고 싶습니다.<br><br>최면 상담을 찾는 모든 내담자들이 '최면상담사가 내담자에게 꼭 전하고 싶은 말'의 글을 읽고 최면 상담을 받으실 수 있으면 좋겠습니다.<br><br>이 글을 읽으면 좀 더 좋은 치료 효과를 얻을 수 있을 것입니다. 왜냐하면 내담자의 상담에 임하는 마음상태와 생각이 상담에서 제일 중요하기 때문입니다.</p>
+        </div>
+    </div>
+
+    <!-- 섹션 28: 핵심 가치와 슬로건 -->
+    <div class="info-panel light" style="background-color: #f0f2f5;">
+        <div class="info-panel-content">
+            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 내담자의 행복 추구</p>
+            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 무의식의 긍정적 활용</p>
+            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 의식과 무의식의 조화</p>
+            
+            <p class="main-text" style="margin-top: 4rem; color: #e74c3c; font-weight: 700;">슬로건</p>
+            <p class="main-text" style="font-size: 2.5rem; font-weight: 900; margin-top: 0.5rem;">내담자의 마음 지도를<br>함께 그리는 여정</p>
+
+            <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad;">당신의 마음을 찾아가는 여정,<br>최면 전문 상담가 : 김현준 센터장</p>
+        </div>
+    </div>
+
+    <!-- 섹션 29: 프로필 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="profile-name">김현준 센터장</h2>
+            <p class="profile-subtitle">보유 라이센스 및 이수 프로그램</p>
+            <ul class="license-list">
+                <li>
+                    <span class="license-title">ABH Hypnosis Counselor</span>
+                    <span class="license-issuer">Certified by American Board of Hypnotherapy</span>
+                </li>
+                <li>
+                    <span class="license-title">국제 공인 Timeline Therapy™ Master Practitioner</span>
+                    <span class="license-issuer">Certified by Timeline Therapy™ Association</span>
+                </li>
+                <li>
+                    <span class="license-title">ABNLP NLP Practitioner</span>
+                    <span class="license-issuer">Certified by American Board of NLP</span>
+                </li>
+                <li>
+                    <span class="license-title">불안전문심리상담사 1급</span>
+                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                </li>
+                <li>
+                    <span class="license-title">Ericksonian Hypnosis Practitioner</span>
+                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                </li>
+                <li>
+                    <span class="license-title">머니마인드코칭 3급</span>
+                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 스크롤 애니메이션을 위한 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoContents = document.querySelectorAll('#mindbodylab-benefits-section .info-panel-content');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                infoContents.forEach(content => {
+                    observer.observe(content);
+                });
+            } else {
+                infoContents.forEach(content => {
+                    content.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+</div>
+<!-- =============================================== -->
+<!-- ===== 독립형 섹션 끝 ===== -->
+<!-- =============================================== -->
 
 
     </main>
@@ -1282,13 +1616,13 @@
       "name": "마인드바디랩 최면상담센터",
       "image": "https://www.mindbodylab.kr/images/logo.png",
       "url": "https://www.mindbodylab.kr",
-      "telephone": "+82-10-0000-0000",
-      "description": "전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험 등 마음의 치유를 돕는 최면상담센터입니다.",
+      "telephone": "+82-10-5264-5001",
+      "description": "전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험, 전생 최면 등 마음의 치유를 돕는 최면상담센터입니다.",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "상세주소",
+        "streetAddress": "서울시 송파구 중대로 97 5층 548호" "서울시 송파구 가락동 99-5 5층 548호",
         "addressLocality": "서울",
-        "postalCode": "우편번호",
+        "postalCode": "05719",
         "addressCountry": "KR"
       },
       "sameAs": [
