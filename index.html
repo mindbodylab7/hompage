@@ -958,6 +958,277 @@
 <!-- ===== 독립형 섹션 끝 ===== -->
 <!-- =============================================== -->
 
+<!-- ======================================================= -->
+<!-- ===== 무의식 및 최면 상담의 중요성 (독립형 섹션) ===== -->
+<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
+<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
+<!-- ======================================================= -->
+<div id="mindbodylab-consciousness-section">
+    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
+    <style>
+        /* 외부 폰트 불러오기 */
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
+
+        /* 전체 컨테이너 스타일 */
+        #mindbodylab-consciousness-section {
+            width: 100%;
+            font-family: 'Noto Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #fdfdfd;
+        }
+
+        /* 각 정보 패널의 기본 레이아웃 */
+        #mindbodylab-consciousness-section .info-panel {
+            padding: 5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        /* 어두운 배경 패널 */
+        #mindbodylab-consciousness-section .info-panel.dark {
+            background-color: #1f2428;
+            color: #e8e8e8;
+        }
+
+        /* 밝은 배경 패널 */
+        #mindbodylab-consciousness-section .info-panel.light {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
+        #mindbodylab-consciousness-section .info-panel-content {
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+        
+        #mindbodylab-consciousness-section .info-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 소제목 스타일 (예: (3) 무의식이란) */
+        #mindbodylab-consciousness-section .sub-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 2.5rem;
+            padding-bottom: 1rem;
+            display: inline-block;
+            border-bottom: 2px solid;
+        }
+        
+        #mindbodylab-consciousness-section .info-panel.dark .sub-heading {
+            border-color: #e8e8e8;
+        }
+        #mindbodylab-consciousness-section .info-panel.light .sub-heading {
+            border-color: #333;
+        }
+
+        /* 본문 텍스트 스타일 */
+        #mindbodylab-consciousness-section .main-text {
+            font-size: 1.8rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        
+        #mindbodylab-consciousness-section .main-text + .main-text {
+             margin-top: 2.5rem;
+        }
+
+        #mindbodylab-consciousness-section .sub-text {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin-top: 2rem;
+            color: #5a5a5a;
+        }
+        
+        #mindbodylab-consciousness-section .info-panel.dark .sub-text {
+             color: #b0b0b0;
+        }
+
+        /* 강조 텍스트 (빨간색) */
+        #mindbodylab-consciousness-section .text-red {
+            color: #e74c3c;
+            font-weight: 600;
+        }
+
+        /* 리스트 스타일 */
+        #mindbodylab-consciousness-section .point-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2.5rem;
+        }
+        #mindbodylab-consciousness-section .point-list li {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        #mindbodylab-consciousness-section .point-list li + li {
+            margin-top: 2rem;
+        }
+
+        /* 모바일 화면 대응 */
+        @media (max-width: 768px) {
+            #mindbodylab-consciousness-section .info-panel {
+                padding: 4rem 1.2rem;
+            }
+            #mindbodylab-consciousness-section .sub-heading {
+                font-size: 2rem;
+            }
+            #mindbodylab-consciousness-section .main-text {
+                font-size: 1.5rem;
+            }
+            #mindbodylab-consciousness-section .sub-text {
+                font-size: 1rem;
+            }
+            #mindbodylab-consciousness-section .point-list li {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+
+    <!-- (2) 상담이란 섹션 마무리 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <p class="main-text" style="color: #e8e8e8;"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.</p>
+            <p class="main-text" style="color: #e8e8e8; margin-top: 3rem;">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을 높여가는 과정입니다.</p>
+        </div>
+    </div>
+
+    <!-- (3) 무의식이란 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(3) 무의식이란</h2>
+            <p class="main-text"><span class="text-red">무의식</span>은 우리가 의식하지 못하는<br>복잡한 정신 과정으로,<br>행동과 감정에 큰 영향을 미칩니다.</p>
+            <p class="main-text">무의식은 의식 밖에서<br>우리의 결정과 행동에 영향을 줍니다.</p>
+            <p class="main-text">무의식은 지능적 적응 시스템으로<br>생존에 중요한 역할을 합니다.</p>
+        </div>
+    </div>
+    
+    <!-- 무의식의 발현과 탐구 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">무의식은<br>꿈, 예술 등에서 드러나며<br>프로이드와 같은 정신분석 학자들은<br>이를 통해 무의식을 탐구하려 했습니다.</p>
+            <p class="main-text">최면은 무의식에 접근해<br>기억과 감정을 변화시킵니다.</p>
+            <p class="main-text">한국 심리학은<br>'한'과 같은 문화적 정서가<br>무의식에 작용하고,</p>
+        </div>
+    </div>
+
+    <!-- 집단 무의식과 상담에서의 역할 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <p class="main-text">집단 무의식을 통해 공유된<br>문화와 상징이<br>개인의 무의식에 영향을 준다고 봅니다.</p>
+            <p class="main-text">심리상담에서는<br>무의식을 탐색하고 이해하는것이<br>치료에 중요한 역할을 할 수 있다고<br>보고 있습니다.</p>
+            <p class="main-text"><span class="text-red">무의식은 행동과 감정에 영향을 주며,<br>정신 건강과 성장에 중요합니다.</span></p>
+        </div>
+    </div>
+
+    <!-- (4) 상담에서 무의식의 중요성 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(4) 상담에서 무의식의 중요성</h2>
+            <p class="main-text" style="color: #e8e8e8;"><span class="text-red">무의식</span>은 행동과 감정에 큰 영향을 주어<br><span class="text-red">심리상담</span>에서 중요합니다.</p>
+            <p class="sub-text">무의식의 중요성은 다음과 같은<br>여러 측면에서 나타납니다.</p>
+            <ul class="point-list" style="color: #e8e8e8;">
+                <li>첫째.<br>무의식은 자아와 감정을<br>근본적으로 변화시킵니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 무의식의 중요성 (계속) -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <ul class="point-list" style="color: #e8e8e8;">
+                <li>둘째.<br>무의식은 일상 적응과<br>심리치료에 중요합니다.</li>
+                <li>셋째.<br>무의식은 행동과 판단에 영향을 주어<br>상담에서 중요할수 밖에 없습니다.</li>
+                <li>넷째.<br>무의식 탐색은<br>자기 이해와 치료에 도움이 됩니다.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 무의식의 중요성 (마무리) -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <ul class="point-list" style="color: #e8e8e8;">
+                <li>다섯째.<br>무의식을 다루면<br>치료 저항을 극복하고<br>효과가 지속될 수 있습니다.</li>
+                <li>마지막으로.<br>무의식을 다루면<br>자기 이해와 지속적인 치료 효과를<br>얻을 수 있습니다.</li>
+            </ul>
+            <p class="main-text" style="margin-top: 3rem;"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인 요소입니다.</span></p>
+        </div>
+    </div>
+
+    <!-- (5) 최면과 무의식의 관계 -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(5) 최면과 무의식의 관계</h2>
+            <p class="main-text"><span class="text-red">최면</span>은 무의식에 <span class="text-red">접근</span>해<br>행동과 감정에 영향을 줍니다.</p>
+            <p class="main-text">최면은 무의식에<br>접근할 수 있는 도구입니다.</p>
+            <ul class="point-list">
+                <li>첫째.<br>최면은 비판적 사고를 낮춰<br>무의식에 쉽게 접근하게 합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 최면과 무의식의 관계 (계속) -->
+    <div class="info-panel light">
+        <div class="info-panel-content">
+            <ul class="point-list">
+                <li>둘째.<br>최면의 무의식 접근은<br>내담자의 내면에 깊은 수준에서<br>변화를 촉진할 수 있습니다.</li>
+                <li>셋째.<br>최면으로 무의식에 접근해<br>효과적인 심리 치료를 할 수 있습니다.</li>
+                <li>넷째.<br>최면으로 문제를 새롭게 보고<br>해결할 수 있습니다.</li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- (6) 최면 상담이어야 하는 이유 -->
+    <div class="info-panel dark">
+        <div class="info-panel-content">
+            <h2 class="sub-heading">(6) 최면 상담이어야 하는 이유</h2>
+            <p class="main-text" style="color: #e8e8e8;">일반 상담이 아닌 <span class="text-red">최면 상담</span>을 선택하면<br><span class="text-red">좋은 이유</span>는 다음과 같습니다.</p>
+            <ul class="point-list" style="margin-top: 3rem;">
+                <li style="color: #e8e8e8;">1. 무의식에 대한 직접적 접근 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>무의식에 직접 접근해 근본 문제를 해결합니다.</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // 스크롤 애니메이션을 위한 스크립트
+        document.addEventListener('DOMContentLoaded', function() {
+            const infoContents = document.querySelectorAll('#mindbodylab-consciousness-section .info-panel-content');
+
+            if ('IntersectionObserver' in window) {
+                const observer = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            entry.target.classList.add('is-visible');
+                            observer.unobserve(entry.target);
+                        }
+                    });
+                }, { threshold: 0.1 });
+
+                infoContents.forEach(content => {
+                    observer.observe(content);
+                });
+            } else {
+                infoContents.forEach(content => {
+                    content.classList.add('is-visible');
+                });
+            }
+        });
+    </script>
+</div>
+<!-- =============================================== -->
+<!-- ===== 독립형 섹션 끝 ===== -->
+<!-- =============================================== -->
 
 
 
