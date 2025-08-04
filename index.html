@@ -11,6 +11,7 @@
             font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 권장 */
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden; /* 가로 스크롤 방지 */
         }
 
         a {
@@ -51,21 +52,21 @@
             margin-right: 10px;
         }
 
-        /* 메인 내비게이션 */
-        .header-right nav ul {
+        /* 데스크톱 내비게이션 */
+        .desktop-nav ul {
             display: flex; /* 기본적으로 가로 정렬 */
             align-items: center;
         }
 
-        .header-right nav ul li {
+        .desktop-nav ul li {
             margin-right: 25px;
         }
 
-        .header-right nav ul li:last-child {
+        .desktop-nav ul li:last-child {
             margin-right: 0;
         }
 
-        .header-right nav ul li a {
+        .desktop-nav ul li a {
             font-size: 15px;
             font-weight: 500;
             color: #555;
@@ -75,11 +76,83 @@
         }
 
         /* 내비게이션 링크 호버 효과 */
-        .header-right nav ul li a:hover {
+        .desktop-nav ul li a:hover {
             color: #007bff; /* 마우스 올렸을 때 파란색으로 변경 */
         }
 
-        
+        /* 햄버거 메뉴 아이콘 (모바일에서만 표시) */
+        .hamburger-menu {
+            display: none; /* 기본적으로 숨김 (데스크톱에서는 안 보임) */
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px; /* 아이콘 크기 */
+            color: #555;
+            z-index: 1100; /* 메뉴 오버레이 위에 표시 */
+        }
+
+        /* 모바일 내비게이션 오버레이 (햄버거 메뉴 클릭 시 나타남) */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%; /* 초기에는 화면 밖으로 숨김 */
+            width: 80%; /* 메뉴 패널 너비 */
+            max-width: 300px; /* 최대 너비 제한 */
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+            transition: right 0.3s ease-in-out; /* 부드러운 슬라이드 애니메이션 */
+            z-index: 1050; /* 헤더보다 낮고 햄버거 아이콘보다 높게 */
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px; /* 헤더 높이 고려 */
+        }
+
+        .mobile-nav-overlay.active {
+            right: 0; /* 활성화되면 화면 안으로 */
+        }
+
+        .mobile-nav-overlay .close-menu {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #555;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-nav-overlay nav ul {
+            display: flex;
+            flex-direction: column; /* 메뉴 항목 세로 정렬 */
+            padding: 20px;
+            width: 100%; /* 메뉴 항목이 패널 너비에 맞게 */
+        }
+
+        .mobile-nav-overlay nav ul li {
+            margin-bottom: 15px; /* 메뉴 항목 간격 조정 */
+        }
+
+        .mobile-nav-overlay nav ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-nav-overlay nav ul li a {
+            font-size: 18px; /* 모바일 메뉴 글자 크기 */
+            font-weight: 500;
+            color: #333;
+            padding: 10px 0; /* 터치 영역 넓게 */
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-overlay nav ul li a:hover {
+            color: #007bff;
+        }
+
         /* 메인 히어로 섹션 */
         .main-hero {
             background-color: #e0e0e0;
@@ -138,7 +211,7 @@
             margin: 0 auto;
         }
 
-        /* 채팅 버블 (스크린샷에 보이는 노란색 말풍선) */
+        /* 채팅 버블 */
         .chat-bubble {
             position: fixed;
             bottom: 20px;
@@ -163,54 +236,17 @@
         }
 
         /* 반응형 디자인을 위한 미디어 쿼리 */
-        @media (max-width: 992px) { /* 태블릿 및 모바일 */
-            .header-right nav ul li {
-                margin-right: 15px; /* 메뉴 간격 줄이기 */
-            }
-            .header-right .utility-icons {
-                margin-left: 15px; /* 아이콘 간격 줄이기 */
-            }
-        }
-
         @media (max-width: 768px) { /* 모바일 화면 */
+            .desktop-nav {
+                display: none; /* 데스크톱 내비게이션 숨김 */
+            }
+
+            .hamburger-menu {
+                display: block; /* 햄버거 메뉴 아이콘 표시 */
+            }
+
             header {
-                flex-direction: column; /* 세로로 쌓이도록 변경 */
-                align-items: center; /* 가운데 정렬 */
-                padding: 15px;
-            }
-
-            .header-left {
-                margin-bottom: 15px; /* 로고와 메뉴 사이 간격 */
-            }
-
-            .header-right {
-                flex-direction: column; /* 내비게이션과 아이콘/버튼이 세로로 쌓이도록 */
-                align-items: center; /* 가운데 정렬 */
-                width: 100%; /* 전체 너비 사용 */
-            }
-
-            .header-right nav ul {
-                flex-direction: column; /* 메뉴 항목을 세로로 쌓기 */
-                width: 100%; /* 전체 너비 사용 */
-                margin-bottom: 20px; /* 메뉴와 아이콘 사이 간격 */
-            }
-
-            .header-right nav ul li {
-                margin: 10px 0; /* 세로 간격 */
-                text-align: center; /* 텍스트 가운데 정렬 */
-            }
-
-            .header-right nav ul li:last-child {
-                margin-right: 0; /* 마지막 항목 마진 제거 */
-            }
-
-            .header-right .utility-icons {
-                margin-left: 0; /* 아이콘 왼쪽 마진 제거 */
-                margin-bottom: 15px; /* 아이콘과 버튼 사이 간격 */
-            }
-
-            .header-right .site-button {
-                width: auto; /* 버튼 너비 자동 */
+                padding: 15px 20px; /* 모바일 헤더 패딩 조정 */
             }
 
             .main-hero h1 {
@@ -220,7 +256,6 @@
                 font-size: 18px;
             }
         }
-
     </style>
     <!-- 구글 폰트 Noto Sans KR 임포트 -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
@@ -236,7 +271,8 @@
             </a>
         </div>
         <div class="header-right">
-            <nav>
+            <!-- 데스크톱용 내비게이션 -->
+            <nav class="desktop-nav">
                 <ul>
                     <li><a href="#">소개</a></li>
                     <li><a href="#">블로그</a></li>
@@ -245,12 +281,32 @@
                     <li><a href="#">클래스/컨텐츠</a></li>
                     <li><a href="#">게시판</a></li>
                     <li><a href="#">공지사항</a></li>
-                
                 </ul>
             </nav>
-           
+            <!-- 햄버거 메뉴 아이콘 (모바일에서만 보임) -->
+            <button class="hamburger-menu" id="hamburgerMenu">
+                <i class="fas fa-bars"></i>
+            </button>
         </div>
     </header>
+
+    <!-- 모바일 내비게이션 오버레이 (숨겨져 있다가 햄버거 클릭 시 나타남) -->
+    <div class="mobile-nav-overlay" id="mobileNavOverlay">
+        <button class="close-menu" id="closeMenu">
+            <i class="fas fa-times"></i>
+        </button>
+        <nav>
+            <ul>
+                <li><a href="#">소개</a></li>
+                <li><a href="#">블로그</a></li>
+                <li><a href="#">유튜브</a></li>
+                <li><a href="#">상담 예약</a></li>
+                <li><a href="#">클래스/컨텐츠</a></li>
+                <li><a href="#">게시판</a></li>
+                <li><a href="#">공지사항</a></li>
+            </ul>
+        </nav>
+    </div>
 
     <main>
         <section class="main-hero">
@@ -275,5 +331,42 @@
         💬
     </div>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.getElementById('hamburgerMenu');
+            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+            const closeMenu = document.getElementById('closeMenu');
+
+            // 햄버거 메뉴 클릭 시 모바일 내비게이션 열기
+            hamburgerMenu.addEventListener('click', function() {
+                mobileNavOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden'; // 스크롤 방지
+            });
+
+            // 닫기 버튼 클릭 시 모바일 내비게이션 닫기
+            closeMenu.addEventListener('click', function() {
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = ''; // 스크롤 허용
+            });
+
+            // 오버레이 외부 클릭 시 모바일 내비게이션 닫기
+            mobileNavOverlay.addEventListener('click', function(event) {
+                // 클릭된 요소가 모바일 내비게이션 자체 또는 그 자식이 아니면 닫기
+                if (event.target === mobileNavOverlay) {
+                    mobileNavOverlay.classList.remove('active');
+                    document.body.style.overflow = ''; // 스크롤 허용
+                }
+            });
+
+            // 메뉴 항목 클릭 시 메뉴 닫기 (선택 사항)
+            const mobileNavLinks = mobileNavOverlay.querySelectorAll('nav ul li a');
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileNavOverlay.classList.remove('active');
+                    document.body.style.overflow = '';
+                });
+            });
+        });
+    </script>
 </body>
 </html>
