@@ -153,40 +153,58 @@
             color: #007bff;
         }
 
-        /* 메인 히어로 섹션 */
+        /* 메인 히어로 섹션 개선 */
         .main-hero {
-            background-color: #e0e0e0;
-            padding: 100px 20px;
+            background-color: #e0e0e0; /* 배경색 통일 */
+            padding: 40px 20px; /* 상하 패딩을 50px에서 40px로 더 줄임 */
             text-align: center;
             color: #333;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 250px; /* 최소 높이를 300px에서 250px로 더 줄임 */
+        }
+
+        .main-hero .hero-content {
+            max-width: 600px;
+            width: 100%;
+            padding: 15px; /* 내부 여백을 20px에서 15px로 줄임 */
+            box-sizing: border-box;
         }
 
         .main-hero .logo-img-placeholder {
-            width: 200px;
-            height: 150px;
-            background-color: #ccc;
-            margin: 0 auto 30px;
+            width: 140px; /* 로고 이미지 크기 더 줄임 */
+            height: 90px; /* 로고 이미지 크기 더 줄임 */
+            background-color: #e0e0e0;
+            margin: 0 auto 15px; /* 하단 마진을 20px에서 15px로 줄임 */
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 18px;
+            font-size: 14px; /* 폰트 크기 조정 */
             color: #666;
             border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .main-hero .logo-img-placeholder img {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
 
         .main-hero h1 {
-            font-size: 55px;
+            font-size: 40px; /* 글자 크기 44px에서 40px로 줄임 */
             font-weight: 900;
             color: #000;
-            margin-bottom: 20px;
-            letter-spacing: -2px;
+            margin-bottom: 8px; /* 하단 마진을 10px에서 8px로 줄임 */
+            letter-spacing: -1.5px;
         }
 
         .main-hero .keywords {
-            font-size: 22px;
+            font-size: 16px; /* 글자 크기 18px에서 16px로 줄임 */
             font-weight: 500;
             color: #555;
-            margin-top: 30px;
+            margin-top: 10px; /* 상단 마진을 15px에서 10px로 줄임 */
         }
 
         /* 소개 섹션 */
@@ -216,7 +234,7 @@
             position: fixed;
             bottom: 20px;
             right: 20px;
-            background-color: #ffeb3b; /* 노란색 */
+            background-color: #ffeb3b;
             color: #333;
             width: 50px;
             height: 50px;
@@ -236,24 +254,33 @@
         }
 
         /* 반응형 디자인을 위한 미디어 쿼리 */
-        @media (max-width: 768px) { /* 모바일 화면 */
+        @media (max-width: 768px) {
             .desktop-nav {
-                display: none; /* 데스크톱 내비게이션 숨김 */
+                display: none;
             }
 
             .hamburger-menu {
-                display: block; /* 햄버거 메뉴 아이콘 표시 */
+                display: block;
             }
 
             header {
-                padding: 15px 20px; /* 모바일 헤더 패딩 조정 */
+                padding: 15px 20px;
             }
 
+            .main-hero {
+                padding: 30px 20px; /* 모바일에서 패딩을 40px에서 30px로 더 줄임 */
+                min-height: 200px; /* 모바일 최소 높이 250px에서 200px로 더 줄임 */
+            }
             .main-hero h1 {
-                font-size: 40px;
+                font-size: 28px; /* 모바일에서 글자 크기 더 줄임 */
             }
             .main-hero .keywords {
-                font-size: 18px;
+                font-size: 14px; /* 모바일에서 글자 크기 더 줄임 */
+            }
+            .main-hero .logo-img-placeholder {
+                width: 100px; /* 모바일에서 로고 크기 조정 */
+                height: 70px;
+                margin-bottom: 10px; /* 모바일에서 로고 하단 마진 조정 */
             }
         }
     </style>
@@ -282,6 +309,7 @@
                     <li><a href="#">클래스/컨텐츠</a></li>
                     <li><a href="#">게시판</a></li>
                     <li><a href="#">공지사항</a></li>
+                    <li><a href="#">나의 강의실</a></li>
                 </ul>
             </nav>
             <!-- 햄버거 메뉴 아이콘 (모바일에서만 보임) -->
@@ -305,19 +333,22 @@
                 <li><a href="#">클래스/컨텐츠</a></li>
                 <li><a href="#">게시판</a></li>
                 <li><a href="#">공지사항</a></li>
+                <li><a href="#">나의 강의실</a></li>
             </ul>
         </nav>
     </div>
 
     <main>
         <section class="main-hero">
-            <!-- 마인드바디랩 로고 및 실험 도구 이미지 (사용자 제공) -->
-            <div class="logo-img-placeholder">
-                <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지" style="max-width: 100%; height: auto; display: block;">
-            </div>
+            <div class="hero-content">
+                <!-- 마인드바디랩 로고 및 실험 도구 이미지 -->
+                <div class="logo-img-placeholder">
+                    <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지">
+                </div>
 
-            <h1>최면상담센터</h1>
-            <p class="keywords">심리 / 전생 / 최면 / 상담</p>
+                <h1>최면상담센터</h1>
+                <p class="keywords">심리 / 전생 / 최면 / 상담</p>
+            </div>
         </section>
 
         <section class="section-intro">
