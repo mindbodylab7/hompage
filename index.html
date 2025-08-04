@@ -413,139 +413,6 @@
         });
     </script>
 <!-- =============================================== -->
-<!-- ===== 독립형 전체 스토리 섹션 (완성본) ===== -->
-<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
-<!-- 모든 스토리 내용을 순서대로 포함하고 있습니다. -->
-<!-- =============================================== -->
-<div id="mindbodylab-full-story-section">
-    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
-    <style>
-        /* 외부 폰트 불러오기 */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-        /* 전체 컨테이너 스타일 */
-        #mindbodylab-full-story-section {
-            width: 100%;
-            font-family: 'Noto Sans KR', sans-serif; /* 폰트 지정 */
-            -webkit-font-smoothing: antialiased; /* 폰트 부드럽게 */
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        /* 각 스토리 패널의 기본 레이아웃 */
-        #mindbodylab-full-story-section .story-panel {
-            min-height: 90vh; /* 최소 높이를 화면의 90%로 설정 */
-            display: flex;
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
-            padding: 60px 20px;
-            box-sizing: border-box;
-            text-align: center; /* 텍스트 중앙 정렬 */
-        }
-        
-        /* 어두운 배경 패널 */
-        #mindbodylab-full-story-section .story-panel.dark {
-            background-color: #1a1a2e; /* 깊은 남색 */
-            color: #e0e0e0; /* 부드러운 흰색 */
-        }
-
-        /* 밝은 배경 패널 */
-        #mindbodylab-full-story-section .story-panel.light {
-            background-color: #fdfdfd; /* 거의 흰색 */
-            color: #333;
-        }
-
-        /* 패널 내부 콘텐츠 컨테이너 */
-        #mindbodylab-full-story-section .story-panel-content {
-            max-width: 800px; /* 콘텐츠 최대 너비 제한 */
-            width: 100%;
-        }
-
-        /* 제목(h2) 스타일 */
-        #mindbodylab-full-story-section .story-panel h2 {
-            font-size: 2.2rem;
-            font-weight: 600;
-            line-height: 1.5;
-            margin: 0;
-        }
-        
-        /* 어두운 패널의 제목 색상 */
-        #mindbodylab-full-story-section .story-panel.dark h2 {
-            color: #f0f2f5;
-        }
-        
-        /* 밝은 패널의 제목 색상 */
-        #mindbodylab-full-story-section .story-panel.light h2 {
-            color: #2c3e50;
-        }
-
-        /* 본문(p) 스타일 */
-        #mindbodylab-full-story-section .story-panel p {
-            font-size: 1.5rem;
-            font-weight: 400;
-            line-height: 1.7;
-            margin: 20px 0 0 0;
-        }
-        
-        /* 인용구 스타일 */
-        #mindbodylab-full-story-section .story-panel h2.quote {
-            font-size: 1.8rem;
-            font-style: italic;
-            color: #a9a9a9;
-        }
-        
-        /* 강조 텍스트 (밑줄) 스타일 */
-        #mindbodylab-full-story-section .highlight-text {
-            font-weight: 700;
-            border-bottom: 3px solid;
-            padding-bottom: 4px;
-            display: inline;
-        }
-        
-        #mindbodylab-full-story-section .story-panel.light .highlight-text {
-            border-color: #333;
-        }
-
-        #mindbodylab-full-story-section .story-panel.dark .highlight-text {
-            border-color: #e0e0e0;
-        }
-        
-        /* 최종 결론 텍스트 스타일 */
-        #mindbodylab-full-story-section .final-conclusion {
-            font-size: 2.5rem;
-            font-weight: 900;
-            color: #0056b3; /* 파란색으로 강조 */
-        }
-        
-        /* 추천 대상 텍스트 스타일 */
-        #mindbodylab-full-story-section .recommendation {
-            font-size: 2rem;
-            font-weight: 500;
-            line-height: 1.6;
-            color: #2c3e50;
-        }
-
-        /* 모바일 화면 대응 */
-        @media (max-width: 768px) {
-            #mindbodylab-full-story-section .story-panel {
-                min-height: 80vh;
-                padding: 40px 15px;
-            }
-            #mindbodylab-full-story-section .story-panel h2 {
-                font-size: 1.8rem;
-            }
-            #mindbodylab-full-story-section .story-panel p {
-                font-size: 1.2rem;
-            }
-            #mindbodylab-full-story-section .final-conclusion {
-                font-size: 2rem;
-            }
-            #mindbodylab-full-story-section .recommendation {
-                font-size: 1.6rem;
-            }
-        }
-    </style>
-
-<!-- =============================================== -->
 <!-- ===== 독립형 전체 스토리 섹션 (최종 교정) ===== -->
 <!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
 <!-- 모든 스토리 내용을 순서대로 포함하고 있습니다. -->
@@ -567,8 +434,8 @@
 
         /* 각 스토리 패널의 기본 레이아웃 */
         #mindbodylab-full-story-section .story-panel {
-            /* 기존 min-height 제거, padding으로 공간 조절 */
-            padding: 10rem 1.5rem;
+            /* 위아래 여백을 10rem에서 7rem으로 줄여 공간을 압축했습니다. */
+            padding: 7rem 1.5rem;
             display: flex;
             justify-content: center; /* 가로 중앙 정렬 */
             align-items: center; /* 세로 중앙 정렬 */
@@ -675,7 +542,8 @@
         /* 모바일 화면 대응 */
         @media (max-width: 768px) {
             #mindbodylab-full-story-section .story-panel {
-                padding: 6rem 1.2rem;
+                /* 모바일 여백도 6rem에서 5rem으로 조정 */
+                padding: 5rem 1.2rem;
             }
             #mindbodylab-full-story-section .story-panel h2 {
                 font-size: 2rem;
@@ -814,6 +682,7 @@
 <!-- =============================================== -->
 <!-- ===== 독립형 전체 스토리 섹션 끝 ===== -->
 <!-- =============================================== -->
+
 
 
 
