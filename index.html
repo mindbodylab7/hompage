@@ -414,87 +414,69 @@
         });
     </script>
 <!-- =============================================== -->
-<!-- ===== 독립형 전체 스토리 섹션 (최종 교정) ===== -->
-<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
-<!-- 모든 스토리 내용을 순서대로 포함하고 있습니다. -->
+<!-- ===== 독립형 전체 페이지 섹션 (완전체) ===== -->
+<!-- 설명: 모든 콘텐츠와 최종 스타일, 한국어 줄바꿈 규칙이 -->
+<!-- 적용된 완성본 코드입니다. -->
 <!-- =============================================== -->
+
+<!-- ===== 1부: 감성 스토리 섹션 ===== -->
 <div id="mindbodylab-full-story-section">
     <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
     <style>
-        /* 외부 폰트 불러오기 */
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-        /* 전체 컨테이너 스타일 */
         #mindbodylab-full-story-section {
             width: 100%;
-            font-family: 'Noto Sans KR', sans-serif; /* 폰트 지정 */
-            -webkit-font-smoothing: antialiased; /* 폰트 부드럽게 */
+            font-family: 'Noto Sans KR', sans-serif;
+            -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
-            background-color: #fdfdfd; /* 기본 배경색 통일 */
+            background-color: #fdfdfd;
+            word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
         }
-
-        /* 각 스토리 패널의 기본 레이아웃 */
         #mindbodylab-full-story-section .story-panel {
-            /* 위아래 여백을 10rem에서 7rem으로 줄여 공간을 압축했습니다. */
             padding: 7rem 1.5rem;
             display: flex;
-            justify-content: center; /* 가로 중앙 정렬 */
-            align-items: center; /* 세로 중앙 정렬 */
+            justify-content: center;
+            align-items: center;
             box-sizing: border-box;
-            text-align: center; /* 텍스트 중앙 정렬 */
-            overflow: hidden; /* 애니메이션을 위한 설정 */
+            text-align: center;
+            overflow: hidden;
         }
-        
-        /* 어두운 배경 패널 */
         #mindbodylab-full-story-section .story-panel.dark {
-            background-color: #1f2428; /* 조금 더 부드러운 검은색 */
-            color: #e8e8e8; /* 부드러운 흰색 */
+            background-color: #1f2428;
+            color: #e8e8e8;
         }
-
-        /* 밝은 배경 패널 */
         #mindbodylab-full-story-section .story-panel.light {
-            background-color: #fdfdfd; /* 거의 흰색 */
+            background-color: #fdfdfd;
             color: #333;
         }
-
-        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
         #mindbodylab-full-story-section .story-panel-content {
-            max-width: 800px; /* 콘텐츠 최대 너비 제한 */
+            max-width: 800px;
             width: 100%;
-            opacity: 0; /* 기본적으로 숨김 */
-            transform: translateY(30px); /* 아래에서 위로 올라오는 효과 */
+            opacity: 0;
+            transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
-        /* 화면에 보일 때 적용될 클래스 */
         #mindbodylab-full-story-section .story-panel-content.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* 제목(h2) 스타일 */
         #mindbodylab-full-story-section .story-panel h2 {
-            font-size: 2.8rem; /* 폰트 크기 조정 */
-            font-weight: 700; /* 폰트 두께 조정 */
-            line-height: 1.4; /* 줄 간격 조정 */
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.4;
             margin: 0;
         }
-        
-        /* 본문(p) 스타일 */
         #mindbodylab-full-story-section .story-panel p {
-            font-size: 1.2rem; /* 폰트 크기 조정 */
+            font-size: 1.2rem;
             font-weight: 400;
-            line-height: 1.8; /* 가독성을 위해 줄 간격 넓힘 */
-            margin: 1.5rem auto 0 auto; /* 위쪽 여백 조정 */
+            line-height: 1.8;
+            margin: 1.5rem auto 0 auto;
             max-width: 90%;
             color: #5a5a5a;
         }
-        
         #mindbodylab-full-story-section .story-panel.dark p {
             color: #b0b0b0;
         }
-        
-        /* 인용구 스타일 */
         #mindbodylab-full-story-section .story-panel h2.quote {
             font-size: 1.6rem;
             font-weight: 500;
@@ -502,8 +484,6 @@
             color: #999;
             line-height: 1.7;
         }
-        
-        /* 강조 텍스트 (세련된 하이라이트 효과) */
         #mindbodylab-full-story-section .highlight-text {
             font-weight: 700;
             position: relative;
@@ -520,30 +500,23 @@
             opacity: 0.6;
         }
         #mindbodylab-full-story-section .story-panel.light .highlight-text::after {
-            background-color: #ffde59; /* 부드러운 노란색 */
+            background-color: #ffde59;
         }
         #mindbodylab-full-story-section .story-panel.dark .highlight-text::after {
-            background-color: #59d4ff; /* 부드러운 파란색 */
+            background-color: #59d4ff;
         }
-        
-        /* 최종 결론 텍스트 스타일 */
         #mindbodylab-full-story-section .final-conclusion {
             font-size: 2.8rem;
             font-weight: 900;
             color: #0056b3;
         }
-        
-        /* 추천 대상 텍스트 스타일 */
         #mindbodylab-full-story-section .recommendation {
             font-size: 2.2rem;
             font-weight: 600;
             line-height: 1.6;
         }
-
-        /* 모바일 화면 대응 */
         @media (max-width: 768px) {
             #mindbodylab-full-story-section .story-panel {
-                /* 모바일 여백도 6rem에서 5rem으로 조정 */
                 padding: 5rem 1.2rem;
             }
             #mindbodylab-full-story-section .story-panel h2 {
@@ -561,92 +534,69 @@
         }
     </style>
 
-    <!-- 스토리 시작: 문제 제기 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
             <h2>정말 잘 살려고 살고 있는데,<br>그 누구보다 성실한데...<br>왜 이런 일들이 내게 일어날까?</h2>
             <p>오직 나에게만 일어나는 이 일, 이유가 있을까?</p>
         </div>
     </div>
-
-    <!-- 스토리 2: 고민의 구체화 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2>"행복하지 못한 저도<br>행복해질 수 있을까요?"</h2>
             <p>지금보다 더 나은 삶을 살려면 무엇을 어떻게 해야 할까요?<br>누군가 이 고민을 해결할 방법을 알려주면 좋을 텐데...</p>
         </div>
     </div>
-
-    <!-- 스토리 3: 일반적인 해결책 1 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2>이럴 때 좋은 방법 중 하나는<br><span class="highlight-text">내 상황을 잘 아는 사람에게</span><br>고민을 이야기하고 물어보는 것입니다.</h2>
             <p>진짜 이 고민은 내 상황을 아는 사람만이 제대로 듣고 이해해 줄 수 있으니까요.</p>
         </div>
     </div>
-
-    <!-- 스토리 4: 일반적인 해결책의 한계 -->
     <div class="story-panel light">
         <div class="story-panel-content">
-            <h2>그것도 하나의 방법입니다.<br> 가족과 친구들이<br></B>지금의 나를 가장 잘 안다면 말이죠.<br>가족과 친구에게 위로를 받으면 <span class="highlight-text">잠시 마음은 편해지니까요.</span></h2>
+            <h2>그것도 하나의 방법입니다.<br> 가족과 친구들이 지금의 나를 가장 잘 안다면 말이죠.<br>가족과 친구에게 위로를 받으면 <span class="highlight-text">잠시 마음은 편해지니까요.</span></h2>
             <p>하지만... 근원적으로 고민은 남아 있을 수 있습니다.</p>
         </div>
     </div>
-
-    <!-- 스토리 5: 공감 없는 위로의 예시 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
             <h2>왜냐하면, 그 친구 그리고 가족과의 대화는 이렇게 될 수 있으니까요.</h2>
-            <h2 class="quote"><p>"아.. 진짜 많이 힘들겠다. 힘내"<br>"나 때도 그랬는데. 이해 돼. 힘내"<br>"그건 너를 얕본 거야. 똑같이 되갚아줘!"<br>"걱정 마. 다 잘될 거야!"</p></h2>
+            <h2 class="quote">"아.. 진짜 많이 힘들겠다. 힘내"<br>"나 때도 그랬는데. 이해 돼. 힘내"<br>"그건 너를 얕본 거야. 똑같이 되갚아줘!"<br>"걱정 마. 다 잘될 거야!"</h2>
         </div>
     </div>
-
-    <!-- 스토리 6: 위로 이후의 공허함 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
             <h2>이런 위로의 말들은 들을 때는<br>기분이 좋지만,<br>이 대화가 끝나면 <span class="highlight-text">무의식적으로 나도 모르게</span><br>해결된 것이 없다는 생각이 들면서...</h2>
         </div>
     </div>
-
-    <!-- 스토리 7: 무력감 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
             <h2>나를 위해 말해준 이야기들은<br>'나도 다 알고 있었는데…'<br>'무엇을 해야 하지…?'<br>하며 <span class="highlight-text">아무것도 할 수 없는 무력감에</span> 빠지게 됩니다.</h2>
         </div>
     </div>
-    
-    <!-- 스토리 8: 근본적인 이유 -->
     <div class="story-panel dark">
         <div class="story-panel-content">
-            <h2>그 말들이 <span class="highlight-text"><br>내 마음에 와 닿지 않았기 때문</span>입니다.<br>이러지도 저러지도 못하며, 어떠한 선택도 할 수 없기 때문입니다.</h2>
+            <h2>그 말들이 <span class="highlight-text">내 마음에 와 닿지 않았기 때문</span>입니다.<br>이러지도 저러지도 못하며, 어떠한 선택도 할 수 없기 때문입니다.</h2>
         </div>
     </div>
-
-    <!-- 스토리 9: 진정한 해결책 제시 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2>지금의 나를 가장 잘 아는,<br><span class="highlight-text">나의 무의식에게 답변을 얻는 것</span>이<br>가장 확실합니다.</h2>
-            <p>왜냐하면 나도 모르게, 무의식적으로 내가 힘들어하는<br>진짜 이유를 무의식은 알고 있기 때문입니다.<br>그렇기 때문에, <span class="highlight-text">무의식은 답을 알고 있습니다.</span></p>
+            <p>왜냐하면 나도 모르게, 무의식적으로 내가 힘들어하는 진짜 이유를 무의식은 알고 있기 때문입니다.<br>그렇기 때문에, <span class="highlight-text">무의식은 답을 알고 있습니다.</span></p>
         </div>
     </div>
-    
-    <!-- 스토리 10: 서비스의 가치 설명 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2>심리 상담 시 가장 효과적인 방법은<br><span class="highlight-text">내게 문제를 일으키는 원인을 제대로 파악</span>하는 것입니다.</h2>
             <p>문제의 원인을 찾기 위해 어린 시절로 최면 연령 퇴행을 했을 때,<br>이번 생의 경험이 아닌 <span class="final-conclusion">다른 생의 경험에서<br>원인과 답을</span> 찾을 때가 있습니다.</p>
         </div>
     </div>
-    
-    <!-- 스토리 11: 성공 사례로 신뢰 형성 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2>누군가는 전생체험을 통해 <span class="highlight-text">삶의 의미와 정체성을 찾았고</span><br>누군가는 오랜 시간 알 수 없던 <span class="highlight-text">고통의 원인과 습관을 고쳤습니다.</span></h2>
             <p>전생 체험과 영성 상담의 가치는 진실이냐 과학이냐가 아닌, 바로 '인간'에 있습니다.</p>
         </div>
     </div>
-
-    <!-- 스토리 12: 행동 촉구 -->
     <div class="story-panel light">
         <div class="story-panel-content">
             <h2 class="recommendation">때문에 기존의 심리상담이나<br>해결을 위해 받아본 여러 가지 방법들의<br>효과가 부족했다고<br>느끼시는 분들에게 권합니다.</h2>
@@ -654,60 +604,37 @@
     </div>
     
     <script>
-        // 스크롤 애니메이션을 위한 스크립트
         document.addEventListener('DOMContentLoaded', function() {
             const storyContents = document.querySelectorAll('#mindbodylab-full-story-section .story-panel-content');
-
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
                         if (entry.isIntersecting) {
                             entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target); // 한 번 보이면 계속 보이도록 관찰 중지
+                            observer.unobserve(entry.target);
                         }
                     });
-                }, { threshold: 0.1 }); // 10% 보였을 때 실행
-
-                storyContents.forEach(content => {
-                    observer.observe(content);
-                });
+                }, { threshold: 0.1 });
+                storyContents.forEach(content => observer.observe(content));
             } else {
-                // IntersectionObserver를 지원하지 않는 브라우저에서는 바로 보이게 처리
-                storyContents.forEach(content => {
-                    content.classList.add('is-visible');
-                });
+                storyContents.forEach(content => content.classList.add('is-visible'));
             }
         });
     </script>
 </div>
-<!-- =============================================== -->
-<!-- ===== 독립형 전체 스토리 섹션 끝 ===== -->
-<!-- =============================================== -->
 
-
-<!-- =============================================== -->
-<!-- ===== 최면 및 상담 안내 (독립형 섹션) ===== -->
-<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
-<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
-<!-- =============================================== -->
+<!-- ===== 2부: 정보 안내 섹션 ===== -->
 <div id="mindbodylab-explanation-section">
-    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
     <style>
-        /* 외부 폰트 불러오기 */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-        /* 전체 컨테이너 스타일 */
         #mindbodylab-explanation-section {
             width: 100%;
             font-family: 'Noto Sans KR', sans-serif;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
             background-color: #fdfdfd;
+            word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
         }
-
-        /* 각 정보 패널의 기본 레이아웃 */
         #mindbodylab-explanation-section .info-panel {
-            /* 위아래 여백을 7rem에서 5rem으로 더 줄였습니다. */
             padding: 5rem 1.5rem;
             display: flex;
             justify-content: center;
@@ -716,20 +643,14 @@
             text-align: center;
             overflow: hidden;
         }
-        
-        /* 어두운 배경 패널 */
         #mindbodylab-explanation-section .info-panel.dark {
             background-color: #1f2428;
             color: #e8e8e8;
         }
-
-        /* 밝은 배경 패널 */
         #mindbodylab-explanation-section .info-panel.light {
             background-color: #fdfdfd;
             color: #333;
         }
-
-        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
         #mindbodylab-explanation-section .info-panel-content {
             max-width: 800px;
             width: 100%;
@@ -737,37 +658,33 @@
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        
         #mindbodylab-explanation-section .info-panel-content.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-
-        /* 소제목 스타일 (예: (1) 최면이란) */
         #mindbodylab-explanation-section .sub-heading {
             font-size: 2.5rem;
             font-weight: 700;
-            margin-bottom: 0.5rem;
+            margin-bottom: 2.5rem;
             padding-bottom: 1rem;
             display: inline-block;
             border-bottom: 2px solid;
         }
-        
         #mindbodylab-explanation-section .info-panel.dark .sub-heading {
             border-color: #e8e8e8;
         }
         #mindbodylab-explanation-section .info-panel.light .sub-heading {
             border-color: #333;
         }
-
-        /* 본문 텍스트 스타일 */
         #mindbodylab-explanation-section .main-text {
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.7;
             margin-top: 2rem;
         }
-        
+        #mindbodylab-explanation-section .main-text + .main-text {
+             margin-top: 2.5rem;
+        }
         #mindbodylab-explanation-section .sub-text {
             font-size: 1.2rem;
             font-weight: 400;
@@ -775,18 +692,13 @@
             margin-top: 2rem;
             color: #5a5a5a;
         }
-        
         #mindbodylab-explanation-section .info-panel.dark .sub-text {
              color: #b0b0b0;
         }
-
-        /* 강조 텍스트 (빨간색) */
         #mindbodylab-explanation-section .text-red {
             color: #e74c3c;
             font-weight: 600;
         }
-
-        /* 목차 리스트 스타일 */
         #mindbodylab-explanation-section .toc-list {
             list-style: none;
             padding: 0;
@@ -797,8 +709,6 @@
             font-weight: 500;
             margin-bottom: 1rem;
         }
-
-        /* 노란색 하이라이트 박스 */
         #mindbodylab-explanation-section .highlight-box-yellow {
             background-color: #ffeb3b;
             color: #333;
@@ -812,18 +722,59 @@
             font-size: 1.3rem;
             font-weight: 600;
         }
-
-        /* 모바일 화면 대응 */
+        #mindbodylab-explanation-section .point-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 2.5rem;
+            text-align: left;
+            display: inline-block;
+        }
+        #mindbodylab-explanation-section .point-list li {
+            font-size: 1.5rem;
+            font-weight: 500;
+            line-height: 1.7;
+        }
+        #mindbodylab-explanation-section .point-list li + li {
+            margin-top: 2rem;
+        }
+        #mindbodylab-explanation-section .profile-name {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+        }
+        #mindbodylab-explanation-section .profile-subtitle {
+            font-size: 1.5rem;
+            color: #ccc;
+            margin-bottom: 3rem;
+        }
+        #mindbodylab-explanation-section .license-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        #mindbodylab-explanation-section .license-list li {
+            margin-bottom: 1.5rem;
+        }
+        #mindbodylab-explanation-section .license-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            display: block;
+        }
+        #mindbodylab-explanation-section .license-issuer {
+            font-size: 1rem;
+            color: #bbb;
+            display: block;
+        }
         @media (max-width: 768px) {
             #mindbodylab-explanation-section .info-panel {
-                /* 모바일 여백도 5rem에서 4rem으로 조정 */
                 padding: 4rem 1.2rem;
             }
             #mindbodylab-explanation-section .sub-heading {
                 font-size: 2rem;
             }
-            #mindbodylab-explanation-section .main-text {
-                font-size: 1.5rem;
+            #mindbodylab-explanation-section .main-text,
+            #mindbodylab-explanation-section .point-list li {
+                font-size: 1.3rem;
             }
             #mindbodylab-explanation-section .sub-text {
                 font-size: 1rem;
@@ -834,10 +785,18 @@
             #mindbodylab-explanation-section .highlight-box-yellow p {
                 font-size: 1.1rem;
             }
+            #mindbodylab-explanation-section .profile-name {
+                font-size: 2.5rem;
+            }
+            #mindbodylab-explanation-section .profile-subtitle {
+                font-size: 1.2rem;
+            }
+            #mindbodylab-explanation-section .license-title {
+                font-size: 1.3rem;
+            }
         }
     </style>
 
-    <!-- 섹션 1: 소개 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading" style="border:none; font-size: 3rem;">최면 심리 상담 센터</h2>
@@ -850,8 +809,6 @@
             </div>
         </div>
     </div>
-
-    <!-- 섹션 2: 목차 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading" style="border:none; font-size: 2.8rem;">최면 상담 안내</h2>
@@ -870,8 +827,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- 섹션 3: (1) 최면이란 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(1) 최면이란</h2>
@@ -879,40 +834,30 @@
             <p class="sub-text">이는 깨어 있으면서도 주의력이 매우 집중돼<br>주변 환경에 대한 인식이 감소하는 상태입니다.<br>하지만 최면가의 암시 제안에는 더 잘 반응하는 상태입니다.</p>
         </div>
     </div>
-    
-    <!-- 섹션 4: 최면 상태 설명 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">최면 상태에서는<br>사람이 겉보기엔 잠든 것 같지만<br>실제로는 깨어 있어 <span class="text-red">내면의 감정과 기억에<br>깊이 접근할 수 있습니다.</span></p>
             <p class="sub-text">이를 통해 평소에는 쉽게 접근하지 못했던<br>심리적 자원을 활용할 수 있게 됩니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 5: 최면의 활용 -->
     <div class="info-panel light">
         <div class="info-panel-content">
              <p class="main-text">최면 중에는 비판적 사고가 줄고,<br>제안을 쉽게 받아 심리 치료에 활용됩니다.</p>
              <p class="sub-text">의학적으로 최면은 단순한 수면 상태가 아니라<br>특별한 의식 상태로, 이완과 집중이 강화되어<br>통증 관리나 스트레스 완화 등에 효과적으로 사용됩니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 6: 최면의 상호작용 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">최면은 최면가의 강요로 이끌어 가는 것은 불가합니다.<br>피 최면자의 자발적 협조에 의한<br>상호작용 과정으로 최면 상태가 유지될 수 있습니다.</p>
             <p class="sub-text">즉, <span class="text-red">의식이 있는 상태</span>이며<br>자신의 의지와 의식에 의해 최면가의 말에<br><span class="text-red">대답과 행동을 하는 상태</span>입니다.</p>
         </div>
     </div>
-    
-    <!-- 섹션 7: 최면의 과학적 접근 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">최면은 의식이 있으면서<br>집중력을 높여 심리적 치유에<br>도움을 주는 방법입니다.</p>
             <p class="sub-text"><span class="text-red">최면은 마술이나 미신적 현상이 아니라,</span><br>과학적으로 연구되고 있는 심리-생리학적 현상입니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 8: (2) 상담이란 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading">(2) 상담이란</h2>
@@ -920,192 +865,18 @@
             <p class="sub-text">심리상담은 정신 건강을 증진하고 삶의 질을 높이는 것을 목표로 합니다.<br>내담자가 자신의 감정과 문제를 이해하고 해결할 수 있도록 도움을 줍니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 9: 상담가의 역할 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <p class="main-text" style="color: #e8e8e8;">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span class="text-red">공감하며 경청</span>을 합니다.</p>
             <p class="sub-text">내담자 스스로가 문제를 해결할 수 있도록 도움을 줍니다.<br>심리상담은 현재 문제를 해결하고, 자아 성장을 도와 삶의 질을 높이며,<br>스트레스 관리와 대인관계 개선을 통해 전반적인 정신 건강을 유지하고,</p>
         </div>
     </div>
-
-    <script>
-        // 스크롤 애니메이션을 위한 스크립트
-        document.addEventListener('DOMContentLoaded', function() {
-            const infoContents = document.querySelectorAll('#mindbodylab-explanation-section .info-panel-content');
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                infoContents.forEach(content => {
-                    observer.observe(content);
-                });
-            } else {
-                infoContents.forEach(content => {
-                    content.classList.add('is-visible');
-                });
-            }
-        });
-    </script>
-</div>
-<!-- =============================================== -->
-<!-- ===== 독립형 섹션 끝 ===== -->
-<!-- =============================================== -->
-
-<!-- ======================================================= -->
-<!-- ===== 무의식 및 최면 상담의 중요성 (독립형 섹션) ===== -->
-<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
-<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
-<!-- ======================================================= -->
-<div id="mindbodylab-consciousness-section">
-    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
-    <style>
-        /* 외부 폰트 불러오기 */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-        /* 전체 컨테이너 스타일 */
-        #mindbodylab-consciousness-section {
-            width: 100%;
-            font-family: 'Noto Sans KR', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: #fdfdfd;
-        }
-
-        /* 각 정보 패널의 기본 레이아웃 */
-        #mindbodylab-consciousness-section .info-panel {
-            padding: 5rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        /* 어두운 배경 패널 */
-        #mindbodylab-consciousness-section .info-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-
-        /* 밝은 배경 패널 */
-        #mindbodylab-consciousness-section .info-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-
-        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
-        #mindbodylab-consciousness-section .info-panel-content {
-            max-width: 800px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        #mindbodylab-consciousness-section .info-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 소제목 스타일 (예: (3) 무의식이란) */
-        #mindbodylab-consciousness-section .sub-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            display: inline-block;
-            border-bottom: 2px solid;
-        }
-        
-        #mindbodylab-consciousness-section .info-panel.dark .sub-heading {
-            border-color: #e8e8e8;
-        }
-        #mindbodylab-consciousness-section .info-panel.light .sub-heading {
-            border-color: #333;
-        }
-
-        /* 본문 텍스트 스타일 */
-        #mindbodylab-consciousness-section .main-text {
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-        
-        #mindbodylab-consciousness-section .main-text + .main-text {
-             margin-top: 2.5rem;
-        }
-
-        #mindbodylab-consciousness-section .sub-text {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-top: 2rem;
-            color: #5a5a5a;
-        }
-        
-        #mindbodylab-consciousness-section .info-panel.dark .sub-text {
-             color: #b0b0b0;
-        }
-
-        /* 강조 텍스트 (빨간색) */
-        #mindbodylab-consciousness-section .text-red {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-
-        /* 리스트 스타일 */
-        #mindbodylab-consciousness-section .point-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 2.5rem;
-        }
-        #mindbodylab-consciousness-section .point-list li {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-        #mindbodylab-consciousness-section .point-list li + li {
-            margin-top: 2rem;
-        }
-
-        /* 모바일 화면 대응 */
-        @media (max-width: 768px) {
-            #mindbodylab-consciousness-section .info-panel {
-                padding: 4rem 1.2rem;
-            }
-            #mindbodylab-consciousness-section .sub-heading {
-                font-size: 2rem;
-            }
-            #mindbodylab-consciousness-section .main-text {
-                font-size: 1.5rem;
-            }
-            #mindbodylab-consciousness-section .sub-text {
-                font-size: 1rem;
-            }
-            #mindbodylab-consciousness-section .point-list li {
-                font-size: 1.2rem;
-            }
-        }
-    </style>
-
-    <!-- (2) 상담이란 섹션 마무리 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <p class="main-text" style="color: #e8e8e8;"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.</p>
             <p class="main-text" style="color: #e8e8e8; margin-top: 3rem;">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을 높여가는 과정입니다.</p>
         </div>
     </div>
-
-    <!-- (3) 무의식이란 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(3) 무의식이란</h2>
@@ -1114,8 +885,6 @@
             <p class="main-text">무의식은 지능적 적응 시스템으로<br>생존에 중요한 역할을 합니다.</p>
         </div>
     </div>
-    
-    <!-- 무의식의 발현과 탐구 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">무의식은<br>꿈, 예술 등에서 드러나며<br>프로이드와 같은 정신분석 학자들은<br>이를 통해 무의식을 탐구하려 했습니다.</p>
@@ -1123,8 +892,6 @@
             <p class="main-text">한국 심리학은<br>'한'과 같은 문화적 정서가<br>무의식에 작용하고,</p>
         </div>
     </div>
-
-    <!-- 집단 무의식과 상담에서의 역할 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">집단 무의식을 통해 공유된<br>문화와 상징이<br>개인의 무의식에 영향을 준다고 봅니다.</p>
@@ -1132,8 +899,6 @@
             <p class="main-text"><span class="text-red">무의식은 행동과 감정에 영향을 주며,<br>정신 건강과 성장에 중요합니다.</span></p>
         </div>
     </div>
-
-    <!-- (4) 상담에서 무의식의 중요성 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading">(4) 상담에서 무의식의 중요성</h2>
@@ -1144,8 +909,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- 무의식의 중요성 (계속) -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <ul class="point-list" style="color: #e8e8e8;">
@@ -1155,8 +918,6 @@
             </ul>
         </div>
     </div>
-    
-    <!-- 무의식의 중요성 (마무리) -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <ul class="point-list" style="color: #e8e8e8;">
@@ -1166,8 +927,6 @@
             <p class="main-text" style="margin-top: 3rem;"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인 요소입니다.</span></p>
         </div>
     </div>
-
-    <!-- (5) 최면과 무의식의 관계 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(5) 최면과 무의식의 관계</h2>
@@ -1178,8 +937,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- 최면과 무의식의 관계 (계속) -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <ul class="point-list">
@@ -1189,8 +946,6 @@
             </ul>
         </div>
     </div>
-    
-    <!-- (6) 최면 상담이어야 하는 이유 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading">(6) 최면 상담이어야 하는 이유</h2>
@@ -1200,216 +955,6 @@
             </ul>
         </div>
     </div>
-
-    <script>
-        // 스크롤 애니메이션을 위한 스크립트
-        document.addEventListener('DOMContentLoaded', function() {
-            const infoContents = document.querySelectorAll('#mindbodylab-consciousness-section .info-panel-content');
-
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-
-                infoContents.forEach(content => {
-                    observer.observe(content);
-                });
-            } else {
-                infoContents.forEach(content => {
-                    content.classList.add('is-visible');
-                });
-            }
-        });
-    </script>
-</div>
-<!-- =============================================== -->
-<!-- ===== 독립형 섹션 끝 ===== -->
-<!-- =============================================== -->
-
-<!-- ======================================================= -->
-<!-- ===== 최면 상담의 효과 및 안내 (독립형 섹션) ===== -->
-<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
-<!-- '최종 버전' 스타일이 적용되어 있습니다. -->
-<!-- ======================================================= -->
-<div id="mindbodylab-benefits-section">
-    <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
-    <style>
-        /* 외부 폰트 불러오기 */
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-
-        /* 전체 컨테이너 스타일 */
-        #mindbodylab-benefits-section {
-            width: 100%;
-            font-family: 'Noto Sans KR', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: #fdfdfd;
-        }
-
-        /* 각 정보 패널의 기본 레이아웃 */
-        #mindbodylab-benefits-section .info-panel {
-            padding: 5rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-            overflow: hidden;
-        }
-        
-        /* 어두운 배경 패널 */
-        #mindbodylab-benefits-section .info-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-
-        /* 밝은 배경 패널 */
-        #mindbodylab-benefits-section .info-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-
-        /* 패널 내부 콘텐츠 컨테이너 & 애니메이션 */
-        #mindbodylab-benefits-section .info-panel-content {
-            max-width: 800px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        
-        #mindbodylab-benefits-section .info-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        /* 소제목 스타일 */
-        #mindbodylab-benefits-section .sub-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            display: inline-block;
-            border-bottom: 2px solid;
-        }
-        
-        #mindbodylab-benefits-section .info-panel.dark .sub-heading {
-            border-color: #e8e8e8;
-        }
-        #mindbodylab-benefits-section .info-panel.light .sub-heading {
-            border-color: #333;
-        }
-
-        /* 본문 텍스트 스타일 */
-        #mindbodylab-benefits-section .main-text {
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-        
-        #mindbodylab-benefits-section .main-text + .main-text {
-             margin-top: 2.5rem;
-        }
-
-        #mindbodylab-benefits-section .sub-text {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-top: 2rem;
-            color: #5a5a5a;
-        }
-        
-        #mindbodylab-benefits-section .info-panel.dark .sub-text {
-             color: #b0b0b0;
-        }
-
-        /* 강조 텍스트 (빨간색) */
-        #mindbodylab-benefits-section .text-red {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-
-        /* 리스트 스타일 */
-        #mindbodylab-benefits-section .point-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 2.5rem;
-            text-align: left; /* 리스트는 왼쪽 정렬 */
-            display: inline-block; /* 가운데 정렬을 위해 */
-        }
-        #mindbodylab-benefits-section .point-list li {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-        #mindbodylab-benefits-section .point-list li + li {
-            margin-top: 2rem;
-        }
-        
-        /* 프로필 섹션 스타일 */
-        #mindbodylab-benefits-section .profile-name {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-        #mindbodylab-benefits-section .profile-subtitle {
-            font-size: 1.5rem;
-            color: #ccc;
-            margin-bottom: 3rem;
-        }
-        #mindbodylab-benefits-section .license-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        #mindbodylab-benefits-section .license-list li {
-            margin-bottom: 1.5rem;
-        }
-        #mindbodylab-benefits-section .license-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            display: block;
-        }
-        #mindbodylab-benefits-section .license-issuer {
-            font-size: 1rem;
-            color: #bbb;
-            display: block;
-        }
-
-
-        /* 모바일 화면 대응 */
-        @media (max-width: 768px) {
-            #mindbodylab-benefits-section .info-panel {
-                padding: 4rem 1.2rem;
-            }
-            #mindbodylab-benefits-section .sub-heading {
-                font-size: 2rem;
-            }
-            #mindbodylab-benefits-section .main-text,
-            #mindbodylab-benefits-section .point-list li {
-                font-size: 1.3rem;
-            }
-            #mindbodylab-benefits-section .sub-text {
-                font-size: 1rem;
-            }
-            #mindbodylab-benefits-section .profile-name {
-                font-size: 2.5rem;
-            }
-            #mindbodylab-benefits-section .profile-subtitle {
-                font-size: 1.2rem;
-            }
-            #mindbodylab-benefits-section .license-title {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
-
-    <!-- 섹션 20: 최면 상담의 효과 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <ul class="point-list" style="color: #e8e8e8; text-align: center;">
@@ -1419,8 +964,6 @@
             <p class="main-text" style="margin-top: 3rem;">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더 효과적입니다.</span></p>
         </div>
     </div>
-
-    <!-- 섹션 21: (7) 최면 상담 안내 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(7) 최면 상담 안내</h2>
@@ -1429,8 +972,6 @@
             <p class="main-text">최면 상태는 집중과 몰입이 높은<br>심리 상태입니다.</p>
         </div>
     </div>
-    
-    <!-- 섹션 22: 최면 상담의 적용 범위 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">최면 상담은 무의식에 접근해<br>정신 건강을 돕습니다.</p>
@@ -1438,8 +979,6 @@
             <p class="main-text">불안, 우울 등 다양한 문제와<br>심리적 성장에<br>최면을 활용할 수 있습니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 23: 최면의 자발성 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">최면은 피최면자의<br>자발적 참여와 협력이 필요합니다.</p>
@@ -1447,16 +986,12 @@
             <p class="main-text">암시는 피최면자 스스로의 수용으로<br>받아들여지게 되는 것입니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 24: 최면 상담의 결론 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="main-text">결론적으로,<br>최면 상담은 무의식에 접근해<br>자기 이해와 성장을 돕습니다.</p>
             <p class="main-text">이로 인하여<br><span class="text-red">심리적 문제를<br>스스로 치유하게 합니다.</span></p>
         </div>
     </div>
-
-    <!-- 섹션 25: (8) 상담 시간과 비용 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
@@ -1471,8 +1006,6 @@
             </ul>
         </div>
     </div>
-
-    <!-- 섹션 26: (9) 최면상담사가 내담자에게 꼭 전하고 싶은 말 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(9) 최면상담사가<br>내담자에게 꼭 전하고 싶은 말</h2>
@@ -1480,15 +1013,11 @@
             <p class="sub-text" style="text-align: left; margin-top: 2rem;">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한 번으로 다 해결될 것으로 기대를 하고 최면 상담 센터를 방문합니다. 그리고 최면 상담가가 모든 것을 알아서 다 해줄 것이라는 생각과 믿음을 갖고 최면 상담에 임하시곤 합니다. 최면 상담을 찾는 내담자들의 이러한 생각과 믿음을 갖는 것을 저는 충분히 이해하고 있습니다.<br><br>그런데 안타깝게도 최면은 만병통치약이 아닙니다. 그리고 최면 상담가는 내담자의 모든 것을 꿰뚫어 보는 독심술사의 능력을 갖고 있지 않습니다.<br><br>물론 단 한 번의 최면으로 극적인 효과를 보는 사례들도 분명히 있습니다. 그리고 최면 상담가의 유도문과 암시에 의해 내담자의 심리적 문제가 잘 치유되는 경우도 있습니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 27: 상담사의 역할 -->
     <div class="info-panel light">
         <div class="info-panel-content">
             <p class="sub-text" style="text-align: left;">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를 원하는 상황에서 무의식적 원인으로 그 변화를 가로막고 있는 벽을 최면 상담가가 함께 협응을 통해서 함께 찾아가고 내담자가 갖고 있는 무의식적 장애물인 벽을 넘어 원하는 상태에 이르게 도움을 주는 조력자의 역할을 합니다.<br><br>즉 최면 상담 세션을 진행할 때 내담자의 적극적이고 능동적인 의지와 협조가 있어야 원하는 결과를 얻을 수 있다는 이야기를 드리고 싶습니다.<br><br>최면 상담을 찾는 모든 내담자들이 '최면상담사가 내담자에게 꼭 전하고 싶은 말'의 글을 읽고 최면 상담을 받으실 수 있으면 좋겠습니다.<br><br>이 글을 읽으면 좀 더 좋은 치료 효과를 얻을 수 있을 것입니다. 왜냐하면 내담자의 상담에 임하는 마음상태와 생각이 상담에서 제일 중요하기 때문입니다.</p>
         </div>
     </div>
-
-    <!-- 섹션 28: 핵심 가치와 슬로건 -->
     <div class="info-panel light" style="background-color: #f0f2f5;">
         <div class="info-panel-content">
             <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 내담자의 행복 추구</p>
@@ -1501,8 +1030,6 @@
             <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad;">당신의 마음을 찾아가는 여정,<br>최면 전문 상담가 : 김현준 센터장</p>
         </div>
     </div>
-
-    <!-- 섹션 29: 프로필 -->
     <div class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="profile-name">김현준 센터장</h2>
@@ -1537,10 +1064,8 @@
     </div>
 
     <script>
-        // 스크롤 애니메이션을 위한 스크립트
         document.addEventListener('DOMContentLoaded', function() {
-            const infoContents = document.querySelectorAll('#mindbodylab-benefits-section .info-panel-content');
-
+            const infoContents = document.querySelectorAll('#mindbodylab-explanation-section .info-panel-content, #mindbodylab-benefits-section .info-panel-content');
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
@@ -1550,21 +1075,14 @@
                         }
                     });
                 }, { threshold: 0.1 });
-
-                infoContents.forEach(content => {
-                    observer.observe(content);
-                });
+                infoContents.forEach(content => observer.observe(content));
             } else {
-                infoContents.forEach(content => {
-                    content.classList.add('is-visible');
-                });
+                infoContents.forEach(content => content.classList.add('is-visible'));
             }
         });
     </script>
 </div>
-<!-- =============================================== -->
-<!-- ===== 독립형 섹션 끝 ===== -->
-<!-- =============================================== -->
+
 
 
     </main>
