@@ -156,13 +156,13 @@
         /* 메인 히어로 섹션 개선 */
         .main-hero {
             background-color: #e0e0e0; /* 배경색 통일 */
-            padding: 60px 20px; /* 상하 패딩 조정 */
+            padding: 60px 20px; /* 상하 패딩을 80px에서 60px로 줄임 */
             text-align: center;
             color: #333;
             display: flex;
             justify-content: center;
             align-items: center;
-            min-height: 400px; /* 최소 높이 조정 */
+            min-height: 400px; /* 최소 높이를 500px에서 400px로 줄임 */
         }
 
         .main-hero .hero-content {
@@ -173,10 +173,10 @@
         }
 
         .main-hero .logo-img-placeholder {
-            width: 420px; /* 로고 이미지 크기 3배 (140px * 3) */
-            height: 270px; /* 로고 이미지 크기 3배 (90px * 3) */
+            width: 280px; /* 원래 140px * 2배 = 280px */
+            height: 180px; /* 원래 90px * 2배 = 180px */
             background-color: #e0e0e0;
-            margin: 0 auto 25px; /* 하단 마진 조정 */
+            margin: 0 auto 30px; /* 하단 마진 조정 */
             display: flex;
             align-items: center;
             justify-content: center;
@@ -193,18 +193,18 @@
         }
 
         .main-hero h1 {
-            font-size: 120px; /* 글자 크기 3배 (40px * 3) */
+            font-size: 80px; /* 원래 40px * 2배 = 80px */
             font-weight: 900;
             color: #000;
-            margin-bottom: 15px; /* 하단 마진 조정 */
-            letter-spacing: -2.5px; /* 자간 조정 */
+            margin-bottom: 20px; /* 하단 마진 조정 */
+            letter-spacing: -3px; /* 자간 조정 */
         }
 
         .main-hero .keywords {
-            font-size: 48px; /* 글자 크기 3배 (16px * 3) */
+            font-size: 32px; /* 원래 16px * 2배 = 32px */
             font-weight: 500;
             color: #555;
-            margin-top: 15px; /* 상단 마진 조정 */
+            margin-top: 20px; /* 상단 마진 조정 */
         }
 
         /* 소개 섹션 */
@@ -268,19 +268,19 @@
             }
 
             .main-hero {
-                padding: 45px 20px; /* 모바일에서 패딩 조정 */
-                min-height: 280px; /* 모바일 최소 높이 조정 */
+                padding: 40px 20px; /* 모바일에서 패딩을 60px에서 40px로 줄임 */
+                min-height: 280px; /* 모바일 최소 높이 350px에서 280px로 줄임 */
             }
             .main-hero h1 {
-                font-size: 84px; /* 모바일에서 글자 크기 3배 (28px * 3) */
+                font-size: 56px; /* 원래 28px * 2배 = 56px */
             }
             .main-hero .keywords {
-                font-size: 42px; /* 모바일에서 글자 크기 3배 (14px * 3) */
+                font-size: 28px; /* 원래 14px * 2배 = 28px */
             }
             .main-hero .logo-img-placeholder {
-                width: 300px; /* 모바일에서 로고 크기 3배 (100px * 3) */
-                height: 210px; /* 모바일에서 로고 크기 3배 (70px * 3) */
-                margin-bottom: 15px; /* 모바일에서 로고 하단 마진 조정 */
+                width: 200px; /* 원래 100px * 2배 = 200px */
+                height: 140px; /* 원래 70px * 2배 = 140px */
+                margin-bottom: 20px; /* 모바일에서 로고 하단 마진 조정 */
             }
         }
     </style>
@@ -384,7 +384,7 @@
             // 오버레이 외부 클릭 시 모바일 내비게이션 닫기
             mobileNavOverlay.addEventListener('click', function(event) {
                 // 클릭된 요소가 모바일 내비게이션 자체 또는 그 자식이 아니면 닫기
-                if (event.target === mobileNavOverlay) {ㅁ
+                if (event.target === mobileNavOverlay) {
                     mobileNavOverlay.classList.remove('active');
                     document.body.style.overflow = ''; // 스크롤 허용
                 }
