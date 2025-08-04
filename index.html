@@ -1608,6 +1608,130 @@
             });
         });
     </script>
+
+<!-- =============================================== -->
+<!-- ===== 웹사이트 푸터 (Footer) 섹션 ===== -->
+<!-- 설명: 이 코드는 자체적으로 완벽하게 작동하며, -->
+<!-- 웹사이트 하단에 들어갈 모든 정보를 포함합니다. -->
+<!-- =============================================== -->
+<footer>
+    <!-- 푸터에만 적용되는 독립적인 스타일 -->
+    <style>
+        #mindbodylab-footer {
+            background-color: #1f2428; /* 어두운 배경색 */
+            color: #a0a0a0; /* 기본 글자색 (밝은 회색) */
+            padding: 4rem 1.5rem; /* 상하 여백 추가 */
+            font-family: 'Noto Sans KR', sans-serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        #mindbodylab-footer .footer-container {
+            max-width: 1100px; /* 푸터 최대 너비 */
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap; /* 화면이 좁아지면 줄바꿈 */
+            justify-content: center; /* 섹션들을 중앙에 배치하여 균형감 부여 */
+            gap: 2rem 4rem; /* 행과 열에 일관된 간격 추가 */
+            align-items: flex-start; 
+        }
+
+        #mindbodylab-footer .footer-section {
+            margin-bottom: 1.5rem;
+            min-width: 300px; /* 최소 너비 조정 */
+            flex: 1; /* 섹션이 유연하게 공간을 차지하도록 설정 */
+            text-align: left; /* 가독성을 위해 텍스트 왼쪽 정렬 */
+        }
+
+        #mindbodylab-footer h4 {
+            color: #ffffff; /* 섹션 제목 색상 */
+            font-size: 1.1rem;
+            margin-top: 0;
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid #444; /* 제목 밑줄 추가 */
+        }
+
+        #mindbodylab-footer p,
+        #mindbodylab-footer a {
+            margin: 0.5rem 0;
+            color: #a0a0a0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #mindbodylab-footer a:hover {
+            color: #ffffff; /* 링크에 마우스 올리면 흰색으로 변경 */
+        }
+
+        #mindbodylab-footer .info-item strong {
+            color: #c0c0c0; /* 정보 항목의 제목(예: 사업자등록번호) 색상 */
+            margin-right: 8px;
+            display: inline-block;
+            min-width: 120px; /* strong 태그 너비 고정으로 줄 맞춤 효과 */
+        }
+        
+        #mindbodylab-footer .copyright {
+            text-align: center;
+            width: 100%;
+            margin-top: 3rem; /* 여백 추가 */
+            padding-top: 2rem;
+            border-top: 1px solid #333; /* 구분선 */
+            font-size: 0.8rem;
+            color: #777;
+        }
+
+    </style>
+
+    <div id="mindbodylab-footer">
+        <div class="footer-container">
+            
+            <!-- 정보 섹션 1: 연락처 및 링크 (왼쪽으로 이동) -->
+            <div class="footer-section">
+                <h4>Contact & Links</h4>
+                 <p class="info-item">
+                    <strong>대표전화</strong> <a href="tel:07079543170">070-7954-3170</a>
+                </p>
+                <p class="info-item">
+                    <strong>팩스</strong> 0504-218-2545
+                </p>
+                <p class="info-item">
+                    <strong>이메일</strong> <a href="mailto:mindbodylab7@gmail.com">mindbodylab7@gmail.com</a>
+                </p>
+                 <p class="info-item">
+                    <strong>홈페이지</strong> <a href="https://mindbodylab.liveklass.com/mypage" target="_blank">www.mindbodylab.kr</a>
+                </p>
+            </div>
+
+            <!-- 정보 섹션 2: 회사 및 주소 (오른쪽으로 이동) -->
+            <div class="footer-section">
+                <h4>(주)마인드바디랩</h4>
+                <p class="info-item">
+                    <strong>사업자등록번호</strong> 613-81-82845
+                </p>
+                <p class="info-item">
+                    <strong>통신판매업신고번호</strong> 제 2023-서울송파-0215 호
+                </p>
+                <p class="info-item">
+                    <strong>주소</strong> 서울시 송파구 중대로 97 5층 548호
+                </p>
+            </div>
+
+        </div>
+        
+        <!-- 저작권 정보 -->
+        <div class="copyright">
+            <p>&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+<!-- =============================================== -->
+<!-- ===== 웹사이트 푸터 (Footer) 섹션 끝 ===== -->
+<!-- =============================================== -->
+
+
     
     <!-- 구조화된 데이터 (검색엔진용 정보) -->
     <script type="application/ld+json">
