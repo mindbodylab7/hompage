@@ -1,3 +1,279 @@
-<h1>홈페이지</h1>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>마인드바디랩 최면상담센터</title>
+    <style>
+        /* 기본 스타일 */
+        body {
+            margin: 0;
+            font-family: 'Noto Sans KR', sans-serif; /* 한국어 폰트 권장 */
+            color: #333;
+            line-height: 1.6;
+        }
 
-<p>테스트</p>
+        a {
+            text-decoration: none;
+            color: inherit; /* 링크 기본 색상 상속 */
+        }
+
+        ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: relative;
+            z-index: 1000;
+        }
+
+        .header-left .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .header-left .logo img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        /* 메인 내비게이션 */
+        .header-right nav ul {
+            display: flex; /* 기본적으로 가로 정렬 */
+            align-items: center;
+        }
+
+        .header-right nav ul li {
+            margin-right: 25px;
+        }
+
+        .header-right nav ul li:last-child {
+            margin-right: 0;
+        }
+
+        .header-right nav ul li a {
+            font-size: 15px;
+            font-weight: 500;
+            color: #555;
+            padding: 5px 0; /* 호버 영역을 넓게 */
+            display: block; /* 호버 영역 전체를 링크로 */
+            transition: color 0.3s ease; /* 색상 변경 애니메이션 */
+        }
+
+        /* 내비게이션 링크 호버 효과 */
+        .header-right nav ul li a:hover {
+            color: #007bff; /* 마우스 올렸을 때 파란색으로 변경 */
+        }
+
+        
+        /* 메인 히어로 섹션 */
+        .main-hero {
+            background-color: #e0e0e0;
+            padding: 100px 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        .main-hero .logo-img-placeholder {
+            width: 200px;
+            height: 150px;
+            background-color: #ccc;
+            margin: 0 auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            color: #666;
+            border-radius: 10px;
+        }
+
+        .main-hero h1 {
+            font-size: 55px;
+            font-weight: 900;
+            color: #000;
+            margin-bottom: 20px;
+            letter-spacing: -2px;
+        }
+
+        .main-hero .keywords {
+            font-size: 22px;
+            font-weight: 500;
+            color: #555;
+            margin-top: 30px;
+        }
+
+        /* 소개 섹션 */
+        .section-intro {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #f9f9f9;
+        }
+
+        .section-intro h2 {
+            font-size: 30px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .section-intro p {
+            font-size: 17px;
+            line-height: 1.6;
+            color: #666;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* 채팅 버블 (스크린샷에 보이는 노란색 말풍선) */
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffeb3b; /* 노란색 */
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        /* 반응형 디자인을 위한 미디어 쿼리 */
+        @media (max-width: 992px) { /* 태블릿 및 모바일 */
+            .header-right nav ul li {
+                margin-right: 15px; /* 메뉴 간격 줄이기 */
+            }
+            .header-right .utility-icons {
+                margin-left: 15px; /* 아이콘 간격 줄이기 */
+            }
+        }
+
+        @media (max-width: 768px) { /* 모바일 화면 */
+            header {
+                flex-direction: column; /* 세로로 쌓이도록 변경 */
+                align-items: center; /* 가운데 정렬 */
+                padding: 15px;
+            }
+
+            .header-left {
+                margin-bottom: 15px; /* 로고와 메뉴 사이 간격 */
+            }
+
+            .header-right {
+                flex-direction: column; /* 내비게이션과 아이콘/버튼이 세로로 쌓이도록 */
+                align-items: center; /* 가운데 정렬 */
+                width: 100%; /* 전체 너비 사용 */
+            }
+
+            .header-right nav ul {
+                flex-direction: column; /* 메뉴 항목을 세로로 쌓기 */
+                width: 100%; /* 전체 너비 사용 */
+                margin-bottom: 20px; /* 메뉴와 아이콘 사이 간격 */
+            }
+
+            .header-right nav ul li {
+                margin: 10px 0; /* 세로 간격 */
+                text-align: center; /* 텍스트 가운데 정렬 */
+            }
+
+            .header-right nav ul li:last-child {
+                margin-right: 0; /* 마지막 항목 마진 제거 */
+            }
+
+            .header-right .utility-icons {
+                margin-left: 0; /* 아이콘 왼쪽 마진 제거 */
+                margin-bottom: 15px; /* 아이콘과 버튼 사이 간격 */
+            }
+
+            .header-right .site-button {
+                width: auto; /* 버튼 너비 자동 */
+            }
+
+            .main-hero h1 {
+                font-size: 40px;
+            }
+            .main-hero .keywords {
+                font-size: 18px;
+            }
+        }
+
+    </style>
+    <!-- 구글 폰트 Noto Sans KR 임포트 -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <!-- 아이콘 사용을 위한 Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="header-left">
+            <a href="#" class="logo">
+                <!-- 여기에 로고 이미지 태그를 넣으세요 (예: <img src="로고_이미지_경로.png" alt="마인드바디랩 로고">) -->
+                <span>마인드바디랩</span>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav>
+                <ul>
+                    <li><a href="#">소개</a></li>
+                    <li><a href="#">블로그</a></li>
+                    <li><a href="#">유튜브</a></li>
+                    <li><a href="#">상담 예약</a></li>
+                    <li><a href="#">클래스/레슨즈</a></li>
+                    <li><a href="#">게시판</a></li>
+                    <li><a href="#">공지사항</a></li>
+                
+                </ul>
+            </nav>
+           
+        </div>
+    </header>
+
+    <main>
+        <section class="main-hero">
+            <!-- 마인드바디랩 로고 및 실험 도구 이미지 (사용자 제공) -->
+            <div class="logo-img-placeholder">
+                <img src="마인드바디랩_로고_및_실험도구_이미지_경로.png" alt="마인드바디랩 로고 및 실험 도구 이미지" style="max-width: 100%; height: auto; display: block;">
+            </div>
+
+            <h1>최면상담센터</h1>
+            <p class="keywords">심리 / 전생 / 최면 / 상담</p>
+        </section>
+
+        <section class="section-intro">
+            <h2>마인드바디랩</h2>
+            <p>마인드바디랩은 전문 최면상담 센터입니다.</p>
+            <p>최면 상담으로 병든 마음과 정신적 문제를 치유하고 있습니다.</p>
+        </section>
+    </main>
+
+    <!-- 채팅 버블 -->
+    <div class="chat-bubble">
+        💬
+    </div>
+
+</body>
+</html>
