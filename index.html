@@ -30,6 +30,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content="https://www.mindbodylab.kr">
 
     <style>
+        /* ===== 아래 코드를 복사해서 <style> 태그 맨 위에 붙여넣으세요 ===== */
+html {
+    scroll-behavior: smooth;
+    /* 스티키 헤더의 높이를 고려하여 스크롤 후 제목이 가려지지 않게 합니다. */
+    scroll-padding-top: 80px;
+}
+
+/* 스크롤 위치에 따라 활성화된 메뉴 링크에 적용될 스타일입니다. */
+.desktop-nav ul li a.active,
+.mobile-nav-overlay nav ul li a.active {
+    color: #007bff;
+    font-weight: 700;
+}
+        
         /* 기본 스타일 */
         body {
             margin: 0;
@@ -419,37 +433,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburgerMenu = document.getElementById('hamburgerMenu');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const closeMenu = document.getElementById('closeMenu');
+    document.addEventListener('DOMContentLoaded', function() {
+        // --- 1. 햄버거 메뉴 기능 (기존 기능 포함) ---
+        const hamburgerMenu = document.getElementById('hamburgerMenu');
+        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+        const closeMenu = document.getElementById('closeMenu');
 
-            hamburgerMenu.addEventListener('click', function() {
-                mobileNavOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
+        hamburgerMenu.addEventListener('click', () => {
+            mobileNavOverlay.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        });
 
-            closeMenu.addEventListener('click', function() {
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
+        const closeMobileMenu = () => {
+            mobileNavOverlay.classList.remove('active');
+            document.body.style.overflow = '';
+        };
 
-            mobileNavOverlay.addEventListener('click', function(event) {
-                if (event.target === mobileNavOverlay) {
-                    mobileNavOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
+        closeMenu.addEventListener('click', closeMobileMenu);
+        mobileNavOverlay.addEventListener('click', (event) => {
+            if (event.target === mobileNavOverlay) closeMobileMenu();
+        });
+
+        // --- 2. 스크롤 스파이 기능 (새로운 기능) ---
+        // 필요한 요소들을 모두 선택합니다.
+        const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav-overlay a');
+        const sections = document.querySelectorAll('div[id], footer[id]');
+        const header = document.querySelector('header');
+        const headerOffset = header ? header.offsetHeight + 20 : 80; // 헤더 높이 + 약간의 여유
+
+        // 모바일 메뉴의 링크를 클릭했을 때 메뉴가 닫히도록 합니다.
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileNavOverlay.classList.contains('active')) {
+                    closeMobileMenu();
                 }
             });
-
-            const mobileNavLinks = mobileNavOverlay.querySelectorAll('nav ul li a');
-            mobileNavLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    mobileNavOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                });
-            });
         });
-    </script>
+
+        // 스크롤 위치를 감지하여 현재 보이는 섹션을 알아내는 함수입니다.
+        const scrollSpyHandler = () => {
+            let currentSectionId = '';
+            const scrollPosition = window.scrollY + headerOffset;
+
+            sections.forEach(section => {
+                // 현재 스크롤 위치가 섹션의 시작과 끝 사이에 있는지 확인합니다.
+                if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                    currentSectionId = section.getAttribute('id');
+                }
+            });
+            
+            // 페이지 맨 아래로 스크롤했을 때 마지막 메뉴(오시는 길)가 활성화되도록 합니다.
+            const lastSection = sections[sections.length - 1];
+            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
+                if (lastSection) {
+                    currentSectionId = lastSection.getAttribute('id');
+                }
+            }
+
+            // 모든 링크의 'active' 클래스를 제거한 후, 현재 섹션에 해당하는 링크에만 추가합니다.
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSectionId) {
+                    link.classList.add('active');
+                }
+            });
+        };
+
+        // 페이지가 로드되거나 스크롤될 때마다 위의 함수를 실행합니다.
+        window.addEventListener('scroll', scrollSpyHandler);
+        window.addEventListener('load', scrollSpyHandler);
+    });
+</script>
 
 <!-- =============================================== -->
 <!-- ===== 독립형 전체 페이지 섹션 (완전체) ===== -->
