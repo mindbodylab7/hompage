@@ -589,6 +589,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     currentSectionId = section.getAttribute('id');
                 }
             });
+
+// ===============================================
+// ===== 플로팅 목차 토글 기능 (새로 추가) =====
+// ===============================================
+const tocContainer = document.getElementById('floating-toc-container');
+const tocToggleButton = document.getElementById('toc-toggle-button');
+const tocLinks = document.querySelectorAll('#side-nav a');
+
+if (tocToggleButton) {
+    // 햄버거 버튼 클릭 시 컨테이너에 'is-open' 클래스 추가/제거
+    tocToggleButton.addEventListener('click', function() {
+        tocContainer.classList.toggle('is-open');
+    });
+
+    // 목차 안의 링크 클릭 시 목차 닫기
+    tocLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            tocContainer.classList.remove('is-open');
+        });
+    });
+}
+
+
             
             // 페이지 맨 아래로 스크롤했을 때 마지막 메뉴(오시는 길)가 활성화되도록 합니다.
             const lastSection = sections[sections.length - 1];
