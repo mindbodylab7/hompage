@@ -30,6 +30,90 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:url" content="https://www.mindbodylab.kr">
 
     <style>
+/* =============================================== */
+/* ===== 사이드 내비게이션 스타일 (새로 추가) ===== */
+/* =============================================== */
+#side-nav {
+    position: fixed; /* 화면에 고정 */
+    top: 50%; /* 세로 중앙 정렬 */
+    right: 30px; /* 오른쪽에서 30px 띄우기 */
+    transform: translateY(-50%); /* 정확한 세로 중앙 정렬을 위한 보정 */
+    z-index: 999; /* 다른 요소 위에 표시 */
+}
+
+#side-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#side-nav ul li a {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* 텍스트를 오른쪽 정렬 */
+    padding: 8px 0;
+    text-decoration: none;
+    color: #888; /* 기본 글자색 */
+    font-size: 14px;
+    font-weight: 500;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+    transition: all 0.3s ease;
+}
+
+/* 마우스를 올렸을 때의 스타일 */
+#side-nav ul li a:hover span {
+    opacity: 1;
+    color: #000;
+}
+
+#side-nav ul li a:hover::after {
+    background-color: #000;
+}
+
+
+/* 활성화된 메뉴(현재 보이는 섹션) 스타일 */
+#side-nav ul li a.active {
+    color: #007bff; /* 활성화 시 텍스트 색상 */
+    font-weight: 700;
+}
+
+#side-nav ul li a.active::after {
+    background-color: #007bff; /* 활성화 시 점 색상 */
+    transform: scale(1.5); /* 점을 약간 크게 */
+}
+
+/* 메뉴 텍스트 (평소에는 반투명하게) */
+#side-nav ul li a span {
+    opacity: 0; /* 평소에는 텍스트 숨기기 */
+    margin-right: 15px; /* 점과의 간격 */
+    transition: all 0.3s ease;
+}
+
+/* 메뉴에 마우스를 올리면 텍스트가 나타남 */
+#side-nav:hover ul li a span {
+    opacity: 1;
+}
+
+
+/* 오른쪽에 표시될 '점' 스타일 */
+#side-nav ul li a::after {
+    content: '';
+    display: block;
+    width: 8px;
+    height: 8px;
+    background-color: #aaa; /* 기본 점 색상 */
+    border-radius: 50%;
+    transition: all 0.3s ease;
+}
+
+/* 모바일 화면에서는 사이드 메뉴 숨기기 */
+@media (max-width: 1024px) {
+    #side-nav {
+        display: none;
+    }
+}
+        
+        
         /* ===== 아래 코드를 복사해서 <style> 태그 맨 위에 붙여넣으세요 ===== */
 html {
     scroll-behavior: smooth;
