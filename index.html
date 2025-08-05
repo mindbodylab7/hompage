@@ -33,6 +33,97 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     <meta property="og:type" content="website">
 
     <style>
+
+/* =============================================== */
+/* ===== 네이버 예약 버튼 스타일 (이 부분을 복사) ===== */
+/* =============================================== */
+.booking-widget-container {
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+    padding: 2rem 1rem; /* 위젯 주변의 여백 */
+    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+}
+
+.booking-widget {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.booking-widget .location-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.booking-widget .location-icon svg {
+    width: 32px;
+    height: 32px; /* SVG 아이콘 크기는 height로 제어하는 것이 더 안정적일 수 있습니다. */
+    flex-shrink: 0;
+}
+
+.booking-widget .location-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.booking-widget .location-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.booking-widget .booking-buttons {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+}
+
+.booking-widget .btn-reserve {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background-color: #03c75a;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+.booking-widget .btn-reserve:hover {
+    background-color: #02b350;
+}
+
+.booking-widget .naver-icon {
+    font-style: normal;
+    font-weight: 900;
+    font-size: 15px;
+}
+
+@media (max-width: 500px) {
+    .booking-widget {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}        
+        
+
+        
 /* =============================================== */
 /* ===== 플로팅 목차 (PC/모바일 반응형) ===== */
 /* =============================================== */
