@@ -445,6 +445,101 @@ html {
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
     <!-- 아이콘 사용을 위한 Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        /* 이 스타일 블록은 아래 버튼에만 적용되므로, 
+          웹사이트의 다른 부분에 영향을 주지 않습니다.
+        */
+
+        /* ✅ [수정됨] 위젯을 감싸는 컨테이너를 추가하여 가운데 정렬합니다. */
+        .booking-widget-container {
+            display: flex;
+            justify-content: center; /* 수평 가운데 정렬 */
+            padding: 2rem 1rem; /* 위젯 주변의 여백 */
+            font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
+        }
+
+        .booking-widget {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-sizing: border-box;
+        }
+
+        .booking-widget .location-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+        
+        .booking-widget .location-icon svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .booking-widget .location-text h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .booking-widget .location-text p {
+            margin: 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .booking-widget .booking-buttons {
+            display: flex;
+            gap: 8px;
+            flex-shrink: 0;
+        }
+
+        .booking-widget .btn-reserve {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            background-color: #03c75a;
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: background-color 0.2s;
+        }
+
+        .booking-widget .btn-reserve:hover {
+            background-color: #02b350;
+        }
+
+        .booking-widget .naver-icon {
+            font-style: normal;
+            font-weight: 900;
+            font-size: 15px;
+        }
+
+        @media (max-width: 500px) {
+            .booking-widget {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+    
 </head>
 <body>
     <!-- Google Tag Manager (noscript) -->
@@ -822,13 +917,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
-    <div class="booking-widget-container">
+<div class="booking-widget-container">
         <div class="booking-widget">
             <!-- 1. 왼쪽 정보 영역 -->
             <div class="location-info">
                 <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
-                    <svg viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
@@ -842,16 +937,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- ✅ href="https://m.site.naver.com/1O0dx" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="#" class="btn-reserve">
+                <!-- href="https://m.site.naver.com/1O0dx" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dx" class="btn-reserve">
                     <span class="naver-icon">N</span> 예약
                 </a>
             </div>
         </div>
     </div>
-    
-
-    
+                 
 <!-- ===== 2부: 정보 안내 섹션 ===== -->
 <div id="principle">
     <style>
@@ -1243,7 +1336,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="location-info">
                 <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
-                    <svg viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
@@ -1257,14 +1350,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- ✅ href="https://m.site.naver.com/1O0dE" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="#" class="btn-reserve">
+                <!-- href="https://m.site.naver.com/1O0dE" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dx" class="btn-reserve">
                     <span class="naver-icon">N</span> 예약
                 </a>
             </div>
         </div>
     </div>
-   
+
     <div class="info-panel light">
         <div class="info-panel-content">
             <h2 class="sub-heading">(9) 최면상담사가<br>내담자에게 꼭 전하고 싶은 말</h2>
@@ -1336,7 +1429,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <div class="location-info">
                 <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
-                    <svg viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
@@ -1350,8 +1443,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- ✅ href="https://m.site.naver.com/1O0dP" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="#" class="btn-reserve">
+                <!-- href="#" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dP" class="btn-reserve">
                     <span class="naver-icon">N</span> 예약
                 </a>
             </div>
