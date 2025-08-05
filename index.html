@@ -534,7 +534,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
         // --- 2. 스크롤 스파이 기능 (새로운 기능) ---
         // 필요한 요소들을 모두 선택합니다.
-        const navLinks = document.querySelectorAll('.desktop-nav a, .mobile-nav-overlay a');
+        const navLinks = document.querySelectorAll('#side-nav a, .mobile-nav-overlay a[href^="#"]');
         const sections = document.querySelectorAll('div[id], footer[id]');
         const header = document.querySelector('header');
         const headerOffset = header ? header.offsetHeight + 20 : 80; // 헤더 높이 + 약간의 여유
