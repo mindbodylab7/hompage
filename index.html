@@ -34,93 +34,95 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
     <style>
 
-/* =============================================== */
-/* ===== 네이버 예약 버튼 스타일 (이 부분을 복사) ===== */
-/* =============================================== */
-.booking-widget-container {
-    display: flex;
-    justify-content: center; /* 수평 가운데 정렬 */
-    padding: 2rem 1rem; /* 위젯 주변의 여백 */
-    font-family: -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Malgun Gothic", "맑은 고딕", sans-serif;
-}
+        /* 이 스타일 블록은 아래 버튼 위젯에만 적용됩니다. */
+        .booking-widget-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
 
-.booking-widget {
-    max-width: 600px;
-    width: 100%;
-    background-color: #fff;
-    border: 1px solid #e0e0e0;
-    border-radius: 8px;
-    padding: 16px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    box-sizing: border-box;
-}
+        .booking-widget {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-sizing: border-box;
+        }
 
-.booking-widget .location-info {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    flex-grow: 1;
-}
+        .booking-widget .location-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+        
+        .booking-widget .location-icon svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
 
-.booking-widget .location-icon svg {
-    width: 32px;
-    height: 32px; /* SVG 아이콘 크기는 height로 제어하는 것이 더 안정적일 수 있습니다. */
-    flex-shrink: 0;
-}
+        .booking-widget .location-text h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
 
-.booking-widget .location-text h4 {
-    margin: 0 0 4px 0;
-    font-size: 16px;
-    font-weight: 600;
-    color: #222;
-}
+        .booking-widget .location-text p {
+            margin: 0;
+            font-size: 13px;
+            color: #666;
+        }
 
-.booking-widget .location-text p {
-    margin: 0;
-    font-size: 13px;
-    color: #666;
-}
+        .booking-widget .booking-buttons {
+            flex-shrink: 0;
+        }
 
-.booking-widget .booking-buttons {
-    display: flex;
-    gap: 8px;
-    flex-shrink: 0;
-}
-
-.booking-widget .btn-reserve {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-    background-color: #03c75a;
-    color: #fff;
-    padding: 8px 12px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background-color 0.2s;
-}
-
-.booking-widget .btn-reserve:hover {
-    background-color: #02b350;
-}
-
-.booking-widget .naver-icon {
-    font-style: normal;
-    font-weight: 900;
-    font-size: 15px;
-}
-
-@media (max-width: 500px) {
-    .booking-widget {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-}        
+        /* ✅ [수정됨] 새로운 '모던 스타일' 버튼 CSS */
+        .btn-modern-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            color: #333;
+            padding: 12px 24px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .btn-modern-ghost:hover {
+            background-color: #333;
+            color: #fff;
+        }
+        
+        /* 모바일 화면 대응 */
+        @media (max-width: 500px) {
+            .booking-widget {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .booking-buttons {
+                width: 100%; /* 모바일에서 버튼이 꽉 차도록 설정 */
+            }
+            .btn-modern-ghost {
+                width: 100%; /* 버튼 내부 컨텐츠도 꽉 차도록 */
+                justify-content: center; /* 버튼 안의 텍스트와 아이콘을 중앙 정렬 */
+                box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 */
+            }
+        }       
         
 
         
@@ -917,18 +919,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
 </div>
 
-<div class="booking-widget-container">
+    <div class="booking-widget-container">
         <div class="booking-widget">
-            <!-- 1. 왼쪽 정보 영역 -->
+            <!-- 1. 왼쪽 정보 영역 (그대로 유지) -->
             <div class="location-info">
-                <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
                     <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
                 </div>
-                <!-- 센터 이름 및 주소 -->
                 <div class="location-text">
                     <h4>마인드바디랩 최면센터</h4>
                     <p>서울특별시 송파구 중대로 97 5층</p>
@@ -937,14 +937,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- href="https://m.site.naver.com/1O0dx" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="https://m.site.naver.com/1O0dx" class="btn-reserve">
-                    <span class="naver-icon">N</span> 예약
+                <!-- ✅ [수정됨] 버튼만 '모던 스타일'로 교체했습니다. -->
+                <!-- ✅ href="#" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
+                    <i class="fas fa-plus"></i>
+                    <span>지금 상담 예약하기</span>
                 </a>
             </div>
         </div>
     </div>
-                 
+    
 <!-- ===== 2부: 정보 안내 섹션 ===== -->
 <div id="principle">
     <style>
@@ -1332,16 +1334,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="booking-widget-container">
         <div class="booking-widget">
-            <!-- 1. 왼쪽 정보 영역 -->
+            <!-- 1. 왼쪽 정보 영역 (그대로 유지) -->
             <div class="location-info">
-                <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
                     <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
                 </div>
-                <!-- 센터 이름 및 주소 -->
                 <div class="location-text">
                     <h4>마인드바디랩 최면센터</h4>
                     <p>서울특별시 송파구 중대로 97 5층</p>
@@ -1350,9 +1350,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- href="https://m.site.naver.com/1O0dE" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="https://m.site.naver.com/1O0dx" class="btn-reserve">
-                    <span class="naver-icon">N</span> 예약
+                <!-- ✅ [수정됨] 버튼만 '모던 스타일'로 교체했습니다. -->
+                <!-- ✅ href="#" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
+                    <i class="fas fa-plus"></i>
+                    <span>지금 상담 예약하기</span>
                 </a>
             </div>
         </div>
@@ -1420,21 +1422,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     </main>
 
-    <div class="chat-bubble">
-        <i class="fas fa-comment-dots"></i>
-    </div>
     <div class="booking-widget-container">
         <div class="booking-widget">
-            <!-- 1. 왼쪽 정보 영역 -->
+            <!-- 1. 왼쪽 정보 영역 (그대로 유지) -->
             <div class="location-info">
-                <!-- 위치 아이콘 (SVG) -->
                 <div class="location-icon">
                     <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
                         <circle cx="16" cy="16" r="7" fill="white"/>
                     </svg>
                 </div>
-                <!-- 센터 이름 및 주소 -->
                 <div class="location-text">
                     <h4>마인드바디랩 최면센터</h4>
                     <p>서울특별시 송파구 중대로 97 5층</p>
@@ -1443,13 +1440,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
             <!-- 2. 오른쪽 예약 버튼 영역 -->
             <div class="booking-buttons">
-                <!-- href="#" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
-                <a href="https://m.site.naver.com/1O0dP" class="btn-reserve">
-                    <span class="naver-icon">N</span> 예약
+                <!-- ✅ [수정됨] 버튼만 '모던 스타일'로 교체했습니다. -->
+                <!-- ✅ href="#" 부분에 실제 예약 페이지 링크를 넣어주세요. -->
+                <a href="https://m.site.naver.com/1O0dP" class="btn-modern-ghost">
+                    <i class="fas fa-plus"></i>
+                    <span>지금 상담 예약하기</span>
                 </a>
             </div>
         </div>
     </div>
+
 
 
 <!-- =============================================== -->
