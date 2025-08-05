@@ -524,7 +524,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             background-color: #fdfdfd;
             word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
         }
-        #mindbodylab-full-story-section .story-panel {
+        #journey .story-panel {
             padding: 7rem 1.5rem;
             display: flex;
             justify-content: center;
@@ -533,32 +533,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             text-align: center;
             overflow: hidden;
         }
-        #mindbodylab-full-story-section .story-panel.dark {
+        #journey .story-panel.dark {
             background-color: #1f2428;
             color: #e8e8e8;
         }
-        #mindbodylab-full-story-section .story-panel.light {
+        #journey .story-panel.light {
             background-color: #fdfdfd;
             color: #333;
         }
-        #mindbodylab-full-story-section .story-panel-content {
+        #journey .story-panel-content {
             max-width: 800px;
             width: 100%;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        #mindbodylab-full-story-section .story-panel-content.is-visible {
+        #journey .story-panel-content.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        #mindbodylab-full-story-section .story-panel h2 {
+        #journey .story-panel h2 {
             font-size: 2.8rem;
             font-weight: 700;
             line-height: 1.4;
             margin: 0;
         }
-        #mindbodylab-full-story-section .story-panel p {
+        #journey .story-panel p {
             font-size: 1.2rem;
             font-weight: 400;
             line-height: 1.8;
@@ -566,22 +566,22 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             max-width: 90%;
             color: #5a5a5a;
         }
-        #mindbodylab-full-story-section .story-panel.dark p {
+        #journey .story-panel.dark p {
             color: #b0b0b0;
         }
-        #mindbodylab-full-story-section .story-panel h2.quote {
+        #journey .story-panel h2.quote {
             font-size: 1.6rem;
             font-weight: 500;
             font-style: normal;
             color: #999;
             line-height: 1.7;
         }
-        #mindbodylab-full-story-section .highlight-text {
+        #journey .highlight-text {
             font-weight: 700;
             position: relative;
             display: inline-block;
         }
-        #mindbodylab-full-story-section .highlight-text::after {
+        #journey .highlight-text::after {
             content: '';
             position: absolute;
             bottom: -4px;
@@ -591,36 +591,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             border-radius: 3px;
             opacity: 0.6;
         }
-        #mindbodylab-full-story-section .story-panel.light .highlight-text::after {
+        #journey .story-panel.light .highlight-text::after {
             background-color: #ffde59;
         }
-        #mindbodylab-full-story-section .story-panel.dark .highlight-text::after {
+        #journey .story-panel.dark .highlight-text::after {
             background-color: #59d4ff;
         }
-        #mindbodylab-full-story-section .final-conclusion {
+        #journey .final-conclusion {
             font-size: 2.8rem;
             font-weight: 900;
             color: #0056b3;
         }
-        #mindbodylab-full-story-section .recommendation {
+        #journey .recommendation {
             font-size: 2.2rem;
             font-weight: 600;
             line-height: 1.6;
         }
         @media (max-width: 768px) {
-            #mindbodylab-full-story-section .story-panel {
+            #journey .story-panel {
                 padding: 5rem 1.2rem;
             }
-            #mindbodylab-full-story-section .story-panel h2 {
+            #journey .story-panel h2 {
                 font-size: 2rem;
             }
-            #mindbodylab-full-story-section .story-panel p {
+            #journey .story-panel p {
                 font-size: 1rem;
             }
-            #mindbodylab-full-story-section .final-conclusion {
+            #journey .final-conclusion {
                 font-size: 2.2rem;
             }
-            #mindbodylab-full-story-section .recommendation {
+            #journey .recommendation {
                 font-size: 1.8rem;
             }
         }
@@ -697,7 +697,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const storyContents = document.querySelectorAll('#mindbodylab-full-story-section .story-panel-content');
+            const storyContents = document.querySelectorAll('#journey .story-panel-content');
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
@@ -726,7 +726,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             background-color: #fdfdfd;
             word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
         }
-        #mindbodylab-explanation-section .info-panel {
+        #principle .info-panel {
             padding: 5rem 1.5rem;
             display: flex;
             justify-content: center;
@@ -735,26 +735,26 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             text-align: center;
             overflow: hidden;
         }
-        #mindbodylab-explanation-section .info-panel.dark {
+        #principle .info-panel.dark {
             background-color: #1f2428;
             color: #e8e8e8;
         }
-        #mindbodylab-explanation-section .info-panel.light {
+        #principle .info-panel.light {
             background-color: #fdfdfd;
             color: #333;
         }
-        #mindbodylab-explanation-section .info-panel-content {
+        #principle .info-panel-content {
             max-width: 800px;
             width: 100%;
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease-out, transform 0.8s ease-out;
         }
-        #mindbodylab-explanation-section .info-panel-content.is-visible {
+        #principle .info-panel-content.is-visible {
             opacity: 1;
             transform: translateY(0);
         }
-        #mindbodylab-explanation-section .sub-heading {
+        #principle .sub-heading {
             font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 2.5rem;
@@ -762,46 +762,46 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             display: inline-block;
             border-bottom: 2px solid;
         }
-        #mindbodylab-explanation-section .info-panel.dark .sub-heading {
+        #principle .info-panel.dark .sub-heading {
             border-color: #e8e8e8;
         }
-        #mindbodylab-explanation-section .info-panel.light .sub-heading {
+        #principle .info-panel.light .sub-heading {
             border-color: #333;
         }
-        #mindbodylab-explanation-section .main-text {
+        #principle .main-text {
             font-size: 1.8rem;
             font-weight: 500;
             line-height: 1.7;
             margin-top: 2rem;
         }
-        #mindbodylab-explanation-section .main-text + .main-text {
+        #principle .main-text + .main-text {
              margin-top: 2.5rem;
         }
-        #mindbodylab-explanation-section .sub-text {
+        #principle .sub-text {
             font-size: 1.2rem;
             font-weight: 400;
             line-height: 1.8;
             margin-top: 2rem;
             color: #5a5a5a;
         }
-        #mindbodylab-explanation-section .info-panel.dark .sub-text {
+        #principle .info-panel.dark .sub-text {
              color: #b0b0b0;
         }
-        #mindbodylab-explanation-section .text-red {
+        #principle .text-red {
             color: #e74c3c;
             font-weight: 600;
         }
-        #mindbodylab-explanation-section .toc-list {
+        #principle .toc-list {
             list-style: none;
             padding: 0;
             margin-top: 2rem;
         }
-        #mindbodylab-explanation-section .toc-list li {
+        #principle .toc-list li {
             font-size: 1.5rem;
             font-weight: 500;
             margin-bottom: 1rem;
         }
-        #mindbodylab-explanation-section .highlight-box-yellow {
+        #principle .highlight-box-yellow {
             background-color: #ffeb3b;
             color: #333;
             padding: 1.5rem;
@@ -809,81 +809,81 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             border-radius: 8px;
             display: inline-block;
         }
-        #mindbodylab-explanation-section .highlight-box-yellow p {
+        #principle .highlight-box-yellow p {
             margin: 0;
             font-size: 1.3rem;
             font-weight: 600;
         }
-        #mindbodylab-explanation-section .point-list {
+        #principle .point-list {
             list-style: none;
             padding: 0;
             margin-top: 2.5rem;
             text-align: left;
             display: inline-block;
         }
-        #mindbodylab-explanation-section .point-list li {
+        #principle .point-list li {
             font-size: 1.5rem;
             font-weight: 500;
             line-height: 1.7;
         }
-        #mindbodylab-explanation-section .point-list li + li {
+        #principle .point-list li + li {
             margin-top: 2rem;
         }
-        #mindbodylab-explanation-section .profile-name {
+        #principle .profile-name {
             font-size: 3rem;
             font-weight: 900;
             margin-bottom: 1rem;
         }
-        #mindbodylab-explanation-section .profile-subtitle {
+        #principle .profile-subtitle {
             font-size: 1.5rem;
             color: #ccc;
             margin-bottom: 3rem;
         }
-        #mindbodylab-explanation-section .license-list {
+        #principle .license-list {
             list-style: none;
             padding: 0;
             margin: 0;
         }
-        #mindbodylab-explanation-section .license-list li {
+        #principle .license-list li {
             margin-bottom: 1.5rem;
         }
-        #mindbodylab-explanation-section .license-title {
+        #principle .license-title {
             font-size: 1.6rem;
             font-weight: 700;
             display: block;
         }
-        #mindbodylab-explanation-section .license-issuer {
+        #principle .license-issuer {
             font-size: 1rem;
             color: #bbb;
             display: block;
         }
         @media (max-width: 768px) {
-            #mindbodylab-explanation-section .info-panel {
+            #principlen .info-panel {
                 padding: 4rem 1.2rem;
             }
-            #mindbodylab-explanation-section .sub-heading {
+            #principle .sub-heading {
                 font-size: 2rem;
             }
-            #mindbodylab-explanation-section .main-text,
-            #mindbodylab-explanation-section .point-list li {
+            #principle .main-text,
+            #principle .point-list li {
                 font-size: 1.3rem;
             }
-            #mindbodylab-explanation-section .sub-text {
+            #principle .sub-text {
                 font-size: 1rem;
             }
-            #mindbodylab-explanation-section .toc-list li {
+            #principle .toc-list li {
                 font-size: 1.2rem;
             }
-            #mindbodylab-explanation-section .highlight-box-yellow p {
+            #principle .highlight-box-yellow p {
                 font-size: 1.1rem;
             }
-            #mindbodylab-explanation-section .profile-name {
+            #principle .profile-name {
                 font-size: 2.5rem;
             }
-            #mindbodylab-explanation-section .profile-subtitle {
+            #principle .profile-subtitle {
                 font-size: 1.2rem;
             }
-            #mindbodylab-explanation-section .license-title {
+            #principle .license-title {
                 font-size: 1.3rem;
             }
         }
@@ -1157,7 +1157,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            const infoContents = document.querySelectorAll('#mindbodylab-explanation-section .info-panel-content, #mindbodylab-benefits-section .info-panel-content');
+            const infoContents = document.querySelectorAll('#principle .info-panel-content, #mindbodylab-benefits-section .info-panel-content');
             if ('IntersectionObserver' in window) {
                 const observer = new IntersectionObserver((entries, observer) => {
                     entries.forEach(entry => {
