@@ -540,9 +540,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </a>
 
-    <script>
+   <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // --- 1. 햄버거 메뉴 기능 (기존 기능 포함) ---
+        
+        // --- 1. 기존 햄버거 메뉴 기능 (그대로 둡니다) ---
         const hamburgerMenu = document.getElementById('hamburgerMenu');
         const mobileNavOverlay = document.getElementById('mobileNavOverlay');
         const closeMenu = document.getElementById('closeMenu');
@@ -562,66 +563,27 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             if (event.target === mobileNavOverlay) closeMobileMenu();
         });
 
-        // --- 2. 스크롤 스파이 기능 (새로운 기능) ---
-        // 필요한 요소들을 모두 선택합니다.
+
+        // --- 2. 스크롤 스파이 기능 (그대로 둡니다) ---
         const navLinks = document.querySelectorAll('#side-nav a, .mobile-nav-overlay a[href^="#"]');
         const sections = document.querySelectorAll('div[id], footer[id]');
         const header = document.querySelector('header');
-        const headerOffset = header ? header.offsetHeight + 20 : 80; // 헤더 높이 + 약간의 여유
+        const headerOffset = header ? header.offsetHeight + 20 : 80;
 
-        // 모바일 메뉴의 링크를 클릭했을 때 메뉴가 닫히도록 합니다.
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                if (mobileNavOverlay.classList.contains('active')) {
-                    closeMobileMenu();
-                }
-            });
-        });
-
-        // 스크롤 위치를 감지하여 현재 보이는 섹션을 알아내는 함수입니다.
         const scrollSpyHandler = () => {
             let currentSectionId = '';
             const scrollPosition = window.scrollY + headerOffset;
-
             sections.forEach(section => {
-                // 현재 스크롤 위치가 섹션의 시작과 끝 사이에 있는지 확인합니다.
                 if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
                     currentSectionId = section.getAttribute('id');
                 }
             });
-
-// ===============================================
-// ===== 플로팅 목차 토글 기능 (새로 추가) =====
-// ===============================================
-const tocContainer = document.getElementById('floating-toc-container');
-const tocToggleButton = document.getElementById('toc-toggle-button');
-const tocLinks = document.querySelectorAll('#side-nav a');
-
-if (tocToggleButton) {
-    // 햄버거 버튼 클릭 시 컨테이너에 'is-open' 클래스 추가/제거
-    tocToggleButton.addEventListener('click', function() {
-        tocContainer.classList.toggle('is-open');
-    });
-
-    // 목차 안의 링크 클릭 시 목차 닫기
-    tocLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            tocContainer.classList.remove('is-open');
-        });
-    });
-}
-
-
-            
-            // 페이지 맨 아래로 스크롤했을 때 마지막 메뉴(오시는 길)가 활성화되도록 합니다.
             const lastSection = sections[sections.length - 1];
             if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
                 if (lastSection) {
                     currentSectionId = lastSection.getAttribute('id');
                 }
             }
-
-            // 모든 링크의 'active' 클래스를 제거한 후, 현재 섹션에 해당하는 링크에만 추가합니다.
             navLinks.forEach(link => {
                 link.classList.remove('active');
                 if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSectionId) {
@@ -629,10 +591,35 @@ if (tocToggleButton) {
                 }
             });
         };
-
-        // 페이지가 로드되거나 스크롤될 때마다 위의 함수를 실행합니다.
         window.addEventListener('scroll', scrollSpyHandler);
         window.addEventListener('load', scrollSpyHandler);
+        // 스크롤 스파이 메뉴 클릭 시 햄버거 메뉴 닫기
+        const allMobileLinks = mobileNavOverlay.querySelectorAll('a');
+        allMobileLinks.forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+
+
+        // =======================================================
+        // ===== 플로팅 목차 토글 기능 (여기에 새로 추가된 부분) =====
+        // =======================================================
+        const tocContainer = document.getElementById('floating-toc-container');
+        const tocToggleButton = document.getElementById('toc-toggle-button');
+        const tocLinks = document.querySelectorAll('#side-nav a');
+
+        if (tocToggleButton && tocContainer) {
+            // 햄버거 버튼 클릭 시 컨테이너에 'is-open' 클래스 추가/제거
+            tocToggleButton.addEventListener('click', function() {
+                tocContainer.classList.toggle('is-open');
+            });
+
+            // 목차 안의 링크 클릭 시 목차 닫기
+            tocLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    tocContainer.classList.remove('is-open');
+                });
+            });
+        }
     });
 </script>
 
