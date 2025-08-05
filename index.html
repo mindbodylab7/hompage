@@ -540,85 +540,90 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </a>
 
-   <script>
+<script>
     document.addEventListener('DOMContentLoaded', function() {
-        
-        // --- 1. 기존 햄버거 메뉴 기능 (그대로 둡니다) ---
+
+        // --- 1. 메인 햄버거 메뉴 기능 ---
         const hamburgerMenu = document.getElementById('hamburgerMenu');
         const mobileNavOverlay = document.getElementById('mobileNavOverlay');
         const closeMenu = document.getElementById('closeMenu');
+        if (hamburgerMenu && mobileNavOverlay && closeMenu) {
+            const closeMobileMenu = () => {
+                mobileNavOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            };
+            hamburgerMenu.addEventListener('click', () => {
+                mobileNavOverlay.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+            closeMenu.addEventListener('click', closeMobileMenu);
+            mobileNavOverlay.addEventListener('click', (event) => {
+                if (event.target === mobileNavOverlay) closeMobileMenu();
+            });
+            const allMobileLinks = mobileNavOverlay.querySelectorAll('a');
+            allMobileLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        }
 
-        hamburgerMenu.addEventListener('click', () => {
-            mobileNavOverlay.classList.add('active');
-            document.body.style.overflow = 'hidden';
-        });
-
-        const closeMobileMenu = () => {
-            mobileNavOverlay.classList.remove('active');
-            document.body.style.overflow = '';
-        };
-
-        closeMenu.addEventListener('click', closeMobileMenu);
-        mobileNavOverlay.addEventListener('click', (event) => {
-            if (event.target === mobileNavOverlay) closeMobileMenu();
-        });
-
-
-        // --- 2. 스크롤 스파이 기능 (그대로 둡니다) ---
+        // --- 2. 스크롤 스파이 기능 ---
         const navLinks = document.querySelectorAll('#side-nav a, .mobile-nav-overlay a[href^="#"]');
         const sections = document.querySelectorAll('div[id], footer[id]');
         const header = document.querySelector('header');
-        const headerOffset = header ? header.offsetHeight + 20 : 80;
-
-        const scrollSpyHandler = () => {
-            let currentSectionId = '';
-            const scrollPosition = window.scrollY + headerOffset;
-            sections.forEach(section => {
-                if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                    currentSectionId = section.getAttribute('id');
-                }
-            });
-            const lastSection = sections[sections.length - 1];
-            if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50) {
-                if (lastSection) {
+        if (sections.length > 0 && navLinks.length > 0) {
+            const headerOffset = header ? header.offsetHeight + 20 : 80;
+            const scrollSpyHandler = () => {
+                let currentSectionId = '';
+                const scrollPosition = window.scrollY + headerOffset;
+                sections.forEach(section => {
+                    if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
+                        currentSectionId = section.getAttribute('id');
+                    }
+                });
+                const lastSection = sections[sections.length - 1];
+                if (lastSection && (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)) {
                     currentSectionId = lastSection.getAttribute('id');
                 }
-            }
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSectionId) {
-                    link.classList.add('active');
-                }
-            });
-        };
-        window.addEventListener('scroll', scrollSpyHandler);
-        window.addEventListener('load', scrollSpyHandler);
-        // 스크롤 스파이 메뉴 클릭 시 햄버거 메뉴 닫기
-        const allMobileLinks = mobileNavOverlay.querySelectorAll('a');
-        allMobileLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSectionId) {
+                        link.classList.add('active');
+                    }
+                });
+            };
+            window.addEventListener('scroll', scrollSpyHandler);
+            window.addEventListener('load', scrollSpyHandler);
+        }
 
-
-        // =======================================================
-        // ===== 플로팅 목차 토글 기능 (여기에 새로 추가된 부분) =====
-        // =======================================================
+        // --- 3. 플로팅 목차 토글 기능 ---
         const tocContainer = document.getElementById('floating-toc-container');
         const tocToggleButton = document.getElementById('toc-toggle-button');
         const tocLinks = document.querySelectorAll('#side-nav a');
-
         if (tocToggleButton && tocContainer) {
-            // 햄버거 버튼 클릭 시 컨테이너에 'is-open' 클래스 추가/제거
             tocToggleButton.addEventListener('click', function() {
                 tocContainer.classList.toggle('is-open');
             });
-
-            // 목차 안의 링크 클릭 시 목차 닫기
             tocLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     tocContainer.classList.remove('is-open');
                 });
             });
+        }
+
+        // --- 4. 스크롤 애니메이션 기능 ---
+        const animatedContents = document.querySelectorAll('.story-panel-content, .info-panel-content');
+        if (animatedContents.length > 0 && 'IntersectionObserver' in window) {
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            animatedContents.forEach(content => observer.observe(content));
+        } else if (animatedContents.length > 0) {
+            animatedContents.forEach(content => content.classList.add('is-visible'));
         }
     });
 </script>
@@ -812,25 +817,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <h2 class="recommendation">때문에 기존의 심리상담이나<br>해결을 위해 받아본 여러 가지 방법들의<br>효과가 부족했다고<br>느끼시는 분들에게 권합니다.</h2>
         </div>
     </div>
-    
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const storyContents = document.querySelectorAll('#journey .story-panel-content');
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                storyContents.forEach(content => observer.observe(content));
-            } else {
-                storyContents.forEach(content => content.classList.add('is-visible'));
-            }
-        });
-    </script>
 </div>
 
 <!-- ===== 2부: 정보 안내 섹션 ===== -->
@@ -1272,25 +1258,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ul>
         </div>
     </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const infoContents = document.querySelectorAll('#principle .info-panel-content, #mindbodylab-benefits-section .info-panel-content');
-            if ('IntersectionObserver' in window) {
-                const observer = new IntersectionObserver((entries, observer) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            entry.target.classList.add('is-visible');
-                            observer.unobserve(entry.target);
-                        }
-                    });
-                }, { threshold: 0.1 });
-                infoContents.forEach(content => observer.observe(content));
-            } else {
-                infoContents.forEach(content => content.classList.add('is-visible'));
-            }
-        });
-    </script>
 </div>
 
 
