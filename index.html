@@ -516,7 +516,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- 이 섹션에만 적용되는 독립적인 스타일 -->
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-        #mindbodylab-full-story-section {
+        #journey {
             width: 100%;
             font-family: 'Noto Sans KR', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -718,7 +718,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- ===== 2부: 정보 안내 섹션 ===== -->
 <div id="principle">
     <style>
-        #mindbodylab-explanation-section {
+        #principle {
             width: 100%;
             font-family: 'Noto Sans KR', sans-serif;
             -webkit-font-smoothing: antialiased;
@@ -1084,7 +1084,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="main-text">이로 인하여<br><span class="text-red">심리적 문제를<br>스스로 치유하게 합니다.</span></p>
         </div>
     </div>
-    <div class="guide">
+    <div id="guide" class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
             <ul class="point-list" style="color: #e8e8e8;">
@@ -1122,7 +1122,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad;">당신의 마음을 찾아가는 여정,<br>최면 전문 상담가 : 김현준 센터장</p>
         </div>
     </div>
-    <div class="director">
+    <div id="director" class="info-panel dark">
         <div class="info-panel-content">
             <h2 class="profile-name">김현준 센터장</h2>
             <p class="profile-subtitle">보유 라이센스 및 이수 프로그램</p>
@@ -1183,41 +1183,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <i class="fas fa-comment-dots"></i>
     </div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const hamburgerMenu = document.getElementById('hamburgerMenu');
-            const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-            const closeMenu = document.getElementById('closeMenu');
 
-            hamburgerMenu.addEventListener('click', function() {
-                mobileNavOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-
-            closeMenu.addEventListener('click', function() {
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            });
-
-            mobileNavOverlay.addEventListener('click', function(event) {
-                if (event.target === mobileNavOverlay) {
-                    mobileNavOverlay.classList.remove('active');
-                    document.body.style.overflow = '';
-                }
-            });
-
-            const allNavLinks = document.querySelectorAll('nav ul li a');
-            allNavLinks.forEach(link => {
-                // 외부 링크가 아닌, 페이지 내부 링크(#)에만 이벤트 적용
-                if (link.getAttribute('href').startsWith('#')) {
-                    link.addEventListener('click', function() {
-                        mobileNavOverlay.classList.remove('active');
-                        document.body.style.overflow = '';
-                    });
-                }
-            });
-        });
-    </script>
 
 <!-- =============================================== -->
 <!-- ===== 웹사이트 푸터 (Footer) 섹션 ===== -->
