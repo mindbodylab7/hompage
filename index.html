@@ -1,248 +1,47 @@
-
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-NXVLC5NW');</script>
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>마인드바디랩 최면상담센터</title>
-    <meta name="description" content="마인드바디랩 최면상담센터. 전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험 등 마음의 치유를 돕습니다. 전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 지금 상담을 예약하세요.">
+    <meta name="description"
+        content="마인드바디랩 최면상담센터. 전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험 등 마음의 치유를 돕습니다. 전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 지금 상담을 예약하세요.">
     <meta name="keywords" content="최면상담, 심리상담, 최면치료, 마인드바디랩, 전생체험, 심리치유, 트라우마 상담, 무의식, 내면아이, 전생최면, 최면전생, 최면체험">
     <link rel="shortcut icon" href="/favicon.ico">
     <link rel="apple-touch-icon" href="/images/favicon.ico">
     <meta property="og:title" content="마인드바디랩 최면상담센터">
-    <meta property="og:description" content="전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 전문 최면 상담을 통해 마음의 문제를 치유합니다.">
+    <meta property="og:description"
+        content="전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 전문 최면 상담을 통해 마음의 문제를 치유합니다.">
     <meta property="og:image" content="https://www.mindbodylab.kr/images/og-image.png">
     <meta property="og:url" content="https://www.mindbodylab.kr">
     <meta property="og:type" content="website">
 
+    <!-- 크리티컬 CSS - 즉시 렌더링을 위한 인라인 스타일 -->
     <style>
-
-        /* 이 스타일 블록은 아래 버튼 위젯에만 적용됩니다. */
-        .booking-widget-container {
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
-            font-family: 'Noto Sans KR', sans-serif;
-        }
-
-        .booking-widget {
-            max-width: 600px;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
+        /* 기본 리셋 및 폰트 */
+        * {
+            margin: 0;
+            padding: 0;
             box-sizing: border-box;
         }
 
-        .booking-widget .location-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-grow: 1;
-        }
-        
-        .booking-widget .location-icon svg {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 80px;
         }
 
-        .booking-widget .location-text h4 {
-            margin: 0 0 4px 0;
-            font-size: 16px;
-            font-weight: 600;
-            color: #222;
-        }
-
-        .booking-widget .location-text p {
-            margin: 0;
-            font-size: 13px;
-            color: #666;
-        }
-
-        .booking-widget .booking-buttons {
-            flex-shrink: 0;
-        }
-
-        /* ✅ [수정됨] 새로운 '모던 스타일' 버튼 CSS */
-        .btn-modern-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: transparent;
-            color: #333;
-            padding: 12px 24px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .btn-modern-ghost:hover {
-            background-color: #333;
-            color: #fff;
-        }
-        
-        /* 모바일 화면 대응 */
-        @media (max-width: 500px) {
-            .booking-widget {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            .booking-buttons {
-                width: 100%; /* 모바일에서 버튼이 꽉 차도록 설정 */
-            }
-            .btn-modern-ghost {
-                width: 100%; /* 버튼 내부 컨텐츠도 꽉 차도록 */
-                justify-content: center; /* 버튼 안의 텍스트와 아이콘을 중앙 정렬 */
-                box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 */
-            }
-        }       
-        
-        
-/* =============================================== */
-/* ===== 플로팅 목차 (PC/모바일 반응형) ===== */
-/* =============================================== */
-
-/* --- 1. PC 화면 스타일 (화면이 1201px 이상일 때) --- */
-@media (min-width: 1201px) {
-    /* 모바일용 햄버거 버튼은 숨김 */
-    #toc-toggle-button {
-        display: none;
-    }
-
-    /* 목차 리스트를 항상 표시 */
-    #side-nav {
-        position: fixed;
-        top: 120px;
-        left: 40px;
-        padding: 15px 20px;
-        z-index: 999;
-        background-color: rgba(255, 255, 255, 0.7);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.2);
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-        opacity: 0.7;
-        transition: opacity 0.3s ease;
-    }
-
-    #side-nav:hover {
-        opacity: 1;
-    }
-}
-
-
-/* --- 2. 모바일 화면 스타일 (화면이 1200px 이하일 때) --- */
-@media (max-width: 1200px) {
-    /* 컨테이너의 위치 지정 */
-    #floating-toc-container {
-        position: fixed;
-        top: 100px;
-        left: 20px;
-        z-index: 1001;
-    }
-
-    /* 햄버거 버튼 스타일 */
-    #toc-toggle-button {
-        width: 45px;
-        height: 45px;
-        background-color: #fff;
-        border: 1px solid #eee;
-        border-radius: 50%;
-        box-shadow: 0 2px 10px rgba(0,0,0,0.15);
-        cursor: pointer;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 18px;
-        color: #333;
-    }
-    
-    /* 목차 리스트는 평소에 숨김 */
-    #side-nav {
-        display: none; /* 일단 숨겨둠 */
-        padding: 15px 20px;
-        margin-top: 10px;
-        background-color: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-        border: 1px solid rgba(255, 255, 255, 0.3);
-        border-radius: 12px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* 컨테이너가 is-open 클래스를 가질 때 목차를 표시 */
-    #floating-toc-container.is-open #side-nav {
-        display: block;
-    }
-}
-
-
-/* --- 3. 공통 스타일 (PC/모바일 모두 적용) --- */
-#side-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-#side-nav ul li a {
-    display: block;
-    padding: 8px 10px;
-    margin-bottom: 5px;
-    text-decoration: none;
-    font-size: 14px;
-    font-weight: 500;
-    color: #555;
-    border-left: 3px solid transparent;
-    transition: all 0.3s ease;
-    white-space: nowrap;
-}
-#side-nav ul li a:hover {
-    color: #000;
-    background-color: rgba(255, 255, 255, 0.5);
-}
-#side-nav ul li a.active {
-    color: #007bff;
-    font-weight: 700;
-    border-left: 3px solid #007bff;
-}       
-
-        
-        /* ===== 아래 코드를 복사해서 <style> 태그 맨 위에 붙여넣으세요 ===== */
-html {
-    scroll-behavior: smooth;
-    /* 스티키 헤더의 높이를 고려하여 스크롤 후 제목이 가려지지 않게 합니다. */
-    scroll-padding-top: 80px;
-}
-
-/* 스크롤 위치에 따라 활성화된 메뉴 링크에 적용될 스타일입니다. */
-.desktop-nav ul li a.active,
-.mobile-nav-overlay nav ul li a.active {
-    color: #007bff;
-    font-weight: 700;
-}
-        
-        /* 기본 스타일 */
         body {
             margin: 0;
-            font-family: 'Noto Sans KR', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
             color: #333;
             line-height: 1.6;
             overflow-x: hidden;
+            background-color: #fdfdfd;
+            /* 전역 자연스러운 줄바꿈 설정 */
+            word-break: keep-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
         }
 
         a {
@@ -256,7 +55,7 @@ html {
             padding: 0;
         }
 
-        /* 헤더 스타일 */
+        /* 헤더 - 즉시 표시 */
         header {
             display: flex;
             justify-content: space-between;
@@ -264,15 +63,11 @@ html {
             padding: 15px 30px;
             background-color: #fff;
             border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            
-            /* --- 수정된 부분 --- */
-            position: sticky; /* 스크롤을 내려도 고정되도록 변경 */
-            top: 0;           /* 화면 맨 위에 붙도록 설정 */
-            width: 100%;      /* 고정되었을 때 너비를 꽉 채움 */
-            box-sizing: border-box; /* 패딩이 너비에 영향을 주지 않도록 설정 */
-            /* --- 수정 끝 --- */
-
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
             z-index: 1000;
         }
 
@@ -290,7 +85,6 @@ html {
             margin-right: 10px;
         }
 
-        /* 데스크톱 내비게이션 */
         .desktop-nav ul {
             display: flex;
             align-items: center;
@@ -317,7 +111,6 @@ html {
             color: #007bff;
         }
 
-        /* 햄버거 메뉴 아이콘 (모바일에서만 표시) */
         .hamburger-menu {
             display: none;
             background: none;
@@ -329,68 +122,7 @@ html {
             z-index: 1100;
         }
 
-        /* 모바일 내비게이션 오버레이 */
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -5px 0 15px rgba(0,0,0,0.2);
-            transition: right 0.3s ease-in-out;
-            z-index: 1050;
-            display: flex;
-            flex-direction: column;
-            padding-top: 60px;
-        }
-
-        .mobile-nav-overlay.active {
-            right: 0;
-        }
-
-        .mobile-nav-overlay .close-menu {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: #555;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .mobile-nav-overlay nav ul {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .mobile-nav-overlay nav ul li {
-            margin-bottom: 15px;
-        }
-
-        .mobile-nav-overlay nav ul li:last-child {
-            margin-bottom: 0;
-        }
-
-        .mobile-nav-overlay nav ul li a {
-            font-size: 18px;
-            font-weight: 500;
-            color: #333;
-            padding: 10px 0;
-            display: block;
-            transition: color 0.3s ease;
-        }
-
-        .mobile-nav-overlay nav ul li a:hover {
-            color: #007bff;
-        }
-
-        /* 메인 히어로 섹션 */
+        /* 메인 히어로 - 즉시 표시 */
         .main-hero {
             background-color: #e0e0e0;
             padding: 40px 20px;
@@ -444,7 +176,7 @@ html {
             margin-top: 10px;
         }
 
-        /* 소개 섹션 */
+        /* 소개 섹션 - 즉시 표시 */
         .section-intro {
             padding: 80px 20px;
             text-align: center;
@@ -466,31 +198,110 @@ html {
             margin: 0 auto;
         }
 
-        /* 채팅 버블 */
-        .chat-bubble {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffeb3b;
-            color: #333;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
+        /* 고민 이야기 섹션 - 즉시 표시 */
+        #journey {
+            width: 100%;
+            background-color: #fdfdfd;
+            word-break: keep-all;
+        }
+
+        #journey .story-panel {
+            padding: 7rem 1.5rem;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            cursor: pointer;
-            z-index: 100;
-            transition: transform 0.3s ease;
+            box-sizing: border-box;
+            text-align: center;
         }
 
-        .chat-bubble:hover {
-            transform: scale(1.1);
+        #journey .story-panel.dark {
+            background-color: #1f2428;
+            color: #e8e8e8;
         }
 
-        /* 반응형 디자인 */
+        #journey .story-panel.light {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        #journey .story-panel-content {
+            max-width: 800px;
+            width: 100%;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        #journey .story-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #journey .story-panel h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0;
+        }
+
+        #journey .story-panel p {
+            font-size: 1.2rem;
+            font-weight: 400;
+            line-height: 1.8;
+            margin: 1.5rem auto 0 auto;
+            max-width: 90%;
+            color: #5a5a5a;
+        }
+
+        #journey .story-panel.dark p {
+            color: #b0b0b0;
+        }
+
+        #journey .story-panel h2.quote {
+            font-size: 1.6rem;
+            font-weight: 500;
+            color: #999;
+            line-height: 1.7;
+        }
+
+        #journey .highlight-text {
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        #journey .highlight-text::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            opacity: 0.6;
+        }
+
+        #journey .story-panel.light .highlight-text::after {
+            background-color: #ffde59;
+        }
+
+        #journey .story-panel.dark .highlight-text::after {
+            background-color: #59d4ff;
+        }
+
+        #journey .final-conclusion {
+            font-size: 2.8rem;
+            font-weight: 900;
+            color: #0056b3;
+        }
+
+        #journey .recommendation {
+            font-size: 2.2rem;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+
+        /* 모바일 반응형 - 즉시 적용 */
         @media (max-width: 768px) {
             .desktop-nav {
                 display: none;
@@ -508,45 +319,696 @@ html {
                 padding: 30px 20px;
                 min-height: 200px;
             }
+
             .main-hero h1 {
                 font-size: 28px;
             }
+
             .main-hero .keywords {
                 font-size: 14px;
             }
+
             .main-hero .logo-img-placeholder {
                 width: 100px;
                 height: 70px;
                 margin-bottom: 10px;
             }
+
+            #journey .story-panel {
+                padding: 5rem 1.2rem;
+            }
+
+            #journey .story-panel h2 {
+                font-size: 1.4rem;
+            }
+
+            #journey .story-panel p {
+                font-size: 1rem;
+            }
+
+            #journey .final-conclusion {
+                font-size: 2.2rem;
+            }
+
+            #journey .recommendation {
+                font-size: 1.8rem;
+            }
+        }
+
+        /* 추가 섹션 스타일 - 즉시 표시 */
+        .info-panel {
+            padding: 5rem 1.5rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            text-align: center;
+        }
+
+        .info-panel.dark {
+            background-color: #1f2428;
+            color: #e8e8e8;
+        }
+
+        .info-panel.light {
+            background-color: #fdfdfd;
+            color: #333;
+        }
+
+        .info-panel-content {
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .info-panel-content.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .sub-heading {
+            font-size: 2.5rem;
+            font-weight: 700;
+            line-height: 1.4;
+            margin: 0 0 2rem 0;
+            border-bottom: 3px solid #007bff;
+            padding-bottom: 1rem;
+            text-align: center;
+            color: #333;
+        }
+
+        .info-panel.dark .sub-heading {
+            color: #e8e8e8 !important;
+            border-bottom-color: #59d4ff;
+        }
+
+        .info-panel.light .sub-heading {
+            color: #333 !important;
+            border-bottom-color: #007bff;
+        }
+
+        .main-text {
+            font-size: 1.4rem;
+            font-weight: 500;
+            line-height: 1.6;
+            margin: 1.5rem 0;
+            text-align: center;
+            color: #333;
+        }
+
+        .info-panel.dark .main-text {
+            color: #e8e8e8 !important;
+        }
+
+        .info-panel.light .main-text {
+            color: #333 !important;
+        }
+
+        .sub-text {
+            font-size: 1.1rem;
+            font-weight: 400;
+            line-height: 1.7;
+            margin: 1rem 0;
+            text-align: center;
+            color: #666;
+        }
+
+        .info-panel.dark .sub-text {
+            color: #b0b0b0 !important;
+        }
+
+        .info-panel.light .sub-text {
+            color: #666 !important;
+        }
+
+        .text-red {
+            color: #e74c3c;
+            font-weight: 700;
+        }
+
+        .brand-text {
+            font-size: 1.8rem;
+            margin: 1.5rem 0;
+        }
+
+        .highlight-box-yellow {
+            background-color: #fff9c4;
+            border: 2px solid #f1c40f;
+            border-radius: 12px;
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+
+        .highlight-box-yellow p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        /* 예약 위젯 - 즉시 표시 */
+        .booking-widget-container {
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .booking-widget {
+            max-width: 600px;
+            width: 100%;
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 16px;
+            box-sizing: border-box;
+        }
+
+        .booking-widget .location-info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        .booking-widget .location-icon svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .booking-widget .location-text h4 {
+            margin: 0 0 4px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #222;
+        }
+
+        .booking-widget .location-text p {
+            margin: 0;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .booking-widget .booking-buttons {
+            flex-shrink: 0;
+        }
+
+        .btn-modern-ghost {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background-color: transparent;
+            color: #333;
+            padding: 12px 24px;
+            border: 2px solid #333;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .btn-modern-ghost:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 채팅 버블 - 즉시 표시 */
+        .chat-bubble {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #ffeb3b;
+            color: #333;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            z-index: 100;
+            transition: transform 0.3s ease;
+        }
+
+        .chat-bubble:hover {
+            transform: scale(1.1);
+        }
+
+        /* 상담 리스트 */
+        .consultation-list {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+            text-align: left;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .consultation-list li {
+            padding: 0.8rem 1rem;
+            margin: 0.5rem 0;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            border-left: 4px solid #59d4ff;
+        }
+
+        /* 프로그램 그리드 */
+        .program-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .program-card {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .program-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .program-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin: 0 0 1rem 0;
+            color: #59d4ff;
+        }
+
+        .program-card p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin: 0;
+        }
+
+        /* 센터장 프로필 */
+        .director-profile {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 3rem;
+            align-items: center;
+            text-align: left;
+            margin: 3rem 0;
+        }
+
+        .profile-image {
+            display: flex;
+            justify-content: center;
+        }
+
+        .profile-image img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #007bff;
+        }
+
+        .profile-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            color: #007bff;
+        }
+
+        .credentials {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #007bff;
+        }
+
+        .license-item {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #e9ecef;
+        }
+
+        .license-item:last-child {
+            margin-bottom: 0;
+            border-bottom: none;
+        }
+
+        .license-title {
+            display: block;
+            font-size: 1.2rem;
+            font-weight: 700;
+            color: #007bff;
+            margin-bottom: 0.5rem;
+        }
+
+        .license-issuer {
+            display: block;
+            font-size: 0.95rem;
+            color: #6c757d;
+            font-style: italic;
+        }
+
+        .message {
+            font-size: 1.2rem;
+            font-style: italic;
+            line-height: 1.7;
+            margin: 2rem 0;
+            padding: 2rem;
+            background-color: #e3f2fd;
+            border-radius: 12px;
+            color: #1565c0;
+            font-weight: 500;
+        }
+
+        /* 연락처 정보 */
+        .contact-info {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin: 3rem 0;
+            text-align: left;
+        }
+
+        .address-info h3 {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 0 0 1.5rem 0;
+            color: #59d4ff;
+        }
+
+        .address-info p {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin: 0.8rem 0;
+        }
+
+        .address {
+            font-weight: 600;
+            color: #e8e8e8;
+        }
+
+        .phone {
+            color: #59d4ff;
+            font-weight: 600;
+        }
+
+        .hours {
+            color: #b0b0b0;
+        }
+
+        .map-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .map-placeholder {
+            width: 100%;
+            height: 200px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 2px dashed #59d4ff;
+        }
+
+        .map-placeholder p {
+            color: #59d4ff;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        /* 모바일 반응형 - 추가 섹션들 */
+        @media (max-width: 768px) {
+            .info-panel {
+                padding: 3rem 1.2rem;
+            }
+
+            .sub-heading {
+                font-size: 1.8rem;
+            }
+
+            .main-text {
+                font-size: 1.2rem;
+            }
+
+            .sub-text {
+                font-size: 1rem;
+            }
+
+            .booking-widget {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .booking-buttons {
+                width: 100%;
+            }
+
+            .btn-modern-ghost {
+                width: 100%;
+                justify-content: center;
+                box-sizing: border-box;
+            }
+
+            .program-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .director-profile {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .profile-image img {
+                width: 150px;
+                height: 150px;
+            }
+
+            .contact-info {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .consultation-list {
+                text-align: center;
+            }
+
+            .consultation-list li {
+                text-align: left;
+            }
+        }
+
+        /* 모바일 네비게이션 - 즉시 표시 */
+        .mobile-nav-overlay {
+            position: fixed;
+            top: 0;
+            right: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+            transition: right 0.3s ease-in-out;
+            z-index: 1050;
+            display: flex;
+            flex-direction: column;
+            padding-top: 60px;
+        }
+
+        .mobile-nav-overlay.active {
+            right: 0;
+        }
+
+        .mobile-nav-overlay .close-menu {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 28px;
+            color: #555;
+            cursor: pointer;
+            padding: 10px;
+        }
+
+        .mobile-nav-overlay nav ul {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            width: 100%;
+        }
+
+        .mobile-nav-overlay nav ul li {
+            margin-bottom: 15px;
+        }
+
+        .mobile-nav-overlay nav ul li:last-child {
+            margin-bottom: 0;
+        }
+
+        .mobile-nav-overlay nav ul li a {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            padding: 10px 0;
+            display: block;
+            transition: color 0.3s ease;
+        }
+
+        .mobile-nav-overlay nav ul li a:hover {
+            color: #007bff;
+        }
+
+        /* 드롭다운 메뉴 스타일 */
+        .dropdown-menu {
+            position: relative;
+        }
+
+        .dropdown-submenu {
+            position: absolute;
+            left: 100%;
+            top: 0;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+            min-width: 280px;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateX(-10px);
+            transition: all 0.3s ease;
+            z-index: 1002;
+        }
+
+        .dropdown-menu:hover .dropdown-submenu {
+            opacity: 1;
+            visibility: visible;
+            transform: translateX(0);
+        }
+
+        .dropdown-submenu li {
+            margin: 0;
+        }
+
+        .dropdown-submenu li a {
+            padding: 10px 15px;
+            font-size: 12px;
+            color: #333;
+            border-left: none;
+            white-space: nowrap;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .dropdown-submenu li:last-child a {
+            border-bottom: none;
+        }
+
+        .dropdown-submenu li a:hover {
+            background-color: rgba(0, 123, 255, 0.1);
+            color: #007bff;
+        }
+
+        /* 목차 링크 스타일 */
+        .toc-link {
+            color: #59d4ff !important;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .toc-link:hover {
+            color: #ffffff !important;
+            background-color: rgba(89, 212, 255, 0.2);
+        }
+
+        /* 모바일에서 드롭다운 숨김 */
+        @media (max-width: 1200px) {
+            .dropdown-submenu {
+                display: none;
+            }
         }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    
+
+    <!-- 폰트 로딩 (비차단) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap"
+        rel="stylesheet" media="print"
+        onload="this.media='all'; document.body.style.fontFamily='Noto Sans KR, sans-serif';">
+
+    <!-- 추가 CSS (비차단 로딩) -->
+    <link rel="stylesheet" href="css/floating-toc.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        media="print" onload="this.media='all'">
 </head>
+
 <body>
-    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXVLC5NW"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<div id="floating-toc-container">
-    <button id="toc-toggle-button">
-        <i class="fas fa-bars"></i>
-    </button>
-    <nav id="side-nav">
-        <ul>
-            <li><a href="#journey"><span>고민 이야기</span></a></li>
-            <li><a href="#principle"><span>치유 원리</span></a></li>
-            <li><a href="#guide"><span>상담 안내</span></a></li>
-            <li><a href="#director"><span>센터장 소개</span></a></li>
-            <li><a href="#contact"><span>오시는 길</span></a></li>
-        </ul>
-    </nav>
-</div>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXVLC5NW" height="0" width="0"
+            style="display:none;visibility:hidden"></iframe></noscript>
+
+    <!-- 플로팅 목차 -->
+    <div id="floating-toc-container">
+        <button id="toc-toggle-button">
+            <i class="fas fa-bars"></i>
+        </button>
+        <nav id="side-nav">
+            <ul>
+                <li><a href="#journey"><span>고민 이야기</span></a></li>
+                <li class="dropdown-menu">
+                    <a href="#principle"><span>치유 원리</span></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="#principle-1">(1) 최면이란</a></li>
+                        <li><a href="#principle-2">(2) 상담이란</a></li>
+                        <li><a href="#principle-3">(3) 무의식이란</a></li>
+                        <li><a href="#principle-4">(4) 상담에서 무의식의 중요성</a></li>
+                        <li><a href="#principle-5">(5) 최면과 무의식의 관계</a></li>
+                        <li><a href="#principle-6">(6) 최면 상담이어야만 하는 이유</a></li>
+                        <li><a href="#principle-7">(7) 최면 상담 안내</a></li>
+                        <li><a href="#principle-8">(8) 상담 시간과 비용</a></li>
+                        <li><a href="#principle-9">(9) 최면상담사의 메시지</a></li>
+                    </ul>
+                </li>
+                <li><a href="#guide"><span>상담 안내</span></a></li>
+                <li><a href="#director"><span>센터장 소개</span></a></li>
+                <li><a href="#contact"><span>오시는 길</span></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- 헤더 -->
     <header>
         <div class="header-left">
             <a href="#" class="logo">
-                <img src="images/mindbodylab_icon.png" alt="MindbodyLab Icon" onerror="this.onerror=null; this.src='https://placehold.co/100x100?text=Logo';">
-                <span><font color="red">마인드</font><font color="blue">바디</font><font color="orange">랩</font></span>
+                <img src="images/mindbodylab_icon.png" alt="MindbodyLab Icon"
+                    onerror="this.onerror=null; this.src='https://placehold.co/100x100?text=Logo';">
+                <span>
+                    <font color="red">마인드</font>
+                    <font color="blue">바디</font>
+                    <font color="orange">랩</font>
+                </span>
             </a>
         </div>
         <div class="header-right">
@@ -559,17 +1021,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <li><a href="https://m.site.naver.com/1NVtx">클래스/컨텐츠</a></li>
                     <li><a href="https://m.site.naver.com/1NVtW">게시판</a></li>
                     <li><a href="https://m.site.naver.com/1NVux">공지사항</a></li>
-                
                 </ul>
             </nav>
-
-            
             <button class="hamburger-menu" id="hamburgerMenu">
                 <i class="fas fa-bars"></i>
             </button>
         </div>
     </header>
 
+    <!-- 모바일 네비게이션 오버레이 -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay">
         <button class="close-menu" id="closeMenu">
             <i class="fas fa-times"></i>
@@ -583,23 +1043,25 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 <li><a href="https://m.site.naver.com/1NVtx">클래스/컨텐츠</a></li>
                 <li><a href="https://m.site.naver.com/1NVtW">게시판</a></li>
                 <li><a href="https://m.site.naver.com/1NVux">공지사항</a></li>
-            
             </ul>
         </nav>
     </div>
 
+    <!-- 메인 콘텐츠 -->
     <main>
+        <!-- 히어로 섹션 -->
         <section class="main-hero">
             <div class="hero-content">
                 <div class="logo-img-placeholder">
-                    <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지" onerror="this.onerror=null; this.src='https://placehold.co/280x180?text=Logo';">
+                    <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지"
+                        onerror="this.onerror=null; this.src='https://placehold.co/280x180?text=Logo';">
                 </div>
-
                 <h1>최면상담센터</h1>
                 <p class="keywords">심리 / 전생 / 최면 / 상담 / 무의식</p>
             </div>
         </section>
 
+        <!-- 소개 섹션 -->
         <section class="section-intro">
             <h2>마인드바디랩</h2>
             <p>마인드바디랩은 전문 최면상담 센터입니다.</p>
@@ -607,290 +1069,95 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </section>
     </main>
 
-    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link">
-        <div class="chat-bubble">
-            💬
+    <!-- 고민 이야기 섹션 -->
+    <section id="journey">
+        <div class="story-panel dark">
+            <div class="story-panel-content">
+                <h2>정말 잘 살려고 살고 있는데,<br>그 누구보다 성실한데...<br>왜 이런 일들이 내게 일어날까?</h2>
+                <p>오직 나에게만 일어나는 이 일, 이유가 있을까?</p>
+            </div>
         </div>
-    </a>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>"행복하지 못한 저도<br>행복해질 수 있을까요?"</h2>
+                <p>지금보다 더 나은 삶을 살려면 무엇을 어떻게 해야 할까요?<br>누군가 이 고민을 해결할 방법을 알려주면 좋을 텐데...</p>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>이럴 때 좋은 방법 중 하나는<br><span class="highlight-text">내 상황을 잘 아는 사람에게</span><br>고민을 이야기하고 물어보는 것입니다.</h2>
+                <p>진짜 이 고민은 내 상황을 아는 사람만이 제대로 듣고 이해해 줄 수 있으니까요.</p>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>그것도 하나의 방법입니다.<br> 가족과 친구들이 지금의 나를 가장 잘 안다면 말이죠.<br>가족과 친구에게 위로를 받으면 <span class="highlight-text">잠시
+                        마음은 편해지니까요.</span></h2>
+                <p>하지만... 근원적으로 고민은 남아 있을 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="story-panel dark">
+            <div class="story-panel-content">
+                <h2>왜냐하면, 그 친구 그리고 가족과의 대화는 이렇게 될 수 있으니까요.</h2>
+                <h2 class="quote">"아.. 진짜 많이 힘들겠다. 힘내"<br>"나 때도 그랬는데. 이해 돼. 힘내"<br>"그건 너를 얕본 거야. 똑같이 되갚아줘!"<br>"걱정 마. 다
+                    잘될 거야!"</h2>
+            </div>
+        </div>
+        <div class="story-panel dark">
+            <div class="story-panel-content">
+                <h2>이런 위로의 말들은 들을 때는<br>기분이 좋지만,<br>이 대화가 끝나면 <span class="highlight-text">무의식적으로 나도 모르게</span><br>해결된
+                    것이 없다는 생각이 들면서...</h2>
+            </div>
+        </div>
+        <div class="story-panel dark">
+            <div class="story-panel-content">
+                <h2>나를 위해 말해준 이야기들은<br>'나도 다 알고 있었는데…'<br>'무엇을 해야 하지…?'<br>하며 <span class="highlight-text">아무것도 할 수 없는
+                        무력감에</span> 빠지게 됩니다.</h2>
+            </div>
+        </div>
+        <div class="story-panel dark">
+            <div class="story-panel-content">
+                <h2>그 말들이 <span class="highlight-text">내 마음에 와 닿지 않았기 때문</span>입니다.<br>이러지도 저러지도 못하며, 어떠한 선택도 할 수 없기
+                    때문입니다.</h2>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>지금의 나를 가장 잘 아는,<br><span class="highlight-text">나의 무의식에게 답변을 얻는 것</span>이<br>가장 확실합니다.</h2>
+                <p>왜냐하면 나도 모르게, 무의식적으로 내가 힘들어하는 진짜 이유를 무의식은 알고 있기 때문입니다.<br>그렇기 때문에, <span class="highlight-text">무의식은
+                        답을 알고 있습니다.</span></p>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>심리 상담 시 가장 효과적인 방법은<br><span class="highlight-text">내게 문제를 일으키는 원인을 제대로 파악</span>하는 것입니다.</h2>
+                <p>문제의 원인을 찾기 위해 어린 시절로 최면 연령 퇴행을 했을 때,<br>이번 생의 경험이 아닌 <span class="final-conclusion">다른 생의 경험에서<br>원인과
+                        답을</span> 찾을 때가 있습니다.</p>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2>누군가는 전생체험을 통해 <span class="highlight-text">삶의 의미와 정체성을 찾았고</span><br>누군가는 오랜 시간 알 수 없던 <span
+                        class="highlight-text">고통의 원인과 습관을 고쳤습니다.</span></h2>
+                <p>전생 체험과 영성 상담의 가치는 진실이냐 과학이냐가 아닌, 바로 '인간'에 있습니다.</p>
+            </div>
+        </div>
+        <div class="story-panel light">
+            <div class="story-panel-content">
+                <h2 class="recommendation">때문에 기존의 심리상담이나<br>해결을 위해 받아본 여러 가지 방법들의<br>효과가 부족했다고<br>느끼시는 분들에게 권합니다.</h2>
+            </div>
+        </div>
+    </section>
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-
-        // --- 1. 메인 햄버거 메뉴 기능 ---
-        const hamburgerMenu = document.getElementById('hamburgerMenu');
-        const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-        const closeMenu = document.getElementById('closeMenu');
-        if (hamburgerMenu && mobileNavOverlay && closeMenu) {
-            const closeMobileMenu = () => {
-                mobileNavOverlay.classList.remove('active');
-                document.body.style.overflow = '';
-            };
-            hamburgerMenu.addEventListener('click', () => {
-                mobileNavOverlay.classList.add('active');
-                document.body.style.overflow = 'hidden';
-            });
-            closeMenu.addEventListener('click', closeMobileMenu);
-            mobileNavOverlay.addEventListener('click', (event) => {
-                if (event.target === mobileNavOverlay) closeMobileMenu();
-            });
-            const allMobileLinks = mobileNavOverlay.querySelectorAll('a');
-            allMobileLinks.forEach(link => {
-                link.addEventListener('click', closeMobileMenu);
-            });
-        }
-
-        // --- 2. 스크롤 스파이 기능 ---
-        const navLinks = document.querySelectorAll('#side-nav a, .mobile-nav-overlay a[href^="#"]');
-        const sections = document.querySelectorAll('div[id], footer[id]');
-        const header = document.querySelector('header');
-        if (sections.length > 0 && navLinks.length > 0) {
-            const headerOffset = header ? header.offsetHeight + 20 : 80;
-            const scrollSpyHandler = () => {
-                let currentSectionId = '';
-                const scrollPosition = window.scrollY + headerOffset;
-                sections.forEach(section => {
-                    if (section.offsetTop <= scrollPosition && (section.offsetTop + section.offsetHeight) > scrollPosition) {
-                        currentSectionId = section.getAttribute('id');
-                    }
-                });
-                const lastSection = sections[sections.length - 1];
-                if (lastSection && (window.innerHeight + window.scrollY >= document.body.offsetHeight - 50)) {
-                    currentSectionId = lastSection.getAttribute('id');
-                }
-                navLinks.forEach(link => {
-                    link.classList.remove('active');
-                    if (link.getAttribute('href') && link.getAttribute('href').substring(1) === currentSectionId) {
-                        link.classList.add('active');
-                    }
-                });
-            };
-            window.addEventListener('scroll', scrollSpyHandler);
-            window.addEventListener('load', scrollSpyHandler);
-        }
-
-        // --- 3. 플로팅 목차 토글 기능 ---
-        const tocContainer = document.getElementById('floating-toc-container');
-        const tocToggleButton = document.getElementById('toc-toggle-button');
-        const tocLinks = document.querySelectorAll('#side-nav a');
-        if (tocToggleButton && tocContainer) {
-            tocToggleButton.addEventListener('click', function() {
-                tocContainer.classList.toggle('is-open');
-            });
-            tocLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    tocContainer.classList.remove('is-open');
-                });
-            });
-        }
-
-        // --- 4. 스크롤 애니메이션 기능 ---
-        const animatedContents = document.querySelectorAll('.story-panel-content, .info-panel-content');
-        if (animatedContents.length > 0 && 'IntersectionObserver' in window) {
-            const observer = new IntersectionObserver((entries, observer) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.1 });
-            animatedContents.forEach(content => observer.observe(content));
-        } else if (animatedContents.length > 0) {
-            animatedContents.forEach(content => content.classList.add('is-visible'));
-        }
-    });
-</script>
-
-<div id="journey">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700;900&display=swap');
-        #journey {
-            width: 100%;
-            font-family: 'Noto Sans KR', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: #fdfdfd;
-            word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
-        }
-        #journey .story-panel {
-            padding: 7rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-            overflow: hidden;
-        }
-        #journey .story-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-        #journey .story-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-        #journey .story-panel-content {
-            max-width: 800px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        #journey .story-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #journey .story-panel h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin: 0;
-        }
-        #journey .story-panel p {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin: 1.5rem auto 0 auto;
-            max-width: 90%;
-            color: #5a5a5a;
-        }
-        #journey .story-panel.dark p {
-            color: #b0b0b0;
-        }
-        #journey .story-panel h2.quote {
-            font-size: 1.6rem;
-            font-weight: 500;
-            font-style: normal;
-            color: #999;
-            line-height: 1.7;
-        }
-        #journey .highlight-text {
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-        #journey .highlight-text::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            opacity: 0.6;
-        }
-        #journey .story-panel.light .highlight-text::after {
-            background-color: #ffde59;
-        }
-        #journey .story-panel.dark .highlight-text::after {
-            background-color: #59d4ff;
-        }
-        #journey .final-conclusion {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #0056b3;
-        }
-        #journey .recommendation {
-            font-size: 2.2rem;
-            font-weight: 600;
-            line-height: 1.6;
-        }
-        @media (max-width: 768px) {
-            #journey .story-panel {
-                padding: 5rem 1.2rem;
-            }
-            #journey .story-panel h2 {
-                font-size: 1.4rem;
-            }
-            #journey .story-panel p {
-                font-size: 1rem;
-            }
-            #journey .final-conclusion {
-                font-size: 2.2rem;
-            }
-            #journey .recommendation {
-                font-size: 1.8rem;
-            }
-        }
-    </style>
-
-    <div class="story-panel dark">
-        <div class="story-panel-content">
-            <h2>정말 잘 살려고 살고 있는데,<br>그 누구보다 성실한데...<br>왜 이런 일들이 내게 일어날까?</h2>
-            <p>오직 나에게만 일어나는 이 일, 이유가 있을까?</p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>"행복하지 못한 저도<br>행복해질 수 있을까요?"</h2>
-            <p>지금보다 더 나은 삶을 살려면 무엇을 어떻게 해야 할까요?<br>누군가 이 고민을 해결할 방법을 알려주면 좋을 텐데...</p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>이럴 때 좋은 방법 중 하나는<br><span class="highlight-text">내 상황을 잘 아는 사람에게</span><br>고민을 이야기하고 물어보는 것입니다.</h2>
-            <p>진짜 이 고민은 내 상황을 아는 사람만이 제대로 듣고 이해해 줄 수 있으니까요.</p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>그것도 하나의 방법입니다.<br> 가족과 친구들이 지금의 나를 가장 잘 안다면 말이죠.<br>가족과 친구에게 위로를 받으면 <span class="highlight-text">잠시 마음은 편해지니까요.</span></h2>
-            <p>하지만... 근원적으로 고민은 남아 있을 수 있습니다.</p>
-        </div>
-    </div>
-    <div class="story-panel dark">
-        <div class="story-panel-content">
-            <h2>왜냐하면, 그 친구 그리고 가족과의 대화는 이렇게 될 수 있으니까요.</h2>
-            <h2 class="quote">"아.. 진짜 많이 힘들겠다. 힘내"<br>"나 때도 그랬는데. 이해 돼. 힘내"<br>"그건 너를 얕본 거야. 똑같이 되갚아줘!"<br>"걱정 마. 다 잘될 거야!"</h2>
-        </div>
-    </div>
-    <div class="story-panel dark">
-        <div class="story-panel-content">
-            <h2>이런 위로의 말들은 들을 때는<br>기분이 좋지만,<br>이 대화가 끝나면 <span class="highlight-text">무의식적으로 나도 모르게</span><br>해결된 것이 없다는 생각이 들면서...</h2>
-        </div>
-    </div>
-    <div class="story-panel dark">
-        <div class="story-panel-content">
-            <h2>나를 위해 말해준 이야기들은<br>'나도 다 알고 있었는데…'<br>'무엇을 해야 하지…?'<br>하며 <span class="highlight-text">아무것도 할 수 없는 무력감에</span> 빠지게 됩니다.</h2>
-        </div>
-    </div>
-    <div class="story-panel dark">
-        <div class="story-panel-content">
-            <h2>그 말들이 <span class="highlight-text">내 마음에 와 닿지 않았기 때문</span>입니다.<br>이러지도 저러지도 못하며, 어떠한 선택도 할 수 없기 때문입니다.</h2>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>지금의 나를 가장 잘 아는,<br><span class="highlight-text">나의 무의식에게 답변을 얻는 것</span>이<br>가장 확실합니다.</h2>
-            <p>왜냐하면 나도 모르게, 무의식적으로 내가 힘들어하는 진짜 이유를 무의식은 알고 있기 때문입니다.<br>그렇기 때문에, <span class="highlight-text">무의식은 답을 알고 있습니다.</span></p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>심리 상담 시 가장 효과적인 방법은<br><span class="highlight-text">내게 문제를 일으키는 원인을 제대로 파악</span>하는 것입니다.</h2>
-            <p>문제의 원인을 찾기 위해 어린 시절로 최면 연령 퇴행을 했을 때,<br>이번 생의 경험이 아닌 <span class="final-conclusion">다른 생의 경험에서<br>원인과 답을</span> 찾을 때가 있습니다.</p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2>누군가는 전생체험을 통해 <span class="highlight-text">삶의 의미와 정체성을 찾았고</span><br>누군가는 오랜 시간 알 수 없던 <span class="highlight-text">고통의 원인과 습관을 고쳤습니다.</span></h2>
-            <p>전생 체험과 영성 상담의 가치는 진실이냐 과학이냐가 아닌, 바로 '인간'에 있습니다.</p>
-        </div>
-    </div>
-    <div class="story-panel light">
-        <div class="story-panel-content">
-            <h2 class="recommendation">때문에 기존의 심리상담이나<br>해결을 위해 받아본 여러 가지 방법들의<br>효과가 부족했다고<br>느끼시는 분들에게 권합니다.</h2>
-        </div>
-    </div>
-</div>
-
+    <!-- 예약 위젯 -->
     <div class="booking-widget-container">
         <div class="booking-widget">
             <div class="location-info">
                 <div class="location-icon">
                     <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
-                        <circle cx="16" cy="16" r="7" fill="white"/>
+                        <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z"
+                            fill="#03C75A" />
+                        <circle cx="16" cy="16" r="7" fill="white" />
                     </svg>
                 </div>
                 <div class="location-text">
@@ -898,7 +1165,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>서울특별시 송파구 중대로 97 5층</p>
                 </div>
             </div>
-
             <div class="booking-buttons">
                 <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
                     <i class="fas fa-plus"></i>
@@ -907,398 +1173,247 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </div>
         </div>
     </div>
-    
-<div id="principle">
-    <style>
-        #principle {
-            width: 100%;
-            font-family: 'Noto Sans KR', sans-serif;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            background-color: #fdfdfd;
-            word-break: keep-all; /* 한국어 단어 단위 줄바꿈 적용 */
-        }
-        #principle .info-panel {
-            padding: 5rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-            overflow: hidden;
-        }
-        #principle .info-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-        #principle .info-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-        #principle .info-panel-content {
-            max-width: 800px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-        #principle .info-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        #principle .sub-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1rem;
-            display: inline-block;
-            border-bottom: 2px solid;
-        }
-        #principle .info-panel.dark .sub-heading {
-            border-color: #e8e8e8;
-        }
-        #principle .info-panel.light .sub-heading {
-            border-color: #333;
-        }
-        #principle .main-text {
-            font-size: 1.8rem;
-            font-weight: 500;
-            line-height: 1.7;
-            margin-top: 2rem;
-        }
-        #principle .main-text + .main-text {
-             margin-top: 2.5rem;
-        }
-        #principle .sub-text {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin-top: 2rem;
-            color: #5a5a5a;
-        }
-        #principle .info-panel.dark .sub-text {
-             color: #b0b0b0;
-        }
-        #principle .text-red {
-            color: #e74c3c;
-            font-weight: 600;
-        }
-        #principle .toc-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 2rem;
-        }
-        #principle .toc-list li {
-            font-size: 1.5rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-        }
-        #principle .highlight-box-yellow {
-            background-color: #ffeb3b;
-            color: #333;
-            padding: 1.5rem;
-            margin-top: 2rem;
-            border-radius: 8px;
-            display: inline-block;
-        }
-        #principle .highlight-box-yellow p {
-            margin: 0;
-            font-size: 1.3rem;
-            font-weight: 600;
-        }
-        #principle .point-list {
-            list-style: none;
-            padding: 0;
-            margin-top: 2.5rem;
-            text-align: left;
-            display: inline-block;
-        }
-        #principle .point-list li {
-            font-size: 1.5rem;
-            font-weight: 500;
-            line-height: 1.7;
-        }
-        #principle .point-list li + li {
-            margin-top: 2rem;
-        }
-        #principle .profile-name {
-            font-size: 3rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-        }
-        #principle .profile-subtitle {
-            font-size: 1.5rem;
-            color: #ccc;
-            margin-bottom: 3rem;
-        }
-        #principle .license-list {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-        #principle .license-list li {
-            margin-bottom: 1.5rem;
-        }
-        #principle .license-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            display: block;
-        }
-        #principle .license-issuer {
-            font-size: 1rem;
-            color: #bbb;
-            display: block;
-        }
-        @media (max-width: 768px) {
-            #principle .info-panel {
-                padding: 4rem 1.2rem;
-            }
-            #principle .sub-heading {
-                font-size: 2rem;
-            }
-            #principle .main-text,
-            #principle .point-list li {
-                font-size: 1.2rem;
-            }
-            #principle .sub-text {
-                font-size: 1rem;
-            }
-            #principle .toc-list li {
-                font-size: 1.2rem;
-            }
-            #principle .highlight-box-yellow p {
-                font-size: 1.1rem;
-            }
-            #principle .profile-name {
-                font-size: 2.5rem;
-            }
-            #principle .profile-subtitle {
-                font-size: 1.2rem;
-            }
-            #principle .license-title {
-                font-size: 1.3rem;
-            }
-        }
-    </style>
 
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <h2 class="sub-heading" style="border:none; font-size: 3rem;">최면 심리 상담 센터</h2>
-            <p class="main-text">무의식적 문제의 원인을 찾고<br>최면 상담으로 해결하는 곳 입니다.</p>
-            <p class="main-text" style="margin-top: 1rem;">
-                <span style="color:#e74c3c; font-weight: 900;">마인드</span><span style="color:#3498db; font-weight: 900;">바디</span><span style="color:#f39c12; font-weight: 900;">랩</span>
-            </p>
-            <div class="highlight-box-yellow">
-                <p>마인드바디랩은 최면, NLP를 활용하여<br>회복탄력성 증대, 무의식의 변화를 시키는<br>방법에 최선을 다하고 있습니다.</p>
+    <!-- 치유 원리 섹션 -->
+    <section id="principle">
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <h2 class="sub-heading" style="border:none; font-size: 3rem;">최면 심리 상담 센터</h2>
+                <p class="main-text">무의식적 문제의 원인을 찾고<br>최면 상담으로 해결하는 곳 입니다.</p>
+                <p class="brand-text">
+                    <span style="color:#e74c3c; font-weight: 900;">마인드</span><span
+                        style="color:#3498db; font-weight: 900;">바디</span><span
+                        style="color:#f39c12; font-weight: 900;">랩</span>
+                </p>
+                <div class="highlight-box-yellow">
+                    <p>마인드바디랩은 최면, NLP를 활용하여<br>회복탄력성 증대, 무의식의 변화를 시키는<br>방법에 최선을 다하고 있습니다.</p>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="info-panel dark">
-        <div class="info-panel-content">
-            <h2 class="sub-heading" style="border:none; font-size: 2.8rem;">최면 상담 안내</h2>
-            <p class="sub-text" style="font-size: 1.3rem;">최면 상담 설명, 상담 비용, 예약 방법 등 안내</p>
-            <h3 style="font-size: 2rem; margin-top: 3rem;">- 목차 -</h3>
-            <ul class="toc-list">
-                <li>(1) 최면이란</li>
-                <li>(2) 상담이란</li>
-                <li>(3) 무의식이란</li>
-                <li>(4) 상담에서 무의식의 중요성</li>
-                <li>(5) 최면과 무의식의 관계</li>
-                <li>(6) 최면 상담이어야만 하는 이유</li>
-                <li>(7) 최면 상담 안내</li>
-                <li>(8) 상담 시간과 비용, 그리고 상담 횟수</li>
-                <li>(9) 최면상담사가 내담자에게 꼭 전하고 싶은 말</li>
-            </ul>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <h2 class="sub-heading" style="border:none; font-size: 2.8rem;">최면 상담 안내</h2>
+                <p class="sub-text" style="font-size: 1.3rem;">최면 상담 설명, 상담 비용, 예약 방법 등 안내</p>
+                <h3 style="font-size: 2rem; margin-top: 3rem;">- 목차 -</h3>
+                <ul class="consultation-list">
+                    <li><a href="#principle-1" class="toc-link">(1) 최면이란</a></li>
+                    <li><a href="#principle-2" class="toc-link">(2) 상담이란</a></li>
+                    <li><a href="#principle-3" class="toc-link">(3) 무의식이란</a></li>
+                    <li><a href="#principle-4" class="toc-link">(4) 상담에서 무의식의 중요성</a></li>
+                    <li><a href="#principle-5" class="toc-link">(5) 최면과 무의식의 관계</a></li>
+                    <li><a href="#principle-6" class="toc-link">(6) 최면 상담이어야만 하는 이유</a></li>
+                    <li><a href="#principle-7" class="toc-link">(7) 최면 상담 안내</a></li>
+                    <li><a href="#principle-8" class="toc-link">(8) 상담 시간과 비용, 그리고 상담 횟수</a></li>
+                    <li><a href="#principle-9" class="toc-link">(9) 최면상담사가 내담자에게 꼭 전하고 싶은 말</a></li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <h2 class="sub-heading">(1) 최면이란</h2>
-            <p class="main-text"><span class="text-red">최면</span>은 일상적인 의식 상태와는 다른<br>특별한 심리 상태를 의미합니다.</p>
-            <p class="sub-text">이는 깨어 있으면서도 주의력이 매우 집중돼<br>주변 환경에 대한 인식이 감소하는 상태입니다.<br>하지만 최면가의 암시 제안에는 더 잘 반응하는 상태입니다.</p>
+        <div class="info-panel light" id="principle-1">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(1) 최면이란</h2>
+                <p class="main-text"><span class="text-red">최면</span>은 일상적인 의식 상태와는 다른<br>특별한 심리 상태를 의미합니다.</p>
+                <p class="sub-text">이는 깨어 있으면서도 주의력이 매우 집중돼<br>주변 환경에 대한 인식이 감소하는 상태입니다.<br>하지만 최면가의 암시 제안에는 더 잘 반응하는
+                    상태입니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">최면 상태에서는<br>사람이 겉보기엔 잠든 것 같지만<br>실제로는 깨어 있어 <span class="text-red">내면의 감정과 기억에<br>깊이 접근할 수 있습니다.</span></p>
-            <p class="sub-text">이를 통해 평소에는 쉽게 접근하지 못했던<br>심리적 자원을 활용할 수 있게 됩니다.</p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면 상태에서는<br>사람이 겉보기엔 잠든 것 같지만<br>실제로는 깨어 있어 <span class="text-red">내면의 감정과
+                        기억에<br>깊이 접근할 수 있습니다.</span></p>
+                <p class="sub-text">이를 통해 평소에는 쉽게 접근하지 못했던<br>심리적 자원을 활용할 수 있게 됩니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-             <p class="main-text">최면 중에는 비판적 사고가 줄고,<br>제안을 쉽게 받아 심리 치료에 활용됩니다.</p>
-             <p class="sub-text">의학적으로 최면은 단순한 수면 상태가 아니라<br>특별한 의식 상태로, 이완과 집중이 강화되어<br>통증 관리나 스트레스 완화 등에 효과적으로 사용됩니다.</p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면 중에는 비판적 사고가 줄고,<br>제안을 쉽게 받아 심리 치료에 활용됩니다.</p>
+                <p class="sub-text">의학적으로 최면은 단순한 수면 상태가 아니라<br>특별한 의식 상태로, 이완과 집중이 강화되어<br>통증 관리나 스트레스 완화 등에 효과적으로
+                    사용됩니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">최면은 최면가의 강요로 이끌어 가는 것은 불가합니다.<br>피 최면자의 자발적 협조에 의한<br>상호작용 과정으로 최면 상태가 유지될 수 있습니다.</p>
-            <p class="sub-text">즉, <span class="text-red">의식이 있는 상태</span>이며<br>자신의 의지와 의식에 의해 최면가의 말에<br><span class="text-red">대답과 행동을 하는 상태</span>입니다.</p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면은 최면가의 강요로 이끌어 가는 것은 불가합니다.<br>피 최면자의 자발적 협조에 의한<br>상호작용 과정으로 최면 상태가 유지될 수 있습니다.
+                </p>
+                <p class="sub-text">즉, <span class="text-red">의식이 있는 상태</span>이며<br>자신의 의지와 의식에 의해 최면가의 말에<br><span
+                        class="text-red">대답과 행동을 하는 상태</span>입니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">최면은 의식이 있으면서<br>집중력을 높여 심리적 치유에<br>도움을 주는 방법입니다.</p>
-            <p class="sub-text"><span class="text-red">최면은 마술이나 미신적 현상이 아니라,</span><br>과학적으로 연구되고 있는 심리-생리학적 현상입니다.</p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면은 의식이 있으면서<br>집중력을 높여 심리적 치유에<br>도움을 주는 방법입니다.</p>
+                <p class="sub-text"><span class="text-red">최면은 마술이나 미신적 현상이 아니라,</span><br>과학적으로 연구되고 있는 심리-생리학적 현상입니다.
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel dark">
-        <div class="info-panel-content">
-            <h2 class="sub-heading">(2) 상담이란</h2>
-            <p class="main-text" style="color: #e8e8e8;"><span class="text-red">상담</span>은 심리학적 기법으로<br>내담자를 돕는 치유적 관계입니다.</p>
-            <p class="sub-text">심리상담은 정신 건강을 증진하고 삶의 질을 높이는 것을 목표로 합니다.<br>내담자가 자신의 감정과 문제를 이해하고 해결할 수 있도록 도움을 줍니다.</p>
+        <div class="info-panel dark" id="principle-2">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(2) 상담이란</h2>
+                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">상담</span>은 심리학적 기법으로<br>내담자를 돕는 치유적
+                    관계입니다.</p>
+                <p class="sub-text">심리상담은 정신 건강을 증진하고 삶의 질을 높이는 것을 목표로 합니다.<br>내담자가 자신의 감정과 문제를 이해하고 해결할 수 있도록 도움을 줍니다.
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel dark">
-        <div class="info-panel-content">
-            <p class="main-text" style="color: #e8e8e8;">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span class="text-red">공감하며 경청</span>을 합니다.</p>
-            <p class="sub-text">내담자 스스로가 문제를 해결할 수 있도록 도움을 줍니다.<br>심리상담은 현재 문제를 해결하고, 자아 성장을 도와 삶의 질을 높이며,<br>스트레스 관리와 대인관계 개선을 통해 전반적인 정신 건강을 유지하고,</p>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <p class="main-text" style="color: #e8e8e8;">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span
+                        class="text-red">공감하며 경청</span>을 합니다.</p>
+                <p class="sub-text">내담자 스스로가 문제를 해결할 수 있도록 도움을 줍니다.<br>심리상담은 현재 문제를 해결하고, 자아 성장을 도와 삶의 질을 높이며,<br>스트레스
+                    관리와 대인관계 개선을 통해 전반적인 정신 건강을 유지하고,</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel dark">
-        <div class="info-panel-content">
-            <p class="main-text" style="color: #e8e8e8;"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.</p>
-            <p class="main-text" style="color: #e8e8e8; margin-top: 3rem;">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을 높여가는 과정입니다.</p>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.
+                </p>
+                <p class="main-text" style="color: #e8e8e8; margin-top: 3rem;">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을
+                    높여가는 과정입니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <h2 class="sub-heading">(3) 무의식이란</h2>
-            <p class="main-text"><span class="text-red">무의식</span>은 우리가 의식하지 못하는<br>복잡한 정신 과정으로,<br>행동과 감정에 큰 영향을 미칩니다.</p>
-            <p class="main-text">무의식은 의식 밖에서<br>우리의 결정과 행동에 영향을 줍니다.</p>
-            <p class="main-text">무의식은 지능적 적응 시스템으로<br>생존에 중요한 역할을 합니다.</p>
+        <div class="info-panel light" id="principle-3">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(3) 무의식이란</h2>
+                <p class="main-text"><span class="text-red">무의식</span>은 우리가 의식하지 못하는<br>복잡한 정신 과정으로,<br>행동과 감정에 큰 영향을
+                    미칩니다.</p>
+                <p class="main-text">무의식은 의식 밖에서<br>우리의 결정과 행동에 영향을 줍니다.</p>
+                <p class="main-text">무의식은 지능적 적응 시스템으로<br>생존에 중요한 역할을 합니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">무의식은<br>꿈, 예술 등에서 드러나며<br>프로이드와 같은 정신분석 학자들은<br>이를 통해 무의식을 탐구하려 했습니다.</p>
-            <p class="main-text">최면은 무의식에 접근해<br>기억과 감정을 변화시킵니다.</p>
-            <p class="main-text">한국 심리학은<br>'한'과 같은 문화적 정서가<br>무의식에 작용하고,</p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">무의식은<br>꿈, 예술 등에서 드러나며<br>프로이드와 같은 정신분석 학자들은<br>이를 통해 무의식을 탐구하려 했습니다.</p>
+                <p class="main-text">최면은 무의식에 접근해<br>기억과 감정을 변화시킵니다.</p>
+                <p class="main-text">한국 심리학은<br>'한'과 같은 문화적 정서가<br>무의식에 작용하고,</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">집단 무의식을 통해 공유된<br>문화와 상징이<br>개인의 무의식에 영향을 준다고 봅니다.</p>
-            <p class="main-text">심리상담에서는<br>무의식을 탐색하고 이해하는것이<br>치료에 중요한 역할을 할 수 있다고<br>보고 있습니다.</p>
-            <p class="main-text"><span class="text-red">무의식은 행동과 감정에 영향을 주며,<br>정신 건강과 성장에 중요합니다.</span></p>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">집단 무의식을 통해 공유된<br>문화와 상징이<br>개인의 무의식에 영향을 준다고 봅니다.</p>
+                <p class="main-text">심리상담에서는<br>무의식을 탐색하고 이해하는것이<br>치료에 중요한 역할을 할 수 있다고<br>보고 있습니다.</p>
+                <p class="main-text"><span class="text-red">무의식은 행동과 감정에 영향을 주며,<br>정신 건강과 성장에 중요합니다.</span></p>
+            </div>
         </div>
-    </div>
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <h2 class="sub-heading">(4) 상담에서 무의식의 중요성</h2>
-        <p class="main-text" style="color: #e8e8e8;"><span class="text-red">무의식</span>은 행동과 감정에 큰 영향을 주어<br><span class="text-red">심리상담</span>에서 중요합니다.</p>
-        <p class="sub-text">무의식의 중요성은 다음과 같은<br>여러 측면에서 나타납니다.</p>
-    </div>
-</div>
-
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <ul class="point-list" style="color: #e8e8e8;">
-            <li>첫째.<br>무의식은 자아와 감정을<br>근본적으로 변화시킵니다.</li>
-            <li>둘째.<br>무의식은 일상 적응과<br>심리치료에 중요합니다.</li>
-            <li>셋째.<br>무의식은 행동과 판단에 영향을 주어<br>상담에서 중요할수 밖에 없습니다.</li>
-            <li>넷째.<br>무의식 탐색은<br>자기 이해와 치료에 도움이 됩니다.</li>
-            <li>다섯째.<br>무의식을 다루면<br>치료 저항을 극복하고<br>효과가 지속될 수 있습니다.</li>
-            <li>마지막으로.<br>무의식을 다루면<br>자기 이해와 지속적인 치료 효과를<br>얻을 수 있습니다.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <p class="main-text" style="margin-top: 3rem;"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인 요소입니다.</span></p>
-    </div>
-</div>
-<div class="info-panel light"> 
-    <div class="info-panel-content"> 
-        <h2 class="sub-heading">(5) 최면과 무의식의 관계</h2> 
-        <p class="main-text"><span class="text-red">최면</span>은 무의식에 <span class="text-red">접근</span>해<br>행동과 감정에 영향을 줍니다.</p> 
-        <p class="main-text">최면은 무의식에<br>접근할 수 있는 도구입니다.</p> 
-    </div> 
-</div>
-
-<div class="info-panel light">
-    <div class="info-panel-content">
-        <ul class="point-list"> 
-            <li>첫째.<br>최면은 비판적 사고를 낮춰<br>무의식에 쉽게 접근하게 합니다.</li> 
-            <li>둘째.<br>최면의 무의식 접근은<br>내담자의 내면에 깊은 수준에서<br>변화를 촉진할 수 있습니다.</li> 
-            <li>셋째.<br>최면으로 무의식에 접근해<br>효과적인 심리 치료를 할 수 있습니다.</li> 
-            <li>넷째.<br>최면으로 문제를 새롭게 보고<br>해결할 수 있습니다.</li> 
-        </ul> 
-    </div> 
-</div>
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <h2 class="sub-heading">(6) 최면 상담이어야 하는 이유</h2>
-        <p class="main-text" style="color: #e8e8e8;">일반 상담이 아닌 <span class="text-red">최면 상담</span>을 선택하면<br><span class="text-red">좋은 이유</span>는 다음과 같습니다.</p>
-    </div>
-</div>
-
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <ul class="point-list" style="text-align: center;">
-            <li>1. 무의식에 대한 직접적 접근 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>무의식에 직접 접근해 근본 문제를 해결합니다.</li>
-            <li>2. 효과 :<br>최면은 다양한 문제에 효과적이고,<br>의료적 절차에도 도움이 됩니다.</li>
-            <li>3. 빠른 결과 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>더 적은 회기로 더 빠른 개선을 경험할 수 있습니다.</li>
-        </ul>
-    </div>
-</div>
-
-<div class="info-panel dark">
-    <div class="info-panel-content">
-        <p class="main-text" style="margin-top: 3rem;">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더 효과적입니다.</span></p>
-    </div>
-</div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <h2 class="sub-heading">(7) 최면 상담 안내</h2>
-            <p class="main-text"><span class="text-red">최면 상담</span>은 전문가가 최면 상태로<br>내담자를 이끌어 <span class="text-red">치유하는 방법</span>입니다.</p>
-            <p class="main-text">최면 상담은 무의식을 촉진해<br>심리 변화를 이끌어냅니다.</p>
-            <p class="main-text">최면 상태는 집중과 몰입이 높은<br>심리 상태입니다.</p>
+        <div class="info-panel dark" id="principle-4">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(4) 상담에서 무의식의 중요성</h2>
+                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">무의식</span>은 행동과 감정에 큰 영향을
+                    주어<br><span class="text-red">심리상담</span>에서 중요합니다.</p>
+                <p class="sub-text">무의식의 중요성은 다음과 같은<br>여러 측면에서 나타납니다.</p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">최면 상담은 무의식에 접근해<br>정신 건강을 돕습니다.</p>
-            <p class="main-text">최면 상담은<br>다양한 심리적, 정서적<br>문제에 적용될 수 있습니다.</p>
-            <p class="main-text">불안, 우울 등 다양한 문제와<br>심리적 성장에<br>최면을 활용할 수 있습니다.</p>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <ul class="consultation-list" style="color: #e8e8e8;">
+                    <li>첫째.<br>무의식은 자아와 감정을<br>근본적으로 변화시킵니다.</li>
+                    <li>둘째.<br>무의식은 일상 적응과<br>심리치료에 중요합니다.</li>
+                    <li>셋째.<br>무의식은 행동과 판단에 영향을 주어<br>상담에서 중요할수 밖에 없습니다.</li>
+                    <li>넷째.<br>무의식 탐색은<br>자기 이해와 치료에 도움이 됩니다.</li>
+                    <li>다섯째.<br>무의식을 다루면<br>치료 저항을 극복하고<br>효과가 지속될 수 있습니다.</li>
+                    <li>마지막으로.<br>무의식을 다루면<br>자기 이해와 지속적인 치료 효과를<br>얻을 수 있습니다.</li>
+                </ul>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">최면은 피최면자의<br>자발적 참여와 협력이 필요합니다.</p>
-            <p class="main-text">최면 중 피최면자의<br>윤리와 가치가 존중되며<br>최면가의 강압적 암시를<br>받을 수 없습니다.</p>
-            <p class="main-text">암시는 피최면자 스스로의 수용으로<br>받아들여지게 되는 것입니다.</p>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <p class="main-text" style="margin-top: 3rem;"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인
+                        요소입니다.</span></p>
+            </div>
         </div>
-    </div>
-    <div class="info-panel light">
-        <div class="info-panel-content">
-            <p class="main-text">결론적으로,<br>최면 상담은 무의식에 접근해<br>자기 이해와 성장을 돕습니다.</p>
-            <p class="main-text">이로 인하여<br><span class="text-red">심리적 문제를<br>스스로 치유하게 합니다.</span></p>
+        <div class="info-panel light" id="principle-5">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(5) 최면과 무의식의 관계</h2>
+                <p class="main-text"><span class="text-red">최면</span>은 무의식에 <span class="text-red">접근</span>해<br>행동과 감정에
+                    영향을 줍니다.</p>
+                <p class="main-text">최면은 무의식에<br>접근할 수 있는 도구입니다.</p>
+            </div>
         </div>
-    </div>
-    <div id="guide" class="info-panel dark">
-        <div class="info-panel-content">
-            <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
-            <ul class="point-list" style="color: #e8e8e8;">
-                <li>- 기본 상담의 횟수는<br><strong>3회기</strong>를 기준으로 진행하고 있습니다.
-                    <span class="sub-text" style="display: block; color: #bbb;">※ 단 1회기 또는 2회기 상담만으로도 스스로 충분히 변화하고 안정감을 느낀다면, 상담은 바로 종결될 수 있습니다.<br>★ 내담자의 상담 이슈에 따라 상담 회기는 3회 이상으로 진행될 수 있습니다.</span>
-                </li>
-                <li>- 1회기 상담 시간 :<br><strong>1시간 30분 / 1주당 1회 상담</strong>을 진행 하고 있습니다.
-                    <span class="sub-text" style="display: block; color: #bbb;">※ 상담 진행에 따라 상담 시간은 더 길어 질 수 있습니다. 이때 추가 비용이 발생하지 않습니다.</span>
-                </li>
-                <li>- 최면 상담 비용<br><strong>1회기 상담 비용 - 15만원</strong></li>
-            </ul>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <ul class="consultation-list">
+                    <li>첫째.<br>최면은 비판적 사고를 낮춰<br>무의식에 쉽게 접근하게 합니다.</li>
+                    <li>둘째.<br>최면의 무의식 접근은<br>내담자의 내면에 깊은 수준에서<br>변화를 촉진할 수 있습니다.</li>
+                    <li>셋째.<br>최면으로 무의식에 접근해<br>효과적인 심리 치료를 할 수 있습니다.</li>
+                    <li>넷째.<br>최면으로 문제를 새롭게 보고<br>해결할 수 있습니다.</li>
+                </ul>
+            </div>
         </div>
-    </div>
+        <div class="info-panel dark" id="principle-6">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(6) 최면 상담이어야 하는 이유</h2>
+                <p class="main-text" style="color: #e8e8e8;">일반 상담이 아닌 <span class="text-red">최면 상담</span>을
+                    선택하면<br><span class="text-red">좋은 이유</span>는 다음과 같습니다.</p>
+            </div>
+        </div>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <ul class="consultation-list" style="text-align: center;">
+                    <li>1. 무의식에 대한 직접적 접근 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>무의식에 직접 접근해 근본 문제를 해결합니다.</li>
+                    <li>2. 효과 :<br>최면은 다양한 문제에 효과적이고,<br>의료적 절차에도 도움이 됩니다.</li>
+                    <li>3. 빠른 결과 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>더 적은 회기로 더 빠른 개선을 경험할 수 있습니다.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <p class="main-text" style="margin-top: 3rem;">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더
+                        효과적입니다.</span></p>
+            </div>
+        </div>
+        <div class="info-panel light" id="principle-7">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(7) 최면 상담 안내</h2>
+                <p class="main-text"><span class="text-red">최면 상담</span>은 전문가가 최면 상태로<br>내담자를 이끌어 <span
+                        class="text-red">치유하는 방법</span>입니다.</p>
+                <p class="main-text">최면 상담은 무의식을 촉진해<br>심리 변화를 이끌어냅니다.</p>
+                <p class="main-text">최면 상태는 집중과 몰입이 높은<br>심리 상태입니다.</p>
+            </div>
+        </div>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면 상담은 무의식에 접근해<br>정신 건강을 돕습니다.</p>
+                <p class="main-text">최면 상담은<br>다양한 심리적, 정서적<br>문제에 적용될 수 있습니다.</p>
+                <p class="main-text">불안, 우울 등 다양한 문제와<br>심리적 성장에<br>최면을 활용할 수 있습니다.</p>
+            </div>
+        </div>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">최면은 피최면자의<br>자발적 참여와 협력이 필요합니다.</p>
+                <p class="main-text">최면 중 피최면자의<br>윤리와 가치가 존중되며<br>최면가의 강압적 암시를<br>받을 수 없습니다.</p>
+                <p class="main-text">암시는 피최면자 스스로의 수용으로<br>받아들여지게 되는 것입니다.</p>
+            </div>
+        </div>
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <p class="main-text">결론적으로,<br>최면 상담은 무의식에 접근해<br>자기 이해와 성장을 돕습니다.</p>
+                <p class="main-text">이로 인하여<br><span class="text-red">심리적 문제를<br>스스로 치유하게 합니다.</span></p>
+            </div>
+        </div>
+        <div class="info-panel dark" id="principle-8">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
+                <ul class="consultation-list" style="color: #e8e8e8;">
+                    <li>- 기본 상담의 횟수는<br><strong>3회기</strong>를 기준으로 진행하고 있습니다.
+                        <span class="sub-text" style="display: block; color: #bbb;">※ 단 1회기 또는 2회기 상담만으로도 스스로 충분히 변화하고
+                            안정감을 느낀다면, 상담은 바로 종결될 수 있습니다.<br>★ 내담자의 상담 이슈에 따라 상담 회기는 3회 이상으로 진행될 수 있습니다.</span>
+                    </li>
+                    <li>- 1회기 상담 시간 :<br><strong>1시간 30분 / 1주당 1회 상담</strong>을 진행 하고 있습니다.
+                        <span class="sub-text" style="display: block; color: #bbb;">※ 상담 진행에 따라 상담 시간은 더 길어 질 수 있습니다. 이때
+                            추가 비용이 발생하지 않습니다.</span>
+                    </li>
+                    <li>- 최면 상담 비용<br><strong>1회기 상담 비용 - 15만원</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
 
     <div class="booking-widget-container">
         <div class="booking-widget">
             <div class="location-info">
                 <div class="location-icon">
                     <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
-                        <circle cx="16" cy="16" r="7" fill="white"/>
+                        <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z"
+                            fill="#03C75A" />
+                        <circle cx="16" cy="16" r="7" fill="white" />
                     </svg>
                 </div>
                 <div class="location-text">
@@ -1306,7 +1421,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     <p>서울특별시 송파구 중대로 97 5층</p>
                 </div>
             </div>
-
             <div class="booking-buttons">
                 <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost">
                     <i class="fas fa-plus"></i>
@@ -1316,236 +1430,281 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
     </div>
 
-    <div class="info-panel light">
+    <div class="info-panel light" id="principle-9">
         <div class="info-panel-content">
             <h2 class="sub-heading">(9) 최면상담사가<br>내담자에게 꼭 전하고 싶은 말</h2>
             <p class="main-text" style="font-weight: 700;">최면은 만병통치약이 아닙니다.</p>
-            <p class="sub-text" style="text-align: left; margin-top: 2rem;">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한 번으로 다 해결될 것으로 기대를 하고 최면 상담 센터를 방문합니다. 그리고 최면 상담가가 모든 것을 알아서 다 해줄 것이라는 생각과 믿음을 갖고 최면 상담에 임하시곤 합니다. 최면 상담을 찾는 내담자들의 이러한 생각과 믿음을 갖는 것을 저는 충분히 이해하고 있습니다.<br><br>그런데 안타깝게도 최면은 만병통치약이 아닙니다. 그리고 최면 상담가는 내담자의 모든 것을 꿰뚫어 보는 독심술사의 능력을 갖고 있지 않습니다.<br><br>물론 단 한 번의 최면으로 극적인 효과를 보는 사례들도 분명히 있습니다. 그리고 최면 상담가의 유도문과 암시에 의해 내담자의 심리적 문제가 잘 치유되는 경우도 있습니다.</p>
+            <p class="sub-text" style="text-align: left; margin-top: 2rem;">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한
+                번으로 다 해결될 것으로 기대를 하고 최면 상담 센터를 방문합니다. 그리고 최면 상담가가 모든 것을 알아서 다 해줄 것이라는 생각과 믿음을 갖고 최면 상담에 임하시곤 합니다. 최면 상담을
+                찾는 내담자들의 이러한 생각과 믿음을 갖는 것을 저는 충분히 이해하고 있습니다.<br><br>그런데 안타깝게도 최면은 만병통치약이 아닙니다. 그리고 최면 상담가는 내담자의 모든 것을
+                꿰뚫어 보는 독심술사의 능력을 갖고 있지 않습니다.<br><br>물론 단 한 번의 최면으로 극적인 효과를 보는 사례들도 분명히 있습니다. 그리고 최면 상담가의 유도문과 암시에 의해
+                내담자의 심리적 문제가 잘 치유되는 경우도 있습니다.</p>
         </div>
     </div>
     <div class="info-panel light">
         <div class="info-panel-content">
-            <p class="sub-text" style="text-align: left;">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를 원하는 상황에서 무의식적 원인으로 그 변화를 가로막고 있는 벽을 최면 상담가가 함께 협응을 통해서 함께 찾아가고 내담자가 갖고 있는 무의식적 장애물인 벽을 넘어 원하는 상태에 이르게 도움을 주는 조력자의 역할을 합니다.<br><br>즉 최면 상담 세션을 진행할 때 내담자의 적극적이고 능동적인 의지와 협조가 있어야 원하는 결과를 얻을 수 있다는 이야기를 드리고 싶습니다.<br><br>최면 상담을 찾는 모든 내담자들이 '최면상담사가 내담자에게 꼭 전하고 싶은 말'의 글을 읽고 최면 상담을 받으실 수 있으면 좋겠습니다.<br><br>이 글을 읽으면 좀 더 좋은 치료 효과를 얻을 수 있을 것입니다. 왜냐하면 내담자의 상담에 임하는 마음상태와 생각이 상담에서 제일 중요하기 때문입니다.</p>
+            <p class="sub-text" style="text-align: left;">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를
+                원하는 상황에서 무의식적 원인으로 그 변화를 가로막고 있는 벽을 최면 상담가가 함께 협응을 통해서 함께 찾아가고 내담자가 갖고 있는 무의식적 장애물인 벽을 넘어 원하는 상태에 이르게
+                도움을 주는 조력자의 역할을 합니다.<br><br>즉 최면 상담 세션을 진행할 때 내담자의 적극적이고 능동적인 의지와 협조가 있어야 원하는 결과를 얻을 수 있다는 이야기를 드리고
+                싶습니다.<br><br>최면 상담을 찾는 모든 내담자들이 '최면상담사가 내담자에게 꼭 전하고 싶은 말'의 글을 읽고 최면 상담을 받으실 수 있으면 좋겠습니다.<br><br>이 글을 읽으면
+                좀 더 좋은 치료 효과를 얻을 수 있을 것입니다. 왜냐하면 내담자의 상담에 임하는 마음상태와 생각이 상담에서 제일 중요하기 때문입니다.</p>
         </div>
     </div>
     <div class="info-panel light" style="background-color: #f0f2f5;">
         <div class="info-panel-content">
-            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 내담자의 행복 추구</p>
-            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 무의식의 긍정적 활용</p>
-            <p class="main-text" style="font-weight: 700; color: #0056b3;">핵심 가치 – 의식과 무의식의 조화</p>
-            
-            <p class="main-text" style="margin-top: 4rem; color: #e74c3c; font-weight: 700;">슬로건</p>
-            <p class="main-text" style="font-size: 2.5rem; font-weight: 900; margin-top: 0.5rem;">내담자의 마음 지도를<br>함께 그리는 여정</p>
-
-            <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad;">당신의 마음을 찾아가는 여정,<br>최면 전문 상담가 : 김현준 센터장</p>
+            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 내담자의 행복 추구</p>
+            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 무의식의 긍정적 활용</p>
+            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 의식과 무의식의 조화</p>
+            <p class="main-text" style="margin-top: 4rem; color: #e74c3c !important; font-weight: 700;">슬로건</p>
+            <p class="main-text"
+                style="font-size: 2.5rem; font-weight: 900; margin-top: 0.5rem; color: #000000 !important;">내담자의 마음
+                지도를<br>함께 그리는 여정</p>
+            <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad !important;">당신의 마음을 찾아가는
+                여정,<br>최면 전문 상담가 : 김현준 센터장</p>
         </div>
     </div>
-    <div id="director" class="info-panel dark">
-        <div class="info-panel-content">
-            <h2 class="profile-name">김현준 센터장</h2>
-            <p class="profile-subtitle">보유 라이센스 및 이수 프로그램</p>
-            <ul class="license-list">
-                <li>
-                    <span class="license-title">ABH Hypnosis Counselor</span>
-                    <span class="license-issuer">Certified by American Board of Hypnotherapy</span>
-                </li>
-                <li>
-                    <span class="license-title">국제 공인 Timeline Therapy™ Master Practitioner</span>
-                    <span class="license-issuer">Certified by Timeline Therapy™ Association</span>
-                </li>
-                <li>
-                    <span class="license-title">ABNLP NLP Practitioner</span>
-                    <span class="license-issuer">Certified by American Board of NLP</span>
-                </li>
-                <li>
-                    <span class="license-title">불안전문심리상담사 1급</span>
-                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
-                </li>
-                <li>
-                    <span class="license-title">Ericksonian Hypnosis Practitioner</span>
-                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
-                </li>
-                <li>
-                    <span class="license-title">머니마인드코칭 3급</span>
-                    <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
-                </li>
-            </ul>
-        </div>
-    </div>
-</div>
+    </section>
 
-
-
-    </main>
-
-    <div class="booking-widget-container">
-        <div class="booking-widget">
-            <div class="location-info">
-                <div class="location-icon">
-                    <svg width="32" height="46" viewBox="0 0 32 46" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M16 0C7.163 0 0 7.163 0 16C0 28 16 46 16 46C16 46 32 28 32 16C32 7.163 24.837 0 16 0Z" fill="#03C75A"/>
-                        <circle cx="16" cy="16" r="7" fill="white"/>
-                    </svg>
-                </div>
-                <div class="location-text">
-                    <h4>마인드바디랩 최면센터</h4>
-                    <p>서울특별시 송파구 중대로 97 5층</p>
+    <!-- 상담 안내 섹션 -->
+    <section id="guide">
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">상담 프로그램</h2>
+                <div class="program-grid">
+                    <div class="program-card">
+                        <h3>개인 최면 상담</h3>
+                        <p>1:1 맞춤형 최면 상담으로 개인의 문제를 깊이 있게 다룹니다.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>전생 체험 상담</h3>
+                        <p>전생 회귀를 통해 현재 문제의 근본 원인을 찾아 해결합니다.</p>
+                    </div>
+                    <div class="program-card">
+                        <h3>트라우마 치유</h3>
+                        <p>과거의 상처와 트라우마를 최면을 통해 치유합니다.</p>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="booking-buttons">
-                <a href="https://m.site.naver.com/1O0dP" class="btn-modern-ghost">
-                    <i class="fas fa-plus"></i>
-                    <span>지금 상담 예약하기</span>
-                </a>
+    <!-- 센터장 소개 섹션 -->
+    <section id="director">
+        <div class="info-panel light">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">센터장 소개</h2>
+                <div class="director-profile">
+                    <div class="profile-image">
+                        <img src="images/director.jpg" alt="센터장 프로필"
+                            onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Profile';">
+                    </div>
+                    <div class="profile-info">
+                        <h3 style="text-align: left;">김현준 센터장</h3>
+                        <p class="sub-heading"
+                            style="font-size: 1.4rem; border: none; margin: 1.5rem 0; text-align: left;">보유 라이센스 및 이수
+                            프로그램</p>
+                        <div class="credentials">
+                            <div class="license-item">
+                                <span class="license-title">ABH Hypnosis Counselor</span>
+                                <span class="license-issuer">Certified by American Board of Hypnotherapy</span>
+                            </div>
+                            <div class="license-item">
+                                <span class="license-title">국제 공인 Timeline Therapy™ Master Practitioner</span>
+                                <span class="license-issuer">Certified by Timeline Therapy™ Association</span>
+                            </div>
+                            <div class="license-item">
+                                <span class="license-title">ABNLP NLP Practitioner</span>
+                                <span class="license-issuer">Certified by American Board of NLP</span>
+                            </div>
+                            <div class="license-item">
+                                <span class="license-title">불안전문심리상담사 1급</span>
+                                <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                            </div>
+                            <div class="license-item">
+                                <span class="license-title">Ericksonian Hypnosis Practitioner</span>
+                                <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                            </div>
+                            <div class="license-item">
+                                <span class="license-title">머니마인드코칭 3급</span>
+                                <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
-
-
-
-<footer id="contact">
-    <style>
-        #mindbodylab-footer {
-            background-color: #1f2428; /* 어두운 배경색 */
-            color: #a0a0a0; /* 기본 글자색 (밝은 회색) */
-            padding: 4rem 1.5rem; /* 상하 여백 추가 */
-            font-family: 'Noto Sans KR', sans-serif;
-            font-size: 0.9rem;
-            line-height: 1.8;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-        }
-
-        #mindbodylab-footer .footer-container {
-            max-width: 1100px; /* 푸터 최대 너비 */
-            margin: 0 auto;
-            display: flex;
-            flex-wrap: wrap; /* 화면이 좁아지면 줄바꿈 */
-            justify-content: center; /* 섹션들을 중앙에 배치하여 균형감 부여 */
-            gap: 2rem 4rem; /* 행과 열에 일관된 간격 추가 */
-            align-items: flex-start; 
-        }
-
-        #mindbodylab-footer .footer-section {
-            margin-bottom: 1.5rem;
-            min-width: 300px; /* 최소 너비 조정 */
-            flex: 1; /* 섹션이 유연하게 공간을 차지하도록 설정 */
-            text-align: left; /* 가독성을 위해 텍스트 왼쪽 정렬 */
-        }
-
-        #mindbodylab-footer h4 {
-            color: #ffffff; /* 섹션 제목 색상 */
-            font-size: 1.1rem;
-            margin-top: 0;
-            margin-bottom: 1rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 1px solid #444; /* 제목 밑줄 추가 */
-        }
-
-        #mindbodylab-footer p,
-        #mindbodylab-footer a {
-            margin: 0.5rem 0;
-            color: #a0a0a0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        #mindbodylab-footer a:hover {
-            color: #ffffff; /* 링크에 마우스 올리면 흰색으로 변경 */
-        }
-
-        #mindbodylab-footer .info-item strong {
-            color: #c0c0c0; /* 정보 항목의 제목(예: 사업자등록번호) 색상 */
-            margin-right: 8px;
-            display: inline-block;
-            min-width: 120px; /* strong 태그 너비 고정으로 줄 맞춤 효과 */
-        }
-        
-        #mindbodylab-footer .copyright {
-            text-align: center;
-            width: 100%;
-            margin-top: 3rem; /* 여백 추가 */
-            padding-top: 2rem;
-            border-top: 1px solid #333; /* 구분선 */
-            font-size: 0.8rem;
-            color: #777;
-        }
-
-    </style>
-
-    <div id="mindbodylab-footer">
-        <div class="footer-container">
-            
-            <div class="footer-section">
-                <h4>Contact & Links</h4>
-                 <p class="info-item">
-                    <strong>대표전화</strong> <a href="tel:07079543170">070-7954-3170</a>
-                </p>
-                <p class="info-item">
-                    <strong>팩스</strong> 0504-218-2545
-                </p>
-                <p class="info-item">
-                    <strong>이메일</strong> <a href="mailto:mindbodylab7@gmail.com">mindbodylab7@gmail.com</a>
-                </p>
-                 <p class="info-item">
-                    <strong>홈페이지</strong> <a href="https://mindbodylab.liveklass.com/mypage" target="_blank">www.mindbodylab.kr</a>
-                </p>
-            </div>
-
-            <div class="footer-section">
-                <h4>(주)마인드바디랩</h4>
-                <p class="info-item">
-                    <strong>사업자등록번호</strong> 613-81-82845
-                </p>
-                <p class="info-item">
-                    <strong>통신판매업신고번호</strong> 제 2023-서울송파-0215 호
-                </p>
-                <p class="info-item">
-                    <strong>주소</strong> 서울시 송파구 중대로 97 5층 548호
-                </p>
-            </div>
-
+        <div class="highlight-box-yellow"
+            style="text-align: center; font-size: 1.5rem; margin: 0.5rem auto 2rem auto; padding: 2rem; background-color: #fff3cd; border: 2px solid #ffeaa7; border-radius: 10px; max-width: 600px; word-break: keep-all; word-wrap: break-word; line-height: 1.6;">
+            <b>"모든 답은 여러분의 무의식 속에 있습니다. 저는 단지 그 답을 찾아가는 여정을 함께 동행하는 안내자일 뿐입니다."</b>
         </div>
-        
-        <div class="copyright">
-            <p>&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
+    </section>
+
+    <section id="contact">
+        <div class="info-panel dark">
+            <div class="info-panel-content">
+                <h2 class="sub-heading">오시는 길</h2>
+                <div class="contact-info">
+                    <div class="address-info">
+                        <h3>마인드바디랩 최면상담센터</h3>
+                        <p class="address">서울특별시 송파구 중대로 97 5층</p>
+                        <p class="phone">전화: 070-7954-3170</p>
+                        <p class="hours">상담문의: 노란색 말풍선으로 언제든지 문의 하세요! :)</p>
+                    </div>
+
+                    <div class="map-container">
+                        <a href="https://map.naver.com/p/entry/place/1198745383" target="_blank"
+                            title="새 창에서 네이버 지도 열기">
+                            <img src="images/map-preview.png" alt="마인드바디랩 최면상담센터 지도 보기"
+                                style="width: 100%; height: auto; display: block; border: 0;">
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-</footer>
-<script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "PsychologicalTreatment",
-      "name": "마인드바디랩 최면상담센터",
-      "image": "https://www.mindbodylab.kr/images/logo.png",
-      "url": "https://www.mindbodylab.kr",
-      "telephone": "+82-10-5264-5001",
-      "description": "전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험, 전생 최면 등 마음의 치유를 돕는 최면상담센터입니다.",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "서울시 송파구 중대로 97 5층 548호",
-        "addressLocality": "서울",
-        "postalCode": "05719",
-        "addressCountry": "KR"
-      },
-      "sameAs": [
-        "https://m.site.naver.com/1NVtM",
-        "https://m.site.naver.com/1NVuo"
-      ] 
-    }
+    </section>
+
+    <!-- 플로팅 채팅 버블 -->
+    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link">
+        <div class="chat-bubble">
+            💬
+        </div>
+    </a>
+
+    <!-- Google Tag Manager -->
+    <script>(function (w, d, s, l, i) {
+            w[l] = w[l] || []; w[l].push({
+                'gtm.start':
+                    new Date().getTime(), event: 'gtm.js'
+            }); var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+                    'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-NXVLC5NW');</script>
+
+    <!-- 크리티컬 JavaScript - 즉시 실행 -->
+    <script>
+        // 즉시 실행 함수로 네임스페이스 보호
+        (function () {
+            'use strict';
+
+            // DOM 로드 완료 후 실행
+            document.addEventListener('DOMContentLoaded', function () {
+
+                // === 1. 햄버거 메뉴 기능 ===
+                const hamburgerMenu = document.getElementById('hamburgerMenu');
+                const mobileNavOverlay = document.getElementById('mobileNavOverlay');
+                const closeMenu = document.getElementById('closeMenu');
+
+                if (hamburgerMenu && mobileNavOverlay && closeMenu) {
+                    const closeMobileMenu = () => {
+                        mobileNavOverlay.classList.remove('active');
+                        document.body.style.overflow = '';
+                    };
+
+                    hamburgerMenu.addEventListener('click', () => {
+                        mobileNavOverlay.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    });
+
+                    closeMenu.addEventListener('click', closeMobileMenu);
+
+                    mobileNavOverlay.addEventListener('click', (e) => {
+                        if (e.target === mobileNavOverlay) closeMobileMenu();
+                    });
+
+                    // 모바일 링크 클릭시 메뉴 닫기
+                    mobileNavOverlay.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', closeMobileMenu);
+                    });
+
+                    // ESC 키로 메뉴 닫기
+                    document.addEventListener('keydown', (e) => {
+                        if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
+                            closeMobileMenu();
+                        }
+                    });
+
+                    // 리사이즈시 메뉴 닫기
+                    window.addEventListener('resize', () => {
+                        if (window.innerWidth >= 768) closeMobileMenu();
+                    });
+                }
+
+                // === 2. 부드러운 스크롤 ===
+                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            const header = document.querySelector('header');
+                            const headerHeight = header ? header.offsetHeight : 0;
+                            const targetPosition = target.offsetTop - headerHeight - 20;
+
+                            window.scrollTo({
+                                top: targetPosition,
+                                behavior: 'smooth'
+                            });
+                        }
+                    });
+                });
+
+                // === 3. 스크롤 애니메이션 (세련된 효과) ===
+                const animatedContents = document.querySelectorAll('.story-panel-content, .info-panel-content');
+
+                if (animatedContents.length > 0 && 'IntersectionObserver' in window) {
+                    const observer = new IntersectionObserver((entries) => {
+                        entries.forEach(entry => {
+                            if (entry.isIntersecting) {
+                                entry.target.classList.add('is-visible');
+                                // 한 번 나타난 후에는 관찰 중단 (성능 최적화)
+                                observer.unobserve(entry.target);
+                            }
+                        });
+                    }, {
+                        threshold: 0.1,
+                        rootMargin: '0px 0px -50px 0px' // 약간 일찍 트리거
+                    });
+
+                    animatedContents.forEach(content => {
+                        observer.observe(content);
+                    });
+                } else if (animatedContents.length > 0) {
+                    // IntersectionObserver를 지원하지 않는 구형 브라우저 폴백
+                    animatedContents.forEach(content => {
+                        content.classList.add('is-visible');
+                    });
+                }
+
+                // === 4. 이벤트 추적 ===
+                // 예약 버튼 클릭 추적
+                document.querySelectorAll('.btn-modern-ghost').forEach(button => {
+                    button.addEventListener('click', () => {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'click', {
+                                'event_category': 'booking',
+                                'event_label': 'consultation_booking'
+                            });
+                        }
+                    });
+                });
+
+                // 채팅 버블 클릭 추적
+                const chatBubble = document.querySelector('.chat-bubble');
+                if (chatBubble) {
+                    chatBubble.addEventListener('click', () => {
+                        if (typeof gtag !== 'undefined') {
+                            gtag('event', 'click', {
+                                'event_category': 'chat',
+                                'event_label': 'chat_consultation'
+                            });
+                        }
+                    });
+                }
+            });
+        })();
     </script>
-    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"> </script> 
-<script type="text/javascript"> 
-if (!wcs_add) var wcs_add={};
-wcs_add["wa"] = "s_18b747d78924";
-if (!_nasa) var _nasa={};
-if(window.wcs){
-wcs.inflow();
-wcs_do();
-}
-</script>
 
-    
+    <!-- 추가 기능 (비차단 로딩) -->
+    <script src="js/scroll-spy.js" defer></script>
 </body>
+
 </html>
