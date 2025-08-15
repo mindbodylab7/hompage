@@ -1,0 +1,337 @@
+/* =============================================== */
+/* ===== 섹션별 스타일 ===== */
+/* =============================================== */
+
+/* 메인 히어로 섹션 */
+.main-hero {
+    background-color: #e0e0e0;
+    padding: 40px 20px;
+    text-align: center;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 250px;
+}
+
+.main-hero .hero-content {
+    max-width: 600px;
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+.main-hero .logo-img-placeholder {
+    width: 140px;
+    height: 90px;
+    background-color: #e0e0e0;
+    margin: 0 auto 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    color: #666;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.main-hero .logo-img-placeholder img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.main-hero h1 {
+    font-size: 40px;
+    font-weight: 900;
+    color: #000;
+    margin-bottom: 8px;
+    letter-spacing: -1.5px;
+}
+
+.main-hero .keywords {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+    margin-top: 10px;
+}
+
+/* 소개 섹션 */
+.section-intro {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+}
+
+.section-intro h2 {
+    font-size: 30px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.section-intro p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #666;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 고민 이야기 섹션 */
+#journey {
+    width: 100%;
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #fdfdfd;
+    word-break: keep-all;
+}
+
+#journey .story-panel {
+    padding: 7rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+#journey .story-panel.dark {
+    background-color: #1f2428;
+    color: #e8e8e8;
+}
+
+#journey .story-panel.light {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+#journey .story-panel-content {
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#journey .story-panel-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#journey .story-panel h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+#journey .story-panel p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 1.5rem auto 0 auto;
+    max-width: 90%;
+    color: #5a5a5a;
+}
+
+#journey .story-panel.dark p {
+    color: #b0b0b0;
+}
+
+#journey .story-panel h2.quote {
+    font-size: 1.6rem;
+    font-weight: 500;
+    font-style: normal;
+    color: #999;
+    line-height: 1.7;
+}
+
+#journey .highlight-text {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#journey .highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+#journey .story-panel.light .highlight-text::after {
+    background-color: #ffde59;
+}
+
+#journey .story-panel.dark .highlight-text::after {
+    background-color: #59d4ff;
+}
+
+#journey .final-conclusion {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #0056b3;
+}
+
+#journey .recommendation {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* 정보 패널 공통 스타일 */
+.info-panel {
+    padding: 5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+    overflow: hidden;
+}
+
+.info-panel.dark {
+    background-color: #1f2428;
+    color: #e8e8e8;
+}
+
+.info-panel.light {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+.info-panel-content {
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.info-panel-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 2rem 0;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 1rem;
+}
+
+.info-panel.dark .sub-heading {
+    color: #e8e8e8;
+    border-bottom-color: #59d4ff;
+}
+
+.main-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+}
+
+.sub-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 1rem 0;
+    color: #666;
+}
+
+.info-panel.dark .sub-text {
+    color: #b0b0b0;
+}
+
+.text-red {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+}
+
+.highlight-box-yellow {
+    background-color: #fff9c4;
+    border: 2px solid #f1c40f;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.highlight-box-yellow p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* 모바일 반응형 - 섹션 */
+@media (max-width: 768px) {
+    .main-hero {
+        padding: 30px 20px;
+        min-height: 200px;
+    }
+    
+    .main-hero h1 {
+        font-size: 28px;
+    }
+    
+    .main-hero .keywords {
+        font-size: 14px;
+    }
+    
+    .main-hero .logo-img-placeholder {
+        width: 100px;
+        height: 70px;
+        margin-bottom: 10px;
+    }
+
+    #journey .story-panel {
+        padding: 5rem 1.2rem;
+    }
+    
+    #journey .story-panel h2 {
+        font-size: 1.4rem;
+    }
+    
+    #journey .story-panel p {
+        font-size: 1rem;
+    }
+    
+    #journey .final-conclusion {
+        font-size: 2.2rem;
+    }
+    
+    #journey .recommendation {
+        font-size: 1.8rem;
+    }
+
+    .info-panel {
+        padding: 3rem 1.2rem;
+    }
+    
+    .sub-heading {
+        font-size: 1.8rem;
+    }
+    
+    .main-text {
+        font-size: 1.2rem;
+    }
+    
+    .sub-text {
+        font-size: 1rem;
+    }
+}

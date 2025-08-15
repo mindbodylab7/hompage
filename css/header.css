@@ -1,0 +1,148 @@
+/* =============================================== */
+/* ===== 헤더 및 네비게이션 스타일 ===== */
+/* =============================================== */
+
+/* 헤더 스타일 */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    width: 100%;
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+.header-left .logo {
+    display: flex;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.header-left .logo img {
+    height: 30px;
+    margin-right: 10px;
+}
+
+/* 데스크톱 내비게이션 */
+.desktop-nav ul {
+    display: flex;
+    align-items: center;
+}
+
+.desktop-nav ul li {
+    margin-right: 25px;
+}
+
+.desktop-nav ul li:last-child {
+    margin-right: 0;
+}
+
+.desktop-nav ul li a {
+    font-size: 15px;
+    font-weight: 500;
+    color: #555;
+    padding: 5px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.desktop-nav ul li a:hover {
+    color: #007bff;
+}
+
+/* 햄버거 메뉴 */
+.hamburger-menu {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    font-size: 24px;
+    color: #555;
+    z-index: 1100;
+}
+
+/* 모바일 내비게이션 오버레이 */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.mobile-nav-overlay.active {
+    right: 0;
+}
+
+.mobile-nav-overlay .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #555;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-nav-overlay nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.mobile-nav-overlay nav ul li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav-overlay nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-nav-overlay nav ul li a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-overlay nav ul li a:hover {
+    color: #007bff;
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+    .desktop-nav {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    header {
+        padding: 15px 20px;
+    }
+}
