@@ -973,16 +973,15 @@
         media="print" onload="this.media='all'">
 
     <!-- 네이버 애널리틱스 -->
-    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
-    <script type="text/javascript">
-        if (!wcs_add) var wcs_add = {};
-        wcs_add["wa"] = "s_18b747d78924";
-        if (!_nasa) var _nasa = {};
-        if (window.wcs) {
-            wcs.inflow();
-            wcs_do();
-        }
-    </script>
+    <script>
+if (!wcs_add) var wcs_add = {};
+wcs_add["wa"] = "s_18b747d78924";
+if(window.wcs) {
+  wcs.inflow("mindbodylab.kr");
+}
+wcs_do();
+</script>
+
 </head>
 
 <body>
@@ -1732,5 +1731,6 @@
     <script src="js/scroll-spy.js" defer></script>
 
 </body>
+
 
 </html>
