@@ -973,15 +973,16 @@
         media="print" onload="this.media='all'">
 
     <!-- 네이버 애널리틱스 -->
-    <script>
-if (!wcs_add) var wcs_add = {};
-wcs_add["wa"] = "s_18b747d78924";
-if(window.wcs) {
-  wcs.inflow("mindbodylab.kr");
-}
-wcs_do();
-</script>
-
+    <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
+    <script type="text/javascript">
+        if (!wcs_add) var wcs_add = {};
+        wcs_add["wa"] = "s_18b747d78924";
+        if (!_nasa) var _nasa = {};
+        if (window.wcs) {
+            wcs.inflow();
+            wcs_do();
+        }
+    </script>
 </head>
 
 <body>
@@ -1594,6 +1595,13 @@ wcs_do();
         </div>
     </a>
 
+    <!-- MIG-LOG 공통 로그분석 스크립트 -->
+    <script type="text/javascript" src="//wsa.mig-log.com/wsalog.js"></script>
+    <script type="text/javascript">
+        wsa.inflow("www.mindbodylab.kr");
+        wsa_do(wsa);
+    </script>
+
     <!-- Google Tag Manager -->
     <script>(function (w, d, s, l, i) {
             w[l] = w[l] || []; w[l].push({
@@ -1731,6 +1739,5 @@ wcs_do();
     <script src="js/scroll-spy.js" defer></script>
 
 </body>
-
 
 </html>
