@@ -25,9 +25,36 @@
     <meta property="og:image" content="https://www.mindbodylab.kr/images/og-image.png">
     <meta property="og:url" content="https://www.mindbodylab.kr">
     <meta property="og:type" content="website">
+    <!-- [P4-01] canonical URL — 검색엔진 중복 페이지 방지 -->
+    <link rel="canonical" href="https://www.mindbodylab.kr">
+
+    <!-- [P4-02] JSON-LD 구조화 데이터 — 검색엔진 리치 결과 지원 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "마인드바디랩 최면상담센터",
+        "description": "전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정",
+        "url": "https://www.mindbodylab.kr",
+        "telephone": "070-7954-3170",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "중대로 97 5층",
+            "addressLocality": "송파구",
+            "addressRegion": "서울특별시",
+            "addressCountry": "KR"
+        },
+        "priceRange": "₩150,000/회기"
+    }
+    </script>
 
     <!-- 크리티컬 CSS - 즉시 렌더링을 위한 인라인 스타일 -->
     <style>
+        /* ============================================
+           크리티컬 CSS — 헤더/히어로/기본 리셋만 인라인 유지
+           나머지는 css/styles.css로 분리됨 (P2-01)
+           ============================================ */
+
         /* 기본 리셋 및 폰트 */
         * {
             margin: 0;
@@ -93,6 +120,11 @@
             height: 30px;
             margin-right: 10px;
         }
+
+        /* [P1-03] 로고 텍스트 색상 — <font> 태그 대체 CSS */
+        .logo-red { color: #e74c3c; }
+        .logo-blue { color: #3498db; }
+        .logo-orange { color: #f39c12; }
 
         .desktop-nav ul {
             display: flex;
@@ -207,110 +239,9 @@
             margin: 0 auto;
         }
 
-        /* 고민 이야기 섹션 - 즉시 표시 */
-        #journey {
-            width: 100%;
-            background-color: #fdfdfd;
-            word-break: keep-all;
-        }
+        /* [P2-01] #journey CSS는 css/styles.css로 추출됨 */
 
-        #journey .story-panel {
-            padding: 7rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        #journey .story-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-
-        #journey .story-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-
-        #journey .story-panel-content {
-            max-width: 800px;
-            width: 100%;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        #journey .story-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        #journey .story-panel h2 {
-            font-size: 2.8rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin: 0;
-        }
-
-        #journey .story-panel p {
-            font-size: 1.2rem;
-            font-weight: 400;
-            line-height: 1.8;
-            margin: 1.5rem auto 0 auto;
-            max-width: 90%;
-            color: #5a5a5a;
-        }
-
-        #journey .story-panel.dark p {
-            color: #b0b0b0;
-        }
-
-        #journey .story-panel h2.quote {
-            font-size: 1.6rem;
-            font-weight: 500;
-            color: #999;
-            line-height: 1.7;
-        }
-
-        #journey .highlight-text {
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        #journey .highlight-text::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            border-radius: 3px;
-            opacity: 0.6;
-        }
-
-        #journey .story-panel.light .highlight-text::after {
-            background-color: #ffde59;
-        }
-
-        #journey .story-panel.dark .highlight-text::after {
-            background-color: #59d4ff;
-        }
-
-        #journey .final-conclusion {
-            font-size: 2.8rem;
-            font-weight: 900;
-            color: #0056b3;
-        }
-
-        #journey .recommendation {
-            font-size: 2.2rem;
-            font-weight: 600;
-            line-height: 1.6;
-        }
-
-        /* 모바일 반응형 - 즉시 적용 */
+        /* 모바일 반응형 - 크리티컬 (헤더/히어로만) */
         @media (max-width: 768px) {
             .desktop-nav {
                 display: none;
@@ -342,621 +273,17 @@
                 height: 70px;
                 margin-bottom: 10px;
             }
-
-            #journey .story-panel {
-                padding: 5rem 1.2rem;
-            }
-
-            #journey .story-panel h2 {
-                font-size: 1.4rem;
-            }
-
-            #journey .story-panel p {
-                font-size: 1rem;
-            }
-
-            #journey .final-conclusion {
-                font-size: 2.2rem;
-            }
-
-            #journey .recommendation {
-                font-size: 1.8rem;
-            }
-        }
-
-        /* 추가 섹션 스타일 - 즉시 표시 */
-        .info-panel {
-            padding: 5rem 1.5rem;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            text-align: center;
-        }
-
-        .info-panel.dark {
-            background-color: #1f2428;
-            color: #e8e8e8;
-        }
-
-        .info-panel.light {
-            background-color: #fdfdfd;
-            color: #333;
-        }
-
-        .info-panel-content {
-            max-width: 800px;
-            width: 100%;
-            text-align: center;
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-        }
-
-        .info-panel-content.is-visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .sub-heading {
-            font-size: 2.5rem;
-            font-weight: 700;
-            line-height: 1.4;
-            margin: 0 0 2rem 0;
-            border-bottom: 3px solid #007bff;
-            padding-bottom: 1rem;
-            text-align: center;
-            color: #333;
-        }
-
-        .info-panel.dark .sub-heading {
-            color: #e8e8e8 !important;
-            border-bottom-color: #59d4ff;
-        }
-
-        .info-panel.light .sub-heading {
-            color: #333 !important;
-            border-bottom-color: #007bff;
-        }
-
-        .main-text {
-            font-size: 1.4rem;
-            font-weight: 500;
-            line-height: 1.6;
-            margin: 1.5rem 0;
-            text-align: center;
-            color: #333;
-        }
-
-        .info-panel.dark .main-text {
-            color: #e8e8e8 !important;
-        }
-
-        .info-panel.light .main-text {
-            color: #333 !important;
-        }
-
-        .sub-text {
-            font-size: 1.1rem;
-            font-weight: 400;
-            line-height: 1.7;
-            margin: 1rem 0;
-            text-align: center;
-            color: #666;
-        }
-
-        .info-panel.dark .sub-text {
-            color: #b0b0b0 !important;
-        }
-
-        .info-panel.light .sub-text {
-            color: #666 !important;
-        }
-
-        .text-red {
-            color: #e74c3c;
-            font-weight: 700;
-        }
-
-        .brand-text {
-            font-size: 1.8rem;
-            margin: 1.5rem 0;
-        }
-
-        .highlight-box-yellow {
-            background-color: #fff9c4;
-            border: 2px solid #f1c40f;
-            border-radius: 12px;
-            padding: 2rem;
-            margin: 2rem 0;
-        }
-
-        .highlight-box-yellow p {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 500;
-            color: #333;
-        }
-
-        /* 예약 위젯 - 즉시 표시 */
-        .booking-widget-container {
-            display: flex;
-            justify-content: center;
-            padding: 2rem 1rem;
-        }
-
-        .booking-widget {
-            max-width: 600px;
-            width: 100%;
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 16px;
-            box-sizing: border-box;
-        }
-
-        .booking-widget .location-info {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            flex-grow: 1;
-        }
-
-        .booking-widget .location-icon svg {
-            width: 32px;
-            height: 32px;
-            flex-shrink: 0;
-        }
-
-        .booking-widget .location-text h4 {
-            margin: 0 0 4px 0;
-            font-size: 16px;
-            font-weight: 600;
-            color: #222;
-        }
-
-        .booking-widget .location-text p {
-            margin: 0;
-            font-size: 13px;
-            color: #666;
-        }
-
-        .booking-widget .booking-buttons {
-            flex-shrink: 0;
-        }
-
-        .btn-modern-ghost {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            background-color: transparent;
-            color: #333;
-            padding: 12px 24px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .btn-modern-ghost:hover {
-            background-color: #333;
-            color: #fff;
-        }
-
-        /* 채팅 버블 - 즉시 표시 */
-        .chat-bubble {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: #ffeb3b;
-            color: #333;
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-size: 24px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            cursor: pointer;
-            z-index: 100;
-            transition: transform 0.3s ease;
-        }
-
-        .chat-bubble:hover {
-            transform: scale(1.1);
-        }
-
-        /* 상담 리스트 */
-        .consultation-list {
-            list-style: none;
-            padding: 0;
-            margin: 2rem 0;
-            text-align: left;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .consultation-list li {
-            padding: 0.8rem 1rem;
-            margin: 0.5rem 0;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 500;
-            border-left: 4px solid #59d4ff;
-        }
-
-        /* 프로그램 그리드 */
-        .program-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin: 3rem 0;
-        }
-
-        .program-card {
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            padding: 2rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .program-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-        }
-
-        .program-card h3 {
-            font-size: 1.4rem;
-            font-weight: 700;
-            margin: 0 0 1rem 0;
-            color: #59d4ff;
-        }
-
-        .program-card p {
-            font-size: 1rem;
-            line-height: 1.6;
-            margin: 0;
-        }
-
-        /* 센터장 프로필 */
-        .director-profile {
-            display: grid;
-            grid-template-columns: 200px 1fr;
-            gap: 3rem;
-            align-items: center;
-            text-align: left;
-            margin: 3rem 0;
-        }
-
-        .profile-image {
-            display: flex;
-            justify-content: center;
-        }
-
-        .profile-image img {
-            width: 200px;
-            height: 200px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #007bff;
-        }
-
-        .profile-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0 0 1.5rem 0;
-            color: #007bff;
-        }
-
-        .credentials {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #007bff;
-        }
-
-        .license-item {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .license-item:last-child {
-            margin-bottom: 0;
-            border-bottom: none;
-        }
-
-        .license-title {
-            display: block;
-            font-size: 1.2rem;
-            font-weight: 700;
-            color: #007bff;
-            margin-bottom: 0.5rem;
-        }
-
-        .license-issuer {
-            display: block;
-            font-size: 0.95rem;
-            color: #6c757d;
-            font-style: italic;
-        }
-
-        .message {
-            font-size: 1.2rem;
-            font-style: italic;
-            line-height: 1.7;
-            margin: 2rem 0;
-            padding: 2rem;
-            background-color: #e3f2fd;
-            border-radius: 12px;
-            color: #1565c0;
-            font-weight: 500;
-        }
-
-        /* 연락처 정보 */
-        .contact-info {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            margin: 3rem 0;
-            text-align: left;
-        }
-
-        .address-info h3 {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin: 0 0 1.5rem 0;
-            color: #59d4ff;
-        }
-
-        .address-info p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin: 0.8rem 0;
-        }
-
-        .address {
-            font-weight: 600;
-            color: #e8e8e8;
-        }
-
-        .phone {
-            color: #59d4ff;
-            font-weight: 600;
-        }
-
-        .hours {
-            color: #b0b0b0;
-        }
-
-        .map-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .map-placeholder {
-            width: 100%;
-            height: 200px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border: 2px dashed #59d4ff;
-        }
-
-        .map-placeholder p {
-            color: #59d4ff;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        /* 모바일 반응형 - 추가 섹션들 */
-        @media (max-width: 768px) {
-            .info-panel {
-                padding: 3rem 1.2rem;
-            }
-
-            .sub-heading {
-                font-size: 1.8rem;
-            }
-
-            .main-text {
-                font-size: 1.2rem;
-            }
-
-            .sub-text {
-                font-size: 1rem;
-            }
-
-            .booking-widget {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-
-            .booking-buttons {
-                width: 100%;
-            }
-
-            .btn-modern-ghost {
-                width: 100%;
-                justify-content: center;
-                box-sizing: border-box;
-            }
-
-            .program-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-
-            .director-profile {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .profile-image img {
-                width: 150px;
-                height: 150px;
-            }
-
-            .contact-info {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                text-align: center;
-            }
-
-            .consultation-list {
-                text-align: center;
-            }
-
-            .consultation-list li {
-                text-align: left;
-            }
-        }
-
-        /* 모바일 네비게이션 - 즉시 표시 */
-        .mobile-nav-overlay {
-            position: fixed;
-            top: 0;
-            right: -100%;
-            width: 80%;
-            max-width: 300px;
-            height: 100%;
-            background-color: #fff;
-            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
-            transition: right 0.3s ease-in-out;
-            z-index: 1050;
-            display: flex;
-            flex-direction: column;
-            padding-top: 60px;
-        }
-
-        .mobile-nav-overlay.active {
-            right: 0;
-        }
-
-        .mobile-nav-overlay .close-menu {
-            position: absolute;
-            top: 15px;
-            right: 20px;
-            background: none;
-            border: none;
-            font-size: 28px;
-            color: #555;
-            cursor: pointer;
-            padding: 10px;
-        }
-
-        .mobile-nav-overlay nav ul {
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            width: 100%;
-        }
-
-        .mobile-nav-overlay nav ul li {
-            margin-bottom: 15px;
-        }
-
-        .mobile-nav-overlay nav ul li:last-child {
-            margin-bottom: 0;
-        }
-
-        .mobile-nav-overlay nav ul li a {
-            font-size: 18px;
-            font-weight: 500;
-            color: #333;
-            padding: 10px 0;
-            display: block;
-            transition: color 0.3s ease;
         }
 
-        .mobile-nav-overlay nav ul li a:hover {
-            color: #007bff;
-        }
-
-        /* 드롭다운 메뉴 스타일 */
-        .dropdown-menu {
-            position: relative;
-        }
-
-        .dropdown-submenu {
-            position: absolute;
-            left: 100%;
-            top: 0;
-            background-color: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-            min-width: 280px;
-            opacity: 0;
-            visibility: hidden;
-            transform: translateX(-10px);
-            transition: all 0.3s ease;
-            z-index: 1002;
-        }
-
-        .dropdown-menu:hover .dropdown-submenu {
-            opacity: 1;
-            visibility: visible;
-            transform: translateX(0);
-        }
-
-        .dropdown-submenu li {
-            margin: 0;
-        }
-
-        .dropdown-submenu li a {
-            padding: 10px 15px;
-            font-size: 12px;
-            color: #333;
-            border-left: none;
-            white-space: nowrap;
-            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-        }
-
-        .dropdown-submenu li:last-child a {
-            border-bottom: none;
-        }
-
-        .dropdown-submenu li a:hover {
-            background-color: rgba(0, 123, 255, 0.1);
-            color: #007bff;
-        }
-
-        /* 목차 링크 스타일 */
-        .toc-link {
-            color: #59d4ff !important;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .toc-link:hover {
-            color: #ffffff !important;
-            background-color: rgba(89, 212, 255, 0.2);
-        }
-
-        /* 모바일에서 드롭다운 숨김 */
-        @media (max-width: 1200px) {
-            .dropdown-submenu {
-                display: none;
-            }
-        }
+        /* [P2-01] 아래 CSS는 css/styles.css로 추출됨:
+           .info-panel ~ .highlight-box-yellow,
+           .booking-widget ~ .btn-modern-ghost, .chat-bubble,
+           .consultation-list, .program-grid ~ .program-card,
+           .director-profile ~ .message,
+           .contact-info ~ .map-placeholder,
+           @media(768px) 추가 섹션,
+           .mobile-nav-overlay, .dropdown-menu, .dropdown-submenu,
+           .toc-link, @media(1200px), .copyright */
     </style>
 
     <!-- 폰트 로딩 (비차단) -->
@@ -966,11 +293,11 @@
         rel="stylesheet" media="print"
         onload="this.media='all'; document.body.style.fontFamily='Noto Sans KR, sans-serif';">
 
-    <!-- 추가 CSS (비차단 로딩) -->
+    <!-- [P2-03] 추가 CSS (비차단 로딩) — components.css 제거, styles.css로 통합 -->
+    <link rel="stylesheet" href="css/styles.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="css/styles.css"></noscript>
     <link rel="stylesheet" href="css/floating-toc.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="css/components.css" media="print" onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-        media="print" onload="this.media='all'">
+    <!-- [P5-02] Font Awesome CDN 제거 — 모든 아이콘을 인라인 SVG로 교체 완료 (P5-01) -->
 
     <!-- 네이버 애널리틱스 -->
     <script type="text/javascript" src="//wcs.naver.net/wcslog.js"></script>
@@ -986,14 +313,19 @@
 </head>
 
 <body>
+    <!-- [P1-05] skip navigation — 접근성 바로가기 링크 (Tab 키 첫 포커스) -->
+    <a href="#main-content" class="skip-link">본문으로 바로가기</a>
     <!-- Google Tag Manager (noscript) -->
     <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-NXVLC5NW" height="0" width="0"
             style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- 플로팅 목차 -->
     <div id="floating-toc-container">
-        <button id="toc-toggle-button">
-            <i class="fas fa-bars"></i>
+        <!-- [P3-03] aria-label, aria-expanded, aria-controls, aria-hidden 추가 -->
+        <button id="toc-toggle-button"
+                aria-label="목차 열기" aria-expanded="false" aria-controls="side-nav">
+            <!-- [P5-01] fa-bars → SVG -->
+            <svg width="18" height="18" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
         </button>
         <nav id="side-nav">
             <ul>
@@ -1025,9 +357,9 @@
             <a href="#" class="logo">
                 <img src="images/mindbodylab_icon.png" alt="MindbodyLab Icon"
                     onerror="this.onerror=null; this.src='https://placehold.co/100x100?text=Logo';">
-                <span>
-                    <font color="red">마인드<font color="blue">바디</font>
-                        <font color="orange">랩</font>
+                <!-- [P1-03] <font> 태그를 <span> + CSS class로 교체 -->
+                <span class="logo-text">
+                    <span class="logo-red">마인드</span><span class="logo-blue">바디</span><span class="logo-orange">랩</span>
                 </span>
             </a>
         </div>
@@ -1043,16 +375,22 @@
                     <li><a href="https://m.site.naver.com/1NVux">공지사항</a></li>
                 </ul>
             </nav>
-            <button class="hamburger-menu" id="hamburgerMenu">
-                <i class="fas fa-bars"></i>
+            <!-- [P3-02] aria-expanded 추가 — JS에서 열기/닫기 시 동기화 -->
+            <!-- [P3-03] aria-controls, aria-hidden 추가 -->
+            <button class="hamburger-menu" id="hamburgerMenu"
+                    aria-label="메뉴 열기" aria-expanded="false" aria-controls="mobileNavOverlay">
+                <!-- [P5-01] fa-bars → SVG -->
+                <svg width="18" height="18" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg>
             </button>
         </div>
     </header>
 
     <!-- 모바일 네비게이션 오버레이 -->
     <div class="mobile-nav-overlay" id="mobileNavOverlay">
-        <button class="close-menu" id="closeMenu">
-            <i class="fas fa-times"></i>
+        <!-- [P3-03] aria-label, aria-hidden 추가 -->
+        <button class="close-menu" id="closeMenu" aria-label="메뉴 닫기">
+            <!-- [P5-01] fa-times → SVG -->
+            <svg width="18" height="18" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true"><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>
         </button>
         <nav>
             <ul>
@@ -1067,8 +405,8 @@
         </nav>
     </div>
 
-    <!-- 메인 콘텐츠 -->
-    <main>
+    <!-- [P1-05] 메인 콘텐츠 — skip navigation 대상 id 추가 -->
+    <main id="main-content">
         <!-- 히어로 섹션 -->
         <section class="main-hero">
             <div class="hero-content">
@@ -1087,9 +425,10 @@
             <p>마인드바디랩은 전문 최면상담 센터입니다.</p>
             <p>최면 상담으로 병든 마음과 정신적 문제를 치유하고 있습니다.</p>
         </section>
-    </main>
 
-    <!-- 고민 이야기 섹션 -->
+    <!-- ============================================ -->
+    <!-- 고민 이야기 섹션 (main 내부로 이동됨 - P1-01) -->
+    <!-- ============================================ -->
     <section id="journey">
         <div class="story-panel dark">
             <div class="story-panel-content">
@@ -1187,7 +526,8 @@
             </div>
             <div class="booking-buttons">
                 <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
-                    <i class="fas fa-plus"></i>
+                    <!-- [P5-01] fa-plus → SVG -->
+                    <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
                 </a>
             </div>
@@ -1198,12 +538,14 @@
     <section id="principle">
         <div class="info-panel light">
             <div class="info-panel-content">
-                <h2 class="sub-heading" style="border:none; font-size: 3rem;">최면 심리 상담 센터</h2>
+                <!-- [P2-04] style="border:none; font-size:3rem" → .sub-heading-xl -->
+                <h2 class="sub-heading sub-heading-xl">최면 심리 상담 센터</h2>
                 <p class="main-text">무의식적 문제의 원인을 찾고<br>최면 상담으로 해결하는 곳 입니다.</p>
+                <!-- [P2-04] brand-text 인라인 스타일 → .brand-red/.brand-blue/.brand-orange -->
                 <p class="brand-text">
-                    <span style="color:#e74c3c; font-weight: 900;">마인드</span><span
-                        style="color:#3498db; font-weight: 900;">바디</span><span
-                        style="color:#f39c12; font-weight: 900;">랩</span>
+                    <span class="brand-red">마인드</span><span
+                        class="brand-blue">바디</span><span
+                        class="brand-orange">랩</span>
                 </p>
                 <div class="highlight-box-yellow">
                     <p>마인드바디랩은 최면, NLP를 활용하여<br>회복탄력성 증대, 무의식의 변화를 시키는<br>방법에 최선을 다하고 있습니다.</p>
@@ -1212,9 +554,12 @@
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <h2 class="sub-heading" style="border:none; font-size: 2.8rem;">최면 상담 안내</h2>
-                <p class="sub-text" style="font-size: 1.3rem;">최면 상담 설명, 상담 비용, 예약 방법 등 안내</p>
-                <h3 style="font-size: 2rem; margin-top: 3rem;">- 목차 -</h3>
+                <!-- [P2-04] style="border:none; font-size:2.8rem" → .sub-heading-lg -->
+                <h2 class="sub-heading sub-heading-lg">최면 상담 안내</h2>
+                <!-- [P2-04] style="font-size:1.3rem" → .sub-text-lg -->
+                <p class="sub-text sub-text-lg">최면 상담 설명, 상담 비용, 예약 방법 등 안내</p>
+                <!-- [P2-04] style="font-size:2rem; margin-top:3rem" → .toc-title -->
+                <h3 class="toc-title">- 목차 -</h3>
                 <ul class="consultation-list">
                     <li><a href="#principle-1" class="toc-link">(1) 최면이란</a></li>
                     <li><a href="#principle-2" class="toc-link">(2) 상담이란</a></li>
@@ -1268,7 +613,8 @@
         <div class="info-panel dark" id="principle-2">
             <div class="info-panel-content">
                 <h2 class="sub-heading">(2) 상담이란</h2>
-                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">상담</span>은 심리학적 기법으로<br>내담자를 돕는 치유적
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <p class="main-text"><span class="text-red">상담</span>은 심리학적 기법으로<br>내담자를 돕는 치유적
                     관계입니다.</p>
                 <p class="sub-text">심리상담은 정신 건강을 증진하고 삶의 질을 높이는 것을 목표로 합니다.<br>내담자가 자신의 감정과 문제를 이해하고 해결할 수 있도록 도움을 줍니다.
                 </p>
@@ -1276,7 +622,8 @@
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <p class="main-text" style="color: #e8e8e8;">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <p class="main-text">상담가는 내담자를 <span class="text-red">비판하지 않고</span><br><span
                         class="text-red">공감하며 경청</span>을 합니다.</p>
                 <p class="sub-text">내담자 스스로가 문제를 해결할 수 있도록 도움을 줍니다.<br>심리상담은 현재 문제를 해결하고, 자아 성장을 도와 삶의 질을 높이며,<br>스트레스
                     관리와 대인관계 개선을 통해 전반적인 정신 건강을 유지하고,</p>
@@ -1284,9 +631,11 @@
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <p class="main-text"><span class="text-red">미래의 문제를 예방</span>하는 데<br>도움을 줍니다.
                 </p>
-                <p class="main-text" style="color: #e8e8e8; margin-top: 3rem;">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을
+                <!-- [P2-04] style="color:#e8e8e8; margin-top:3rem" → .mt-3 (color 삭제) -->
+                <p class="main-text mt-3">심리상담은 전문가와 함께<br>내면을 탐색하고 성장하여<br>삶의 질을
                     높여가는 과정입니다.</p>
             </div>
         </div>
@@ -1316,14 +665,16 @@
         <div class="info-panel dark" id="principle-4">
             <div class="info-panel-content">
                 <h2 class="sub-heading">(4) 상담에서 무의식의 중요성</h2>
-                <p class="main-text" style="color: #e8e8e8;"><span class="text-red">무의식</span>은 행동과 감정에 큰 영향을
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <p class="main-text"><span class="text-red">무의식</span>은 행동과 감정에 큰 영향을
                     주어<br><span class="text-red">심리상담</span>에서 중요합니다.</p>
                 <p class="sub-text">무의식의 중요성은 다음과 같은<br>여러 측면에서 나타납니다.</p>
             </div>
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <ul class="consultation-list" style="color: #e8e8e8;">
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <ul class="consultation-list">
                     <li>첫째.<br>무의식은 자아와 감정을<br>근본적으로 변화시킵니다.</li>
                     <li>둘째.<br>무의식은 일상 적응과<br>심리치료에 중요합니다.</li>
                     <li>셋째.<br>무의식은 행동과 판단에 영향을 주어<br>상담에서 중요할수 밖에 없습니다.</li>
@@ -1335,7 +686,8 @@
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <p class="main-text" style="margin-top: 3rem;"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인
+                <!-- [P2-04] style="margin-top:3rem" → .mt-3 -->
+                <p class="main-text mt-3"><span class="text-red">무의식은 심리 치료와 치유에<br>핵심적인
                         요소입니다.</span></p>
             </div>
         </div>
@@ -1360,13 +712,15 @@
         <div class="info-panel dark" id="principle-6">
             <div class="info-panel-content">
                 <h2 class="sub-heading">(6) 최면 상담이어야 하는 이유</h2>
-                <p class="main-text" style="color: #e8e8e8;">일반 상담이 아닌 <span class="text-red">최면 상담</span>을
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <p class="main-text">일반 상담이 아닌 <span class="text-red">최면 상담</span>을
                     선택하면<br><span class="text-red">좋은 이유</span>는 다음과 같습니다.</p>
             </div>
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <ul class="consultation-list" style="text-align: center;">
+                <!-- [P2-04] style="text-align:center" → .text-center -->
+                <ul class="consultation-list text-center">
                     <li>1. 무의식에 대한 직접적 접근 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>무의식에 직접 접근해 근본 문제를 해결합니다.</li>
                     <li>2. 효과 :<br>최면은 다양한 문제에 효과적이고,<br>의료적 절차에도 도움이 됩니다.</li>
                     <li>3. 빠른 결과 :<br>최면 상담은 일반적인 심리상담과는 다르게<br>더 적은 회기로 더 빠른 개선을 경험할 수 있습니다.</li>
@@ -1375,7 +729,8 @@
         </div>
         <div class="info-panel dark">
             <div class="info-panel-content">
-                <p class="main-text" style="margin-top: 3rem;">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더
+                <!-- [P2-04] style="margin-top:3rem" → .mt-3 -->
+                <p class="main-text mt-3">결론적으로,<br><span class="text-red">최면 상담은 문제와 개인에 따라<br>더
                         효과적입니다.</span></p>
             </div>
         </div>
@@ -1411,20 +766,23 @@
         <div class="info-panel dark" id="principle-8">
             <div class="info-panel-content">
                 <h2 class="sub-heading">(8) 상담 시간과 비용, 그리고 상담 횟수</h2>
-                <ul class="consultation-list" style="color: #e8e8e8;">
+                <!-- [P2-04] style="color:#e8e8e8" 삭제 — .dark 부모 상속 -->
+                <ul class="consultation-list">
                     <li>- 기본 상담의 횟수는<br><strong>3회기</strong>를 기준으로 진행하고 있습니다.
-                        <span class="sub-text" style="display: block; color: #bbb;">※ 단 1회기 또는 2회기 상담만으로도 스스로 충분히 변화하고
+                        <!-- [P2-04] style="display:block; color:#bbb" → .note-text -->
+                        <span class="sub-text note-text">※ 단 1회기 또는 2회기 상담만으로도 스스로 충분히 변화하고
                             안정감을 느낀다면, 상담은 바로 종결될 수 있습니다.<br>★ 내담자의 상담 이슈에 따라 상담 회기는 3회 이상으로 진행될 수 있습니다.</span>
                     </li>
                     <li>- 1회기 상담 시간 :<br><strong>1시간 30분 / 1주당 1회 상담</strong>을 진행 하고 있습니다.
-                        <span class="sub-text" style="display: block; color: #bbb;">※ 상담 진행에 따라 상담 시간은 더 길어 질 수 있습니다. 이때
+                        <!-- [P2-04] style="display:block; color:#bbb" → .note-text -->
+                        <span class="sub-text note-text">※ 상담 진행에 따라 상담 시간은 더 길어 질 수 있습니다. 이때
                             추가 비용이 발생하지 않습니다.</span>
                     </li>
                     <li>- 최면 상담 비용<br><strong>1회기 상담 비용 - 15만원</strong></li>
                 </ul>
             </div>
         </div>
-    </section>
+        <!-- [P1-02] </section> 삭제됨 — #principle 닫는 태그를 아래(핵심가치 이후)로 이동 -->
 
     <div class="booking-widget-container">
         <div class="booking-widget">
@@ -1443,7 +801,8 @@
             </div>
             <div class="booking-buttons">
                 <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost">
-                    <i class="fas fa-plus"></i>
+                    <!-- [P5-01] fa-plus → SVG -->
+                    <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
                 </a>
             </div>
@@ -1453,8 +812,10 @@
     <div class="info-panel light" id="principle-9">
         <div class="info-panel-content">
             <h2 class="sub-heading">(9) 최면상담사가<br>내담자에게 꼭 전하고 싶은 말</h2>
-            <p class="main-text" style="font-weight: 700;">최면은 만병통치약이 아닙니다.</p>
-            <p class="sub-text" style="text-align: left; margin-top: 2rem;">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한
+            <!-- [P2-04] style="font-weight:700" → .fw-bold -->
+            <p class="main-text fw-bold">최면은 만병통치약이 아닙니다.</p>
+            <!-- [P2-04] style="text-align:left; margin-top:2rem" → .text-left .mt-2 -->
+            <p class="sub-text text-left mt-2">실제로 최면 상담을 진행하다 보면 최면 상담을 찾는 많은 내담자들은 최면 한
                 번으로 다 해결될 것으로 기대를 하고 최면 상담 센터를 방문합니다. 그리고 최면 상담가가 모든 것을 알아서 다 해줄 것이라는 생각과 믿음을 갖고 최면 상담에 임하시곤 합니다. 최면 상담을
                 찾는 내담자들의 이러한 생각과 믿음을 갖는 것을 저는 충분히 이해하고 있습니다.<br><br>그런데 안타깝게도 최면은 만병통치약이 아닙니다. 그리고 최면 상담가는 내담자의 모든 것을
                 꿰뚫어 보는 독심술사의 능력을 갖고 있지 않습니다.<br><br>물론 단 한 번의 최면으로 극적인 효과를 보는 사례들도 분명히 있습니다. 그리고 최면 상담가의 유도문과 암시에 의해
@@ -1463,23 +824,28 @@
     </div>
     <div class="info-panel light">
         <div class="info-panel-content">
-            <p class="sub-text" style="text-align: left;">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를
+            <!-- [P2-04] style="text-align:left" → .text-left -->
+            <p class="sub-text text-left">하지만 이런 사례는 최면 감수성이 좋은 내담자들의 일부 사례들입니다.<br><br>최면 상담은 내담자가 변화를
                 원하는 상황에서 무의식적 원인으로 그 변화를 가로막고 있는 벽을 최면 상담가가 함께 협응을 통해서 함께 찾아가고 내담자가 갖고 있는 무의식적 장애물인 벽을 넘어 원하는 상태에 이르게
                 도움을 주는 조력자의 역할을 합니다.<br><br>즉 최면 상담 세션을 진행할 때 내담자의 적극적이고 능동적인 의지와 협조가 있어야 원하는 결과를 얻을 수 있다는 이야기를 드리고
                 싶습니다.<br><br>최면 상담을 찾는 모든 내담자들이 '최면상담사가 내담자에게 꼭 전하고 싶은 말'의 글을 읽고 최면 상담을 받으실 수 있으면 좋겠습니다.<br><br>이 글을 읽으면
                 좀 더 좋은 치료 효과를 얻을 수 있을 것입니다. 왜냐하면 내담자의 상담에 임하는 마음상태와 생각이 상담에서 제일 중요하기 때문입니다.</p>
         </div>
     </div>
-    <div class="info-panel light" style="background-color: #f0f2f5;">
+    <!-- [P2-04] style="background-color:#f0f2f5" → .bg-light-gray -->
+    <div class="info-panel light bg-light-gray">
         <div class="info-panel-content">
-            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 내담자의 행복 추구</p>
-            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 무의식의 긍정적 활용</p>
-            <p class="main-text" style="font-weight: 700; color: #0056b3 !important;">핵심 가치 – 의식과 무의식의 조화</p>
-            <p class="main-text" style="margin-top: 4rem; color: #e74c3c !important; font-weight: 700;">슬로건</p>
-            <p class="main-text"
-                style="font-size: 2.5rem; font-weight: 900; margin-top: 0.5rem; color: #000000 !important;">내담자의 마음
+            <!-- [P2-04] style="font-weight:700; color:#0056b3!important" → .core-value -->
+            <p class="main-text core-value">핵심 가치 – 내담자의 행복 추구</p>
+            <p class="main-text core-value">핵심 가치 – 무의식의 긍정적 활용</p>
+            <p class="main-text core-value">핵심 가치 – 의식과 무의식의 조화</p>
+            <!-- [P2-04] style="margin-top:4rem; color:#e74c3c!important; font-weight:700" → .slogan-label -->
+            <p class="main-text slogan-label">슬로건</p>
+            <!-- [P2-04] style="font-size:2.5rem; font-weight:900; margin-top:0.5rem; color:#000!important" → .slogan-text -->
+            <p class="main-text slogan-text">내담자의 마음
                 지도를<br>함께 그리는 여정</p>
-            <p class="sub-text" style="margin-top: 4rem; font-size: 1.5rem; color: #8e44ad !important;">당신의 마음을 찾아가는
+            <!-- [P2-04] style="margin-top:4rem; font-size:1.5rem; color:#8e44ad!important" → .director-credit -->
+            <p class="sub-text director-credit">당신의 마음을 찾아가는
                 여정,<br>최면 전문 상담가 : 김현준 센터장</p>
         </div>
     </div>
@@ -1519,9 +885,10 @@
                             onerror="this.onerror=null; this.src='https://placehold.co/200x200?text=Profile';">
                     </div>
                     <div class="profile-info">
-                        <h3 style="text-align: left;">김현준 센터장</h3>
-                        <p class="sub-heading"
-                            style="font-size: 1.4rem; border: none; margin: 1.5rem 0; text-align: left;">보유 라이센스 및 이수
+                        <!-- [P2-04] style="text-align:left" → .text-left -->
+                        <h3 class="text-left">김현준 센터장</h3>
+                        <!-- [P2-04] style="font-size:1.4rem; border:none; margin:1.5rem 0; text-align:left" → .credentials-heading -->
+                        <p class="sub-heading credentials-heading">보유 라이센스 및 이수
                             프로그램</p>
                         <div class="credentials">
                             <div class="license-item">
@@ -1553,8 +920,8 @@
                 </div>
             </div>
         </div>
-        <div class="highlight-box-yellow"
-            style="text-align: center; font-size: 1.5rem; margin: 0.5rem auto 2rem auto; padding: 2rem; background-color: #fff3cd; border: 2px solid #ffeaa7; border-radius: 10px; max-width: 600px; word-break: keep-all; word-wrap: break-word; line-height: 1.6;">
+        <!-- [P2-04] 인라인 스타일 전체 → .director-quote -->
+        <div class="highlight-box-yellow director-quote">
             <b>"모든 답은 여러분의 무의식 속에 있습니다. 저희는 단지 그 답을 찾아가는 여정을 함께 동행하는 안내자일 뿐입니다."</b>
         </div>
     </section>
@@ -1574,8 +941,9 @@
                     <div class="map-container">
                         <a href="https://map.naver.com/p/entry/place/1198745383" target="_blank"
                             title="새 창에서 네이버 지도 열기">
+                            <!-- [P2-04] style="width:100%; height:auto; display:block; border:0" → .map-img -->
                             <img src="images/map-preview.png" alt="마인드바디랩 최면상담센터 지도 보기"
-                                style="width: 100%; height: auto; display: block; border: 0;">
+                                class="map-img">
                         </a>
                     </div>
                 </div>
@@ -1583,11 +951,15 @@
         </div>
     </section>
 
-    <!-- 저작권 표시 -->
-    <div class="copyright"
-        style="text-align: center; padding: 2rem 0; background-color: #2a2a2a; color: #888; margin-top: 2rem;">
-        <p style="margin: 0; font-size: 0.9rem;">&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
-    </div>
+    </main>
+    <!-- ============================================ -->
+    <!-- /main 닫힘 (P1-01: 저작권 직전으로 이동됨) -->
+    <!-- ============================================ -->
+
+    <!-- [P1-04] 저작권 표시 — <div> → <footer> 시맨틱 태그 적용, 인라인 style → CSS class -->
+    <footer class="copyright">
+        <p>&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
+    </footer>
     <!-- 플로팅 채팅 버블 -->
     <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link">
         <div class="chat-bubble">
@@ -1630,11 +1002,13 @@
                     const closeMobileMenu = () => {
                         mobileNavOverlay.classList.remove('active');
                         document.body.style.overflow = '';
+                        hamburgerMenu.setAttribute('aria-expanded', 'false'); // [P3-02]
                     };
 
                     hamburgerMenu.addEventListener('click', () => {
                         mobileNavOverlay.classList.add('active');
                         document.body.style.overflow = 'hidden';
+                        hamburgerMenu.setAttribute('aria-expanded', 'true'); // [P3-02]
                     });
 
                     closeMenu.addEventListener('click', closeMobileMenu);
@@ -1661,23 +1035,8 @@
                     });
                 }
 
-                // === 2. 부드러운 스크롤 ===
-                document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                    anchor.addEventListener('click', function (e) {
-                        e.preventDefault();
-                        const target = document.querySelector(this.getAttribute('href'));
-                        if (target) {
-                            const header = document.querySelector('header');
-                            const headerHeight = header ? header.offsetHeight : 0;
-                            const targetPosition = target.offsetTop - headerHeight - 20;
-
-                            window.scrollTo({
-                                top: targetPosition,
-                                behavior: 'smooth'
-                            });
-                        }
-                    });
-                });
+                // [P3-01] "2. 부드러운 스크롤" 삭제됨
+                // — scroll-spy.js > ScrollSpyManager.initSmoothScroll()이 동일 기능 수행
 
                 // === 3. 스크롤 애니메이션 (세련된 효과) ===
                 const animatedContents = document.querySelectorAll('.story-panel-content, .info-panel-content');
