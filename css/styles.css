@@ -1,0 +1,923 @@
+/* ===== 마인드바디랩 메인 스타일시트 ===== */
+/* 비차단 로딩: media="print" onload="this.media='all'" */
+/* P2-01: 인라인 CSS에서 추출된 비크리티컬 스타일
+   - 크리티컬 CSS(헤더, 히어로, 기본 리셋)는 index.html 인라인에 유지
+   - P2-04: 인라인 style 속성 대체 유틸리티 클래스 포함 */
+
+/* ============================================
+   [P1-05] skip navigation — 접근성 바로가기 링크
+   ============================================ */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: #007bff;
+    color: #fff;
+    padding: 8px 16px;
+    z-index: 10000;
+    font-size: 14px;
+}
+.skip-link:focus {
+    top: 0;
+}
+
+/* ============================================
+   고민 이야기 섹션 (#journey)
+   ============================================ */
+#journey {
+    width: 100%;
+    background-color: #fdfdfd;
+    word-break: keep-all;
+}
+
+#journey .story-panel {
+    padding: 7rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+#journey .story-panel.dark {
+    background-color: #1f2428;
+    color: #e8e8e8;
+}
+
+#journey .story-panel.light {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+#journey .story-panel-content {
+    max-width: 800px;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+#journey .story-panel-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#journey .story-panel h2 {
+    font-size: 2.8rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0;
+}
+
+#journey .story-panel p {
+    font-size: 1.2rem;
+    font-weight: 400;
+    line-height: 1.8;
+    margin: 1.5rem auto 0 auto;
+    max-width: 90%;
+    color: #5a5a5a;
+}
+
+#journey .story-panel.dark p {
+    color: #b0b0b0;
+}
+
+#journey .story-panel h2.quote {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #999;
+    line-height: 1.7;
+}
+
+#journey .highlight-text {
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+}
+
+#journey .highlight-text::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 6px;
+    border-radius: 3px;
+    opacity: 0.6;
+}
+
+#journey .story-panel.light .highlight-text::after {
+    background-color: #ffde59;
+}
+
+#journey .story-panel.dark .highlight-text::after {
+    background-color: #59d4ff;
+}
+
+#journey .final-conclusion {
+    font-size: 2.8rem;
+    font-weight: 900;
+    color: #0056b3;
+}
+
+#journey .recommendation {
+    font-size: 2.2rem;
+    font-weight: 600;
+    line-height: 1.6;
+}
+
+/* ============================================
+   정보 패널 (.info-panel) — 치유 원리 등
+   ============================================ */
+.info-panel {
+    padding: 5rem 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.info-panel.dark {
+    background-color: #1f2428;
+    color: #e8e8e8;
+}
+
+.info-panel.light {
+    background-color: #fdfdfd;
+    color: #333;
+}
+
+.info-panel-content {
+    max-width: 800px;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.info-panel-content.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sub-heading {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin: 0 0 2rem 0;
+    border-bottom: 3px solid #007bff;
+    padding-bottom: 1rem;
+    text-align: center;
+    color: #333;
+}
+
+/* [P2-DoD] !important 제거 — .info-panel.dark/light 특이도로 충분 */
+.info-panel.dark .sub-heading {
+    color: #e8e8e8;
+    border-bottom-color: #59d4ff;
+}
+
+.info-panel.light .sub-heading {
+    color: #333;
+    border-bottom-color: #007bff;
+}
+
+.main-text {
+    font-size: 1.4rem;
+    font-weight: 500;
+    line-height: 1.6;
+    margin: 1.5rem 0;
+    text-align: center;
+    color: #333;
+}
+
+/* [P2-DoD] !important 제거 */
+.info-panel.dark .main-text {
+    color: #e8e8e8;
+}
+
+.info-panel.light .main-text {
+    color: #333;
+}
+
+.sub-text {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    margin: 1rem 0;
+    text-align: center;
+    color: #666;
+}
+
+/* [P2-DoD] !important 제거 */
+.info-panel.dark .sub-text {
+    color: #b0b0b0;
+}
+
+.info-panel.light .sub-text {
+    color: #666;
+}
+
+.text-red {
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.brand-text {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+}
+
+.highlight-box-yellow {
+    background-color: #fff9c4;
+    border: 2px solid #f1c40f;
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.highlight-box-yellow p {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: #333;
+}
+
+/* ============================================
+   예약 위젯 (.booking-widget)
+   ============================================ */
+.booking-widget-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.booking-widget {
+    max-width: 600px;
+    width: 100%;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 16px;
+    box-sizing: border-box;
+}
+
+.booking-widget .location-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-grow: 1;
+}
+
+.booking-widget .location-icon svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.booking-widget .location-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #222;
+}
+
+.booking-widget .location-text p {
+    margin: 0;
+    font-size: 13px;
+    color: #666;
+}
+
+.booking-widget .booking-buttons {
+    flex-shrink: 0;
+}
+
+.btn-modern-ghost {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: transparent;
+    color: #333;
+    padding: 12px 24px;
+    border: 2px solid #333;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 700;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-modern-ghost:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+/* ============================================
+   채팅 버블 (.chat-bubble)
+   ============================================ */
+.chat-bubble {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffeb3b;
+    color: #333;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    z-index: 100;
+    transition: transform 0.3s ease;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.1);
+}
+
+/* ============================================
+   상담 리스트 (.consultation-list)
+   ============================================ */
+.consultation-list {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consultation-list li {
+    padding: 0.8rem 1rem;
+    margin: 0.5rem 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    border-left: 4px solid #59d4ff;
+}
+
+/* ============================================
+   프로그램 그리드 (.program-grid, .program-card)
+   ============================================ */
+.program-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+.program-card {
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 2rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.program-card h3 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    color: #59d4ff;
+}
+
+.program-card p {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ============================================
+   센터장 프로필 (.director-profile)
+   ============================================ */
+.director-profile {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 3rem;
+    align-items: center;
+    text-align: left;
+    margin: 3rem 0;
+}
+
+.profile-image {
+    display: flex;
+    justify-content: center;
+}
+
+.profile-image img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #007bff;
+}
+
+.profile-info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    color: #007bff;
+}
+
+.credentials {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    margin: 1.5rem 0;
+    padding: 1.5rem;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #007bff;
+}
+
+.license-item {
+    margin-bottom: 1.5rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid #e9ecef;
+}
+
+.license-item:last-child {
+    margin-bottom: 0;
+    border-bottom: none;
+}
+
+.license-title {
+    display: block;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #007bff;
+    margin-bottom: 0.5rem;
+}
+
+.license-issuer {
+    display: block;
+    font-size: 0.95rem;
+    color: #6c757d;
+    font-style: italic;
+}
+
+.message {
+    font-size: 1.2rem;
+    font-style: italic;
+    line-height: 1.7;
+    margin: 2rem 0;
+    padding: 2rem;
+    background-color: #e3f2fd;
+    border-radius: 12px;
+    color: #1565c0;
+    font-weight: 500;
+}
+
+/* ============================================
+   연락처 정보 (.contact-info)
+   ============================================ */
+.contact-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin: 3rem 0;
+    text-align: left;
+}
+
+.address-info h3 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 0 0 1.5rem 0;
+    color: #59d4ff;
+}
+
+.address-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    margin: 0.8rem 0;
+}
+
+.address {
+    font-weight: 600;
+    color: #e8e8e8;
+}
+
+.phone {
+    color: #59d4ff;
+    font-weight: 600;
+}
+
+.hours {
+    color: #b0b0b0;
+}
+
+.map-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.map-placeholder {
+    width: 100%;
+    height: 200px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px dashed #59d4ff;
+}
+
+.map-placeholder p {
+    color: #59d4ff;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+/* ============================================
+   모바일 반응형 — 추가 섹션 (@media 768px)
+   ============================================ */
+@media (max-width: 768px) {
+    /* journey 모바일 */
+    #journey .story-panel {
+        padding: 5rem 1.2rem;
+    }
+
+    #journey .story-panel h2 {
+        font-size: 1.4rem;
+    }
+
+    #journey .story-panel p {
+        font-size: 1rem;
+    }
+
+    #journey .final-conclusion {
+        font-size: 2.2rem;
+    }
+
+    #journey .recommendation {
+        font-size: 1.8rem;
+    }
+
+    /* info-panel 모바일 */
+    .info-panel {
+        padding: 3rem 1.2rem;
+    }
+
+    .sub-heading {
+        font-size: 1.8rem;
+    }
+
+    .main-text {
+        font-size: 1.2rem;
+    }
+
+    .sub-text {
+        font-size: 1rem;
+    }
+
+    /* booking-widget 모바일 */
+    .booking-widget {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .booking-buttons {
+        width: 100%;
+    }
+
+    .btn-modern-ghost {
+        width: 100%;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    /* program-grid 모바일 */
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    /* director-profile 모바일 */
+    .director-profile {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .profile-image img {
+        width: 150px;
+        height: 150px;
+    }
+
+    /* contact-info 모바일 */
+    .contact-info {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    /* consultation-list 모바일 */
+    .consultation-list {
+        text-align: center;
+    }
+
+    .consultation-list li {
+        text-align: left;
+    }
+}
+
+/* ============================================
+   모바일 반응형 — 소형 디바이스 (@media 480px)
+   [P2-03] components.css에서 병합
+   ============================================ */
+@media (max-width: 480px) {
+    .highlight-box-yellow {
+        padding: 1.5rem;
+        margin: 1.5rem 0;
+    }
+
+    .highlight-box-yellow p {
+        font-size: 1rem;
+    }
+
+    .program-card {
+        padding: 1.5rem;
+    }
+
+    .credentials {
+        padding: 1rem;
+    }
+
+    .message {
+        padding: 1.5rem;
+        font-size: 1.1rem;
+    }
+}
+
+/* ============================================
+   모바일 네비게이션 오버레이 (.mobile-nav-overlay)
+   ============================================ */
+.mobile-nav-overlay {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+    transition: right 0.3s ease-in-out;
+    z-index: 1050;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+}
+
+.mobile-nav-overlay.active {
+    right: 0;
+}
+
+.mobile-nav-overlay .close-menu {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: #555;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.mobile-nav-overlay nav ul {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 100%;
+}
+
+.mobile-nav-overlay nav ul li {
+    margin-bottom: 15px;
+}
+
+.mobile-nav-overlay nav ul li:last-child {
+    margin-bottom: 0;
+}
+
+.mobile-nav-overlay nav ul li a {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    padding: 10px 0;
+    display: block;
+    transition: color 0.3s ease;
+}
+
+.mobile-nav-overlay nav ul li a:hover {
+    color: #007bff;
+}
+
+/* ============================================
+   드롭다운 메뉴 (.dropdown-menu, .dropdown-submenu)
+   ============================================ */
+.dropdown-menu {
+    position: relative;
+}
+
+.dropdown-submenu {
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    min-width: 280px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-10px);
+    transition: all 0.3s ease;
+    z-index: 1002;
+}
+
+.dropdown-menu:hover .dropdown-submenu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(0);
+}
+
+.dropdown-submenu li {
+    margin: 0;
+}
+
+.dropdown-submenu li a {
+    padding: 10px 15px;
+    font-size: 12px;
+    color: #333;
+    border-left: none;
+    white-space: nowrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-submenu li:last-child a {
+    border-bottom: none;
+}
+
+.dropdown-submenu li a:hover {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: #007bff;
+}
+
+/* ============================================
+   목차 링크 (.toc-link)
+   ============================================ */
+/* [P2-DoD] !important 제거 — .consultation-list 내부에서 특이도 충분 */
+.toc-link {
+    color: #59d4ff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.toc-link:hover {
+    color: #ffffff;
+    background-color: rgba(89, 212, 255, 0.2);
+}
+
+/* ============================================
+   모바일 드롭다운 숨김 (@media 1200px)
+   ============================================ */
+@media (max-width: 1200px) {
+    .dropdown-submenu {
+        display: none;
+    }
+}
+
+/* ============================================
+   [P1-04] 저작권 푸터 (.copyright)
+   ============================================ */
+.copyright {
+    text-align: center;
+    padding: 2rem 0;
+    background-color: #2a2a2a;
+    color: #888;
+    margin-top: 2rem;
+}
+.copyright p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+/* ============================================
+   [P2-04] 인라인 style 속성 대체 유틸리티 클래스
+   ============================================ */
+
+/* --- 레이아웃/정렬 유틸리티 --- */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.mt-2 { margin-top: 2rem; }
+.mt-3 { margin-top: 3rem; }
+.fw-bold { font-weight: 700; }
+
+/* --- sub-heading 변형 --- */
+.sub-heading-xl {
+    border: none;
+    font-size: 3rem;
+}
+
+.sub-heading-lg {
+    border: none;
+    font-size: 2.8rem;
+}
+
+/* --- 목차 타이틀 --- */
+.toc-title {
+    font-size: 2rem;
+    margin-top: 3rem;
+}
+
+/* --- 주석/안내 텍스트 --- */
+.note-text {
+    display: block;
+    color: #bbb;
+}
+
+/* --- 배경색 변형 --- */
+.bg-light-gray {
+    background-color: #f0f2f5;
+}
+
+/* --- 핵심가치/슬로건 영역 --- */
+.core-value {
+    font-weight: 700;
+    color: #0056b3;
+}
+
+.slogan-label {
+    margin-top: 4rem;
+    color: #e74c3c;
+    font-weight: 700;
+}
+
+.slogan-text {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-top: 0.5rem;
+    color: #000;
+}
+
+.director-credit {
+    margin-top: 4rem;
+    font-size: 1.5rem;
+    color: #8e44ad;
+}
+
+/* --- 센터장 프로필 영역 --- */
+.credentials-heading {
+    font-size: 1.4rem;
+    border: none;
+    margin: 1.5rem 0;
+    text-align: left;
+}
+
+.director-quote {
+    text-align: center;
+    font-size: 1.5rem;
+    margin: 0.5rem auto 2rem auto;
+    padding: 2rem;
+    background-color: #fff3cd;
+    border: 2px solid #ffeaa7;
+    border-radius: 10px;
+    max-width: 600px;
+    word-break: keep-all;
+    word-wrap: break-word;
+    line-height: 1.6;
+}
+
+/* --- 브랜드 텍스트 컬러 (principle 섹션 내 마인드바디랩) --- */
+.brand-red   { color: #e74c3c; font-weight: 900; }
+.brand-blue  { color: #3498db; font-weight: 900; }
+.brand-orange { color: #f39c12; font-weight: 900; }
+
+/* --- 서브텍스트 크기 변형 --- */
+.sub-text-lg { font-size: 1.3rem; }
+
+/* --- 지도 이미지 --- */
+.map-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border: 0;
+}
