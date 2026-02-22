@@ -163,80 +163,169 @@
             z-index: 1100;
         }
 
-        /* 메인 히어로 - 즉시 표시 */
-        .main-hero {
-            background-color: #e0e0e0;
-            padding: 40px 20px;
-            text-align: center;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 250px;
-        }
-
-        .main-hero .hero-content {
-            max-width: 600px;
-            width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
-        }
-
-        .main-hero .logo-img-placeholder {
-            width: 140px;
-            height: 90px;
-            background-color: #e0e0e0;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #666;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .main-hero .logo-img-placeholder img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .main-hero h1 {
-            font-size: 40px;
-            font-weight: 900;
-            color: #000;
-            margin-bottom: 8px;
-            letter-spacing: -1.5px;
-        }
-
-        .main-hero .keywords {
-            font-size: 16px;
-            font-weight: 500;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        /* 소개 섹션 - 즉시 표시 */
-        .section-intro {
-            padding: 80px 20px;
+        /* ============================================
+           [H2-01] 새 히어로 크리티컬 CSS
+           — 외부 CRO 시안 A + 기존 디자인 톤 적용
+           ============================================ */
+        .new-hero {
+            padding: 48px 20px 32px;
             text-align: center;
             background-color: #f9f9f9;
+            color: #333;
         }
 
-        .section-intro h2 {
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
+        .new-hero__inner {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Tagline — 업종 + 위치 pill 배지 */
+        .new-hero__tag {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 14px;
+            margin-bottom: 16px;
+        }
+
+        .new-hero__tag-sep {
+            color: #ccc;
+        }
+
+        /* Headline (H1) */
+        .new-hero__title {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 900;
+            line-height: 1.35;
+            letter-spacing: -1px;
+            color: #000;
+            margin: 0 0 16px;
+        }
+
+        /* Sub 설명 */
+        .new-hero__sub {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 16px;
+        }
+
+        /* 조건 배지 그룹 */
+        .new-hero__badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
             margin-bottom: 20px;
         }
 
-        .section-intro p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
+        .new-hero__badge {
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            color: #444;
+            background-color: #fff;
+            white-space: nowrap;
+        }
+
+        /* 핵심 불릿 */
+        .new-hero__bullets {
+            list-style: disc;
+            text-align: left;
+            max-width: 520px;
+            margin: 0 auto 24px;
+            padding-left: 20px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .new-hero__bullets li {
+            margin-bottom: 4px;
+        }
+
+        /* CTA 버튼 영역 */
+        .new-hero__cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .new-hero__btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+
+        .new-hero__btn--primary {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #333;
+        }
+
+        .new-hero__btn--primary:hover {
+            background-color: #111;
+            border-color: #111;
+        }
+
+        .new-hero__btn--ghost {
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .new-hero__btn--ghost:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 마이크로카피 */
+        .new-hero__micro {
+            font-size: 13px;
+            color: #888;
+            margin: 0 0 12px;
+        }
+
+        /* 신뢰 요소 */
+        .new-hero__trust {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 8px;
+        }
+
+        .new-hero__trust a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        /* 점프 링크 */
+        .new-hero__jump {
+            display: inline-block;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: underline;
+            margin-top: 4px;
+        }
+
+        .new-hero__jump:hover {
+            color: #0056b3;
         }
 
         /* [P2-01] #journey CSS는 css/styles.css로 추출됨 */
@@ -255,23 +344,31 @@
                 padding: 15px 20px;
             }
 
-            .main-hero {
-                padding: 30px 20px;
-                min-height: 200px;
+            /* [H2-02] 새 히어로 모바일 */
+            .new-hero {
+                padding: 32px 16px 24px;
             }
 
-            .main-hero h1 {
-                font-size: 28px;
+            .new-hero__title {
+                font-size: clamp(22px, 6vw, 30px);
             }
 
-            .main-hero .keywords {
+            .new-hero__sub {
+                font-size: 15px;
+            }
+
+            .new-hero__bullets {
                 font-size: 14px;
+                padding-left: 16px;
             }
 
-            .main-hero .logo-img-placeholder {
-                width: 100px;
-                height: 70px;
-                margin-bottom: 10px;
+            .new-hero__btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .new-hero__cta {
+                flex-direction: column;
             }
         }
 
@@ -407,23 +504,70 @@
 
     <!-- [P1-05] 메인 콘텐츠 — skip navigation 대상 id 추가 -->
     <main id="main-content">
-        <!-- 히어로 섹션 -->
-        <section class="main-hero">
-            <div class="hero-content">
-                <div class="logo-img-placeholder">
-                    <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지"
-                        onerror="this.onerror=null; this.src='https://placehold.co/280x180?text=Logo';">
-                </div>
-                <h1>최면상담센터</h1>
-                <p class="keywords">심리 / 전생 / 최면 / 상담 / 무의식</p>
-            </div>
-        </section>
+        <!-- [H1-01] 새 히어로 섹션 — 외부 CRO 전문가 시안 A 기반, 기존 디자인 톤 적용 -->
+        <section class="new-hero">
+            <div class="new-hero__inner">
 
-        <!-- 소개 섹션 -->
-        <section class="section-intro">
-            <h2>마인드바디랩</h2>
-            <p>마인드바디랩은 전문 최면상담 센터입니다.</p>
-            <p>최면 상담으로 병든 마음과 정신적 문제를 치유하고 있습니다.</p>
+                <!-- Tagline: 업종 + 위치 즉시 인지 -->
+                <div class="new-hero__tag" aria-label="서비스 요약">
+                    <span>최면상담센터</span>
+                    <span class="new-hero__tag-sep" aria-hidden="true">|</span>
+                    <span>서울 송파</span>
+                </div>
+
+                <!-- Headline: 핵심 가치 제안 (H1 — 페이지 유일) -->
+                <h1 class="new-hero__title">말로 풀리지 않는 고민,<br>무의식에서 원인을 함께 찾는<br>1:1 최면상담</h1>
+
+                <!-- Sub: 3줄 핵심 설명 -->
+                <p class="new-hero__sub">
+                    긴 설명보다 <strong>핵심만 먼저</strong> 안내합니다.<br>
+                    내담자의 <strong>자발적 협력</strong>으로 진행되며, 강요로는 최면을 진행할 수 없습니다.<br>
+                    상담 전 과정과 기대치/한계를 충분히 설명한 뒤 진행합니다.
+                </p>
+
+                <!-- 조건 배지: 스캔용 핵심 조건 -->
+                <div class="new-hero__badges" role="list" aria-label="상담 조건 요약">
+                    <span class="new-hero__badge" role="listitem">송파</span>
+                    <span class="new-hero__badge" role="listitem">1회 90분</span>
+                    <span class="new-hero__badge" role="listitem">15만원</span>
+                    <span class="new-hero__badge" role="listitem">기본 3회기</span>
+                    <span class="new-hero__badge" role="listitem">시간 연장 시 추가 비용 없음</span>
+                </div>
+
+                <!-- 핵심 불릿: 서비스 차별점 3개 -->
+                <ul class="new-hero__bullets" aria-label="핵심 포인트">
+                    <li>반복되는 감정·습관·관계 패턴의 <strong>무의식적 원인</strong>을 탐색합니다.</li>
+                    <li>최면 + NLP 기반 접근으로 <strong>회복탄력성</strong>과 무의식의 변화를 돕습니다.</li>
+                    <li>처음이 부담되면: <strong>문의 → 예약</strong> 순서로 진행하셔도 됩니다.</li>
+                </ul>
+
+                <!-- CTA 2단계: 예약(Primary) + 문의(Secondary) -->
+                <div class="new-hero__cta" aria-label="상담 행동 버튼">
+                    <a class="new-hero__btn new-hero__btn--primary"
+                       href="https://m.site.naver.com/1O0dx"
+                       target="_blank" rel="noopener"
+                       data-cta="hero_reserve">
+                        상담 예약하기
+                    </a>
+                    <a class="new-hero__btn new-hero__btn--ghost"
+                       href="tel:070-7954-3170"
+                       data-cta="hero_call">
+                        전화로 먼저 문의하기
+                    </a>
+                </div>
+
+                <!-- 마이크로카피: 외부 이동 안내 (이탈 불안 감소) -->
+                <p class="new-hero__micro">※ '상담 예약하기'는 네이버 예약 페이지로 이동합니다.</p>
+
+                <!-- 신뢰 요소: 센터장 이름 + 자격 참조 -->
+                <p class="new-hero__trust">
+                    <strong>최면 전문 상담가: 김현준 센터장</strong> · 보유 라이센스/이수 프로그램은 아래 <a href="#director">센터장 소개</a>에 공개되어 있습니다.
+                </p>
+
+                <!-- 점프 링크: 비용 섹션 바로 이동 -->
+                <a class="new-hero__jump" href="#principle-8">상담 비용/시간 자세히 보기 →</a>
+
+            </div>
         </section>
 
     <!-- ============================================ -->
@@ -525,7 +669,7 @@
                 </div>
             </div>
             <div class="booking-buttons">
-                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
+                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost" data-cta="booking_widget_1">
                     <!-- [P5-01] fa-plus → SVG -->
                     <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
@@ -800,7 +944,7 @@
                 </div>
             </div>
             <div class="booking-buttons">
-                <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost">
+                <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost" data-cta="booking_widget_2">
                     <!-- [P5-01] fa-plus → SVG -->
                     <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
@@ -960,8 +1104,24 @@
     <footer class="copyright">
         <p>&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
     </footer>
+    <!-- [H3-01] 모바일 스티키 CTA — 전환율 최적화 (991px 이하에서만 표시) -->
+    <div class="sticky-cta" role="region" aria-label="빠른 상담 버튼">
+        <div class="sticky-cta__wrap">
+            <a class="sticky-cta__btn sticky-cta__btn--primary"
+               href="https://m.site.naver.com/1O0dx"
+               target="_blank" rel="noopener"
+               data-cta="sticky_reserve">
+                상담 예약
+            </a>
+            <a class="sticky-cta__btn sticky-cta__btn--ghost"
+               href="tel:070-7954-3170"
+               data-cta="sticky_call">
+                전화 문의
+            </a>
+        </div>
+    </div>
     <!-- 플로팅 채팅 버블 -->
-    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link">
+    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link" data-cta="chat_bubble">
         <div class="chat-bubble">
             💬
         </div>
@@ -1065,31 +1225,27 @@
                     });
                 }
 
-                // === 4. 이벤트 추적 ===
-                // 예약 버튼 클릭 추적
-                document.querySelectorAll('.btn-modern-ghost').forEach(button => {
-                    button.addEventListener('click', () => {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'booking',
-                                'event_label': 'consultation_booking'
-                            });
-                        }
-                    });
-                });
+                // === 4. CTA 이벤트 추적 (data-cta 위임 패턴) ===
+                // [H7-01] 모든 data-cta 링크를 document 레벨에서 위임 처리
+                document.addEventListener('click', function (e) {
+                    var anchor = e.target.closest && e.target.closest('a[data-cta]');
+                    if (!anchor) return;
 
-                // 채팅 버블 클릭 추적
-                const chatBubble = document.querySelector('.chat-bubble');
-                if (chatBubble) {
-                    chatBubble.addEventListener('click', () => {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'chat',
-                                'event_label': 'chat_consultation'
-                            });
-                        }
-                    });
-                }
+                    var ctaName = anchor.getAttribute('data-cta');
+
+                    // GTM dataLayer
+                    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                        window.dataLayer.push({ event: 'cta_click', cta: ctaName });
+                    }
+
+                    // Google Analytics (gtag)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'cta_click', {
+                            'event_category': 'cta',
+                            'event_label': ctaName
+                        });
+                    }
+                });
             });
         })();
     </script>
