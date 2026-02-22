@@ -636,6 +636,11 @@
     .consultation-list li {
         text-align: left;
     }
+
+    /* [H4-01] 채팅 버블 — 스티키 CTA 위로 올림 (모바일) */
+    .chat-bubble {
+        bottom: 90px;
+    }
 }
 
 /* ============================================
@@ -920,4 +925,77 @@
     height: auto;
     display: block;
     border: 0;
+}
+
+/* ============================================
+   [H8-01] 모바일 스티키 CTA
+   — 991px 이하에서 화면 하단 고정, 데스크톱 숨김
+   ============================================ */
+.sticky-cta {
+    display: none;
+}
+
+@media (max-width: 991px) {
+    .sticky-cta {
+        display: block;
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 900;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        border-top: 1px solid #e0e0e0;
+        padding: 10px 16px calc(10px + env(safe-area-inset-bottom));
+    }
+
+    .sticky-cta__wrap {
+        max-width: 600px;
+        margin: 0 auto;
+        display: flex;
+        gap: 10px;
+    }
+
+    .sticky-cta__btn {
+        flex: 1;
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        padding: 12px 16px;
+        border-radius: 8px;
+        font-size: 15px;
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        min-height: 44px;
+    }
+
+    .sticky-cta__btn--primary {
+        background-color: #333;
+        color: #fff;
+        border: 2px solid #333;
+    }
+
+    .sticky-cta__btn--primary:hover {
+        background-color: #111;
+        border-color: #111;
+    }
+
+    .sticky-cta__btn--ghost {
+        background-color: transparent;
+        color: #333;
+        border: 2px solid #333;
+    }
+
+    .sticky-cta__btn--ghost:hover {
+        background-color: #333;
+        color: #fff;
+    }
+
+    /* 스티키 바 높이만큼 본문 하단 여백 확보 */
+    body {
+        padding-bottom: 80px;
+    }
 }
