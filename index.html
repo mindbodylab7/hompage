@@ -612,6 +612,26 @@
             gap: 10px;
         }
 
+        .core-track-chooser {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 12px;
+        }
+
+        .core-track-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 12px;
+            border-radius: 999px;
+            border: 1px solid #d6dde6;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 13px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
         .core-track-card {
             border: 1px solid #dbe2ea;
             border-radius: 12px;
@@ -951,20 +971,24 @@
 
                 <article class="core-block" id="service-tracks" aria-labelledby="service-tracks-title">
                     <p class="core-block__eyebrow">Core 2</p>
-                    <h2 class="core-block__title" id="service-tracks-title">서비스 2트랙</h2>
-                    <p class="core-block__desc">긴 설명을 다 읽기 전에, 현재 나에게 맞는 트랙을 먼저 선택해보세요.</p>
+                    <h2 class="core-block__title" id="service-tracks-title">지금 필요한 트랙부터 선택하세요</h2>
+                    <p class="core-block__desc">지금 더 가까운 쪽은?</p>
+                    <div class="core-track-chooser" aria-label="트랙 선택 힌트">
+                        <span class="core-track-chip">감정·습관 패턴을 정리하고 싶어요</span>
+                        <span class="core-track-chip">이미지·상징으로 의미를 풀어보고 싶어요</span>
+                    </div>
                     <div class="core-track-grid">
                         <div class="core-track-card">
                             <p class="core-track-card__badge">Track 1</p>
-                            <h3>최면상담</h3>
-                            <p class="core-track-card__copy">반복되는 감정·습관·관계 패턴의 변화와 정서 조절을 돕는 트랙입니다.</p>
-                            <a href="#principle-7" data-cta="track_hypnosis_detail">세션 흐름 보기</a>
+                            <h3>최면상담 | 패턴 재정렬</h3>
+                            <p class="core-track-card__copy">반복되는 감정·관계 반응을 현재 맥락에서 정리하고, 일상 적용 루틴까지 설계합니다.</p>
+                            <a href="#principle-7" data-cta="track_hypnosis_detail">패턴 재정렬 시작하기</a>
                         </div>
                         <div class="core-track-card">
                             <p class="core-track-card__badge">Track 2</p>
-                            <h3>전생체험</h3>
-                            <p class="core-track-card__copy">신념 강요 없이 이미지·기억·상징을 통해 자기이해를 돕는 탐색 트랙입니다.</p>
-                            <a href="#track-pastlife-program" data-cta="track_pastlife_detail">프로그램 보기</a>
+                            <h3>전생체험 | 의미 탐색</h3>
+                            <p class="core-track-card__copy">떠오르는 장면·상징·서사를 바탕으로 감정의 뿌리를 해석하고, 다음 선택을 정리합니다.</p>
+                            <a href="#track-pastlife-program" data-cta="track_pastlife_detail">의미 탐색 시작하기</a>
                         </div>
                     </div>
                     <p class="core-block__note">트랙은 고정이 아니라 상담 목적에 따라 조정할 수 있습니다.</p>
