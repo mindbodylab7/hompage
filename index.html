@@ -118,11 +118,17 @@
 
         body {
             margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-            color: #333;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', Roboto, Helvetica, Arial, sans-serif;
+            color: #1d1d1f;
             line-height: 1.6;
             overflow-x: hidden;
-            background-color: #fdfdfd;
+            background-color: #f8fafc;
+            /* 애플 스타일 오로라/블러 배경 */
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(219, 234, 254, 0.6) 0%, transparent 40%),
+                radial-gradient(circle at 90% 60%, rgba(252, 231, 243, 0.6) 0%, transparent 50%),
+                radial-gradient(circle at 50% 90%, rgba(224, 231, 255, 0.5) 0%, transparent 50%);
+            background-attachment: fixed;
             /* 전역 자연스러운 줄바꿈 설정 */
             word-break: keep-all;
             word-wrap: break-word;
@@ -140,20 +146,23 @@
             padding: 0;
         }
 
-        /* 헤더 - 즉시 표시 */
+        /* 헤더 - 즉시 표시 (Glassmorphism 적용) */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 15px 30px;
-            background-color: #fff;
-            border-bottom: 1px solid #eee;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            background-color: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
             position: sticky;
             top: 0;
             width: 100%;
             box-sizing: border-box;
             z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .header-left .logo {
@@ -217,10 +226,11 @@
            — 외부 CRO 시안 A + 기존 디자인 톤 적용
            ============================================ */
         .new-hero {
-            padding: 48px 20px 32px;
+            padding: 64px 20px 48px;
             text-align: center;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: transparent;
+            color: #1d1d1f;
+            position: relative;
         }
 
         .new-hero__inner {
@@ -333,35 +343,41 @@
             justify-content: center;
             align-items: center;
             padding: 14px 28px;
-            border-radius: 8px;
+            border-radius: 999px; /* 애플 스타일 Pill */
             font-size: 16px;
             font-weight: 700;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
             min-height: 48px;
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
         }
 
         .new-hero__btn--primary {
-            background-color: #333;
+            background-color: rgba(29, 29, 31, 0.9);
             color: #fff;
-            border: 2px solid #333;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
 
         .new-hero__btn--primary:hover {
-            background-color: #111;
-            border-color: #111;
+            background-color: rgba(0, 0, 0, 1);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
         }
 
         .new-hero__btn--ghost {
-            background-color: transparent;
-            color: #333;
-            border: 2px solid #333;
+            background-color: rgba(255, 255, 255, 0.5);
+            color: #1d1d1f;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
         }
 
         .new-hero__btn--ghost:hover {
-            background-color: #333;
-            color: #fff;
+            background-color: rgba(255, 255, 255, 0.9);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
         }
 
         /* 마이크로카피 */
@@ -451,8 +467,10 @@
            — 비의료 / 개인차 / 통제감 3종 신뢰 요소
            ============================================ */
         .trust-bar {
-            background-color: #f7f9fc;
-            border-bottom: 1px solid #e8ecf0;
+            background-color: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
             padding: 10px 20px;
         }
 
@@ -533,7 +551,7 @@
 
         .conversion-core {
             padding: 8px 20px 28px;
-            background: #fdfdfd;
+            background: transparent;
         }
 
         .conversion-core__inner {
@@ -544,10 +562,13 @@
         }
 
         .core-block {
-            border: 1px solid #e5e7eb;
-            border-radius: 16px;
-            background: #fff;
-            padding: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.65);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+            padding: 24px;
         }
 
         .core-block__eyebrow {
@@ -586,10 +607,13 @@
         }
 
         .core-diff-item {
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            padding: 14px;
-            background: #fafafa;
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            border-radius: 16px;
+            padding: 16px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
         }
 
         .core-diff-item h3 {
@@ -624,19 +648,25 @@
             align-items: center;
             padding: 7px 12px;
             border-radius: 999px;
-            border: 1px solid #d6dde6;
-            background: #f8fafc;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
             color: #334155;
             font-size: 13px;
             line-height: 1.3;
             font-weight: 600;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
         }
 
         .core-track-card {
-            border: 1px solid #dbe2ea;
-            border-radius: 12px;
-            padding: 16px;
-            background: #f8fbff;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            padding: 20px;
+            background: rgba(248, 251, 255, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
         }
 
         .core-track-card__badge {
@@ -675,9 +705,16 @@
         }
 
         .core-faq-item {
-            border: 1px solid #e5e7eb;
-            border-radius: 12px;
-            background: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.7);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+            transition: background 0.3s ease;
+        }
+        .core-faq-item:hover {
+            background: rgba(255, 255, 255, 0.8);
         }
 
         .core-faq-item summary {
