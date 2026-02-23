@@ -49,6 +49,55 @@
     </script>
 
     <!-- 크리티컬 CSS - 즉시 렌더링을 위한 인라인 스타일 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "최면에서 못 깨어날 수 있나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "일반적으로 그렇지 않습니다. 내담자는 세션 중에도 언제든 중단, 휴식, 종료를 요청할 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "최면은 의식을 잃거나 조종당하는 건가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "최면은 수면이 아니라 집중과 몰입 상태이며, 동의 없이 진행되지 않습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "안 걸리면 어떡하죠?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "개인차가 있으며 진행 강도는 조절됩니다. 중요한 것은 깊이보다 안전과 목표 적합성입니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "몇 번 받아야 하나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "목표와 상황에 따라 다르며, 1회로 방향을 잡고 필요 시 3회 또는 5회 로드맵을 제안합니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "전생체험은 진짜 전생을 증명하나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "증명 목적이 아니라 떠오르는 상징과 서사를 통해 자기이해를 돕는 탐색 방식으로 진행됩니다."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
         /* ============================================
            크리티컬 CSS — 헤더/히어로/기본 리셋만 인라인 유지
@@ -466,6 +515,203 @@
            @media(768px) 추가 섹션,
            .mobile-nav-overlay, .dropdown-menu, .dropdown-submenu,
            .toc-link, @media(1200px), .copyright */
+        /* ============================================
+           [C1-01] 전환 핵심 요약 섹션
+           — 무엇이 다른가 / 2트랙 / FAQ (요약 + 상세 이동)
+           ============================================ */
+        .new-hero__faq-teaser {
+            margin: 6px auto 12px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .new-hero__faq-teaser a {
+            color: #0056b3;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .conversion-core {
+            padding: 8px 20px 28px;
+            background: #fdfdfd;
+        }
+
+        .conversion-core__inner {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            gap: 14px;
+        }
+
+        .core-block {
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            background: #fff;
+            padding: 22px;
+        }
+
+        .core-block__eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin: 0 0 8px;
+            text-transform: uppercase;
+        }
+
+        .core-block__title {
+            font-size: clamp(22px, 3vw, 30px);
+            color: #111827;
+            line-height: 1.3;
+            margin: 0 0 8px;
+        }
+
+        .core-block__desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4b5563;
+            margin: 0 0 14px;
+        }
+
+        .core-block__note {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .core-diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .core-diff-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 14px;
+            background: #fafafa;
+        }
+
+        .core-diff-item h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #111827;
+        }
+
+        .core-diff-item p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .core-track-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .core-track-card {
+            border: 1px solid #dbe2ea;
+            border-radius: 12px;
+            padding: 16px;
+            background: #f8fbff;
+        }
+
+        .core-track-card__badge {
+            margin: 0 0 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f4c81;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .core-track-card h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #0f172a;
+        }
+
+        .core-track-card__copy {
+            margin: 0 0 10px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .core-track-card a {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0b63b6;
+            text-decoration: underline;
+        }
+
+        .core-faq-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .core-faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .core-faq-item summary {
+            padding: 13px 14px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .core-faq-item p {
+            margin: 0;
+            padding: 0 14px 13px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .core-faq-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #0b63b6;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        @media (max-width: 920px) {
+            .core-diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .core-track-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .conversion-core {
+                padding: 8px 16px 22px;
+            }
+
+            .core-block {
+                padding: 18px;
+            }
+
+            .core-block__title {
+                font-size: 24px;
+            }
+
+            .core-block__desc {
+                font-size: 14px;
+            }
+        }
     </style>
 
     <!-- 폰트 로딩 (비차단) -->
@@ -658,7 +904,7 @@
                         예약 가능 일정 확인하기
                     </a>
                     <a class="new-hero__btn new-hero__btn--ghost"
-                       href="#principle-7"
+                       href="#conversion-core"
                        data-cta="hero_guide">
                         처음 오신 분: 세션 흐름/FAQ 보기
                     </a>
@@ -666,6 +912,7 @@
 
                 <!-- 마이크로카피: 외부 이동 안내 (이탈 불안 감소) -->
                 <p class="new-hero__micro">※ '예약 가능 일정 확인하기'는 네이버 예약 페이지로 이동합니다.</p>
+                <p class="new-hero__faq-teaser">최면에서 못 깨어날 수 있나요? <a href="#landing-faq" data-cta="hero_faq_teaser">FAQ에서 먼저 확인</a></p>
 
                 <!-- 신뢰 요소: 센터장 이름 + 자격 참조 -->
                 <p class="new-hero__trust">
@@ -675,6 +922,82 @@
                 <!-- 점프 링크: 비용 섹션 바로 이동 -->
                 <a class="new-hero__jump" href="#principle-8">상담 비용/시간 자세히 보기 →</a>
 
+            </div>
+        </section>
+
+        <!-- [C1-02] 전환 핵심 3섹션: 요약 + 상세 이동 -->
+        <section id="conversion-core" class="conversion-core" aria-label="전환 핵심 요약">
+            <div class="conversion-core__inner">
+                <article class="core-block" id="what-different" aria-labelledby="what-different-title">
+                    <p class="core-block__eyebrow">Core 1</p>
+                    <h2 class="core-block__title" id="what-different-title">무엇이 다른가</h2>
+                    <p class="core-block__desc">처음 방문자가 빠르게 이해할 수 있도록, 차별점만 짧게 먼저 안내합니다.</p>
+                    <div class="core-diff-grid">
+                        <div class="core-diff-item">
+                            <h3>구조화된 진행</h3>
+                            <p>대화 → 목표 설정 → 유도 → 세션 → 리뷰 순서로 일관되게 진행합니다.</p>
+                        </div>
+                        <div class="core-diff-item">
+                            <h3>내담자 통제권 우선</h3>
+                            <p>동의 없이 진행되지 않으며, 세션 중에도 중단·휴식·종료를 요청할 수 있습니다.</p>
+                        </div>
+                        <div class="core-diff-item">
+                            <h3>일상 적용까지 연결</h3>
+                            <p>세션에서 끝내지 않고, 일상에서 실천할 질문과 플랜까지 함께 정리합니다.</p>
+                        </div>
+                    </div>
+                    <p class="core-block__note">자세한 배경 설명은 아래 본문의 <a href="#principle-6" data-cta="core_diff_detail">최면 상담이어야 하는 이유</a>에서 확인할 수 있습니다.</p>
+                </article>
+
+                <article class="core-block" id="service-tracks" aria-labelledby="service-tracks-title">
+                    <p class="core-block__eyebrow">Core 2</p>
+                    <h2 class="core-block__title" id="service-tracks-title">서비스 2트랙</h2>
+                    <p class="core-block__desc">긴 설명을 다 읽기 전에, 현재 나에게 맞는 트랙을 먼저 선택해보세요.</p>
+                    <div class="core-track-grid">
+                        <div class="core-track-card">
+                            <p class="core-track-card__badge">Track 1</p>
+                            <h3>최면상담</h3>
+                            <p class="core-track-card__copy">반복되는 감정·습관·관계 패턴의 변화와 정서 조절을 돕는 트랙입니다.</p>
+                            <a href="#principle-7" data-cta="track_hypnosis_detail">세션 흐름 보기</a>
+                        </div>
+                        <div class="core-track-card">
+                            <p class="core-track-card__badge">Track 2</p>
+                            <h3>전생체험</h3>
+                            <p class="core-track-card__copy">신념 강요 없이 이미지·기억·상징을 통해 자기이해를 돕는 탐색 트랙입니다.</p>
+                            <a href="#track-pastlife-program" data-cta="track_pastlife_detail">프로그램 보기</a>
+                        </div>
+                    </div>
+                    <p class="core-block__note">트랙은 고정이 아니라 상담 목적에 따라 조정할 수 있습니다.</p>
+                </article>
+
+                <article class="core-block" id="landing-faq" aria-labelledby="landing-faq-title">
+                    <p class="core-block__eyebrow">Core 3</p>
+                    <h2 class="core-block__title" id="landing-faq-title">FAQ</h2>
+                    <p class="core-block__desc">처음 오신 분들이 가장 많이 묻는 질문만 요약해 안내합니다.</p>
+                    <div class="core-faq-list">
+                        <details class="core-faq-item">
+                            <summary>Q1. 최면에서 못 깨어날 수 있나요?</summary>
+                            <p>일반적으로 그렇지 않습니다. 내담자는 언제든 중단·휴식·종료를 요청할 수 있습니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q2. 최면은 의식을 잃거나 조종당하는 건가요?</summary>
+                            <p>최면은 수면이 아니라 집중·몰입 상태이며, 동의 없이 진행되지 않습니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q3. 안 걸리면 어떡하죠?</summary>
+                            <p>개인차가 있으며 진행 강도는 조절됩니다. 중요한 것은 깊이보다 안전과 목표 적합성입니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q4. 몇 번 받아야 하나요?</summary>
+                            <p>목표와 상황에 따라 다릅니다. 1회로 방향을 잡고 필요 시 3~5회 로드맵을 제안드립니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q5. 전생체험은 진짜 전생을 증명하나요?</summary>
+                            <p>증명 목적이 아니라, 떠오르는 상징과 서사를 통해 자기이해를 돕는 방식으로 진행됩니다.</p>
+                        </details>
+                    </div>
+                    <a class="core-faq-more" href="#principle-9" data-cta="faq_detail">센터장 안내 메시지 자세히 보기</a>
+                </article>
             </div>
         </section>
 
@@ -1111,11 +1434,11 @@
             <div class="info-panel-content">
                 <h2 class="sub-heading">상담 프로그램</h2>
                 <div class="program-grid">
-                    <div class="program-card">
+                    <div class="program-card" id="track-hypnosis-program">
                         <h3>개인 최면 상담</h3>
                         <p>1:1 맞춤형 최면 상담으로 개인의 문제를 깊이 있게 다룹니다.</p>
                     </div>
-                    <div class="program-card">
+                    <div class="program-card" id="track-pastlife-program">
                         <h3>전생 체험 상담</h3>
                         <p>전생 회귀를 통해 현재 문제의 근본 원인을 찾아 해결합니다.</p>
                     </div>
