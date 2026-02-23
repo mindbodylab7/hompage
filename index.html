@@ -49,6 +49,55 @@
     </script>
 
     <!-- 크리티컬 CSS - 즉시 렌더링을 위한 인라인 스타일 -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "최면에서 못 깨어날 수 있나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "일반적으로 그렇지 않습니다. 내담자는 세션 중에도 언제든 중단, 휴식, 종료를 요청할 수 있습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "최면은 의식을 잃거나 조종당하는 건가요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "최면은 수면이 아니라 집중과 몰입 상태이며, 동의 없이 진행되지 않습니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "안 걸리면 어떡하죠?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "개인차가 있으며 진행 강도는 조절됩니다. 중요한 것은 깊이보다 안전과 목표 적합성입니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "몇 번 받아야 하나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "목표와 상황에 따라 다르며, 1회로 방향을 잡고 필요 시 3회 또는 5회 로드맵을 제안합니다."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "전생체험은 진짜 전생을 증명하나요?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "증명 목적이 아니라 떠오르는 상징과 서사를 통해 자기이해를 돕는 탐색 방식으로 진행됩니다."
+                }
+            }
+        ]
+    }
+    </script>
+
     <style>
         /* ============================================
            크리티컬 CSS — 헤더/히어로/기본 리셋만 인라인 유지
@@ -163,80 +212,188 @@
             z-index: 1100;
         }
 
-        /* 메인 히어로 - 즉시 표시 */
-        .main-hero {
-            background-color: #e0e0e0;
-            padding: 40px 20px;
-            text-align: center;
-            color: #333;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 250px;
-        }
-
-        .main-hero .hero-content {
-            max-width: 600px;
-            width: 100%;
-            padding: 15px;
-            box-sizing: border-box;
-        }
-
-        .main-hero .logo-img-placeholder {
-            width: 140px;
-            height: 90px;
-            background-color: #e0e0e0;
-            margin: 0 auto 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 14px;
-            color: #666;
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .main-hero .logo-img-placeholder img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
-
-        .main-hero h1 {
-            font-size: 40px;
-            font-weight: 900;
-            color: #000;
-            margin-bottom: 8px;
-            letter-spacing: -1.5px;
-        }
-
-        .main-hero .keywords {
-            font-size: 16px;
-            font-weight: 500;
-            color: #555;
-            margin-top: 10px;
-        }
-
-        /* 소개 섹션 - 즉시 표시 */
-        .section-intro {
-            padding: 80px 20px;
+        /* ============================================
+           [H2-01] 새 히어로 크리티컬 CSS
+           — 외부 CRO 시안 A + 기존 디자인 톤 적용
+           ============================================ */
+        .new-hero {
+            padding: 48px 20px 32px;
             text-align: center;
             background-color: #f9f9f9;
+            color: #333;
         }
 
-        .section-intro h2 {
-            font-size: 30px;
-            font-weight: bold;
-            color: #333;
+        .new-hero__inner {
+            max-width: 800px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        /* Tagline — 업종 + 위치 pill 배지 */
+        .new-hero__tag {
+            display: inline-flex;
+            gap: 8px;
+            align-items: center;
+            font-size: 14px;
+            color: #555;
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 14px;
+            margin-bottom: 16px;
+        }
+
+        .new-hero__tag-sep {
+            color: #ccc;
+        }
+
+        /* Headline (H1) */
+        .new-hero__title {
+            font-size: clamp(24px, 5vw, 38px);
+            font-weight: 900;
+            line-height: 1.35;
+            letter-spacing: -1px;
+            color: #000;
+            margin: 0 0 14px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .new-hero__title-main {
+            display: block;
+            max-width: 760px;
+        }
+
+        .new-hero__title-sub {
+            display: block;
+            max-width: 660px;
+            font-size: clamp(17px, 2.5vw, 23px);
+            line-height: 1.6;
+            letter-spacing: -0.2px;
+            font-weight: 600;
+            color: #4b5563;
+        }
+
+        /* Sub 설명 */
+        .new-hero__sub {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto 16px;
+        }
+
+        /* 조건 배지 그룹 */
+        .new-hero__badges {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
             margin-bottom: 20px;
         }
 
-        .section-intro p {
-            font-size: 17px;
-            line-height: 1.6;
-            color: #666;
-            max-width: 800px;
-            margin: 0 auto;
+        .new-hero__badge {
+            border: 1px solid #ddd;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            color: #444;
+            background-color: #fff;
+            white-space: nowrap;
+        }
+
+        /* 핵심 불릿 */
+        .new-hero__bullets {
+            list-style: disc;
+            text-align: left;
+            max-width: 520px;
+            margin: 0 auto 24px;
+            padding-left: 20px;
+            font-size: 15px;
+            line-height: 1.8;
+            color: #444;
+        }
+
+        .new-hero__bullets li {
+            margin-bottom: 4px;
+        }
+
+        /* CTA 버튼 영역 */
+        .new-hero__cta {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .new-hero__btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            padding: 14px 28px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            min-height: 48px;
+        }
+
+        .new-hero__btn--primary {
+            background-color: #333;
+            color: #fff;
+            border: 2px solid #333;
+        }
+
+        .new-hero__btn--primary:hover {
+            background-color: #111;
+            border-color: #111;
+        }
+
+        .new-hero__btn--ghost {
+            background-color: transparent;
+            color: #333;
+            border: 2px solid #333;
+        }
+
+        .new-hero__btn--ghost:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* 마이크로카피 */
+        .new-hero__micro {
+            font-size: 13px;
+            color: #888;
+            margin: 0 0 12px;
+        }
+
+        /* 신뢰 요소 */
+        .new-hero__trust {
+            font-size: 14px;
+            color: #555;
+            margin: 0 0 8px;
+        }
+
+        .new-hero__trust a {
+            color: #007bff;
+            text-decoration: underline;
+        }
+
+        /* 점프 링크 */
+        .new-hero__jump {
+            display: inline-block;
+            font-size: 14px;
+            color: #007bff;
+            text-decoration: underline;
+            margin-top: 4px;
+        }
+
+        .new-hero__jump:hover {
+            color: #0056b3;
         }
 
         /* [P2-01] #journey CSS는 css/styles.css로 추출됨 */
@@ -255,23 +412,97 @@
                 padding: 15px 20px;
             }
 
-            .main-hero {
-                padding: 30px 20px;
-                min-height: 200px;
+            /* [H2-02] 새 히어로 모바일 */
+            .new-hero {
+                padding: 32px 16px 24px;
             }
 
-            .main-hero h1 {
-                font-size: 28px;
+            .new-hero__title {
+                font-size: clamp(22px, 6vw, 30px);
+                gap: 5px;
             }
 
-            .main-hero .keywords {
+            .new-hero__title-sub {
+                font-size: clamp(16px, 4.2vw, 20px);
+                line-height: 1.55;
+            }
+
+            .new-hero__sub {
+                font-size: 15px;
+            }
+
+            .new-hero__bullets {
                 font-size: 14px;
+                padding-left: 16px;
             }
 
-            .main-hero .logo-img-placeholder {
-                width: 100px;
-                height: 70px;
-                margin-bottom: 10px;
+            .new-hero__btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .new-hero__cta {
+                flex-direction: column;
+            }
+        }
+
+        /* ============================================
+           [S0-01] 안전문구 트러스트 바
+           — 비의료 / 개인차 / 통제감 3종 신뢰 요소
+           ============================================ */
+        .trust-bar {
+            background-color: #f7f9fc;
+            border-bottom: 1px solid #e8ecf0;
+            padding: 10px 20px;
+        }
+
+        .trust-bar__inner {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+        }
+
+        .trust-bar__item {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 12.5px;
+            color: #5a6a80;
+            line-height: 1.4;
+            white-space: nowrap;
+        }
+
+        .trust-bar__icon {
+            flex-shrink: 0;
+            color: #8a9bb0;
+        }
+
+        .trust-bar__sep {
+            color: #d0d7de;
+            font-size: 12px;
+        }
+
+        @media (max-width: 768px) {
+            .trust-bar {
+                padding: 10px 16px;
+            }
+
+            .trust-bar__inner {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .trust-bar__sep {
+                display: none;
+            }
+
+            .trust-bar__item {
+                font-size: 11.5px;
+                white-space: normal;
             }
         }
 
@@ -284,6 +515,316 @@
            @media(768px) 추가 섹션,
            .mobile-nav-overlay, .dropdown-menu, .dropdown-submenu,
            .toc-link, @media(1200px), .copyright */
+        /* ============================================
+           [C1-01] 전환 핵심 요약 섹션
+           — 무엇이 다른가 / 2트랙 / FAQ (요약 + 상세 이동)
+           ============================================ */
+        .new-hero__faq-teaser {
+            margin: 6px auto 12px;
+            font-size: 14px;
+            color: #4b5563;
+        }
+
+        .new-hero__faq-teaser a {
+            color: #0056b3;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        .conversion-core {
+            padding: 8px 20px 28px;
+            background: #fdfdfd;
+        }
+
+        .conversion-core__inner {
+            max-width: 980px;
+            margin: 0 auto;
+            display: grid;
+            gap: 14px;
+        }
+
+        .core-block {
+            border: 1px solid #e5e7eb;
+            border-radius: 16px;
+            background: #fff;
+            padding: 22px;
+        }
+
+        .core-block__eyebrow {
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            color: #64748b;
+            margin: 0 0 8px;
+            text-transform: uppercase;
+        }
+
+        .core-block__title {
+            font-size: clamp(22px, 3vw, 30px);
+            color: #111827;
+            line-height: 1.3;
+            margin: 0 0 8px;
+        }
+
+        .core-block__desc {
+            font-size: 15px;
+            line-height: 1.7;
+            color: #4b5563;
+            margin: 0 0 14px;
+        }
+
+        .core-block__note {
+            margin-top: 12px;
+            font-size: 13px;
+            color: #6b7280;
+        }
+
+        .core-diff-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .core-diff-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            padding: 14px;
+            background: #fafafa;
+        }
+
+        .core-diff-item h3 {
+            margin: 0 0 6px;
+            font-size: 16px;
+            line-height: 1.4;
+            color: #111827;
+        }
+
+        .core-diff-item p {
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+            color: #4b5563;
+        }
+
+        .core-track-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 10px;
+        }
+
+        .core-track-chooser {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 0 0 12px;
+        }
+
+        .core-track-chip {
+            display: inline-flex;
+            align-items: center;
+            padding: 7px 12px;
+            border-radius: 999px;
+            border: 1px solid #d6dde6;
+            background: #f8fafc;
+            color: #334155;
+            font-size: 13px;
+            line-height: 1.3;
+            font-weight: 600;
+        }
+
+        .core-track-card {
+            border: 1px solid #dbe2ea;
+            border-radius: 12px;
+            padding: 16px;
+            background: #f8fbff;
+        }
+
+        .core-track-card__badge {
+            margin: 0 0 6px;
+            font-size: 12px;
+            font-weight: 700;
+            color: #0f4c81;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .core-track-card h3 {
+            margin: 0 0 8px;
+            font-size: 20px;
+            line-height: 1.3;
+            color: #0f172a;
+        }
+
+        .core-track-card__copy {
+            margin: 0 0 10px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #475569;
+        }
+
+        .core-track-card a {
+            font-size: 14px;
+            font-weight: 700;
+            color: #0b63b6;
+            text-decoration: underline;
+        }
+
+        .core-faq-list {
+            display: grid;
+            gap: 10px;
+        }
+
+        .core-faq-item {
+            border: 1px solid #e5e7eb;
+            border-radius: 12px;
+            background: #fff;
+        }
+
+        .core-faq-item summary {
+            padding: 13px 14px;
+            cursor: pointer;
+            font-size: 15px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .core-faq-item p {
+            margin: 0;
+            padding: 0 14px 13px;
+            font-size: 14px;
+            line-height: 1.7;
+            color: #4b5563;
+        }
+
+        .core-faq-more {
+            display: inline-block;
+            margin-top: 12px;
+            font-size: 14px;
+            color: #0b63b6;
+            text-decoration: underline;
+            font-weight: 700;
+        }
+
+        @media (max-width: 920px) {
+            .core-diff-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .core-track-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .conversion-core {
+                padding: 8px 16px 22px;
+            }
+
+            .core-block {
+                padding: 18px;
+            }
+
+            .core-block__title {
+                font-size: 24px;
+            }
+
+            .core-block__desc {
+                font-size: 14px;
+            }
+        }
+        
+        /* =========================================
+           Mindful Glassmorphism Overrides (Intensified)
+           ========================================= */
+        body {
+            background-color: #f0f4f8 !important;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(186, 212, 255, 0.8) 0%, transparent 50%),
+                radial-gradient(circle at 90% 60%, rgba(255, 204, 230, 0.8) 0%, transparent 60%),
+                radial-gradient(circle at 50% 90%, rgba(199, 210, 254, 0.7) 0%, transparent 50%) !important;
+            background-attachment: fixed !important;
+        }
+
+        header {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            backdrop-filter: blur(24px) !important;
+            -webkit-backdrop-filter: blur(24px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6) !important;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05) !important;
+            transition: all 0.3s ease;
+        }
+
+        .new-hero {
+            background-color: transparent !important;
+        }
+
+        .new-hero__btn {
+            border-radius: 999px !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+        }
+
+        .new-hero__btn--primary {
+            background-color: rgba(29, 29, 31, 0.9) !important;
+            border: 1px solid rgba(255, 255, 255, 0.2) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1) !important;
+        }
+
+        .new-hero__btn--ghost {
+            background-color: rgba(255, 255, 255, 0.5) !important;
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .trust-bar {
+            background-color: rgba(255, 255, 255, 0.25) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.5) !important;
+        }
+
+        .conversion-core {
+            background: transparent !important;
+        }
+
+        .core-block {
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            background: rgba(255, 255, 255, 0.45) !important;
+            backdrop-filter: blur(28px) !important;
+            -webkit-backdrop-filter: blur(28px) !important;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06) !important;
+        }
+
+        .core-diff-item {
+            border: 1px solid rgba(255, 255, 255, 0.7) !important;
+            background: rgba(255, 255, 255, 0.3) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04) !important;
+        }
+
+        .core-track-chip {
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            background: rgba(255, 255, 255, 0.6) !important;
+            backdrop-filter: blur(8px) !important;
+            -webkit-backdrop-filter: blur(8px) !important;
+        }
+
+        .core-track-card {
+            border: 1px solid rgba(255, 255, 255, 0.9) !important;
+            background: rgba(248, 251, 255, 0.4) !important;
+            backdrop-filter: blur(18px) !important;
+            -webkit-backdrop-filter: blur(18px) !important;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05) !important;
+        }
+
+        .core-faq-item {
+            border: 1px solid rgba(255, 255, 255, 0.8) !important;
+            background: rgba(255, 255, 255, 0.35) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04) !important;
+        }
     </style>
 
     <!-- 폰트 로딩 (비차단) -->
@@ -329,6 +870,14 @@
         </button>
         <nav id="side-nav">
             <ul>
+                <li class="dropdown-menu">
+                    <a href="#conversion-core"><span>핵심 안내</span></a>
+                    <ul class="dropdown-submenu">
+                        <li><a href="#what-different">무엇이 다른가</a></li>
+                        <li><a href="#service-tracks">서비스 2트랙</a></li>
+                        <li><a href="#landing-faq">FAQ</a></li>
+                    </ul>
+                </li>
                 <li><a href="#journey"><span>고민 이야기</span></a></li>
                 <li class="dropdown-menu">
                     <a href="#principle"><span>치유 원리</span></a>
@@ -407,23 +956,174 @@
 
     <!-- [P1-05] 메인 콘텐츠 — skip navigation 대상 id 추가 -->
     <main id="main-content">
-        <!-- 히어로 섹션 -->
-        <section class="main-hero">
-            <div class="hero-content">
-                <div class="logo-img-placeholder">
-                    <img src="images/mindbodylab_logo.png" alt="마인드바디랩 로고 및 실험 도구 이미지"
-                        onerror="this.onerror=null; this.src='https://placehold.co/280x180?text=Logo';">
+        <!-- [S0-01] 안전문구 트러스트 바 — 비의료/개인차/통제감 -->
+        <div class="trust-bar" role="region" aria-label="서비스 원칙 안내">
+            <div class="trust-bar__inner">
+                <div class="trust-bar__item">
+                    <svg class="trust-bar__icon" width="14" height="14" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 0c4.6 0 9.2 1 13.4 2.9L457.7 82.8c22 9.3 38.4 31 38.3 57.2c-.5 99.2-41.3 280.7-213.6 363.2c-16.7 8-36.1 8-52.8 0C57.3 420.7 16.5 239.2 16 140c-.1-26.2 16.3-47.9 38.3-57.2L242.7 2.9C246.8 1 251.4 0 256 0zm0 66.8V444.8C394 378 431.1 230.1 432 141.4L256 66.8z"/></svg>
+                    <span>비의료 서비스 입니다 · 진단·치료를 대체하지 않습니다.</span>
                 </div>
-                <h1>최면상담센터</h1>
-                <p class="keywords">심리 / 전생 / 최면 / 상담 / 무의식</p>
+                <span class="trust-bar__sep" aria-hidden="true">|</span>
+                <div class="trust-bar__item">
+                    <svg class="trust-bar__icon" width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512H418.3c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304H178.3z"/></svg>
+                    <span>경험과 변화는 개인차가 있습니다.</span>
+                </div>
+                <span class="trust-bar__sep" aria-hidden="true">|</span>
+                <div class="trust-bar__item">
+                    <svg class="trust-bar__icon" width="14" height="14" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true"><path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209L241 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L335 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
+                    <span>세션 중 언제든 중단·휴식·종료 가능 합니다.</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- [H1-01] 새 히어로 섹션 — 외부 CRO 전문가 시안 A 기반, 기존 디자인 톤 적용 -->
+        <section class="new-hero">
+            <div class="new-hero__inner">
+
+                <!-- Tagline: 업종 + 위치 즉시 인지 -->
+                <div class="new-hero__tag" aria-label="서비스 요약">
+                    <span>최면상담센터</span>
+                    <span class="new-hero__tag-sep" aria-hidden="true">|</span>
+                    <span>서울 송파</span>
+                </div>
+
+                <!-- Headline: 핵심 가치 제안 (H1 — 페이지 유일) -->
+                <h1 class="new-hero__title">
+                    <span class="new-hero__title-main">불편함의 뿌리를 더 안전하고<br>부드럽게 탐색하는 상담.</span>
+                    <span class="new-hero__title-sub">말로 풀리지 않는 고민, 무의식에서 원인을 함께 찾는 1:1 최면상담</span>
+                </h1>
+
+                <!-- Sub: 3줄 핵심 설명 -->
+                <p class="new-hero__sub">
+                    긴 설명보다 <strong>핵심만 먼저</strong> 안내합니다.<br>
+                    내담자의 <strong>자발적 협력</strong>으로 진행되며, 강요로는 최면을 진행할 수 없습니다.<br>
+                    상담 전 과정과 기대치/한계를 충분히 설명한 뒤 진행합니다.
+                </p>
+
+                <!-- 조건 배지: 스캔용 핵심 조건 -->
+                <div class="new-hero__badges" role="list" aria-label="상담 조건 요약">
+                    <span class="new-hero__badge" role="listitem">송파</span>
+                    <span class="new-hero__badge" role="listitem">1회 90분</span>
+                    <span class="new-hero__badge" role="listitem">15만원</span>
+                    <span class="new-hero__badge" role="listitem">기본 3회기</span>
+                    <span class="new-hero__badge" role="listitem">시간 연장 시 추가 비용 없음</span>
+                </div>
+
+                <!-- 핵심 불릿: 서비스 차별점 3개 -->
+                <ul class="new-hero__bullets" aria-label="핵심 포인트">
+                    <li>반복되는 감정·습관·관계 패턴의 <strong>무의식적 원인</strong>을 탐색합니다.</li>
+                    <li>최면 + NLP 기반 접근으로 <strong>회복탄력성</strong>과 무의식의 변화를 돕습니다.</li>
+                    <li>처음이 부담되면: <strong>문의 → 예약</strong> 순서로 진행하셔도 됩니다.</li>
+                </ul>
+
+                <!-- CTA 2단계: 예약(Primary) + 정보 탐색(Secondary) -->
+                <div class="new-hero__cta" aria-label="상담 행동 버튼">
+                    <a class="new-hero__btn new-hero__btn--primary"
+                       href="https://m.site.naver.com/1O0dx"
+                       target="_blank" rel="noopener"
+                       data-cta="hero_reserve">
+                        예약 가능 일정 확인하기
+                    </a>
+                    <a class="new-hero__btn new-hero__btn--ghost"
+                       href="#conversion-core"
+                       data-cta="hero_guide">
+                        처음 오신 분: 세션 흐름/FAQ 보기
+                    </a>
+                </div>
+
+                <!-- 마이크로카피: 외부 이동 안내 (이탈 불안 감소) -->
+                <p class="new-hero__micro">※ '예약 가능 일정 확인하기'는 네이버 예약 페이지로 이동합니다.</p>
+                <p class="new-hero__faq-teaser">최면에서 못 깨어날 수 있나요? <a href="#landing-faq" data-cta="hero_faq_teaser">FAQ에서 먼저 확인</a></p>
+
+                <!-- 신뢰 요소: 센터장 이름 + 자격 참조 -->
+                <p class="new-hero__trust">
+                    <strong>최면 전문 상담가: 김현준 센터장</strong> · 보유 라이센스/이수 프로그램은 아래 <a href="#director">센터장 소개</a>에 공개되어 있습니다.
+                </p>
+
+                <!-- 점프 링크: 비용 섹션 바로 이동 -->
+                <a class="new-hero__jump" href="#principle-8">상담 비용/시간 자세히 보기 →</a>
+
             </div>
         </section>
 
-        <!-- 소개 섹션 -->
-        <section class="section-intro">
-            <h2>마인드바디랩</h2>
-            <p>마인드바디랩은 전문 최면상담 센터입니다.</p>
-            <p>최면 상담으로 병든 마음과 정신적 문제를 치유하고 있습니다.</p>
+        <!-- [C1-02] 전환 핵심 3섹션: 요약 + 상세 이동 -->
+        <section id="conversion-core" class="conversion-core" aria-label="전환 핵심 요약">
+            <div class="conversion-core__inner">
+                <article class="core-block" id="what-different" aria-labelledby="what-different-title">
+                    <p class="core-block__eyebrow">Core 1</p>
+                    <h2 class="core-block__title" id="what-different-title">무엇이 다른가</h2>
+                    <p class="core-block__desc">처음 방문자가 빠르게 이해할 수 있도록, 차별점만 짧게 먼저 안내합니다.</p>
+                    <div class="core-diff-grid">
+                        <div class="core-diff-item">
+                            <h3>구조화된 진행</h3>
+                            <p>대화 → 목표 설정 → 유도 → 세션 → 리뷰 순서로 일관되게 진행합니다.</p>
+                        </div>
+                        <div class="core-diff-item">
+                            <h3>내담자 통제권 우선</h3>
+                            <p>동의 없이 진행되지 않으며, 세션 중에도 중단·휴식·종료를 요청할 수 있습니다.</p>
+                        </div>
+                        <div class="core-diff-item">
+                            <h3>일상 적용까지 연결</h3>
+                            <p>세션에서 끝내지 않고, 일상에서 실천할 질문과 플랜까지 함께 정리합니다.</p>
+                        </div>
+                    </div>
+                    <p class="core-block__note">자세한 배경 설명은 아래 본문의 <a href="#principle-6" data-cta="core_diff_detail">최면 상담이어야 하는 이유</a>에서 확인할 수 있습니다.</p>
+                </article>
+
+                <article class="core-block" id="service-tracks" aria-labelledby="service-tracks-title">
+                    <p class="core-block__eyebrow">Core 2</p>
+                    <h2 class="core-block__title" id="service-tracks-title">지금 필요한 트랙부터 선택하세요</h2>
+                    <p class="core-block__desc">지금 더 가까운 쪽은?</p>
+                    <div class="core-track-chooser" aria-label="트랙 선택 힌트">
+                        <span class="core-track-chip">감정·습관 패턴을 정리하고 싶어요</span>
+                        <span class="core-track-chip">이미지·상징으로 의미를 풀어보고 싶어요</span>
+                    </div>
+                    <div class="core-track-grid">
+                        <div class="core-track-card">
+                            <p class="core-track-card__badge">Track 1</p>
+                            <h3>최면상담 | 패턴 재정렬</h3>
+                            <p class="core-track-card__copy">반복되는 감정·관계 반응을 현재 맥락에서 정리하고, 일상 적용 루틴까지 설계합니다.</p>
+                            <a href="#principle-7" data-cta="track_hypnosis_detail">패턴 재정렬 시작하기</a>
+                        </div>
+                        <div class="core-track-card">
+                            <p class="core-track-card__badge">Track 2</p>
+                            <h3>전생체험 | 의미 탐색</h3>
+                            <p class="core-track-card__copy">떠오르는 장면·상징·서사를 바탕으로 감정의 뿌리를 해석하고, 다음 선택을 정리합니다.</p>
+                            <a href="#track-pastlife-program" data-cta="track_pastlife_detail">의미 탐색 시작하기</a>
+                        </div>
+                    </div>
+                    <p class="core-block__note">트랙은 고정이 아니라 상담 목적에 따라 조정할 수 있습니다.</p>
+                </article>
+
+                <article class="core-block" id="landing-faq" aria-labelledby="landing-faq-title">
+                    <p class="core-block__eyebrow">Core 3</p>
+                    <h2 class="core-block__title" id="landing-faq-title">FAQ</h2>
+                    <p class="core-block__desc">처음 오신 분들이 가장 많이 묻는 질문만 요약해 안내합니다.</p>
+                    <div class="core-faq-list">
+                        <details class="core-faq-item">
+                            <summary>Q1. 최면에서 못 깨어날 수 있나요?</summary>
+                            <p>전혀 그렇지 않습니다. 내담자는 최면 중 의식이 있으며, 언제든 중단·휴식·종료를 할 수 있습니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q2. 최면은 의식을 잃거나 조종당하는 건가요?</summary>
+                            <p>최면은 수면이 아니라 집중·몰입 상태이며, 내담자 스스로의 동의 없이는 최면 유도가 되지 않습니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q3. 안 걸리면 어떡하죠?</summary>
+                            <p>개인차가 있으며 진행 강도는 조절됩니다. 중요한 것은 깊이보다 심리적 안정과 목표 적합성입니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q4. 몇 번 받아야 하나요?</summary>
+                            <p>목표와 상황에 따라 다릅니다. 기본 3회기로 방향을 잡고, 필요 시 1회기 종료 또는 3회기 이상 로드맵을 제안드립니다.</p>
+                        </details>
+                        <details class="core-faq-item">
+                            <summary>Q5. 전생체험은 진짜 전생을 증명하나요?</summary>
+                            <p>증명 목적이 아니라, 떠오르는 상징과 감정적 서사를 통해 자기이해를 돕는 방식으로 진행됩니다.</p>
+                        </details>
+                    </div>
+                    <a class="core-faq-more" href="#principle-9" data-cta="faq_detail">센터장 안내 메시지 자세히 보기</a>
+                </article>
+            </div>
         </section>
 
     <!-- ============================================ -->
@@ -525,7 +1225,7 @@
                 </div>
             </div>
             <div class="booking-buttons">
-                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost">
+                <a href="https://m.site.naver.com/1O0dx" class="btn-modern-ghost" data-cta="booking_widget_1">
                     <!-- [P5-01] fa-plus → SVG -->
                     <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
@@ -533,6 +1233,7 @@
             </div>
         </div>
     </div>
+    <p class="booking-disclaimer">비의료 서비스 · 개인차 있음 · 세션 중 언제든 중단 가능</p>
 
     <!-- 치유 원리 섹션 -->
     <section id="principle">
@@ -800,7 +1501,7 @@
                 </div>
             </div>
             <div class="booking-buttons">
-                <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost">
+                <a href="https://m.site.naver.com/1O0dE" class="btn-modern-ghost" data-cta="booking_widget_2">
                     <!-- [P5-01] fa-plus → SVG -->
                     <svg width="14" height="14" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
                     <span>지금 상담 예약하기</span>
@@ -808,6 +1509,7 @@
             </div>
         </div>
     </div>
+    <p class="booking-disclaimer">비의료 서비스 · 개인차 있음 · 세션 중 언제든 중단 가능</p>
 
     <div class="info-panel light" id="principle-9">
         <div class="info-panel-content">
@@ -857,11 +1559,11 @@
             <div class="info-panel-content">
                 <h2 class="sub-heading">상담 프로그램</h2>
                 <div class="program-grid">
-                    <div class="program-card">
+                    <div class="program-card" id="track-hypnosis-program">
                         <h3>개인 최면 상담</h3>
                         <p>1:1 맞춤형 최면 상담으로 개인의 문제를 깊이 있게 다룹니다.</p>
                     </div>
-                    <div class="program-card">
+                    <div class="program-card" id="track-pastlife-program">
                         <h3>전생 체험 상담</h3>
                         <p>전생 회귀를 통해 현재 문제의 근본 원인을 찾아 해결합니다.</p>
                     </div>
@@ -960,8 +1662,24 @@
     <footer class="copyright">
         <p>&copy; 2025 (주)마인드바디랩. All Rights Reserved.</p>
     </footer>
+    <!-- [H3-01] 모바일 스티키 CTA — 전환율 최적화 (991px 이하에서만 표시) -->
+    <div class="sticky-cta" role="region" aria-label="빠른 상담 버튼">
+        <div class="sticky-cta__wrap">
+            <a class="sticky-cta__btn sticky-cta__btn--primary"
+               href="https://m.site.naver.com/1O0dx"
+               target="_blank" rel="noopener"
+               data-cta="sticky_reserve">
+                상담 예약
+            </a>
+            <a class="sticky-cta__btn sticky-cta__btn--ghost"
+               href="tel:070-7954-3170"
+               data-cta="sticky_call">
+                전화 문의
+            </a>
+        </div>
+    </div>
     <!-- 플로팅 채팅 버블 -->
-    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link">
+    <a href="https://m.site.naver.com/1NVDa" target="_blank" class="chat-bubble-link" data-cta="chat_bubble">
         <div class="chat-bubble">
             💬
         </div>
@@ -1065,31 +1783,27 @@
                     });
                 }
 
-                // === 4. 이벤트 추적 ===
-                // 예약 버튼 클릭 추적
-                document.querySelectorAll('.btn-modern-ghost').forEach(button => {
-                    button.addEventListener('click', () => {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'booking',
-                                'event_label': 'consultation_booking'
-                            });
-                        }
-                    });
-                });
+                // === 4. CTA 이벤트 추적 (data-cta 위임 패턴) ===
+                // [H7-01] 모든 data-cta 링크를 document 레벨에서 위임 처리
+                document.addEventListener('click', function (e) {
+                    var anchor = e.target.closest && e.target.closest('a[data-cta]');
+                    if (!anchor) return;
 
-                // 채팅 버블 클릭 추적
-                const chatBubble = document.querySelector('.chat-bubble');
-                if (chatBubble) {
-                    chatBubble.addEventListener('click', () => {
-                        if (typeof gtag !== 'undefined') {
-                            gtag('event', 'click', {
-                                'event_category': 'chat',
-                                'event_label': 'chat_consultation'
-                            });
-                        }
-                    });
-                }
+                    var ctaName = anchor.getAttribute('data-cta');
+
+                    // GTM dataLayer
+                    if (window.dataLayer && Array.isArray(window.dataLayer)) {
+                        window.dataLayer.push({ event: 'cta_click', cta: ctaName });
+                    }
+
+                    // Google Analytics (gtag)
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'cta_click', {
+                            'event_category': 'cta',
+                            'event_label': ctaName
+                        });
+                    }
+                });
             });
         })();
     </script>
