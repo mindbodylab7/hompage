@@ -2,7 +2,9 @@
 /* 비차단 로딩: media="print" onload="this.media='all'" */
 /* P2-01: 인라인 CSS에서 추출된 비크리티컬 스타일
    - 크리티컬 CSS(헤더, 히어로, 기본 리셋)는 index.html 인라인에 유지
-   - P2-04: 인라인 style 속성 대체 유틸리티 클래스 포함 */
+   - P2-04: 인라인 style 속성 대체 유틸리티 클래스 포함
+   - [CP-01/02] 전역 폰트 설정(text-size-adjust, font-smoothing)은
+     index.html 인라인 html{}/body{}에 선언됨 — 여기서 중복 선언 금지 */
 
 /* ============================================
    [P1-05] skip navigation — 접근성 바로가기 링크
