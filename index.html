@@ -114,6 +114,10 @@
         html {
             scroll-behavior: smooth;
             scroll-padding-top: 80px;
+            /* [CP-01] iOS Safari 텍스트 크기 임의 조절 방지 — 크로스플랫폼 가독성 통일 */
+            -webkit-text-size-adjust: 100%;
+            -moz-text-size-adjust: 100%;
+            text-size-adjust: 100%;
         }
 
         body {
@@ -127,6 +131,9 @@
             word-break: keep-all;
             word-wrap: break-word;
             overflow-wrap: break-word;
+            /* [CP-02] Retina(iOS/Mac) 폰트 스무딩 — 얇게 날아가는 현상 방지 */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
         a {
