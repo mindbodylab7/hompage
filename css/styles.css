@@ -75,11 +75,11 @@
   }
 
   #journey .story-panel.dark {
-    background-color: rgba(30, 41, 59, 0.85);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(30, 41, 59, 0.6); /* 더 투명하게 */
+    backdrop-filter: blur(32px); /* 블러 증가 */
+    -webkit-backdrop-filter: blur(32px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     color: #f8fafc;
   }
 
@@ -180,11 +180,11 @@
   }
 
   .info-panel.dark {
-    background-color: rgba(30, 41, 59, 0.85);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(30, 41, 59, 0.6); /* 더 투명하게 */
+    backdrop-filter: blur(32px); /* 블러 증가 */
+    -webkit-backdrop-filter: blur(32px);
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
     color: #f8fafc;
   }
 
@@ -278,14 +278,14 @@
   }
 
   .highlight-box-yellow {
-    background-color: rgba(255, 249, 196, 0.6);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(241, 196, 15, 0.5);
+    background-color: rgba(255, 249, 196, 0.4); /* 더 투명하게 */
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(241, 196, 15, 0.6);
     border-radius: 16px;
     padding: 2rem;
     margin: 2rem 0;
-    box-shadow: 0 4px 16px rgba(241, 196, 15, 0.1);
+    box-shadow: 0 8px 32px rgba(241, 196, 15, 0.15);
   }
 
   .highlight-box-yellow p {
@@ -309,10 +309,10 @@
   .booking-widget {
     max-width: 600px;
     width: 100%;
-    background-color: rgba(255, 255, 255, 0.65);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
+    background-color: rgba(255, 255, 255, 0.45); /* 투명도 낮춤 */
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 16px;
     padding: 20px;
     display: flex;
@@ -321,7 +321,7 @@
     flex-wrap: wrap;
     gap: 16px;
     box-sizing: border-box;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08); /* 그림자 부각 */
   }
 
   .booking-widget .location-info {
@@ -434,15 +434,15 @@
 .consultation-list li {
     padding: 1rem 1.2rem;
     margin: 0.8rem 0;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.15); /* 조금 더 선명하게 대비 */
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 12px;
     font-size: 1.1rem;
     font-weight: 500;
     border-left: 4px solid #59d4ff;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05);
 }
 
 /* ============================================
@@ -456,20 +456,21 @@
 }
 
 .program-card {
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 16px;
     padding: 2rem;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 .program-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.2);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.3);
 }
 
 .program-card h3 {
@@ -522,13 +523,13 @@
   line-height: 1.8;
   margin: 1.5rem 0;
   padding: 1.5rem;
-  background-color: rgba(255, 255, 255, 0.5);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.3); /* 투명도 낮춤 */
+  backdrop-filter: blur(20px); /* 블러 증가 */
+  -webkit-backdrop-filter: blur(20px);
   border-radius: 16px;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.9);
   border-left: 6px solid #59d4ff;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05);
 }
 
 .license-item {
@@ -563,14 +564,14 @@
   line-height: 1.7;
   margin: 2rem 0;
   padding: 2rem;
-  background-color: rgba(227, 242, 253, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.7);
+  background-color: rgba(227, 242, 253, 0.4); /* 투명도 */
+  backdrop-filter: blur(24px); /* 블러 증가 */
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.8);
   border-radius: 16px;
   color: #0f4c81;
   font-weight: 500;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06);
 }
 
 /* ============================================
