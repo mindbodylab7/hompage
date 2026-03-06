@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 240" role="img" aria-labelledby="title desc">
+  <title id="title">Director profile placeholder</title>
+  <desc id="desc">Neutral portrait placeholder used until the final director photo is added.</desc>
+  <rect width="240" height="240" rx="40" fill="#eef2f7"/>
+  <circle cx="120" cy="90" r="42" fill="#c8d1de"/>
+  <path d="M54 194c12-36 42-58 66-58s54 22 66 58" fill="#c8d1de"/>
+  <circle cx="120" cy="120" r="96" fill="none" stroke="#d7dee9" stroke-width="4"/>
+  <text x="120" y="220" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#66758a">
+    Profile
+  </text>
+</svg>
