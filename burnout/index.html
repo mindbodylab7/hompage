@@ -51,18 +51,39 @@
         body {
             margin: 0;
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Malgun Gothic', sans-serif;
-            color: #333; line-height: 1.6; overflow-x: hidden; background-color: #fdfdfd;
-            word-break: keep-all; word-wrap: break-word; overflow-wrap: break-word;
-            -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale;
+            color: #333;
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-color: #fdfdfd;
+            word-break: keep-all;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            line-break: strict;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
         a { text-decoration: none; color: inherit; }
         ul { list-style: none; margin: 0; padding: 0; }
         header {
-            display: flex; justify-content: space-between; align-items: center; padding: 15px 30px;
-            background-color: #fff; border-bottom: 1px solid #eee; box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-            position: sticky; top: 0; width: 100%; z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
         }
-        .header-left .logo { display: flex; align-items: center; font-weight: bold; font-size: 20px; color: #333; }
+        .header-left .logo {
+            display: flex;
+            align-items: center;
+            font-weight: bold;
+            font-size: 20px;
+            color: #333;
+        }
         .header-left .logo img { height: 30px; margin-right: 10px; }
         .logo-red { color: #e74c3c; }
         .logo-blue { color: #3498db; }
@@ -70,9 +91,32 @@
         .desktop-nav ul { display: flex; align-items: center; }
         .desktop-nav ul li { margin-right: 25px; }
         .desktop-nav ul li:last-child { margin-right: 0; }
-        .desktop-nav ul li a { font-size: 15px; font-weight: 500; color: #555; padding: 5px 0; display: block; transition: color 0.3s ease; }
+        .desktop-nav ul li a {
+            display: block;
+            padding: 5px 0;
+            font-size: 15px;
+            font-weight: 500;
+            color: #555;
+            transition: color 0.3s ease;
+        }
         .desktop-nav ul li a:hover { color: #007bff; }
-        .hamburger-menu { display: none; background: none; border: none; cursor: pointer; padding: 10px; font-size: 24px; color: #555; z-index: 1100; }
+        .hamburger-menu {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 10px;
+            font-size: 24px;
+            color: #555;
+            z-index: 1100;
+        }
+        .sub-hook__subtitle,
+        .sub-section p,
+        .sub-note,
+        .sub-faq__a,
+        .sub-cta__desc {
+            line-break: strict;
+        }
         @media (max-width: 768px) {
             .desktop-nav { display: none; }
             .hamburger-menu { display: block; }
@@ -362,7 +406,7 @@
                     <p class="sub-faq__q">최면만으로 번아웃이 해결되나요?</p>
                     <p class="sub-faq__a">
                         아닙니다. 최면 상담은 의료를 대체하지 않습니다.
-                        다만 과각성, 반복 사고, 휴식 죄책감, 수면 전환 문제처럼 번아웃을 악화시키는 패턴을 다루는 보조적 도구로 활용할 수 있습니다.
+                        다만 과각성, 반복 사고, 휴식 죄책감, 수면 전환 문제처럼 번아웃을 악화시키는 패턴을 다루는 보조적 도구로 활용할 수 있습니다. 이때 내담자 특성에 따라 크게 효과를 경험하는 경우도 있습니다.
                     </p>
                 </div>
                 <div class="sub-faq__item">
