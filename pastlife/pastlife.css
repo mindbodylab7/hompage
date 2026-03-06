@@ -1,0 +1,300 @@
+/* =============================================== */
+/* ===== Burnout 페이지 Warm Neutral 테마 ===== */
+/* subpage.css 뒤에 로드하여 오버라이드 */
+/* =============================================== */
+
+/* === CSS 변수 (Warm Neutral 팔레트) === */
+:root {
+    --bg-warm: #faf7f2;
+    --bg-card: #ffffff;
+    --accent-amber: #e67e22;
+    --accent-amber-light: #fdf0e2;
+    --accent-blue: #3498db;
+    --accent-blue-light: #eef6ff;
+    --text-dark: #2c2c2e;
+    --text-body: #555;
+    --text-muted: #888;
+    --border-light: #ede8e0;
+    --shadow-soft: 0 2px 12px rgba(0, 0, 0, 0.06);
+    --shadow-hover: 0 6px 24px rgba(0, 0, 0, 0.1);
+    --radius-card: 16px;
+    --radius-pill: 999px;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.6s ease;
+}
+
+/* === 페이지 배경 === */
+body {
+    background-color: var(--bg-warm);
+}
+
+/* === 감정 후킹 리드 (Hero) === */
+.sub-hook {
+    background: linear-gradient(135deg, #faf7f2 0%, #f5ede3 100%);
+    padding: 56px 20px 48px;
+}
+
+.sub-hook__lead {
+    color: var(--text-muted);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.1s forwards;
+}
+
+.sub-hook__title {
+    color: var(--text-dark);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.3s forwards;
+}
+
+.sub-hook__subtitle {
+    color: var(--text-body);
+    opacity: 0;
+    animation: fadeInUp 0.6s ease 0.5s forwards;
+}
+
+/* === 섹션 제목 — 앰버 보더 === */
+.sub-section__title {
+    border-left-color: var(--accent-amber);
+    color: var(--text-dark);
+}
+
+/* === 노트/인용 블록 — 앰버 === */
+.sub-note {
+    background-color: var(--accent-amber-light);
+    border-left-color: var(--accent-amber);
+    color: var(--text-body);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+}
+
+/* === 리스트 불릿 — 앰버 === */
+.sub-list li::before {
+    background-color: var(--accent-amber);
+}
+
+.sub-list li {
+    border-bottom-color: var(--border-light);
+    transition: background-color var(--transition-base);
+}
+
+.sub-list li:hover {
+    background-color: rgba(230, 126, 34, 0.04);
+}
+
+/* === 중간 CTA === */
+.sub-mid-cta {
+    background-color: var(--bg-card);
+    border-color: var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow var(--transition-base);
+}
+
+.sub-mid-cta:hover {
+    box-shadow: var(--shadow-hover);
+}
+
+.sub-mid-cta__link {
+    background-color: var(--accent-amber);
+    border: none;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.25);
+}
+
+.sub-mid-cta__link:hover {
+    background-color: #d35400;
+    box-shadow: 0 4px 16px rgba(230, 126, 34, 0.35);
+    transform: translateY(-2px);
+}
+
+/* === FAQ — 앰버 악센트 === */
+.sub-faq__q::before {
+    color: var(--accent-amber);
+}
+
+.sub-faq__item {
+    border-bottom-color: var(--border-light);
+    padding-left: 8px;
+    border-left: 3px solid transparent;
+    transition: border-left-color var(--transition-base), background-color var(--transition-base);
+}
+
+.sub-faq__item:hover {
+    border-left-color: var(--accent-amber);
+    background-color: rgba(230, 126, 34, 0.03);
+}
+
+/* === 센터장 프로필 카드 === */
+.sub-director {
+    border-color: var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+    transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.sub-director:hover {
+    box-shadow: var(--shadow-hover);
+    transform: translateY(-2px);
+}
+
+.sub-director__photo {
+    border-color: var(--border-light);
+}
+
+.sub-director__badge {
+    color: var(--accent-blue);
+    background-color: var(--accent-blue-light);
+}
+
+.sub-director__quote {
+    border-left-color: var(--accent-amber);
+}
+
+/* === 실용 정보 카드 === */
+.sub-info-card {
+    border-color: var(--border-light);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-soft);
+}
+
+.sub-info-card__item {
+    border-right-color: var(--border-light);
+    transition: background-color var(--transition-base);
+}
+
+.sub-info-card__item:hover {
+    background-color: rgba(230, 126, 34, 0.04);
+}
+
+.sub-info-card__icon {
+    transition: transform var(--transition-base);
+}
+
+.sub-info-card__item:hover .sub-info-card__icon {
+    transform: scale(1.1);
+}
+
+.sub-info-card__label {
+    color: var(--text-muted);
+}
+
+.sub-info-card__value {
+    color: var(--text-dark);
+}
+
+/* === 하단 CTA 영역 === */
+.sub-cta {
+    background: linear-gradient(135deg, #f5ede3 0%, #faf7f2 100%);
+    border-radius: var(--radius-card);
+}
+
+.sub-cta__title {
+    color: var(--text-dark);
+}
+
+.sub-cta__btn--primary {
+    background-color: var(--accent-amber);
+    border: none;
+    box-shadow: 0 2px 8px rgba(230, 126, 34, 0.25);
+}
+
+.sub-cta__btn--primary:hover {
+    background-color: #d35400;
+    box-shadow: 0 4px 16px rgba(230, 126, 34, 0.35);
+    transform: translateY(-2px);
+}
+
+.sub-cta__btn--secondary {
+    border-color: var(--border-light);
+}
+
+.sub-cta__btn--secondary:hover {
+    border-color: var(--accent-amber);
+    color: var(--accent-amber);
+    background-color: var(--accent-amber-light);
+}
+
+.sub-cta__btn--ghost:hover {
+    color: var(--accent-amber);
+    border-color: var(--accent-amber);
+}
+
+.sub-cta__phone a {
+    color: var(--accent-amber);
+}
+
+/* === 크로스 링크 === */
+.sub-cross-link__btn:hover {
+    color: var(--accent-amber);
+    border-color: var(--accent-amber);
+    background-color: var(--accent-amber-light);
+}
+
+/* === 스크롤 애니메이션 === */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity var(--transition-slow), transform var(--transition-slow);
+}
+
+.scroll-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 순차 딜레이 */
+.scroll-reveal.delay-1 { transition-delay: 0.1s; }
+.scroll-reveal.delay-2 { transition-delay: 0.2s; }
+.scroll-reveal.delay-3 { transition-delay: 0.3s; }
+
+/* === 키프레임 === */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* === 반응형 보정 === */
+@media (max-width: 768px) {
+    .sub-hook {
+        padding: 40px 18px 36px;
+    }
+
+    .sub-faq__item {
+        padding-left: 4px;
+    }
+
+    .sub-info-card__item {
+        border-right: none;
+        border-bottom-color: var(--border-light);
+    }
+
+    .sub-director__quote {
+        border-left: none;
+        border-top-color: var(--accent-amber);
+    }
+}
+
+/* === 접근성: 모션 감소 설정 존중 === */
+@media (prefers-reduced-motion: reduce) {
+    .sub-hook__lead,
+    .sub-hook__title,
+    .sub-hook__subtitle {
+        opacity: 1;
+        animation: none;
+    }
+
+    .scroll-reveal {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    * {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}
