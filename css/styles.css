@@ -1300,98 +1300,7 @@
     display: block;
 }
 
-/* =========================================
-   Mindful Glassmorphism Overrides (Intensified)
-   ========================================= */
-
-#journey .story-panel.dark {
-    background-color: rgba(30, 41, 59, 0.6) !important;
-    backdrop-filter: blur(32px) !important;
-    -webkit-backdrop-filter: blur(32px) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-.info-panel.dark {
-    background-color: rgba(30, 41, 59, 0.6) !important;
-    backdrop-filter: blur(32px) !important;
-    -webkit-backdrop-filter: blur(32px) !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.15) !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.15) !important;
-}
-
-.info-panel.light, #journey .story-panel.light {
-    background-color: transparent !important;
-}
-
-.highlight-box-yellow {
-    background-color: rgba(255, 249, 196, 0.4) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(241, 196, 15, 0.6) !important;
-    box-shadow: 0 8px 32px rgba(241, 196, 15, 0.15) !important;
-}
-
-.booking-widget {
-    background-color: rgba(255, 255, 255, 0.45) !important;
-    backdrop-filter: blur(24px) !important;
-    -webkit-backdrop-filter: blur(24px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08) !important;
-}
-
-.btn-modern-ghost {
-    background-color: rgba(255, 255, 255, 0.5) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-    border-radius: 999px !important;
-}
-
-.chat-bubble {
-    background-color: rgba(255, 235, 59, 0.8) !important;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
-}
-
-.consultation-list li {
-    background-color: rgba(255, 255, 255, 0.15) !important;
-    backdrop-filter: blur(16px) !important;
-    -webkit-backdrop-filter: blur(16px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.05) !important;
-}
-
-.program-card {
-    background-color: rgba(255, 255, 255, 0.2) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.3) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
-}
-
-.program-card:hover {
-    background-color: rgba(255, 255, 255, 0.3) !important;
-    border-color: rgba(255, 255, 255, 0.5) !important;
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2) !important;
-}
-
-.credentials {
-    background-color: rgba(255, 255, 255, 0.3) !important;
-    backdrop-filter: blur(20px) !important;
-    -webkit-backdrop-filter: blur(20px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.9) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.05) !important;
-}
-
-.message {
-    background-color: rgba(227, 242, 253, 0.4) !important;
-    backdrop-filter: blur(24px) !important;
-    -webkit-backdrop-filter: blur(24px) !important;
-    border: 1px solid rgba(255, 255, 255, 0.8) !important;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.06) !important;
-}
+/* Glassmorphism -> Liquid Glass: css/liquid-glass.css 로 이동 */
 
 /* ============================================
    [H8-01] 모바일 스티키 CTA 및 헤더 CTA 복원
@@ -1497,3 +1406,5 @@
         padding-bottom: 80px;
     }
 }
+
+/* GlobalMIG 배너 숨김 -> css/liquid-glass.css 로 이동 */

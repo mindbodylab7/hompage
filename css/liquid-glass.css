@@ -1,0 +1,851 @@
+/* =========================================
+   Liquid Glass Design System
+   Apple WWDC 2025 Inspired
+   MindbodyLab Full-Site Override
+   ========================================= */
+
+/* --- Design Tokens --- */
+:root {
+    /* Glass Tier 1: Primary surfaces (header, hero cards, CTA blocks) */
+    --lg-blur-1: 48px;
+    --lg-bg-1: rgba(255, 255, 255, 0.42);
+    --lg-border-1: rgba(255, 255, 255, 0.65);
+    --lg-shadow-1: 0 8px 32px rgba(0, 0, 0, 0.06),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.7);
+
+    /* Glass Tier 2: Secondary surfaces (cards, widgets) */
+    --lg-blur-2: 36px;
+    --lg-bg-2: rgba(255, 255, 255, 0.35);
+    --lg-border-2: rgba(255, 255, 255, 0.55);
+    --lg-shadow-2: 0 6px 24px rgba(0, 0, 0, 0.05),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.6);
+
+    /* Glass Tier 3: Tertiary surfaces (list items, chips) */
+    --lg-blur-3: 24px;
+    --lg-bg-3: rgba(255, 255, 255, 0.28);
+    --lg-border-3: rgba(255, 255, 255, 0.45);
+    --lg-shadow-3: 0 4px 16px rgba(0, 0, 0, 0.04),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.5);
+
+    /* Dark Glass */
+    --lg-dark-blur: 48px;
+    --lg-dark-bg-1: rgba(15, 23, 42, 0.55);
+    --lg-dark-bg-2: rgba(30, 41, 59, 0.5);
+    --lg-dark-border: rgba(255, 255, 255, 0.12);
+    --lg-dark-shadow: 0 8px 32px rgba(0, 0, 0, 0.2),
+                       inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    /* Specular Highlight */
+    --lg-specular: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.45) 0%,
+        rgba(255, 255, 255, 0.12) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    --lg-specular-dark: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.12) 0%,
+        rgba(255, 255, 255, 0.04) 40%,
+        rgba(255, 255, 255, 0) 100%
+    );
+
+    /* Organic Corners */
+    --lg-radius-lg: 24px;
+    --lg-radius-md: 18px;
+    --lg-radius-sm: 14px;
+    --lg-radius-pill: 999px;
+
+    /* Transitions */
+    --lg-transition: 0.35s cubic-bezier(0.25, 0.1, 0.25, 1);
+    --lg-transition-slow: 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+
+    /* Hover Glow */
+    --lg-hover-glow: 0 12px 40px rgba(0, 0, 0, 0.08),
+                     inset 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+
+/* =========================================
+   1. Background Gradient Mesh
+   ========================================= */
+body {
+    background-color: #eef2f8 !important;
+    background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(173, 206, 255, 0.7) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 25%, rgba(255, 197, 225, 0.5) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 80%, rgba(187, 199, 247, 0.6) 0%, transparent 50%),
+        radial-gradient(ellipse at 75% 60%, rgba(199, 237, 255, 0.4) 0%, transparent 45%) !important;
+    background-attachment: fixed !important;
+}
+
+/* Subpage warm mesh */
+body.subpage-warm {
+    background-color: #f5f0ea !important;
+    background-image:
+        radial-gradient(ellipse at 15% 20%, rgba(255, 228, 196, 0.5) 0%, transparent 55%),
+        radial-gradient(ellipse at 85% 30%, rgba(255, 218, 185, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 75%, rgba(220, 210, 245, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 30% 60%, rgba(255, 243, 224, 0.3) 0%, transparent 45%) !important;
+    background-attachment: fixed !important;
+}
+
+
+/* =========================================
+   2. Header
+   ========================================= */
+header {
+    background: var(--lg-bg-1) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    border-bottom: 1px solid var(--lg-border-1) !important;
+    box-shadow: var(--lg-shadow-1) !important;
+    transition: background var(--lg-transition), box-shadow var(--lg-transition);
+}
+
+
+/* =========================================
+   3. Mobile Navigation Overlay
+   ========================================= */
+.mobile-nav-overlay {
+    background: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    box-shadow: -8px 0 40px rgba(0, 0, 0, 0.08) !important;
+}
+
+
+/* =========================================
+   4. Hero Section
+   ========================================= */
+.new-hero {
+    background: transparent !important;
+}
+
+/* Hero Topic Cards */
+.new-hero__topic-card {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+    transition: all var(--lg-transition) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.new-hero__topic-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: var(--lg-specular);
+    border-radius: var(--lg-radius-md) var(--lg-radius-md) 0 0;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.new-hero__topic-card:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: var(--lg-hover-glow) !important;
+    transform: translateY(-3px) scale(1.01) !important;
+    border-color: rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Hero Tag Badge */
+.new-hero__tag {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+/* Hero Buttons */
+.new-hero__btn {
+    border-radius: var(--lg-radius-pill) !important;
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+    transition: all var(--lg-transition) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.new-hero__btn--primary {
+    background: rgba(29, 29, 31, 0.88) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+}
+
+.new-hero__btn--primary:hover {
+    background: rgba(29, 29, 31, 0.95) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transform: translateY(-2px) !important;
+}
+
+.new-hero__btn--ghost {
+    background: var(--lg-bg-3) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+.new-hero__btn--ghost:hover {
+    background: rgba(255, 255, 255, 0.5) !important;
+    box-shadow: var(--lg-hover-glow) !important;
+    transform: translateY(-2px) !important;
+}
+
+
+/* =========================================
+   5. Trust Bar
+   ========================================= */
+.trust-bar {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border-bottom: 1px solid var(--lg-border-3) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+}
+
+
+/* =========================================
+   6. Conversion Core Section
+   ========================================= */
+.conversion-core {
+    background: transparent !important;
+}
+
+.core-block {
+    background: var(--lg-bg-1) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    border: 1px solid var(--lg-border-1) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.core-block::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: var(--lg-specular);
+    border-radius: var(--lg-radius-lg) var(--lg-radius-lg) 0 0;
+    pointer-events: none;
+}
+
+.core-diff-item {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+    transition: all var(--lg-transition);
+}
+
+.core-diff-item:hover {
+    background: rgba(255, 255, 255, 0.42) !important;
+    box-shadow: var(--lg-hover-glow) !important;
+    transform: translateY(-2px);
+}
+
+.core-track-card {
+    background: rgba(240, 248, 255, 0.35) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+}
+
+.core-track-chip {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--lg-border-3) !important;
+}
+
+.core-faq-item {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+
+/* =========================================
+   7. Journey Story Panels
+   ========================================= */
+#journey .story-panel.dark {
+    background: var(--lg-dark-bg-1) !important;
+    backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    border-top: 1px solid var(--lg-dark-border) !important;
+    border-bottom: 1px solid var(--lg-dark-border) !important;
+    box-shadow: var(--lg-dark-shadow) !important;
+}
+
+#journey .story-panel.light {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(120%) !important;
+}
+
+
+/* =========================================
+   8. Info Panels
+   ========================================= */
+.info-panel.dark {
+    background: var(--lg-dark-bg-1) !important;
+    backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    border-top: 1px solid var(--lg-dark-border) !important;
+    border-bottom: 1px solid var(--lg-dark-border) !important;
+    box-shadow: var(--lg-dark-shadow) !important;
+}
+
+.info-panel.light {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(8px) saturate(120%) !important;
+    -webkit-backdrop-filter: blur(8px) saturate(120%) !important;
+}
+
+
+/* =========================================
+   9. Accordion (Principle Section)
+   ========================================= */
+.principle-accordion.light {
+    background: rgba(245, 245, 247, 0.35) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    overflow: hidden;
+}
+
+.principle-accordion.light .principle-accordion__summary {
+    background: rgba(245, 245, 247, 0.45) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) !important;
+}
+
+.principle-accordion.dark {
+    background: var(--lg-dark-bg-2) !important;
+    backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    border: 1px solid var(--lg-dark-border) !important;
+    overflow: hidden;
+}
+
+.principle-accordion.dark .principle-accordion__summary {
+    background: rgba(30, 41, 59, 0.4) !important;
+    backdrop-filter: blur(var(--lg-dark-blur)) !important;
+    -webkit-backdrop-filter: blur(var(--lg-dark-blur)) !important;
+}
+
+
+/* =========================================
+   10. Highlight Box Yellow
+   ========================================= */
+.highlight-box-yellow {
+    background: rgba(255, 249, 196, 0.35) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid rgba(241, 196, 15, 0.45) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: 0 8px 32px rgba(241, 196, 15, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+
+/* =========================================
+   11. Booking Widget
+   ========================================= */
+.booking-widget {
+    background: var(--lg-bg-1) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    border: 1px solid var(--lg-border-1) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-1) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-widget::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 50%;
+    background: var(--lg-specular);
+    pointer-events: none;
+    border-radius: var(--lg-radius-lg) var(--lg-radius-lg) 0 0;
+}
+
+
+/* =========================================
+   12. Buttons
+   ========================================= */
+.btn-modern-ghost {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-pill) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+.btn-modern-ghost:hover {
+    background: rgba(29, 29, 31, 0.88) !important;
+    color: #fff !important;
+    border-color: rgba(255, 255, 255, 0.15) !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* GNB CTA Button */
+.gnb-cta-btn {
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+.gnb-cta-btn:hover {
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.18),
+                inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-2px) !important;
+}
+
+/* Mobile CTA Button */
+.mobile-cta-btn {
+    backdrop-filter: blur(16px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+
+/* =========================================
+   13. Chat Bubble
+   ========================================= */
+.chat-bubble {
+    background: rgba(255, 235, 59, 0.7) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(160%) !important;
+    box-shadow: 0 6px 20px rgba(255, 235, 59, 0.25),
+                inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+.chat-bubble:hover {
+    transform: scale(1.08) !important;
+    box-shadow: 0 10px 30px rgba(255, 235, 59, 0.35),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+
+/* =========================================
+   14. Consultation List
+   ========================================= */
+.consultation-list li {
+    background: rgba(255, 255, 255, 0.12) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: var(--lg-radius-sm) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+    transition: all var(--lg-transition);
+}
+
+.consultation-list li:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+    transform: translateX(4px);
+}
+
+
+/* =========================================
+   15. Program Cards
+   ========================================= */
+.program-card {
+    background: rgba(255, 255, 255, 0.18) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08),
+                inset 0 1px 0 rgba(255, 255, 255, 0.15) !important;
+    transition: all var(--lg-transition) !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.program-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 45%;
+    background: var(--lg-specular-dark);
+    pointer-events: none;
+    border-radius: var(--lg-radius-lg) var(--lg-radius-lg) 0 0;
+}
+
+.program-card:hover {
+    background: rgba(255, 255, 255, 0.28) !important;
+    box-shadow: 0 16px 48px rgba(0, 0, 0, 0.15),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+    transform: translateY(-6px) scale(1.01) !important;
+    border-color: rgba(255, 255, 255, 0.4) !important;
+}
+
+
+/* =========================================
+   16. Director Profile
+   ========================================= */
+.credentials {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+}
+
+.message {
+    background: rgba(227, 242, 253, 0.3) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(170%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(170%) !important;
+    border: 1px solid rgba(200, 230, 255, 0.5) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: 0 8px 32px rgba(21, 101, 192, 0.06),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+
+/* =========================================
+   17. Footer
+   ========================================= */
+.copyright {
+    background: var(--lg-dark-bg-1) !important;
+    backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-dark-blur)) saturate(180%) !important;
+    border-top: 1px solid var(--lg-dark-border) !important;
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+
+/* =========================================
+   18. Floating TOC
+   ========================================= */
+@media (min-width: 1201px) {
+    #side-nav {
+        background: var(--lg-bg-1) !important;
+        backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        border: 1px solid var(--lg-border-1) !important;
+        border-radius: var(--lg-radius-lg) !important;
+        box-shadow: var(--lg-shadow-1) !important;
+    }
+
+    #side-nav:hover {
+        box-shadow: var(--lg-hover-glow) !important;
+    }
+}
+
+@media (max-width: 1200px) {
+    #toc-toggle-button {
+        background: var(--lg-bg-1) !important;
+        backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+        -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+        border: 1px solid var(--lg-border-1) !important;
+        box-shadow: var(--lg-shadow-2) !important;
+    }
+
+    #side-nav {
+        background: var(--lg-bg-1) !important;
+        backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        border: 1px solid var(--lg-border-1) !important;
+        border-radius: var(--lg-radius-lg) !important;
+        box-shadow: var(--lg-shadow-1) !important;
+    }
+}
+
+/* Dropdown Submenu */
+.dropdown-submenu {
+    background: var(--lg-bg-1) !important;
+    backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+    border: 1px solid var(--lg-border-1) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.6) !important;
+}
+
+
+/* =========================================
+   19. Sticky CTA (Mobile)
+   ========================================= */
+@media (max-width: 991px) {
+    .sticky-cta {
+        background: var(--lg-bg-1) !important;
+        backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        -webkit-backdrop-filter: blur(var(--lg-blur-1)) saturate(180%) !important;
+        border-top: 1px solid var(--lg-border-1) !important;
+        box-shadow: 0 -8px 32px rgba(0, 0, 0, 0.06),
+                    inset 0 1px 0 rgba(255, 255, 255, 0.7) !important;
+    }
+}
+
+
+/* =========================================
+   20. Subpage Components
+   ========================================= */
+
+/* Subpage Hook (Hero) */
+.sub-hook {
+    background: transparent !important;
+}
+
+/* Subpage Note/Quote Block */
+.sub-note {
+    background: rgba(255, 255, 255, 0.3) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(150%) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    border-left: 3px solid var(--accent-amber, #e67e22) !important;
+    border-radius: 0 var(--lg-radius-md) var(--lg-radius-md) 0 !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+/* Subpage Article Container */
+.sub-article {
+    background: transparent !important;
+}
+
+/* Subpage Section */
+.sub-section {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+}
+
+/* Subpage Mid-CTA Card */
+.sub-mid-cta {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+    transition: all var(--lg-transition);
+}
+
+.sub-mid-cta:hover {
+    box-shadow: var(--lg-hover-glow) !important;
+    transform: translateY(-2px);
+}
+
+/* Subpage Director Profile */
+.sub-director {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+}
+
+/* Subpage Info Card */
+.sub-info-card {
+    background: var(--lg-bg-2) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(160%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+    overflow: hidden;
+}
+
+.sub-info-card__item {
+    border-right-color: var(--lg-border-3) !important;
+    transition: background var(--lg-transition);
+}
+
+.sub-info-card__item:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Subpage CTA Section */
+.sub-cta {
+    background: rgba(255, 255, 255, 0.25) !important;
+    backdrop-filter: blur(var(--lg-blur-2)) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-2)) saturate(150%) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    border-radius: var(--lg-radius-lg) !important;
+    box-shadow: var(--lg-shadow-2) !important;
+}
+
+/* Subpage CTA Buttons */
+.sub-cta__btn--primary {
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+.sub-cta__btn--secondary {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(12px) saturate(150%) !important;
+    -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+    border: 1px solid var(--lg-border-2) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+/* Subpage Cross-Link Button */
+.sub-cross-link__btn {
+    background: var(--lg-bg-3) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+    transition: all var(--lg-transition) !important;
+}
+
+/* Subpage FAQ Items */
+.sub-faq__item {
+    transition: all var(--lg-transition);
+    border-radius: var(--lg-radius-sm);
+}
+
+.sub-faq__item:hover {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* Subpage List (ordered/unordered) */
+.sub-list {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(var(--lg-blur-3)) saturate(140%) !important;
+    -webkit-backdrop-filter: blur(var(--lg-blur-3)) saturate(140%) !important;
+    border: 1px solid var(--lg-border-3) !important;
+    border-radius: var(--lg-radius-md) !important;
+    box-shadow: var(--lg-shadow-3) !important;
+}
+
+
+/* =========================================
+   21. Performance: Mobile Blur Reduction
+   ========================================= */
+@media (max-width: 768px) {
+    :root {
+        --lg-blur-1: 32px;
+        --lg-blur-2: 24px;
+        --lg-blur-3: 16px;
+        --lg-dark-blur: 32px;
+    }
+
+    /* Remove specular pseudo-elements on mobile */
+    .core-block::before,
+    .new-hero__topic-card::before,
+    .booking-widget::before,
+    .program-card::before {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   22. Reduced Motion
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+
+    .core-block::before,
+    .new-hero__topic-card::before,
+    .booking-widget::before,
+    .program-card::before {
+        display: none;
+    }
+}
+
+
+/* =========================================
+   23. Fallback: No backdrop-filter Support
+   ========================================= */
+@supports not (backdrop-filter: blur(1px)) {
+    header {
+        background-color: rgba(255, 255, 255, 0.92) !important;
+    }
+    .mobile-nav-overlay {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+    }
+    .core-block,
+    .booking-widget {
+        background-color: rgba(255, 255, 255, 0.88) !important;
+    }
+    .new-hero__topic-card,
+    .core-diff-item,
+    .core-track-card,
+    .core-faq-item {
+        background-color: rgba(255, 255, 255, 0.85) !important;
+    }
+    .trust-bar {
+        background-color: rgba(255, 255, 255, 0.8) !important;
+    }
+    .sticky-cta {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+    }
+    .copyright {
+        background-color: #1e293b !important;
+    }
+    #journey .story-panel.dark,
+    .info-panel.dark {
+        background-color: rgba(15, 23, 42, 0.9) !important;
+    }
+    .program-card {
+        background-color: rgba(255, 255, 255, 0.7) !important;
+    }
+    .sub-section,
+    .sub-mid-cta,
+    .sub-director,
+    .sub-info-card {
+        background-color: rgba(255, 255, 255, 0.85) !important;
+    }
+}
+
+
+/* =========================================
+   24. GlobalMIG Banner Hide
+   ========================================= */
+div[style*="mig"], div[class*="mig"],
+div[id*="mig"], div[id*="wsa"],
+div[class*="wsa"], div[class*="global_mig"],
+div[id*="global_mig"], div[id*="GlobalMIG"],
+div[class*="GlobalMIG"] {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+}
