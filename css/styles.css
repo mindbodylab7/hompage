@@ -1431,7 +1431,7 @@
 .core-trust-block__images img {
     flex: 1 1 0;
     min-width: 0;
-    height: 80px;
+    aspect-ratio: 3 / 2;
     object-fit: cover;
     border-radius: 8px;
     border: 1px solid #e0e0e0;
@@ -1457,7 +1457,7 @@
         gap: 8px;
     }
     .core-trust-block__images img {
-        height: 60px;
+        aspect-ratio: 3 / 2;
     }
     .core-trust-block__text {
         font-size: 13px;
