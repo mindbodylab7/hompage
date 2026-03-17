@@ -1407,4 +1407,95 @@
     }
 }
 
+/* ============================================
+   [T1-02] 2차 신뢰 — 전문성 근거 블록
+   ============================================ */
+.core-trust-block {
+    margin-top: 16px;
+    padding: 18px;
+    border: 1px solid #e5e7eb;
+    border-radius: 12px;
+    background: #f8fafc;
+    text-align: center;
+}
+
+.core-trust-block__images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+
+.core-trust-block__images img {
+    flex: 1 1 0;
+    min-width: 0;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+}
+
+.core-trust-block__text {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #4b5563;
+    margin: 0 0 8px;
+}
+
+.core-trust-block__link {
+    display: inline-block;
+    color: #0b63b6;
+    text-decoration: underline;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    .core-trust-block__images {
+        gap: 8px;
+    }
+    .core-trust-block__images img {
+        height: 60px;
+    }
+    .core-trust-block__text {
+        font-size: 13px;
+    }
+    .core-trust-block__link {
+        font-size: 13px;
+    }
+}
+
+/* ============================================
+   [T1-03] 3차 신뢰 — 센터장 협회 사진 갤러리
+   ============================================ */
+.director-gallery {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+    margin: 1.5rem 0;
+}
+
+.director-gallery img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #e0e0e0;
+    object-fit: cover;
+}
+
+/* [T1-04] 센터장 소개 하단 CTA */
+.director-cta {
+    text-align: center;
+    margin: 2rem 0 0;
+}
+
+@media (max-width: 768px) {
+    .director-gallery {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
 /* GlobalMIG 배너 숨김 -> css/liquid-glass.css 로 이동 */
