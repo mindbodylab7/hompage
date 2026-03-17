@@ -9,15 +9,7 @@
     'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-NXVLC5NW');</script>
     <!-- End Google Tag Manager -->
-
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-MT1JPHGLQJ"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-MT1JPHGLQJ');
-    </script>
+    <!-- GA4(G-MT1JPHGLQJ)는 GTM 컨테이너에서 배포 중 — 직접 gtag.js 로드 제거하여 이중 추적 방지 -->
 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -25,14 +17,27 @@
     <meta name="description"
         content="마인드바디랩 최면상담센터. 전문 최면 상담을 통해 심리 문제, 트라우마, 전생 체험 등 마음의 치유를 돕습니다. 전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 지금 상담을 예약하세요.">
     <meta name="keywords" content="최면상담, 심리상담, 최면치료, 마인드바디랩, 전생체험, 심리치유, 트라우마 상담, 무의식, 내면아이, 전생최면, 최면전생, 최면체험">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#1d1d1f">
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" href="/images/favicon.ico">
+    <!-- Open Graph -->
     <meta property="og:title" content="마인드바디랩 최면상담센터">
     <meta property="og:description"
         content="전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다. 전문 최면 상담을 통해 마음의 문제를 치유합니다.">
     <meta property="og:image" content="https://www.mindbodylab.kr/images/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="마인드바디랩 최면상담센터">
     <meta property="og:url" content="https://www.mindbodylab.kr">
     <meta property="og:type" content="website">
+    <meta property="og:locale" content="ko_KR">
+    <meta property="og:site_name" content="마인드바디랩 최면상담센터">
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="마인드바디랩 최면상담센터">
+    <meta name="twitter:description" content="전문 최면 상담을 통해 마음의 문제를 치유하고 본연의 나를 찾아가는 여정을 함께합니다.">
+    <meta name="twitter:image" content="https://www.mindbodylab.kr/images/og-image.png">
     <!-- [P4-01] canonical URL — 검색엔진 중복 페이지 방지 -->
     <link rel="canonical" href="https://www.mindbodylab.kr">
 
@@ -52,7 +57,13 @@
             "addressRegion": "서울특별시",
             "addressCountry": "KR"
         },
-        "priceRange": "₩150,000/회기"
+        "priceRange": "₩150,000/회기",
+        "image": "https://www.mindbodylab.kr/images/og-image.png",
+        "sameAs": [
+            "https://tinyurl.com/8smeynp4",
+            "https://tinyurl.com/yfzvkxkr",
+            "https://tinyurl.com/58tp8rtr"
+        ]
     }
     </script>
 
@@ -458,6 +469,42 @@
         .new-hero__trust a {
             color: #007bff;
             text-decoration: underline;
+        }
+
+        /* [T1-01] 히어로 신뢰 이미지 바 */
+        .new-hero__trust-logos {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 0 0 10px;
+            padding: 8px 0;
+        }
+
+        .new-hero__trust-logos img {
+            height: 56px;
+            width: 84px;
+            object-fit: cover;
+            border-radius: 8px;
+            filter: grayscale(100%);
+            opacity: 0.6;
+            transition: filter 0.3s ease, opacity 0.3s ease;
+        }
+
+        .new-hero__trust-logos img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+            .new-hero__trust-logos {
+                gap: 8px;
+            }
+            .new-hero__trust-logos img {
+                height: 44px;
+                width: 66px;
+            }
         }
 
         /* 점프 링크 */
@@ -1047,6 +1094,13 @@
                 <p class="new-hero__micro">※ '예약 가능 일정 확인하기'는 네이버 예약 페이지로 이동합니다.</p>
                 <p class="new-hero__faq-teaser">최면에서 못 깨어날 수 있나요? <a href="#landing-faq" data-cta="hero_faq_teaser">FAQ에서 먼저 확인</a></p>
 
+                <!-- [T1-01] 1차 신뢰 — 협회 활동 이미지 바 -->
+                <div class="new-hero__trust-logos" aria-label="소속 협회 및 인증 활동">
+                    <img src="images/trust-hero-01.jpg" alt="한국NLP최면교육협회 임명장 수여식" width="120" height="80" loading="eager">
+                    <img src="images/trust-hero-02.jpg" alt="한국NLP최면교육협회 임원진" width="120" height="80" loading="eager">
+                    <img src="images/trust-hero-03.jpg" alt="전문 교육 과정 참여" width="120" height="80" loading="eager">
+                </div>
+
                 <!-- 신뢰 요소: 센터장 이름 + 자격 참조 -->
                 <p class="new-hero__trust">
                     <strong>최면 전문 상담가: 김현준 센터장</strong> · 보유 라이센스/이수 프로그램은 아래 <a href="#director">센터장 소개</a>에 공개되어 있습니다.
@@ -1080,6 +1134,20 @@
                         </div>
                     </div>
                     <p class="core-block__note">자세한 배경 설명은 아래 본문의 <a href="#principle-6" data-cta="core_diff_detail">최면 상담이어야 하는 이유</a>에서 확인할 수 있습니다.</p>
+
+                    <!-- [T1-02] 2차 신뢰 — 전문성 근거 블록 -->
+                    <div class="core-trust-block" aria-label="전문성 근거">
+                        <div class="core-trust-block__images">
+                            <img src="images/trust-core-01.jpg" alt="한국NLP최면교육협회 회장님과 임명장 수여식" width="180" height="120" loading="lazy">
+                            <img src="images/trust-core-02.jpg" alt="한국NLP최면교육협회 임명장 수여식 단체 사진" width="180" height="120" loading="lazy">
+                            <img src="images/trust-core-03.jpg" alt="한국NLP최면교육협회 협회원 단체 사진" width="180" height="120" loading="lazy">
+                        </div>
+                        <p class="core-trust-block__text">
+                            <strong>한국NLP최면교육협회 총무이사</strong><br>
+                            ABH·ABNLP 인증 보유
+                        </p>
+                        <a class="core-trust-block__link" href="#director" data-cta="core_trust_director">자세히 보기 →</a>
+                    </div>
                 </article>
 
                 <article class="core-block" id="service-tracks" aria-labelledby="service-tracks-title">
@@ -1645,7 +1713,7 @@
                                 <span class="license-issuer">Certified by American Board of Hypnotherapy</span>
                             </div>
                             <div class="license-item">
-                                <span class="license-title">국제 공인 Timeline Therapy™ Master Practitioner</span>
+                                <span class="license-title">Timeline Therapy™ Master Practitioner</span>
                                 <span class="license-issuer">Certified by Timeline Therapy™ Association</span>
                             </div>
                             <div class="license-item">
@@ -1664,6 +1732,24 @@
                                 <span class="license-title">머니마인드코칭 3급</span>
                                 <span class="license-issuer">Certified by Mind Korea 부설 설기문 마음연구소</span>
                             </div>
+                        </div>
+
+                        <!-- [T1-03] 3차 신뢰 — 협회 사진 갤러리 -->
+                        <p class="sub-heading credentials-heading">협회 활동 및 인증 사진</p>
+                        <div class="director-gallery" aria-label="협회 활동 및 인증 사진">
+                            <img src="images/trust-gallery-01.jpg" alt="한국NLP최면교육협회 임명장 수여식 전체 단체 사진" loading="lazy">
+                            <img src="images/trust-gallery-02.jpg" alt="한국NLP최면교육협회 협회원 단체 사진" loading="lazy">
+                            <img src="images/trust-gallery-03.jpg" alt="한국NLP최면교육협회 임원진 단체 사진" loading="lazy">
+                        </div>
+
+                        <!-- [T1-04] 센터장 소개 하단 CTA -->
+                        <div class="director-cta" aria-label="상담 예약">
+                            <a class="new-hero__btn new-hero__btn--primary"
+                               href="https://tinyurl.com/2fjvhfdz"
+                               target="_blank" rel="noopener"
+                               data-cta="director_reserve">
+                                예약 가능 일정 확인하기
+                            </a>
                         </div>
                     </div>
                 </div>
